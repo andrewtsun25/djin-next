@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FistIcon renders 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 50 50"
+      >
+        <path
+          d="M 26.976563 5 C 24.78125 5 22.796875 6.027344 21.59375 7.734375 C 20.757813 7.410156 19.410156 7 18 7 C 15.410156 7 13.34375 8.023438 11.539063 10.210938 C 10.835938 10.113281 9.632813 10.039063 8.222656 10.320313 C 4.996094 10.964844 3 14.542969 3 17.488281 L 3 31 C 3 34.757813 4.867188 37 8 37 C 8.996094 37 10.054688 36.894531 10.9375 36.464844 L 11 18.996094 L 13 19.003906 L 12.9375 36.609375 C 14.003906 37.476563 15.421875 38 17 38 C 18.609375 38 19.976563 37.589844 21 36.875 L 21 17 L 23 17 L 23 35.722656 C 23.367188 36.265625 24.347656 37 27 37 C 29.132813 37 31 35.132813 31 33 L 31 17 C 31 14.652344 32.160156 13.425781 32.292969 13.292969 L 33.707031 14.707031 C 33.6875 14.726563 33 15.480469 33 17 L 33 33 C 33 35.132813 34.867188 37 37 37 C 38.953125 37 41.074219 36.5 42.015625 32.816406 L 44 15.953125 C 43.984375 10.335938 41.292969 9.011719 39.683594 8.222656 L 39.449219 8.105469 C 37.589844 7.175781 34.582031 7.644531 33.3125 7.90625 C 31.738281 6.382813 29.902344 5 26.976563 5 Z M 45.40625 21.101563 L 43.96875 33.242188 C 43 37.117188 40.722656 39 37 39 C 34.941406 39 33.085938 37.898438 32 36.265625 C 30.914063 37.898438 29.058594 39 27 39 C 26.351563 39 25.78125 38.957031 25.261719 38.882813 C 24.980469 39.375 24.675781 39.957031 24.421875 40.5625 C 23.644531 42.390625 23.574219 43.8125 24.21875 44.78125 C 24.753906 45.589844 25.6875 46 27 46 C 28.503906 46 30.203125 45.621094 32 45.222656 C 35.121094 44.527344 38.65625 43.742188 41.628906 44.929688 L 41.808594 45 L 42 45 C 44.007813 45 45.5625 44.230469 46.621094 42.710938 C 49.820313 38.113281 47.253906 27.261719 45.40625 21.101563 Z"
+        />
+      </svg>
+    </div>
+  </body>,
+  "container": <div>
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      focusable="false"
+      viewBox="0 0 50 50"
+    >
+      <path
+        d="M 26.976563 5 C 24.78125 5 22.796875 6.027344 21.59375 7.734375 C 20.757813 7.410156 19.410156 7 18 7 C 15.410156 7 13.34375 8.023438 11.539063 10.210938 C 10.835938 10.113281 9.632813 10.039063 8.222656 10.320313 C 4.996094 10.964844 3 14.542969 3 17.488281 L 3 31 C 3 34.757813 4.867188 37 8 37 C 8.996094 37 10.054688 36.894531 10.9375 36.464844 L 11 18.996094 L 13 19.003906 L 12.9375 36.609375 C 14.003906 37.476563 15.421875 38 17 38 C 18.609375 38 19.976563 37.589844 21 36.875 L 21 17 L 23 17 L 23 35.722656 C 23.367188 36.265625 24.347656 37 27 37 C 29.132813 37 31 35.132813 31 33 L 31 17 C 31 14.652344 32.160156 13.425781 32.292969 13.292969 L 33.707031 14.707031 C 33.6875 14.726563 33 15.480469 33 17 L 33 33 C 33 35.132813 34.867188 37 37 37 C 38.953125 37 41.074219 36.5 42.015625 32.816406 L 44 15.953125 C 43.984375 10.335938 41.292969 9.011719 39.683594 8.222656 L 39.449219 8.105469 C 37.589844 7.175781 34.582031 7.644531 33.3125 7.90625 C 31.738281 6.382813 29.902344 5 26.976563 5 Z M 45.40625 21.101563 L 43.96875 33.242188 C 43 37.117188 40.722656 39 37 39 C 34.941406 39 33.085938 37.898438 32 36.265625 C 30.914063 37.898438 29.058594 39 27 39 C 26.351563 39 25.78125 38.957031 25.261719 38.882813 C 24.980469 39.375 24.675781 39.957031 24.421875 40.5625 C 23.644531 42.390625 23.574219 43.8125 24.21875 44.78125 C 24.753906 45.589844 25.6875 46 27 46 C 28.503906 46 30.203125 45.621094 32 45.222656 C 35.121094 44.527344 38.65625 43.742188 41.628906 44.929688 L 41.808594 45 L 42 45 C 44.007813 45 45.5625 44.230469 46.621094 42.710938 C 49.820313 38.113281 47.253906 27.261719 45.40625 21.101563 Z"
+      />
+    </svg>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
