@@ -1,17 +1,9 @@
 import React from "react";
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Theme,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import logo from "../../public/logos/logo.png";
 import Image from "next/image";
-import { useTheme } from "@mui/system";
 
 interface AppToolBarProps {
   isAppDrawerOpen: boolean;
@@ -24,8 +16,6 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
   isAppDrawerOpen,
   setIsAppDrawerOpen,
 }: AppToolBarProps) => {
-  const theme: Theme = useTheme();
-  console.log("Theme = ", theme);
   return (
     <AppBar position="sticky">
       <Toolbar>

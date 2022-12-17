@@ -9,6 +9,7 @@ import "@fontsource/roboto/700.css";
 import { CssBaseline } from "@mui/material";
 import { useState } from "react";
 import { AppToolBar } from "../components/home";
+import AppDrawer from "../components/home/AppDrawer";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isAppDrawerOpen, setIsAppDrawerOpen] = useState(false);
@@ -16,6 +17,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <CssBaseline />
       <AppToolBar
+        isAppDrawerOpen={isAppDrawerOpen}
+        setIsAppDrawerOpen={setIsAppDrawerOpen}
+      />
+      <AppDrawer
         isAppDrawerOpen={isAppDrawerOpen}
         setIsAppDrawerOpen={setIsAppDrawerOpen}
       />
