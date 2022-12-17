@@ -50,11 +50,11 @@ exports[`AppToolBar renders 1`] = `
                 style="color: transparent;"
                 width="50"
               />
-              <h6
-                class="MuiTypography-root MuiTypography-h6 css-ssm9q9-MuiTypography-root"
+              <h5
+                class="MuiTypography-root MuiTypography-h5 css-109s1dp-MuiTypography-root"
               >
                 d.jin
-              </h6>
+              </h5>
             </div>
           </a>
         </div>
@@ -107,11 +107,11 @@ exports[`AppToolBar renders 1`] = `
               style="color: transparent;"
               width="50"
             />
-            <h6
-              class="MuiTypography-root MuiTypography-h6 css-ssm9q9-MuiTypography-root"
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-109s1dp-MuiTypography-root"
             >
               d.jin
-            </h6>
+            </h5>
           </div>
         </a>
       </div>

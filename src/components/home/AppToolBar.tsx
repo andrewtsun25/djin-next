@@ -32,7 +32,7 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
         <Link href="/">
           <Box height="100%" display="flex" alignItems="center">
             <Image src={logo} alt="d.jin website logo" width={50} height={50} />
-            <Typography variant="h6" ml={1}>
+            <Typography variant="h5" ml={1.5}>
               d.jin
             </Typography>
           </Box>

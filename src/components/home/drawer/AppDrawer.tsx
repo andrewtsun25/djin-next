@@ -1,6 +1,6 @@
 import {
-  Box,
-  IconButton,
+  Box, Button,
+  Divider,
   List,
   SwipeableDrawer,
   SxProps,
@@ -29,9 +29,10 @@ import HyperLinkListItem from "./HyperLinkListItem";
 import {
   FistIcon,
   KatanaIcon,
-  MusicScoreIcon,
+  MusicScoreIcon, StorybookIcon,
   TaekwondoIcon,
 } from "../../icons";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
 
 interface AppDrawerProps {
   isAppDrawerOpen: boolean;
@@ -44,9 +45,9 @@ const drawerWidth = 300;
 
 const internalLinkStyle: SxProps<Theme> = { pl: 6 };
 const AppDrawer: React.FC<AppDrawerProps> = ({
-  isAppDrawerOpen,
-  setIsAppDrawerOpen,
-}: AppDrawerProps) => {
+                                               isAppDrawerOpen,
+                                               setIsAppDrawerOpen,
+                                             }: AppDrawerProps) => {
   const theme: Theme = useTheme();
   const isLTR = useMemo(() => theme.direction === "ltr", [theme]);
 
@@ -69,17 +70,16 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
         display="flex"
         alignItems="center"
         justifyContent="flex-end"
-        pt={0.5}
+        pt={0.75}
         pr={1.5}
-        pb={0.5}
+        pb={0.75}
       >
-        <IconButton
+        <Button
           role={CLOSE_BUTTON_ROLE}
-          onClick={() => setIsAppDrawerOpen(false)}
-        >
+          onClick={() => setIsAppDrawerOpen(false)}>
           {isLTR ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-        </IconButton>
-        <Typography>Close</Typography>
+          <Typography sx={{ ml: 0.5}}>Close</Typography>
+        </Button>
       </Box>
       <List>
         <CollapsibleList icon={<CodeIcon />} name="Coding">
@@ -135,6 +135,12 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
             text={"Classical"}
             to="/music/classical"
           />
+          <HyperLinkListItem
+            sx={internalLinkStyle}
+            icon={<HeadphonesIcon />}
+            text={"SoundCloud"}
+            to="https://soundcloud.com/djtaeyong"
+          />
         </CollapsibleList>
         <CollapsibleList icon={<SportsMmaIcon />} name="Martial Arts">
           <HyperLinkListItem
@@ -176,6 +182,17 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
             to="academic/Reclaimer"
           />
         </CollapsibleList>
+        <Divider />
+        <HyperLinkListItem
+          icon={<ContactMailIcon />}
+          text="Contact"
+          to="mailto:djtaeyong@gmail.com"
+        />
+        <HyperLinkListItem
+          icon={<StorybookIcon />}
+          text="Site Storybook"
+          to="https://storybook.djin.dev/"
+        />
       </List>
     </SwipeableDrawer>
   );
