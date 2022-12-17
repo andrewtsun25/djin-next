@@ -8,8 +8,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { CssBaseline } from "@mui/material";
 import { useState } from "react";
-import { AppToolBar } from "../components/home";
-import AppDrawer from "../components/home/AppDrawer";
+import { AppDrawer, AppToolBar } from "../components/home";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isAppDrawerOpen, setIsAppDrawerOpen] = useState(false);

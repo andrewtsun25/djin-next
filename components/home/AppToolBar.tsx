@@ -17,7 +17,7 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
   setIsAppDrawerOpen,
 }: AppToolBarProps) => {
   return (
-    <AppBar position="sticky">
+    <AppBar position="fixed">
       <Toolbar>
         <IconButton
           color="inherit"
