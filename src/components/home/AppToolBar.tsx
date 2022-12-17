@@ -2,7 +2,7 @@ import React from "react";
 import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
-import logo from "../../public/logos/logo.png";
+import logo from "../../../public/logos/logo.png";
 import Image from "next/image";
 
 interface AppToolBarProps {

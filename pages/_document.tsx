@@ -8,9 +8,7 @@ import {
 function Document() {
   return (
     <Html lang="en">
-      <Head>
-        <title>djin.dev</title>
-      </Head>
+      <Head />
       <body>
         <Main />
         <NextScript />
