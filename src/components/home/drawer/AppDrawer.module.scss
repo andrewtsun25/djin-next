@@ -1,0 +1,12 @@
+$app-drawer-width: 300px;
+
+.drawer {
+  width: $app-drawer-width;
+  flex-shrink: 0;
+}
+
+.closeButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

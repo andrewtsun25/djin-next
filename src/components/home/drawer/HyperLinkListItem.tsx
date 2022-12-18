@@ -9,6 +9,7 @@ import {
 import { NextLinkComposed, NextLinkComposedProps } from "./NextLinkComposed";
 
 interface HyperlistLinkItemProps {
+  className?: string;
   sx?: SxProps<Theme>;
   to: NextLinkComposedProps["to"];
   target?: HTMLAttributeAnchorTarget;
@@ -16,6 +17,7 @@ interface HyperlistLinkItemProps {
   text: string;
 }
 const HyperLinkListItem: React.FC<HyperlistLinkItemProps> = ({
+  className,
   sx,
   to,
   icon,
@@ -24,6 +26,7 @@ const HyperLinkListItem: React.FC<HyperlistLinkItemProps> = ({
 }: HyperlistLinkItemProps) => {
   return (
     <ListItemButton
+      className={className}
       sx={sx}
       component={NextLinkComposed}
       to={to}

@@ -1,5 +1,6 @@
 import {
-  Box, Button,
+  Box,
+  Button,
   Divider,
   List,
   SwipeableDrawer,
@@ -29,10 +30,12 @@ import HyperLinkListItem from "./HyperLinkListItem";
 import {
   FistIcon,
   KatanaIcon,
-  MusicScoreIcon, StorybookIcon,
+  MusicScoreIcon,
+  StorybookIcon,
   TaekwondoIcon,
 } from "../../icons";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import styles from "./AppDrawer.module.scss";
 
 interface AppDrawerProps {
   isAppDrawerOpen: boolean;
@@ -45,40 +48,33 @@ const drawerWidth = 300;
 
 const internalLinkStyle: SxProps<Theme> = { pl: 6 };
 const AppDrawer: React.FC<AppDrawerProps> = ({
-                                               isAppDrawerOpen,
-                                               setIsAppDrawerOpen,
-                                             }: AppDrawerProps) => {
+  isAppDrawerOpen,
+  setIsAppDrawerOpen,
+}: AppDrawerProps) => {
   const theme: Theme = useTheme();
   const isLTR = useMemo(() => theme.direction === "ltr", [theme]);
 
   return (
     <SwipeableDrawer
       sx={{
-        width: drawerWidth,
-        flexShrink: 0,
         "& .MuiDrawer-paper": {
           width: drawerWidth,
           boxSizing: "border-box",
         },
       }}
+      className={styles.drawer}
       anchor={isLTR ? "left" : "right"}
       open={isAppDrawerOpen}
       onClose={noop}
       onOpen={noop}
     >
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="flex-end"
-        pt={0.75}
-        pr={1.5}
-        pb={0.75}
-      >
+      <Box className={styles.closeButtonContainer} pt={0.75} pr={1.5} pb={0.75}>
         <Button
           role={CLOSE_BUTTON_ROLE}
-          onClick={() => setIsAppDrawerOpen(false)}>
+          onClick={() => setIsAppDrawerOpen(false)}
+        >
           {isLTR ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          <Typography sx={{ ml: 0.5}}>Close</Typography>
+          <Typography sx={{ ml: 0.5 }}>Close</Typography>
         </Button>
       </Box>
       <List>

@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import logo from "../../../public/logos/logo.png";
 import Image from "next/image";
+import styles from "./AppToolBar.module.scss";
 
 interface AppToolBarProps {
   isAppDrawerOpen: boolean;
@@ -31,7 +32,11 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
         </IconButton>
         <Link href="/">
           <Box height="100%" display="flex" alignItems="center">
-            <Image src={logo} alt="d.jin website logo" width={50} height={50} />
+            <Image
+              src={logo}
+              alt="d.jin website logo"
+              className={styles.logo}
+            />
             <Typography variant="h5" ml={1.5}>
               d.jin
             </Typography>

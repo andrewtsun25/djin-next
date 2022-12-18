@@ -17,7 +17,7 @@ interface CollapsibleListPropsWithoutChildren {
 type CollapsibleListProps =
   PropsWithChildren<CollapsibleListPropsWithoutChildren>;
 
-export const LIST_ITEM_COLLAPSE_BTN_TEST_ID = "List Item Collapse Btn"
+export const LIST_ITEM_COLLAPSE_BTN_TEST_ID = "List Item Collapse Btn";
 const CollapsibleList: React.FC<CollapsibleListProps> = ({
   icon,
   name,
@@ -28,7 +28,10 @@ const CollapsibleList: React.FC<CollapsibleListProps> = ({
     setIsListOpen((newIsListOpen) => !newIsListOpen);
   return (
     <>
-      <ListItemButton onClick={toggleIsListOpen} role="button" data-testid={LIST_ITEM_COLLAPSE_BTN_TEST_ID}>
+      <ListItemButton
+        onClick={toggleIsListOpen}
+        data-testid={LIST_ITEM_COLLAPSE_BTN_TEST_ID}
+      >
         <ListItemIcon>{icon}</ListItemIcon>
         <ListItemText primary={name} />
         {isListOpen ? <ExpandLess /> : <ExpandMore />}
