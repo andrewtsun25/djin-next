@@ -42,5 +42,8 @@ next-env.d.ts
 .idea/
 *.idea
 
+# SWC
+.swc/
+
 # VSCode
 .vscode/

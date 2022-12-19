@@ -13,7 +13,7 @@ describe("HbvResearchCard", () => {
       mediaUrl: "https://media-url.com",
       startDate: new Date("2022-12-25T12:00:00Z"),
       endDate: new Date("2023-01-01T12:00:00Z"),
-      paperLink: "https://paper-link.com",
+      url: "https://paper-link.com",
       description: "description",
       responsibilities: ["responsibility1", "responsibility2"],
       skills: ["skill1", "skill2"],

@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import logo from "../../../public/logos/logo.png";
 import { AppToolBarBrandContainer, AppToolBarLogo } from "./styled";
+import { useRouter } from "next/router";
 
 interface AppToolBarProps {
   isAppDrawerOpen: boolean;
@@ -16,8 +17,10 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
   isAppDrawerOpen,
   setIsAppDrawerOpen,
 }: AppToolBarProps) => {
+  const router = useRouter();
+  const shouldBeFixed = router.asPath === "/";
   return (
-    <AppBar position="fixed">
+    <AppBar position={shouldBeFixed ? "fixed" : "sticky"}>
       <Toolbar>
         <IconButton
           color="inherit"

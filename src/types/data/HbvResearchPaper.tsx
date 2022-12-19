@@ -6,7 +6,7 @@ export interface HbvResearchPaper {
   mediaUrl: string;
   startDate: Date;
   endDate: Date;
-  paperLink: string;
+  url: string;
   description: string;
   responsibilities: string[];
   skills: string[];

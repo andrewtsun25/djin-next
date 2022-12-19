@@ -21,7 +21,7 @@ const HbvResearchCard: React.FC<HbvResearchCardProps> = ({
     description,
     responsibilities,
     skills,
-    paperLink,
+    url,
   },
 }: HbvResearchCardProps) => {
   return (
@@ -36,7 +36,7 @@ const HbvResearchCard: React.FC<HbvResearchCardProps> = ({
         />
         <CardContent>
           <HbvResearchCardIconLink
-            href={paperLink}
+            href={url}
             text="Research Paper"
             icon={<DescriptionIcon />}
           />

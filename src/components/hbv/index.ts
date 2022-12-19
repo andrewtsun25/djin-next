@@ -4,7 +4,10 @@ import {
   HbvItalicizedTypography,
   HbvLink,
   HbvTitle,
+  HbvResearchCardList,
+  HbvPageContentContainer,
 } from "./styled";
+import HbvResearchCard from "./HbvResearchCard";
 
 export {
   HbvBackground,
@@ -12,4 +15,7 @@ export {
   HbvItalicizedTypography,
   HbvLink,
   HbvTitle,
+  HbvResearchCardList,
+  HbvResearchCard,
+  HbvPageContentContainer,
 };

@@ -1,12 +1,13 @@
-// import { DocumentReference } from "../firebase/firestore";
+import { DocumentReference, Timestamp } from "firebase/firestore";
 
 export interface HbvResearchPaperDbEntity {
   name: string;
-  // organization: DocumentReference;
+
+  organization: DocumentReference;
   mediaUrl: string;
-  startDate: Date;
-  endDate: Date;
-  paperLink: string;
+  startDate: Timestamp;
+  endDate: Timestamp;
+  url: string;
   description: string;
   responsibilities: string[];
   skills: string[];

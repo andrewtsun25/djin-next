@@ -1,18 +1,42 @@
-import { Box, Container, Fade } from "@mui/material";
+import { Container, Fade } from "@mui/material";
 import {
   HbvBackground,
   HbvContentTypography,
   HbvItalicizedTypography,
   HbvLink,
   HbvTitle,
+  HbvResearchCard,
+  HbvResearchCardList,
+  HbvPageContentContainer,
 } from "../../../src/components/hbv";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { HbvResearchPaper } from "../../../src/types/data";
+import listHbvResearchPapers from "../../../src/dal/listHbvResearchPapers";
+
 const HEP_B_LINK = "https://med.stanford.edu/liver/education/whatishepb.html";
 
-export default function HbvResearchPage() {
+interface HbvResearchPageProps {
+  hbvResearchPapers: HbvResearchPaper[];
+}
+
+export const getStaticProps: GetStaticProps<
+  HbvResearchPageProps
+> = async () => {
+  const hbvResearchPapers = await listHbvResearchPapers();
+  return {
+    props: {
+      hbvResearchPapers,
+    },
+  };
+};
+
+type HbvResearchNextPageProps = InferGetStaticPropsType<typeof getStaticProps>;
+
+const HbvResearchPage = ({ hbvResearchPapers }: HbvResearchNextPageProps) => {
   return (
     <HbvBackground>
       <Fade in>
-        <Container maxWidth="lg">
+        <HbvPageContentContainer maxWidth="lg">
           <HbvTitle variant="h2" align="center">
             Hepatitis B Research
           </HbvTitle>
@@ -70,8 +94,18 @@ export default function HbvResearchPage() {
             with unique opportunities to perform undergraduate research with
             them.
           </HbvContentTypography>
-        </Container>
+          <HbvResearchCardList>
+            {hbvResearchPapers.map((hbvResearchPaper) => (
+              <HbvResearchCard
+                hbvResearchPaper={hbvResearchPaper}
+                key={hbvResearchPaper.name}
+              />
+            ))}
+          </HbvResearchCardList>
+        </HbvPageContentContainer>
       </Fade>
     </HbvBackground>
   );
-}
+};
+
+export default HbvResearchPage;
