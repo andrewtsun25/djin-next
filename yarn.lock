@@ -1513,6 +1513,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/luxon@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@types/luxon@npm:3.1.0"
+  checksum: 04768029342ad76fc2a9339436c143ea64797b35cf9b03ddded787c13eae30f0ca1246e51c2c5365ed912f98068e13a967a3931b137eb4585248a0ad7ec3fa86
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*, @types/node@npm:18.11.15":
   version: 18.11.15
   resolution: "@types/node@npm:18.11.15"
@@ -2632,6 +2639,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^13.4.0
     "@types/lodash": ^4.14.191
+    "@types/luxon": ^3.1.0
     "@types/node": 18.11.15
     "@types/react": 18.0.26
     "@types/react-dom": 18.0.9
@@ -2643,6 +2651,7 @@ __metadata:
     jest: ^29.3.1
     jest-environment-jsdom: ^29.3.1
     lodash: ^4.17.21
+    luxon: ^3.1.1
     next: 13.0.7
     node-mocks-http: ^1.12.1
     prettier: ^2.8.1
@@ -4900,6 +4909,13 @@ __metadata:
   version: 7.14.1
   resolution: "lru-cache@npm:7.14.1"
   checksum: d72c6713c6a6d86836a7a6523b3f1ac6764768cca47ec99341c3e76db06aacd4764620e5e2cda719a36848785a52a70e531822dc2b33fb071fa709683746c104
+  languageName: node
+  linkType: hard
+
+"luxon@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "luxon@npm:3.1.1"
+  checksum: 388fb35d3c51a19d8b305a3338e7e74634b08562e7d2f9ed5c05a7f4bc9ee1c1ab6a2546b6d9c4c104516b24043757d65f5f3fe3d78b206fbf55a9586ab62230
   languageName: node
   linkType: hard
 
