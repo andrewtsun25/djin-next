@@ -1,0 +1,300 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HbvResearchCard renders 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1ijjpl2-MuiPaper-root-MuiCard-root"
+        style="webkit-transform: none; transform: none; webkit-transition: -webkit-transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms; transition: transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;"
+      >
+        <div
+          class="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-avatar css-1ssile9-MuiCardHeader-avatar"
+          >
+            <div
+              class="MuiAvatar-root MuiAvatar-circular css-1wlk0hk-MuiAvatar-root"
+            >
+              <img
+                alt="Name"
+                class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+                src="https://via.placeholder.com/300.png"
+              />
+            </div>
+          </div>
+          <div
+            class="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-body2 MuiCardHeader-title css-et1ao3-MuiTypography-root"
+            >
+              Name
+            </span>
+            <span
+              class="MuiTypography-root MuiTypography-body2 MuiCardHeader-subheader css-83ijpv-MuiTypography-root"
+            >
+              Dec 25, 2022 - Jan 1, 2023: Organization
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+        >
+          <a
+            class="css-1d1oveo"
+            href="https://paper-link.com"
+          >
+            <div
+              class="MuiBox-root css-1xav8rb"
+            >
+              <div
+                class="MuiBox-root css-1ay9vb9"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="DescriptionIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+                  />
+                </svg>
+              </div>
+              <p
+                class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              >
+                Research Paper
+              </p>
+            </div>
+          </a>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph css-z2eky3-MuiTypography-root"
+          >
+            description
+          </p>
+          <ul>
+            <li
+              role="bulletPoint"
+            >
+              <p
+                class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              >
+                responsibility1
+              </p>
+            </li>
+            <li
+              role="bulletPoint"
+            >
+              <p
+                class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              >
+                responsibility2
+              </p>
+            </li>
+          </ul>
+          <div
+            class="MuiBox-root css-am63uh"
+          >
+            <div
+              class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1y6p6sh-MuiChip-root"
+              role="skill"
+            >
+              <span
+                class="MuiChip-label MuiChip-labelSmall css-wjsjww-MuiChip-label"
+              >
+                skill1
+              </span>
+            </div>
+            <div
+              class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1y6p6sh-MuiChip-root"
+              role="skill"
+            >
+              <span
+                class="MuiChip-label MuiChip-labelSmall css-wjsjww-MuiChip-label"
+              >
+                skill2
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1ijjpl2-MuiPaper-root-MuiCard-root"
+      style="webkit-transform: none; transform: none; webkit-transition: -webkit-transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms; transition: transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
+      >
+        <div
+          class="MuiCardHeader-avatar css-1ssile9-MuiCardHeader-avatar"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circular css-1wlk0hk-MuiAvatar-root"
+          >
+            <img
+              alt="Name"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="https://via.placeholder.com/300.png"
+            />
+          </div>
+        </div>
+        <div
+          class="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+        >
+          <span
+            class="MuiTypography-root MuiTypography-body2 MuiCardHeader-title css-et1ao3-MuiTypography-root"
+          >
+            Name
+          </span>
+          <span
+            class="MuiTypography-root MuiTypography-body2 MuiCardHeader-subheader css-83ijpv-MuiTypography-root"
+          >
+            Dec 25, 2022 - Jan 1, 2023: Organization
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+      >
+        <a
+          class="css-1d1oveo"
+          href="https://paper-link.com"
+        >
+          <div
+            class="MuiBox-root css-1xav8rb"
+          >
+            <div
+              class="MuiBox-root css-1ay9vb9"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="DescriptionIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+                />
+              </svg>
+            </div>
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Research Paper
+            </p>
+          </div>
+        </a>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph css-z2eky3-MuiTypography-root"
+        >
+          description
+        </p>
+        <ul>
+          <li
+            role="bulletPoint"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              responsibility1
+            </p>
+          </li>
+          <li
+            role="bulletPoint"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              responsibility2
+            </p>
+          </li>
+        </ul>
+        <div
+          class="MuiBox-root css-am63uh"
+        >
+          <div
+            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1y6p6sh-MuiChip-root"
+            role="skill"
+          >
+            <span
+              class="MuiChip-label MuiChip-labelSmall css-wjsjww-MuiChip-label"
+            >
+              skill1
+            </span>
+          </div>
+          <div
+            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1y6p6sh-MuiChip-root"
+            role="skill"
+          >
+            <span
+              class="MuiChip-label MuiChip-labelSmall css-wjsjww-MuiChip-label"
+            >
+              skill2
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

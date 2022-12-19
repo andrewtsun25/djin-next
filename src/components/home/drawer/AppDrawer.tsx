@@ -1,12 +1,4 @@
-import {
-  Box, Button,
-  Divider,
-  List,
-  SwipeableDrawer,
-  SxProps,
-  Theme,
-  Typography,
-} from "@mui/material";
+import { Button, Divider, List, Theme, Typography } from "@mui/material";
 import AppsIcon from "@mui/icons-material/Apps";
 import AlbumIcon from "@mui/icons-material/Album";
 import CodeIcon from "@mui/icons-material/Code";
@@ -29,10 +21,16 @@ import HyperLinkListItem from "./HyperLinkListItem";
 import {
   FistIcon,
   KatanaIcon,
-  MusicScoreIcon, StorybookIcon,
+  MusicScoreIcon,
+  StorybookIcon,
   TaekwondoIcon,
 } from "../../icons";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import {
+  AppDrawerCloseButtonContainer,
+  AppDrawerContainer,
+  CollapsibleListHyperLinkListItem,
+} from "../styled";
 
 interface AppDrawerProps {
   isAppDrawerOpen: boolean;
@@ -43,19 +41,16 @@ export const CLOSE_BUTTON_ROLE = "switch";
 
 const drawerWidth = 300;
 
-const internalLinkStyle: SxProps<Theme> = { pl: 6 };
 const AppDrawer: React.FC<AppDrawerProps> = ({
-                                               isAppDrawerOpen,
-                                               setIsAppDrawerOpen,
-                                             }: AppDrawerProps) => {
+  isAppDrawerOpen,
+  setIsAppDrawerOpen,
+}: AppDrawerProps) => {
   const theme: Theme = useTheme();
   const isLTR = useMemo(() => theme.direction === "ltr", [theme]);
 
   return (
-    <SwipeableDrawer
+    <AppDrawerContainer
       sx={{
-        width: drawerWidth,
-        flexShrink: 0,
         "& .MuiDrawer-paper": {
           width: drawerWidth,
           boxSizing: "border-box",
@@ -66,50 +61,39 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
       onClose={noop}
       onOpen={noop}
     >
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="flex-end"
-        pt={0.75}
-        pr={1.5}
-        pb={0.75}
-      >
+      <AppDrawerCloseButtonContainer>
         <Button
           role={CLOSE_BUTTON_ROLE}
-          onClick={() => setIsAppDrawerOpen(false)}>
+          onClick={() => setIsAppDrawerOpen(false)}
+        >
           {isLTR ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          <Typography sx={{ ml: 0.5}}>Close</Typography>
+          <Typography sx={{ ml: 0.5 }}>Close</Typography>
         </Button>
-      </Box>
+      </AppDrawerCloseButtonContainer>
       <List>
         <CollapsibleList icon={<CodeIcon />} name="Coding">
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<WorkIcon />}
             text="Employment"
             to="/coding/employment"
           />
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<SchoolIcon />}
             text="Education"
             to="/coding/education"
           />
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<AppsIcon />}
             text="Projects"
             to="/coding/projects"
           />
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<LinkedInIcon />}
             text="LinkedIn"
             to="https://linkedin.com/in/andrewtsun25"
             target="_blank"
           />
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<GitHubIcon />}
             text="GitHub"
             to="https://github.com/andrewtsun25"
@@ -117,66 +101,56 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
           />
         </CollapsibleList>
         <CollapsibleList icon={<HeadphonesIcon />} name={"Music"}>
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<SchoolIcon />}
             text={"Education"}
             to="/music/education"
           />
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<AlbumIcon />}
             text={"EDM"}
             to="/music/edm"
           />
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<MusicScoreIcon />}
             text={"Classical"}
             to="/music/classical"
           />
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<HeadphonesIcon />}
             text={"SoundCloud"}
             to="https://soundcloud.com/djtaeyong"
           />
         </CollapsibleList>
         <CollapsibleList icon={<SportsMmaIcon />} name="Martial Arts">
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<FistIcon />}
             text="ITF Taekwondo"
             to="/martialArts/itf"
           />
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<TaekwondoIcon />}
             text="WT Taekwondo"
             to="/martialArts/wt"
           />
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<KatanaIcon />}
             text="Haidong Gumdo"
             to="/martialArts/hdgd"
           />
         </CollapsibleList>
         <CollapsibleList icon={<SchoolIcon />} name={"Academic Work"}>
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<LocalHospitalIcon />}
             text="HBV Research"
             to="academic/hbv"
           />
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<LocalPharmacyIcon />}
             text="Holistic Office"
             to="academic/holisticOffice"
           />
-          <HyperLinkListItem
-            sx={internalLinkStyle}
+          <CollapsibleListHyperLinkListItem
             icon={<SportsEsportsIcon />}
             text={"Reclaimer"}
             to="academic/Reclaimer"
@@ -194,7 +168,7 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
           to="https://storybook.djin.dev/"
         />
       </List>
-    </SwipeableDrawer>
+    </AppDrawerContainer>
   );
 };
 

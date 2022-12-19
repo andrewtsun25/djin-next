@@ -1,9 +1,10 @@
 import React from "react";
-import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import logo from "../../../public/logos/logo.png";
-import Image from "next/image";
+import { AppToolBarBrandContainer, AppToolBarLogo } from "./styled";
+import { useRouter } from "next/router";
 
 interface AppToolBarProps {
   isAppDrawerOpen: boolean;
@@ -16,8 +17,10 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
   isAppDrawerOpen,
   setIsAppDrawerOpen,
 }: AppToolBarProps) => {
+  const router = useRouter();
+  const shouldBeFixed = router.asPath === "/";
   return (
-    <AppBar position="fixed">
+    <AppBar position={shouldBeFixed ? "fixed" : "sticky"}>
       <Toolbar>
         <IconButton
           color="inherit"
@@ -30,12 +33,12 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
           <MenuIcon />
         </IconButton>
         <Link href="/">
-          <Box height="100%" display="flex" alignItems="center">
-            <Image src={logo} alt="d.jin website logo" width={50} height={50} />
+          <AppToolBarBrandContainer>
+            <AppToolBarLogo src={logo} alt="d.jin website logo" />
             <Typography variant="h5" ml={1.5}>
               d.jin
             </Typography>
-          </Box>
+          </AppToolBarBrandContainer>
         </Link>
       </Toolbar>
     </AppBar>
