@@ -37,18 +37,19 @@ exports[`Layout renders 1`] = `
             href="/"
           >
             <div
-              class="MuiBox-root css-15c13yl"
+              class="MuiBox-root css-omo8we"
             >
               <img
                 alt="d.jin website logo"
+                class="css-7f50zt"
                 data-nimg="1"
                 decoding="async"
-                height="50"
+                height="40"
                 loading="lazy"
-                src="/_next/image?url=%2Fimg.jpg&w=128&q=75"
-                srcset="/_next/image?url=%2Fimg.jpg&w=64&q=75 1x, /_next/image?url=%2Fimg.jpg&w=128&q=75 2x"
+                src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+                srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
                 style="color: transparent;"
-                width="50"
+                width="40"
               />
               <h5
                 class="MuiTypography-root MuiTypography-h5 css-109s1dp-MuiTypography-root"
@@ -69,7 +70,7 @@ exports[`Layout renders 1`] = `
     </div>
     <div
       aria-hidden="true"
-      class="MuiDrawer-root MuiDrawer-modal MuiModal-root MuiModal-hidden css-1wh2h2b-MuiModal-root-MuiDrawer-root"
+      class="MuiDrawer-root MuiDrawer-modal MuiModal-root MuiModal-hidden css-7ouyiw-MuiModal-root-MuiDrawer-root"
       role="presentation"
     >
       <div
@@ -87,7 +88,7 @@ exports[`Layout renders 1`] = `
         tabindex="-1"
       >
         <div
-          class="MuiBox-root css-15inu1f"
+          class="MuiBox-root css-vojj79"
         >
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -408,18 +409,19 @@ exports[`Layout renders 1`] = `
           href="/"
         >
           <div
-            class="MuiBox-root css-15c13yl"
+            class="MuiBox-root css-omo8we"
           >
             <img
               alt="d.jin website logo"
+              class="css-7f50zt"
               data-nimg="1"
               decoding="async"
-              height="50"
+              height="40"
               loading="lazy"
-              src="/_next/image?url=%2Fimg.jpg&w=128&q=75"
-              srcset="/_next/image?url=%2Fimg.jpg&w=64&q=75 1x, /_next/image?url=%2Fimg.jpg&w=128&q=75 2x"
+              src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+              srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
               style="color: transparent;"
-              width="50"
+              width="40"
             />
             <h5
               class="MuiTypography-root MuiTypography-h5 css-109s1dp-MuiTypography-root"

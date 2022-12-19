@@ -1,10 +1,9 @@
 import React from "react";
-import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import logo from "../../../public/logos/logo.png";
-import Image from "next/image";
-import styles from "./AppToolBar.module.scss";
+import { AppToolBarBrandContainer, AppToolBarLogo } from "./styled";
 
 interface AppToolBarProps {
   isAppDrawerOpen: boolean;
@@ -31,16 +30,12 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
           <MenuIcon />
         </IconButton>
         <Link href="/">
-          <Box height="100%" display="flex" alignItems="center">
-            <Image
-              src={logo}
-              alt="d.jin website logo"
-              className={styles.logo}
-            />
+          <AppToolBarBrandContainer>
+            <AppToolBarLogo src={logo} alt="d.jin website logo" />
             <Typography variant="h5" ml={1.5}>
               d.jin
             </Typography>
-          </Box>
+          </AppToolBarBrandContainer>
         </Link>
       </Toolbar>
     </AppBar>
