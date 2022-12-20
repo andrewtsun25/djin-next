@@ -4,18 +4,52 @@ import {
   HolisticOfficeImage,
   HolisticOfficeImageLink,
   HolisticOfficeImageLinkImage,
-  HolisticOfficeLink,
+  HolisticOfficeHyperLink,
   HolisticOfficePageContainer,
   HolisticOfficePageHeading,
 } from "../../../src/components/holisticOffice";
 import { Urls } from "../../../src/const/url";
+import {
+  HolisticOfficeLink,
+  HolisticOfficeModule,
+} from "../../../src/types/api";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import {
+  listHolisticOfficeLinks,
+  listHolisticOfficeModules,
+} from "../../../src/dal/api";
+import { ModuleInfoGrid } from "../../../src/components/holisticOffice/modulesGrid";
 
 const logoUrl = `${Urls.AssetRoot}/holisticOffice/logo/holistic_office_logo.png`;
 const websiteImg = `${Urls.AssetRoot}/holisticOffice/img/holistic_office_website.png`;
 const architectureImg = `${Urls.AssetRoot}/holisticOffice/img/holistic_office_architecture.png`;
 const holisticOfficeUrl = "https://www.holisticoffice.biz/";
 
-const HolisticOfficePage = () => {
+interface HolisticOfficePageProps {
+  holisticOfficeLinks: HolisticOfficeLink[];
+  holisticOfficeModules: HolisticOfficeModule[];
+}
+
+export const getStaticProps: GetStaticProps<
+  HolisticOfficePageProps
+> = async () => {
+  const holisticOfficeLinks = await listHolisticOfficeLinks();
+  const holisticOfficeModules = await listHolisticOfficeModules();
+  return {
+    props: {
+      holisticOfficeLinks,
+      holisticOfficeModules,
+    },
+  };
+};
+
+type HolisticOfficeNextPageProps = InferGetStaticPropsType<
+  typeof getStaticProps
+>;
+
+const HolisticOfficePage = ({
+  holisticOfficeModules,
+}: HolisticOfficeNextPageProps) => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -39,9 +73,9 @@ const HolisticOfficePage = () => {
             />
           </Grow>
           <Typography paragraph>
-            <HolisticOfficeLink href={holisticOfficeUrl} target="_blank">
+            <HolisticOfficeHyperLink href={holisticOfficeUrl} target="_blank">
               Holistic Office
-            </HolisticOfficeLink>{" "}
+            </HolisticOfficeHyperLink>{" "}
             is a patient EHR (Electronic Health Record) management and inventory
             management system for small to mid-sized independent clinics, and
             also my graduate school project at USC (listed as CSCI-577: Software
@@ -69,6 +103,7 @@ const HolisticOfficePage = () => {
               height={464}
             />
           </Grow>
+          <ModuleInfoGrid modules={holisticOfficeModules} />
           {/*<ModulesGrid />
           <LinkSection
             title="Documentation"

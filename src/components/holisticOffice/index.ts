@@ -3,7 +3,7 @@ import {
   HolisticOfficeImage,
   HolisticOfficeImageLink,
   HolisticOfficeImageLinkImage,
-  HolisticOfficeLink,
+  HolisticOfficeHyperLink,
   HolisticOfficePageContainer,
   HolisticOfficePageHeading,
 } from "./styled";
@@ -13,7 +13,7 @@ export {
   HolisticOfficeImage,
   HolisticOfficeImageLink,
   HolisticOfficeImageLinkImage,
-  HolisticOfficeLink,
+  HolisticOfficeHyperLink,
   HolisticOfficePageContainer,
   HolisticOfficePageHeading,
 };
