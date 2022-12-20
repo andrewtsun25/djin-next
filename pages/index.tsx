@@ -1,6 +1,9 @@
 import Head from "next/head";
-import { Typography } from "@mui/material";
 import { HomeBackground, HomeTextContainer } from "../src/components/home";
+import {
+  HomeDescriptionTypography,
+  HomeTitleTypography,
+} from "../src/components/home/styled";
 
 export default function Home() {
   return (
@@ -10,10 +13,10 @@ export default function Home() {
       </Head>
       <HomeBackground>
         <HomeTextContainer>
-          <Typography variant="h1">d.jin</Typography>
-          <Typography variant="h4" mt={2}>
+          <HomeTitleTypography variant="h1">d.jin</HomeTitleTypography>
+          <HomeDescriptionTypography variant="h4">
             Coder. DJ. Music Producer. Martial Artist.
-          </Typography>
+          </HomeDescriptionTypography>
         </HomeTextContainer>
       </HomeBackground>
     </>

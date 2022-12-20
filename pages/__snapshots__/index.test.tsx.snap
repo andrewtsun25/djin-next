@@ -12,12 +12,12 @@ exports[`Home Page renders 1`] = `
           class="MuiBox-root css-59whaf"
         >
           <h1
-            class="MuiTypography-root MuiTypography-h1 css-o2w69a-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-h1 css-1t1pqza-MuiTypography-root"
           >
             d.jin
           </h1>
           <h4
-            class="MuiTypography-root MuiTypography-h4 css-1ngnsfb-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-h4 css-1k4woit-MuiTypography-root"
           >
             Coder. DJ. Music Producer. Martial Artist.
           </h4>
@@ -33,12 +33,12 @@ exports[`Home Page renders 1`] = `
         class="MuiBox-root css-59whaf"
       >
         <h1
-          class="MuiTypography-root MuiTypography-h1 css-o2w69a-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-h1 css-1t1pqza-MuiTypography-root"
         >
           d.jin
         </h1>
         <h4
-          class="MuiTypography-root MuiTypography-h4 css-1ngnsfb-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-h4 css-1k4woit-MuiTypography-root"
         >
           Coder. DJ. Music Producer. Martial Artist.
         </h4>

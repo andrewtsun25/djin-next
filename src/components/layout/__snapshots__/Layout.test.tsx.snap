@@ -117,6 +117,9 @@ exports[`Layout renders 1`] = `
             />
           </button>
         </div>
+        <hr
+          class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+        />
         <ul
           class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
         >
