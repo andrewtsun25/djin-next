@@ -1,32 +1,28 @@
-import { orderBy, QueryDocumentSnapshot } from "firebase/firestore";
+import { orderBy } from "firebase/firestore";
 import { HbvResearchPaperDbEntity } from "../../types/db";
 import getOrganization from "./getOrganization";
 import { HbvResearchPaper } from "../../types/api";
 import { isNil } from "lodash";
 import {
+  AsyncMapperFunction,
   createListerForFirestoreCollection,
   hbvResearchPapersCollection,
-  ListerAsyncMapperFunction,
   ListerForFirestoreCollection,
 } from "../firestore";
 
-const mapHbvResearchPaperDbEntityToHbvResearchPaper: ListerAsyncMapperFunction<
+const mapHbvResearchPaperDbEntityToHbvResearchPaper: AsyncMapperFunction<
   HbvResearchPaperDbEntity,
   HbvResearchPaper
-> = async (
-  doc: QueryDocumentSnapshot<HbvResearchPaperDbEntity>
-): Promise<HbvResearchPaper> => {
+> = async (dbEntity: HbvResearchPaperDbEntity): Promise<HbvResearchPaper> => {
   const {
     organization: organizationRef,
     startDate,
     endDate,
     ...rest
-  } = doc.data();
+  } = dbEntity;
   const organization = await getOrganization(organizationRef.id);
   if (isNil(organization)) {
-    throw new Error(
-      `Organization for HBV research paper with id ${doc.id} is null`
-    );
+    throw new Error("Organization for HBV research paper is null");
   }
   return {
     organization,

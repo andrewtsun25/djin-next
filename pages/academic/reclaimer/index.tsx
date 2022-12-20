@@ -40,9 +40,7 @@ const ReclaimerPage: React.FC = () => {
       <ReclaimerBackground>
         <Fade in>
           <Container maxWidth="lg">
-            <Typography variant={isMobile ? "h2" : "h1"} align="center">
-              Reclaimer
-            </Typography>
+            <Typography variant={isMobile ? "h2" : "h1"}>Reclaimer</Typography>
             <Grow in>
               <ReclaimerCenteringContainer>
                 <ReclaimerImage
