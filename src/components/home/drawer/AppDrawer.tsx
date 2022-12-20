@@ -70,6 +70,7 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
           <Typography sx={{ ml: 0.5 }}>Close</Typography>
         </Button>
       </AppDrawerCloseButtonContainer>
+      <Divider />
       <List>
         <CollapsibleList icon={<CodeIcon />} name="Coding">
           <CollapsibleListHyperLinkListItem
@@ -153,7 +154,7 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
           <CollapsibleListHyperLinkListItem
             icon={<SportsEsportsIcon />}
             text={"Reclaimer"}
-            to="academic/Reclaimer"
+            to="academic/reclaimer"
           />
         </CollapsibleList>
         <Divider />

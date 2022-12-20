@@ -11,7 +11,7 @@ const nextConfig = {
         protocol: "https",
         hostname: "storage.googleapis.com",
         port: "",
-        pathname: "djin-dev.appspot.com/**",
+        pathname: "/djin-dev.appspot.com/**",
       },
     ],
   },
