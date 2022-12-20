@@ -11,6 +11,7 @@ import {
 import { Urls } from "../../../src/const/url";
 import {
   HolisticOfficeLink,
+  HolisticOfficeLinkType,
   HolisticOfficeModule,
 } from "../../../src/types/api";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
@@ -19,6 +20,10 @@ import {
   listHolisticOfficeModules,
 } from "../../../src/dal/api";
 import { ModuleInfoGrid } from "../../../src/components/holisticOffice/modulesGrid";
+import { useMemo } from "react";
+import { LinkSection } from "../../../src/components/holisticOffice/linkSection";
+import DescriptionIcon from "@mui/icons-material/Description";
+import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
 
 const logoUrl = `${Urls.AssetRoot}/holisticOffice/logo/holistic_office_logo.png`;
 const websiteImg = `${Urls.AssetRoot}/holisticOffice/img/holistic_office_website.png`;
@@ -49,9 +54,24 @@ type HolisticOfficeNextPageProps = InferGetStaticPropsType<
 
 const HolisticOfficePage = ({
   holisticOfficeModules,
+  holisticOfficeLinks,
 }: HolisticOfficeNextPageProps) => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
+  const codeLinks = useMemo(
+    () =>
+      holisticOfficeLinks.filter(
+        ({ type }) => type === HolisticOfficeLinkType.Code
+      ),
+    [holisticOfficeLinks]
+  );
+  const documentationLinks = useMemo(
+    () =>
+      holisticOfficeLinks.filter(
+        ({ type }) => type === HolisticOfficeLinkType.Documentation
+      ),
+    [holisticOfficeLinks]
+  );
   return (
     <HolisticOfficeBackground>
       <Fade in>
@@ -104,11 +124,10 @@ const HolisticOfficePage = ({
             />
           </Grow>
           <ModuleInfoGrid modules={holisticOfficeModules} />
-          {/*<ModulesGrid />
           <LinkSection
             title="Documentation"
             description="The provided documentation cover various aspects of the project besides raw code."
-            linkType={HolisticOfficeLinkType.Documentation}
+            links={documentationLinks}
             icon={<DescriptionIcon />}
           />
           <LinkSection
@@ -117,9 +136,9 @@ const HolisticOfficePage = ({
                 the source code in .zip format at the point of time when this project is considered “completed” by USC.
                 Our source code is divided into 3 modules as listed above. Each repository has a README on how to
                 perform local deployment."
-            linkType={HolisticOfficeLinkType.Code}
+            links={codeLinks}
             icon={<FolderSpecialIcon />}
-          />*/}
+          />
         </HolisticOfficePageContainer>
       </Fade>
     </HolisticOfficeBackground>

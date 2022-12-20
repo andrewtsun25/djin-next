@@ -6,6 +6,10 @@ import HolisticOfficeHyperLink from "./HolisticOfficeHyperLink";
 import HolisticOfficePageContainer from "./HolisticOfficePageContainer";
 import HolisticOfficePageHeading from "./HolisticOfficePageHeading";
 import HolisticOfficeModulePaper from "./HolisticOfficeModulePaper";
+import HolisticOfficeLinkSectionContainer from "./HolisticOfficeLinkSectionContainer";
+import HolisticOfficeLinkSectionTitle from "./HolisticOfficeLinkSectionTitle";
+import HolisticOfficeLinkListUnorderedList from "./HolisticOfficeLinkListUnorderedList";
+import HolisticOfficeLinkListIconLink from "./HolisticOfficeLinkListIconLink";
 
 export {
   HolisticOfficeBackground,
@@ -16,4 +20,8 @@ export {
   HolisticOfficePageContainer,
   HolisticOfficePageHeading,
   HolisticOfficeModulePaper,
+  HolisticOfficeLinkSectionContainer,
+  HolisticOfficeLinkSectionTitle,
+  HolisticOfficeLinkListUnorderedList,
+  HolisticOfficeLinkListIconLink,
 };
