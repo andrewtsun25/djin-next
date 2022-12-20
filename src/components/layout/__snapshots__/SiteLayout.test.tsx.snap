@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout renders 1`] = `
+exports[`SiteLayout renders 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -310,6 +310,7 @@ exports[`Layout renders 1`] = `
             class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-1rhbah2-MuiButtonBase-root-MuiListItemButton-root"
             href="mailto:djtaeyong@gmail.com"
             tabindex="0"
+            target="_blank"
           >
             <div
               class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
@@ -343,6 +344,7 @@ exports[`Layout renders 1`] = `
             class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-1rhbah2-MuiButtonBase-root-MuiListItemButton-root"
             href="https://storybook.djin.dev/"
             tabindex="0"
+            target="_blank"
           >
             <div
               class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"

@@ -1,4 +1,4 @@
-const Collections = {
+const CollectionNames = {
   Employment: {
     Companies: "employments",
   },
@@ -29,4 +29,4 @@ const Collections = {
   },
 };
 
-export default Collections;
+export default CollectionNames;

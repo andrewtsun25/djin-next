@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useState } from "react";
 import { CssBaseline } from "@mui/material";
 import { AppDrawer, AppToolBar } from "../home";
 
-const Layout: React.FC<PropsWithChildren> = ({ children }) => {
+const SiteLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const [isAppDrawerOpen, setIsAppDrawerOpen] = useState(false);
   return (
     <>
@@ -20,4 +20,4 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-export default Layout;
+export default SiteLayout;

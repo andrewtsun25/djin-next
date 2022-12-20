@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Layout from "./Layout";
+import SiteLayout from "./SiteLayout";
 jest.mock("next/router", () => {
   return {
     __esModule: true,
@@ -10,12 +10,12 @@ jest.mock("next/router", () => {
     },
   };
 });
-describe("Layout", () => {
+describe("SiteLayout", () => {
   it("renders", () => {
     const layout = render(
-      <Layout>
+      <SiteLayout>
         <p>Hi!</p>
-      </Layout>
+      </SiteLayout>
     );
     expect(layout).toMatchSnapshot();
   });

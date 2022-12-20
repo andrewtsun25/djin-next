@@ -1,16 +1,11 @@
 import { initializeApp } from "firebase/app";
-import {
-  CollectionReference,
-  getFirestore,
-  collection,
-  DocumentData,
-} from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 import { FirebaseOptions } from "firebase/app";
 
-export const config: FirebaseOptions = {
+const config: FirebaseOptions = {
   apiKey: process.env.FIREBBASE_API_KEY,
   authDomain: "djin-dev.firebaseapp.com",
   projectId: "djin-dev",
@@ -25,9 +20,3 @@ const app = initializeApp(config);
 
 // Initialize Cloud Firestore and get a reference to the service
 export const db = getFirestore(app);
-
-export function fsc<T = DocumentData>(
-  collectionId: string
-): CollectionReference<T> {
-  return collection(db, collectionId) as CollectionReference<T>;
-}

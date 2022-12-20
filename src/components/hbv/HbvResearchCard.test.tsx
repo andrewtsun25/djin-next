@@ -1,4 +1,4 @@
-import { HbvResearchPaper, Organization } from "../../types/data";
+import { HbvResearchPaper, Organization } from "../../types/api";
 import { render } from "@testing-library/react";
 import HbvResearchCard from "./HbvResearchCard";
 

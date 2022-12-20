@@ -32,7 +32,7 @@ function Document() {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
         {/* manifest.json provides metadata used when your web app is installed on a user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/ */}
-        <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <body>
         <Main />
