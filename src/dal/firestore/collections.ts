@@ -8,8 +8,8 @@ import {
   HolisticOfficeLink,
   HolisticOfficeModule,
   Organization,
-} from "../../types/data";
-import { HbvResearchPaperDbEntity } from "../../types/dbEntity";
+} from "../../types/api";
+import { HbvResearchPaperDbEntity } from "../../types/db";
 import CollectionNames from "../../const/collectionNames";
 
 function collectionReferenceOf<T = DocumentData>(

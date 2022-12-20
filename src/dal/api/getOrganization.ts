@@ -1,9 +1,9 @@
-import { organizationsCollection } from "./firestore/collections";
-import { Organization } from "../types/data";
+import { Organization } from "../../types/api";
 import {
   createGetterByIdForFirestoreCollection,
   GetterByIdForFirestoreCollection,
-} from "./firestore";
+  organizationsCollection,
+} from "../firestore";
 
 const getOrganization: GetterByIdForFirestoreCollection<Organization> =
   createGetterByIdForFirestoreCollection(organizationsCollection);

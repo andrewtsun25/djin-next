@@ -1,10 +1,10 @@
-import { holisticOfficeLinksCollection } from "./firestore/collections";
 import { orderBy } from "firebase/firestore";
-import { HolisticOfficeLink } from "../types/data";
+import { HolisticOfficeLink } from "../../types/api";
 import {
   createListerForFirestoreCollection,
   ListerForFirestoreCollection,
-} from "./firestore";
+  holisticOfficeLinksCollection,
+} from "../firestore";
 
 const listHolisticOfficeLinks: ListerForFirestoreCollection<HolisticOfficeLink> =
   createListerForFirestoreCollection(

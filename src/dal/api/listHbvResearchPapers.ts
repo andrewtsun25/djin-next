@@ -1,14 +1,14 @@
 import { orderBy, QueryDocumentSnapshot } from "firebase/firestore";
-import { HbvResearchPaperDbEntity } from "../types/dbEntity";
+import { HbvResearchPaperDbEntity } from "../../types/db";
 import getOrganization from "./getOrganization";
-import { HbvResearchPaper } from "../types/data";
+import { HbvResearchPaper } from "../../types/api";
 import { isNil } from "lodash";
-import { hbvResearchPapersCollection } from "./firestore/collections";
 import {
   createListerForFirestoreCollection,
+  hbvResearchPapersCollection,
   ListerAsyncMapperFunction,
   ListerForFirestoreCollection,
-} from "./firestore";
+} from "../firestore";
 
 const mapHbvResearchPaperDbEntityToHbvResearchPaper: ListerAsyncMapperFunction<
   HbvResearchPaperDbEntity,

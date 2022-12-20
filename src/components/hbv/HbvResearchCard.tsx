@@ -1,6 +1,6 @@
 import { CardContent, Slide, Typography } from "@mui/material";
 import { BulletPoints } from "../../components/text";
-import { HbvResearchPaper } from "../../types/data";
+import { HbvResearchPaper } from "../../types/api";
 import DescriptionIcon from "@mui/icons-material/Description";
 import React from "react";
 import HbvResearchCardIconLink from "./styled/HbvResearchCardIconLink";
