@@ -121,6 +121,7 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
             icon={<HeadphonesIcon />}
             text={"SoundCloud"}
             to="https://soundcloud.com/djtaeyong"
+            target="_blank"
           />
         </CollapsibleList>
         <CollapsibleList icon={<SportsMmaIcon />} name="Martial Arts">
@@ -144,17 +145,17 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
           <CollapsibleListHyperLinkListItem
             icon={<LocalHospitalIcon />}
             text="HBV Research"
-            to="academic/hbv"
+            to="/academic/hbv"
           />
           <CollapsibleListHyperLinkListItem
             icon={<LocalPharmacyIcon />}
             text="Holistic Office"
-            to="academic/holisticOffice"
+            to="/academic/holisticOffice"
           />
           <CollapsibleListHyperLinkListItem
             icon={<SportsEsportsIcon />}
             text={"Reclaimer"}
-            to="academic/reclaimer"
+            to="/academic/reclaimer"
           />
         </CollapsibleList>
         <Divider />
@@ -162,11 +163,13 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
           icon={<ContactMailIcon />}
           text="Contact"
           to="mailto:djtaeyong@gmail.com"
+          target="_blank"
         />
         <HyperLinkListItem
           icon={<StorybookIcon />}
           text="Site Storybook"
           to="https://storybook.djin.dev/"
+          target="_blank"
         />
       </List>
     </AppDrawerContainer>

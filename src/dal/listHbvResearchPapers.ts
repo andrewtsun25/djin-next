@@ -4,10 +4,11 @@ import getOrganization from "./getOrganization";
 import { HbvResearchPaper } from "../types/data";
 import { isNil } from "lodash";
 import { hbvResearchPapersCollection } from "./firestore/collections";
-import createListerForFirestoreCollection, {
+import {
+  createListerForFirestoreCollection,
   ListerAsyncMapperFunction,
   ListerForFirestoreCollection,
-} from "./firestore/createListerForFirestoreCollection";
+} from "./firestore";
 
 const mapHbvResearchPaperDbEntityToHbvResearchPaper: ListerAsyncMapperFunction<
   HbvResearchPaperDbEntity,
