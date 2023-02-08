@@ -1,8 +1,11 @@
 import { useRouter } from "next/router";
-import { MartialArtsBackground } from "../../src/components/martialArts";
+import {
+  MartialArtsBackground,
+  MartialArtsStudioGridTile,
+} from "../../src/components/martialArts";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { getMartialArtsStyle } from "../../src/dal/api";
-import { MartialArtsStyle } from "../../src/types/api";
+import { MartialArtsStudio, MartialArtsStyle } from "../../src/types/api";
 import { isArray } from "../../src/util/isArray";
 import { isNil } from "lodash";
 import {
@@ -29,6 +32,8 @@ import {
 } from "../../src/components/martialArts/styled";
 import MartialArtsImageSection from "../../src/components/martialArts/styled/MartialArtsImageSection";
 import { ParsedUrlQuery } from "querystring";
+import React from "react";
+import { ResponsiveGrid } from "../../src/components/responsiveGrid";
 
 interface MartialArtsPageProps {
   martialArtsStyle: MartialArtsStyle;
@@ -70,6 +75,11 @@ export const getStaticProps: GetStaticProps<
 
 type MartialArtsNextPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
+const renderMartialArtsStudioGridTile = (
+  studio: MartialArtsStudio,
+  index: number
+): JSX.Element => <MartialArtsStudioGridTile studio={studio} key={index} />;
+
 const MartialArtsPage = ({
   martialArtsStyle: {
     logoUrl,
@@ -80,6 +90,7 @@ const MartialArtsPage = ({
     blackBeltRank,
     mediaUrl,
     mediaCaption,
+    studios,
   },
 }: MartialArtsNextPageProps) => {
   const theme = useTheme();
@@ -146,7 +157,10 @@ const MartialArtsPage = ({
             <MartialArtsStudioGridTitle variant="h2">
               Studios
             </MartialArtsStudioGridTitle>
-            {/*<ResponsiveGrid items={studios} renderGridTile={renderGridTile} /> */}
+            <ResponsiveGrid
+              items={studios}
+              renderGridTile={renderMartialArtsStudioGridTile}
+            />
           </MartialArtsStudioGridSection>
         </MartialArtsContentContainer>
       </Fade>
