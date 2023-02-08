@@ -22,6 +22,7 @@ import {
   ReclaimerImage,
   ReclaimerLink,
   ReclaimerPlayIconLink,
+  ReclaimerTitle,
 } from "../../../src/components/reclaimer/styled";
 import { Urls } from "../../../src/const/url";
 import Head from "next/head";
@@ -40,9 +41,9 @@ const ReclaimerPage: React.FC = () => {
       <ReclaimerBackground>
         <Fade in>
           <Container maxWidth="lg">
-            <Typography variant={isMobile ? "h2" : "h1"} align="center">
+            <ReclaimerTitle variant={isMobile ? "h2" : "h1"}>
               Reclaimer
-            </Typography>
+            </ReclaimerTitle>
             <Grow in>
               <ReclaimerCenteringContainer>
                 <ReclaimerImage

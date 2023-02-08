@@ -39,6 +39,7 @@ const HbvResearchCard: React.FC<HbvResearchCardProps> = ({
             href={url}
             text="Research Paper"
             icon={<DescriptionIcon />}
+            target="_blank"
           />
           <Typography paragraph>{description}</Typography>
           <BulletPoints points={responsibilities} />

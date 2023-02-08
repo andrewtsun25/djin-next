@@ -5,22 +5,28 @@ import {
   DocumentSnapshot,
   getDoc,
 } from "firebase/firestore";
-
-export type GetterAsyncMapperFunction<DbType, ApiType> = (
-  doc: DocumentSnapshot<DbType>
-) => Promise<ApiType>;
-
-const defaultMapper = <DbType, ApiType>(doc: DocumentSnapshot<DbType>) => {
-  return doc.data() as unknown as ApiType;
-};
+import {
+  createGetterAsyncMapperFunction,
+  GetterAsyncMapperFunction,
+} from "./createGetterAsyncMapperFunction";
+import {
+  AsyncMapperFunction,
+  identityMapper,
+  MapperFunction,
+} from "./mapperFunction";
 
 export type GetterByIdForFirestoreCollection<ApiType> = (
   id: string
 ) => Promise<ApiType | null>;
 
-function createGetterByIdForFirestoreCollection<DbType, ApiType = DbType>(
+export default function createGetterByIdForFirestoreCollection<
+  DbType,
+  ApiType = DbType
+>(
   collection: CollectionReference<DbType>,
-  mapper: GetterAsyncMapperFunction<DbType, ApiType> = defaultMapper
+  mapper:
+    | MapperFunction<DbType, ApiType>
+    | AsyncMapperFunction<DbType, ApiType> = identityMapper
 ): GetterByIdForFirestoreCollection<ApiType> {
   return async (id: string): Promise<ApiType | null> => {
     const documentReference: DocumentReference<DbType> = doc<DbType>(
@@ -30,8 +36,12 @@ function createGetterByIdForFirestoreCollection<DbType, ApiType = DbType>(
     const documentSnapshot: DocumentSnapshot<DbType> = await getDoc(
       documentReference
     );
-    return documentSnapshot.exists() ? mapper(documentSnapshot) : null;
+    const getterAsyncMapperFunction: GetterAsyncMapperFunction<
+      DbType,
+      ApiType
+    > = createGetterAsyncMapperFunction(mapper);
+    return documentSnapshot.exists()
+      ? getterAsyncMapperFunction(documentSnapshot)
+      : null;
   };
 }
-
-export default createGetterByIdForFirestoreCollection;

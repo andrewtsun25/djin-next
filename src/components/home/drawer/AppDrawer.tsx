@@ -128,12 +128,12 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
           <CollapsibleListHyperLinkListItem
             icon={<FistIcon />}
             text="ITF Taekwondo"
-            to="/martialArts/itf"
+            to="/martialArts/itfTkd"
           />
           <CollapsibleListHyperLinkListItem
             icon={<TaekwondoIcon />}
             text="WT Taekwondo"
-            to="/martialArts/wt"
+            to="/martialArts/wtTkd"
           />
           <CollapsibleListHyperLinkListItem
             icon={<KatanaIcon />}

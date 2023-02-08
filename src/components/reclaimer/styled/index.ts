@@ -5,6 +5,7 @@ import ReclaimerIconLink from "./ReclaimerIconLink";
 import ReclaimerImage from "./ReclaimerImage";
 import ReclaimerLink from "./ReclaimerLink";
 import ReclaimerPlayIconLink from "./ReclaimerPlayIconLink";
+import ReclaimerTitle from "./ReclaimerTitle";
 
 export {
   ReclaimerBackground,
@@ -14,4 +15,5 @@ export {
   ReclaimerImage,
   ReclaimerLink,
   ReclaimerPlayIconLink,
+  ReclaimerTitle,
 };
