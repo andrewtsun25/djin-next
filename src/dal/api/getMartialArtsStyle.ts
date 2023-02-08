@@ -24,9 +24,9 @@ const mapMartialArtsStyleDbEntityToMartialArtsStyle: AsyncMapperFunction<
   } as MartialArtsStyle;
 };
 
-const getMartialArtsSyle = createGetterByIdForFirestoreCollection(
+const getMartialArtsStyle = createGetterByIdForFirestoreCollection(
   martialArtsStylesCollection,
   mapMartialArtsStyleDbEntityToMartialArtsStyle
 );
 
-export default getMartialArtsStudio;
+export default getMartialArtsStyle;

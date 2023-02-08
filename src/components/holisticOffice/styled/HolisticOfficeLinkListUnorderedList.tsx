@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 
-const HolisticOfficeLinkListUnorderedList = styled.ul({
+const HolisticOfficeLinkListUnorderedList = styled("ul")({
   listStyleType: "none",
 });
 

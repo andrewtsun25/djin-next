@@ -46,6 +46,7 @@ exports[`HbvResearchCard renders 1`] = `
           <a
             class="css-1d1oveo"
             href="https://paper-link.com"
+            target="_blank"
           >
             <div
               class="MuiBox-root css-1xav8rb"
@@ -167,6 +168,7 @@ exports[`HbvResearchCard renders 1`] = `
         <a
           class="css-1d1oveo"
           href="https://paper-link.com"
+          target="_blank"
         >
           <div
             class="MuiBox-root css-1xav8rb"
