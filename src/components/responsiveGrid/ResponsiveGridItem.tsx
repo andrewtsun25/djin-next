@@ -1,9 +1,4 @@
-import {
-  ImageListItem,
-  ImageListItemBar,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
+import { ImageListItemBar, SxProps, Theme } from "@mui/material";
 import React from "react";
 
 import {
@@ -24,6 +19,7 @@ interface ResponsiveGridItemProps {
   subtitle?: string;
   icon: JSX.Element;
   mediaSizingStrategy?: ObjectFit;
+  sx?: SxProps<Theme>;
 }
 
 const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
@@ -33,9 +29,10 @@ const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
   linkUrl,
   icon,
   mediaSizingStrategy,
+  sx,
 }: ResponsiveGridItemProps) => {
   return (
-    <ResponsiveGridItemImageListItem cols={1} rows={1}>
+    <ResponsiveGridItemImageListItem cols={1} rows={1} sx={sx}>
       <Image
         src={mediaUrl}
         alt={`Image of ${title}`}

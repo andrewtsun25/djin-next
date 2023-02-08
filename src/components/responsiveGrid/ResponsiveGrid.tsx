@@ -3,6 +3,8 @@ import {
   ImageListItem,
   useTheme,
   useMediaQuery,
+  SxProps,
+  Theme,
 } from "@mui/material";
 import React, { ReactElement } from "react";
 
@@ -11,7 +13,7 @@ import { ResponsiveGridContainer, ResponsiveGridTitle } from "./styled";
 interface ResponsiveGridProps<T> {
   title?: string;
   items: T[];
-  className?: string;
+  sx?: SxProps<Theme>;
   renderGridTile(item: T, index?: number): JSX.Element;
   embedUrl?: string;
 }
