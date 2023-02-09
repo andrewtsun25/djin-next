@@ -4,11 +4,12 @@ import { Urls } from "../../../const/url";
 
 const codingEducationBgUrl = `${Urls.AssetRoot}/education/bg/usc_bg.jpg`;
 
-const CodingEducationBackground = styled(Box)({
+const CodingEducationBackground = styled(Box)(({ theme }) => ({
   backgroundSize: "cover",
   background: `url(${codingEducationBgUrl}) no-repeat center center/110% fixed`,
   width: "100%",
   height: "100%",
-});
+  padding: theme.spacing(2),
+}));
 
 export default CodingEducationBackground;
