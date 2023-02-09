@@ -9,6 +9,8 @@ import {
   holisticOfficeModulesCollection,
   martialArtsStudiosCollection,
   martialArtsStylesCollection,
+  musicInstrumentsCollection,
+  musicScoresCollection,
   organizationsCollection,
 } from "./collections";
 
@@ -20,6 +22,8 @@ export {
   holisticOfficeModulesCollection,
   martialArtsStudiosCollection,
   martialArtsStylesCollection,
+  musicInstrumentsCollection,
+  musicScoresCollection,
   organizationsCollection,
 };
 export type {

@@ -22,7 +22,9 @@ const mapHbvResearchPaperDbEntityToHbvResearchPaper: AsyncMapperFunction<
   } = dbEntity;
   const organization = await getOrganization(organizationRef.id);
   if (isNil(organization)) {
-    throw new Error("Organization for HBV research paper is null");
+    throw new Error(
+      `Organization information for ${organizationRef.id} is missing`
+    );
   }
   return {
     organization,

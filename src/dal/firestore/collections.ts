@@ -12,10 +12,12 @@ import {
 import {
   EducationDbEntity,
   HbvResearchPaperDbEntity,
+  MartialArtsStudioDbEntity,
   MartialArtsStyleDbEntity,
+  MusicInstrumentDbEntity,
+  MusicScoreDbEntity,
 } from "../../types/db";
 import CollectionNames from "../../const/collectionNames";
-import { MartialArtsStudioDbEntity } from "../../types/db/MartialArtsStudioDbEntity";
 
 function collectionReferenceOf<T = DocumentData>(
   collectionId: string
@@ -36,6 +38,12 @@ const martialArtsStudiosCollection: CollectionReference<MartialArtsStudioDbEntit
   collectionReferenceOf(CollectionNames.MartialArts.Studios);
 const martialArtsStylesCollection: CollectionReference<MartialArtsStyleDbEntity> =
   collectionReferenceOf(CollectionNames.MartialArts.Styles);
+
+const musicInstrumentsCollection: CollectionReference<MusicInstrumentDbEntity> =
+  collectionReferenceOf(CollectionNames.Music.Instruments);
+
+const musicScoresCollection: CollectionReference<MusicScoreDbEntity> =
+  collectionReferenceOf(CollectionNames.Music.Scores);
 const organizationsCollection: CollectionReference<Organization> =
   collectionReferenceOf(CollectionNames.Shared.Organizations);
 
@@ -46,5 +54,7 @@ export {
   holisticOfficeModulesCollection,
   martialArtsStudiosCollection,
   martialArtsStylesCollection,
+  musicInstrumentsCollection,
+  musicScoresCollection,
   organizationsCollection,
 };
