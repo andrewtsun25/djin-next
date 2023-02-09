@@ -27,22 +27,20 @@ type CodingEducationNextPageProps = InferGetStaticPropsType<
   typeof getStaticProps
 >;
 
-const CodingEducationPage = ({ educations }: CodingEducationNextPageProps) => {
-  return (
-    <>
-      <Head>
-        <title>Coding Education</title>
-      </Head>
-      <CodingEducationBackground>
-        <Container maxWidth="lg">
-          <EducationPageTitle variant="h2">Coding Education</EducationPageTitle>
-          {educations.map((education, index) => (
-            <EducationCard education={education} key={index} />
-          ))}
-        </Container>
-      </CodingEducationBackground>
-    </>
-  );
-};
+const CodingEducationPage = ({ educations }: CodingEducationNextPageProps) => (
+  <>
+    <Head>
+      <title>Coding Education</title>
+    </Head>
+    <CodingEducationBackground>
+      <Container maxWidth="lg">
+        <EducationPageTitle variant="h2">Coding Education</EducationPageTitle>
+        {educations.map((education, index) => (
+          <EducationCard education={education} key={index} />
+        ))}
+      </Container>
+    </CodingEducationBackground>
+  </>
+);
 
 export default CodingEducationPage;

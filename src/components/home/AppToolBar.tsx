@@ -13,12 +13,16 @@ interface AppToolBarProps {
 
 export const MENU_BUTTON_ROLE = "switch";
 
+const pathsWithFixedPosition = ["/", "/music/education"];
+
 const AppToolBar: React.FC<AppToolBarProps> = ({
   isAppDrawerOpen,
   setIsAppDrawerOpen,
 }: AppToolBarProps) => {
   const router = useRouter();
-  const shouldBeFixed = router.asPath === "/";
+  const shouldBeFixed = pathsWithFixedPosition.some(
+    (path) => router.asPath === path
+  );
   return (
     <AppBar position={shouldBeFixed ? "fixed" : "sticky"}>
       <Toolbar>
