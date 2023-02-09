@@ -15,6 +15,6 @@ export function createGetterAsyncMapperFunction<DbType, ApiType = DbType>(
       // In practice, this should never be reached.
       throw new Error("Cannot map undefined Firestore document snapshot data");
     }
-    return mapper(docData);
+    return mapper(docData, doc.id);
   };
 }

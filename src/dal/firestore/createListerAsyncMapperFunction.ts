@@ -12,5 +12,5 @@ export default function createListerAsyncMapperFunction<
   mapper: MapperFunction<DbType, ApiType> | AsyncMapperFunction<DbType, ApiType>
 ) {
   return async (doc: QueryDocumentSnapshot<DbType>): Promise<ApiType> =>
-    mapper(doc.data());
+    mapper(doc.data(), doc.id);
 }

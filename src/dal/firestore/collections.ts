@@ -10,6 +10,7 @@ import {
   Organization,
 } from "../../types/api";
 import {
+  EducationDbEntity,
   HbvResearchPaperDbEntity,
   MartialArtsStyleDbEntity,
 } from "../../types/db";
@@ -21,6 +22,9 @@ function collectionReferenceOf<T = DocumentData>(
 ): CollectionReference<T> {
   return collection(db, collectionId) as CollectionReference<T>;
 }
+
+const educationsCollection: CollectionReference<EducationDbEntity> =
+  collectionReferenceOf(CollectionNames.Education.Colleges);
 
 const hbvResearchPapersCollection: CollectionReference<HbvResearchPaperDbEntity> =
   collectionReferenceOf(CollectionNames.HbvResearch.Papers);
@@ -36,6 +40,7 @@ const organizationsCollection: CollectionReference<Organization> =
   collectionReferenceOf(CollectionNames.Shared.Organizations);
 
 export {
+  educationsCollection,
   hbvResearchPapersCollection,
   holisticOfficeLinksCollection,
   holisticOfficeModulesCollection,

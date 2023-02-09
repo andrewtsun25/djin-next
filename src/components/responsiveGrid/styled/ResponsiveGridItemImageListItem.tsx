@@ -1,7 +1,7 @@
 import { ImageListItem } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const ResponsiveGridItemImageListItem = styled(ImageListItem)({
+const ResponsiveGridItemImageListItem = styled(ImageListItem)(({ theme }) => ({
   ":before": {
     gridArea: "1 / 1 / 2 / 2",
     content: `""`,
@@ -9,7 +9,7 @@ const ResponsiveGridItemImageListItem = styled(ImageListItem)({
     display: "block",
   },
   background: "white",
-  padding: "1rem",
-});
+  padding: theme.spacing(1),
+}));
 
 export default ResponsiveGridItemImageListItem;

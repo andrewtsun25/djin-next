@@ -6,7 +6,7 @@ const martialArtsBg = `${Urls.AssetRoot}/martialArts/bg/taeryong_studio_bg.png`;
 
 const MartialArtsBackground = styled(Box)({
   backgroundSize: "cover",
-  background: `url(${martialArtsBg}) no-repeat center center/100% fixed`,
+  background: `url(${martialArtsBg}) no-repeat center center/140% fixed`,
   width: "100%",
   height: "100%",
 });
