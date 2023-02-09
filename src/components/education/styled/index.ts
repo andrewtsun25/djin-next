@@ -1,3 +1,4 @@
 import EducationPageTitle from "./EducationPageTitle";
+import EducationCardContainer from "./EducationCardContainer";
 
-export default EducationPageTitle;
+export { EducationCardContainer, EducationPageTitle };

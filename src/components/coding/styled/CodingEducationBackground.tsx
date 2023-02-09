@@ -9,6 +9,7 @@ const CodingEducationBackground = styled(Box)({
   background: `url(${codingEducationBgUrl}) no-repeat center center/100% fixed`,
   width: "100%",
   height: "100%",
+  padding: 2,
 });
 
 export default CodingEducationBackground;

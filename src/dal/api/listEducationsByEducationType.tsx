@@ -8,46 +8,46 @@ import {
 import { educationsCollection } from "../firestore/collections";
 import { isNil, memoize } from "lodash";
 import { EducationDbEntity } from "../../types/db";
-import listStudentOrganizationsByEducationType from "./listStudentOrganizationsByEducationType";
+import listStudentOrganizationsByEducationType from "./listStudentOrganizationsForEducation";
 import getOrganization from "./getOrganization";
 
 // Memoize creation of mapper function to prevent re-declaration per fetch
-const createMapperOfEducationDbEntityToEducationForEducationType = memoize(
-  (educationId: EduType): AsyncMapperFunction<EducationDbEntity, Education> => {
-    return async (dbEntity: EducationDbEntity): Promise<Education> => {
-      const {
-        endDate,
-        organization: organizationRef,
-        startDate,
-        type,
-        ...rest
-      } = dbEntity;
-      const studentOrganizations =
-        await listStudentOrganizationsByEducationType(educationId);
-      const organization = await getOrganization(organizationRef.id);
-      if (isNil(organization)) {
-        throw new Error(
-          `Organization for education at ${organizationRef.id} is null`
-        );
-      }
-      return {
-        endDate: endDate?.toDate(),
-        startDate: startDate.toDate(),
-        organization,
-        studentOrganizations,
-        type: type as EduType,
-        ...rest,
-      };
-    };
+const mapEducationDbEntityToEducation: AsyncMapperFunction<
+  EducationDbEntity,
+  Education
+> = async (dbEntity: EducationDbEntity, eid: string): Promise<Education> => {
+  const {
+    endDate,
+    organization: organizationRef,
+    startDate,
+    type,
+    ...rest
+  } = dbEntity;
+  const studentOrganizations = await listStudentOrganizationsByEducationType(
+    eid
+  );
+  const organization = await getOrganization(organizationRef.id);
+  if (isNil(organization)) {
+    throw new Error(
+      `Organization for education at ${organizationRef.id} is null`
+    );
   }
-);
+  return {
+    endDate: endDate?.toDate(),
+    startDate: startDate.toDate(),
+    organization,
+    studentOrganizations,
+    type: type as EduType,
+    ...rest,
+  };
+};
 
 // Memoize creation of lister function to prevent re-declaration per fetch
 const createListerOfEducationsForEducationType = memoize(
   (educationId: EduType): ListerForFirestoreCollection<Education> => {
     return createListerForFirestoreCollection(
       educationsCollection,
-      createMapperOfEducationDbEntityToEducationForEducationType(educationId),
+      mapEducationDbEntityToEducation,
       where("type", "==", educationId),
       orderBy("startDate", "asc")
     );

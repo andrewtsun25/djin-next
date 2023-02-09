@@ -4,7 +4,9 @@ import { Education, EduType } from "../../../src/types/api";
 import Head from "next/head";
 import { CodingEducationBackground } from "../../../src/components/coding/styled";
 import { Container } from "@mui/material";
-import EducationPageTitle from "../../../src/components/education/styled";
+import { EducationPageTitle } from "../../../src/components/education/styled";
+import React from "react";
+import { EducationCard } from "../../../src/components/education";
 
 interface CodingEducationPageProps {
   educations: Education[];
@@ -34,6 +36,9 @@ const CodingEducationPage = ({ educations }: CodingEducationNextPageProps) => {
       <CodingEducationBackground>
         <Container maxWidth="lg">
           <EducationPageTitle variant="h2">Coding Education</EducationPageTitle>
+          {educations.map((education, index) => (
+            <EducationCard education={education} key={index} />
+          ))}
         </Container>
       </CodingEducationBackground>
     </>

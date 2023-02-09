@@ -10,7 +10,7 @@ import { memoize } from "lodash";
 
 // Memoize creation of lister function to prevent re-declaration per fetch
 const createListerOfStudentOrganizationsForEducationType = memoize(
-  (educationId: EduType): ListerForFirestoreCollection<StudentOrganization> => {
+  (educationId: string): ListerForFirestoreCollection<StudentOrganization> => {
     const studentOrganizationsCollection = collection(
       educationsCollection,
       educationId,
@@ -24,12 +24,12 @@ const createListerOfStudentOrganizationsForEducationType = memoize(
   }
 );
 
-async function listStudentOrganizationsByEducationType(
-  educationId: EduType
+async function listStudentOrganizationsForEducation(
+  educationId: string
 ): Promise<StudentOrganization[]> {
   const lister: ListerForFirestoreCollection<StudentOrganization> =
     createListerOfStudentOrganizationsForEducationType(educationId);
   return await lister();
 }
 
-export default listStudentOrganizationsByEducationType;
+export default listStudentOrganizationsForEducation;
