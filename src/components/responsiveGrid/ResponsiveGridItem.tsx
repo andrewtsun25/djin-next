@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import { Property } from "csstype";
 import ObjectFit = Property.ObjectFit;
+import { useRouter } from "next/router";
 
 const ITEM_MARGIN = 5;
 
@@ -31,6 +32,7 @@ const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
   mediaSizingStrategy,
   sx,
 }: ResponsiveGridItemProps) => {
+  const router = useRouter();
   return (
     <ResponsiveGridItemImageListItem cols={1} rows={1} sx={sx}>
       <Image
@@ -46,9 +48,11 @@ const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
           linkUrl ? (
             <ResponsiveGridItemIconButton
               aria-label={`Download ${title}`}
-              href={linkUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() =>
+                router.push({
+                  pathname: linkUrl,
+                })
+              }
             >
               {icon}
             </ResponsiveGridItemIconButton>
