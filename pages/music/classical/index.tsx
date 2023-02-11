@@ -30,7 +30,7 @@ type ScoresNextPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 const renderMusicInstrumentTile = (instrument: MusicInstrument) => (
   <MusicInstrumentTile musicInstrument={instrument} key={instrument.type} />
 );
-const MusicEducationPage = ({ scores }: ScoresNextPageProps) => {
+const ScoresPage = ({ scores }: ScoresNextPageProps) => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -64,4 +64,4 @@ const MusicEducationPage = ({ scores }: ScoresNextPageProps) => {
   );
 };
 
-export default MusicEducationPage;
+export default ScoresPage;

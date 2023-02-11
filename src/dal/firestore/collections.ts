@@ -27,7 +27,6 @@ function collectionReferenceOf<T = DocumentData>(
 
 const educationsCollection: CollectionReference<EducationDbEntity> =
   collectionReferenceOf(CollectionNames.Education.Colleges);
-
 const hbvResearchPapersCollection: CollectionReference<HbvResearchPaperDbEntity> =
   collectionReferenceOf(CollectionNames.HbvResearch.Papers);
 const holisticOfficeLinksCollection: CollectionReference<HolisticOfficeLink> =
@@ -38,10 +37,8 @@ const martialArtsStudiosCollection: CollectionReference<MartialArtsStudioDbEntit
   collectionReferenceOf(CollectionNames.MartialArts.Studios);
 const martialArtsStylesCollection: CollectionReference<MartialArtsStyleDbEntity> =
   collectionReferenceOf(CollectionNames.MartialArts.Styles);
-
 const musicInstrumentsCollection: CollectionReference<MusicInstrumentDbEntity> =
   collectionReferenceOf(CollectionNames.Music.Instruments);
-
 const musicScoresCollection: CollectionReference<MusicScoreDbEntity> =
   collectionReferenceOf(CollectionNames.Music.Scores);
 const organizationsCollection: CollectionReference<Organization> =
