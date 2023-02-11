@@ -1,3 +1,4 @@
 import MusicInstrumentTile from "./MusicInstrumentTile";
+import SoundCloudWidget from "./SoundCloudWidget";
 
-export { MusicInstrumentTile };
+export { MusicInstrumentTile, SoundCloudWidget };

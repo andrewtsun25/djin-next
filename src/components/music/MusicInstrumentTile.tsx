@@ -6,6 +6,7 @@ import React from "react";
 interface MusicInstrumentTileProps {
   musicInstrument: MusicInstrument;
 }
+
 const MusicInstrumentTile: React.FC<MusicInstrumentTileProps> = ({
   musicInstrument: { name, mediaUrl, scoreUrl },
 }: MusicInstrumentTileProps) => (

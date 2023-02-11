@@ -9,14 +9,13 @@ import {
 import React, { ReactElement } from "react";
 
 import { ResponsiveGridContainer, ResponsiveGridTitle } from "./styled";
-import Embed from "react-embed";
+import { SoundCloudWidget } from "../music";
 
 interface ResponsiveGridProps<T> {
   title?: string;
   items: T[];
   renderGridTile(item: T, index?: number): JSX.Element;
   embedUrl?: string;
-
   sx?: SxProps<Theme>;
 }
 
@@ -44,7 +43,7 @@ function ResponsiveGrid<T>({
         )}
         {embedUrl && (
           <ImageListItem cols={cols} rows={1}>
-            <Embed url={embedUrl} />
+            <SoundCloudWidget url={embedUrl} showArtWork={isSmall} />
           </ImageListItem>
         )}
         {items.map((item: T, index: number) => renderGridTile(item, index))}

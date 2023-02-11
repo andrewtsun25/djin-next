@@ -1,17 +1,16 @@
-import { ImageListItemBar, SxProps, Theme } from "@mui/material";
+import { SxProps, Theme } from "@mui/material";
 import React from "react";
 
 import {
   ResponsiveGridItemIconButton,
   ResponsiveGridItemImageListItem,
+  ResponsiveGridItemImageListItemBar,
 } from "./styled";
 
 import Image from "next/image";
 import { Property } from "csstype";
 import ObjectFit = Property.ObjectFit;
 import { useRouter } from "next/router";
-
-const ITEM_MARGIN = 5;
 
 interface ResponsiveGridItemProps {
   linkUrl?: string;
@@ -41,7 +40,7 @@ const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
         fill
         style={{ objectFit: mediaSizingStrategy ?? "contain" }}
       />
-      <ImageListItemBar
+      <ResponsiveGridItemImageListItemBar
         title={title}
         subtitle={subtitle}
         actionIcon={
