@@ -1,16 +1,16 @@
-import { ImageListItemBar, SxProps, Theme } from "@mui/material";
+import { SxProps, Theme } from "@mui/material";
 import React from "react";
 
 import {
   ResponsiveGridItemIconButton,
   ResponsiveGridItemImageListItem,
+  ResponsiveGridItemImageListItemBar,
 } from "./styled";
 
 import Image from "next/image";
 import { Property } from "csstype";
 import ObjectFit = Property.ObjectFit;
-
-const ITEM_MARGIN = 5;
+import { useRouter } from "next/router";
 
 interface ResponsiveGridItemProps {
   linkUrl?: string;
@@ -31,6 +31,7 @@ const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
   mediaSizingStrategy,
   sx,
 }: ResponsiveGridItemProps) => {
+  const router = useRouter();
   return (
     <ResponsiveGridItemImageListItem cols={1} rows={1} sx={sx}>
       <Image
@@ -39,16 +40,18 @@ const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
         fill
         style={{ objectFit: mediaSizingStrategy ?? "contain" }}
       />
-      <ImageListItemBar
+      <ResponsiveGridItemImageListItemBar
         title={title}
         subtitle={subtitle}
         actionIcon={
           linkUrl ? (
             <ResponsiveGridItemIconButton
               aria-label={`Download ${title}`}
-              href={linkUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() =>
+                router.push({
+                  pathname: linkUrl,
+                })
+              }
             >
               {icon}
             </ResponsiveGridItemIconButton>

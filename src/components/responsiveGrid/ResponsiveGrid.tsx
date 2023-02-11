@@ -9,21 +9,22 @@ import {
 import React, { ReactElement } from "react";
 
 import { ResponsiveGridContainer, ResponsiveGridTitle } from "./styled";
+import { SoundCloudWidget } from "../music";
 
 interface ResponsiveGridProps<T> {
   title?: string;
   items: T[];
-  sx?: SxProps<Theme>;
   renderGridTile(item: T, index?: number): JSX.Element;
   embedUrl?: string;
+  sx?: SxProps<Theme>;
 }
 
 function ResponsiveGrid<T>({
   title,
   items,
   renderGridTile,
-  className,
   embedUrl,
+  sx,
 }: ResponsiveGridProps<T>): ReactElement<ResponsiveGridProps<T>> {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.up("sm"));
@@ -31,7 +32,7 @@ function ResponsiveGrid<T>({
   const cols = isMedium ? 4 : isSmall ? 2 : 1;
   const titleVariant = isMedium ? "h4" : isSmall ? "h5" : "h6";
   return (
-    <ResponsiveGridContainer className={className}>
+    <ResponsiveGridContainer sx={sx}>
       <ImageList cols={cols} gap={10}>
         {title && (
           <ImageListItem cols={cols} style={{ height: "auto" }}>
@@ -40,11 +41,11 @@ function ResponsiveGrid<T>({
             </ResponsiveGridTitle>
           </ImageListItem>
         )}
-        {/*embedUrl && (
-          <ImageListItem cols={cols} style={{ height: "auto" }}>
-            <Embed url={embedUrl} />
+        {embedUrl && (
+          <ImageListItem cols={cols} rows={1}>
+            <SoundCloudWidget url={embedUrl} showArtWork={isSmall} />
           </ImageListItem>
-        )*/}
+        )}
         {items.map((item: T, index: number) => renderGridTile(item, index))}
       </ImageList>
     </ResponsiveGridContainer>

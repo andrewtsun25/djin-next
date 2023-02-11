@@ -59,20 +59,26 @@ const EducationCard: React.FC<EducationCardProps> = ({
             <i>(Transcript is available upon request.)</i>
           </Typography>
           <Typography paragraph>{description}</Typography>
-          <Typography paragraph>
-            During my time at {organizationName}, I was involved in the
-            following student organizations:
-          </Typography>
-          <ul>
-            {studentOrganizations.map(({ name, description, biography }) => (
-              <li key={name}>
-                <Typography>
-                  <b>{name}: </b>
-                  <i>{description}</i> {biography}
-                </Typography>
-              </li>
-            ))}
-          </ul>
+          {studentOrganizations.length > 0 && (
+            <>
+              <Typography paragraph>
+                During my time at {organizationName}, I was involved in the
+                following student organizations:
+              </Typography>
+              <ul>
+                {studentOrganizations.map(
+                  ({ name, description, biography }) => (
+                    <li key={name}>
+                      <Typography>
+                        <b>{name}: </b>
+                        <i>{description}</i> {biography}
+                      </Typography>
+                    </li>
+                  )
+                )}
+              </ul>
+            </>
+          )}
         </CardContent>
       </EducationCardContainer>
     </Slide>

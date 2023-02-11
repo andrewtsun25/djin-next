@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import {
   MartialArtsBackground,
   MartialArtsStudioGridTile,
@@ -6,7 +5,6 @@ import {
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { getMartialArtsStyle } from "../../src/dal/api";
 import { MartialArtsStudio, MartialArtsStyle } from "../../src/types/api";
-import { isArray } from "../../src/util/isArray";
 import { isNil } from "lodash";
 import {
   Fade,

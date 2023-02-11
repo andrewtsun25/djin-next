@@ -1,5 +1,10 @@
 import { orderBy, where } from "firebase/firestore";
-import { Education, EduType } from "../../types/api";
+import {
+  Education,
+  EduType,
+  Organization,
+  StudentOrganization,
+} from "../../types/api";
 import {
   AsyncMapperFunction,
   createListerForFirestoreCollection,
@@ -23,13 +28,14 @@ const mapEducationDbEntityToEducation: AsyncMapperFunction<
     type,
     ...rest
   } = dbEntity;
-  const studentOrganizations = await listStudentOrganizationsByEducationType(
-    eid
+  const studentOrganizations: StudentOrganization[] =
+    await listStudentOrganizationsByEducationType(eid);
+  const organization: Organization | null = await getOrganization(
+    organizationRef.id
   );
-  const organization = await getOrganization(organizationRef.id);
   if (isNil(organization)) {
     throw new Error(
-      `Organization for education at ${organizationRef.id} is null`
+      `Organization information for education at ${organizationRef.id} is missing`
     );
   }
   return {
