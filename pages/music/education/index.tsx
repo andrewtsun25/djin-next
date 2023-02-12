@@ -4,7 +4,7 @@ import { Education, EduType } from "../../../src/types/api";
 import Head from "next/head";
 import { Container } from "@mui/material";
 import { EducationPageTitle } from "../../../src/components/education/styled";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { EducationCard } from "../../../src/components/education";
 import { MusicEducationBackground } from "../../../src/components/music/styled";
 

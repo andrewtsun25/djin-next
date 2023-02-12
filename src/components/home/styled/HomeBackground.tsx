@@ -4,6 +4,9 @@ import { Urls } from "../../../const/url";
 
 const homeBg = `${Urls.AssetRoot}/home/bg/dj_bg.jpg`;
 
+/**
+ * Uses tricks here to perfectly center background: https://css-tricks.com/perfect-full-page-background-image/
+ */
 const HomeBackground = styled(Box)({
   display: "flex",
   justifyContent: "center",

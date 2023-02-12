@@ -41,7 +41,7 @@ export default function createGetterByIdForFirestoreCollection<
       ApiType
     > = createGetterAsyncMapperFunction(mapper);
     return documentSnapshot.exists()
-      ? getterAsyncMapperFunction(documentSnapshot)
+      ? getterAsyncMapperFunction(documentSnapshot, documentSnapshot.id)
       : null;
   };
 }

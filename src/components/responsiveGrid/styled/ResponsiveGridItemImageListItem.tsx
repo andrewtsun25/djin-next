@@ -1,6 +1,9 @@
 import { ImageListItem } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
+/**
+ * Uses tricks in this article to accomplish perfect logo centering in perfect squares: https://css-tricks.com/a-grid-of-logos-in-squares/
+ */
 const ResponsiveGridItemImageListItem = styled(ImageListItem)(({ theme }) => ({
   ":before": {
     gridArea: "1 / 1 / 2 / 2",

@@ -11,6 +11,7 @@ import {
 } from "../../types/api";
 import {
   EducationDbEntity,
+  EmploymentDbEntity,
   HbvResearchPaperDbEntity,
   MartialArtsStudioDbEntity,
   MartialArtsStyleDbEntity,
@@ -27,6 +28,9 @@ function collectionReferenceOf<T = DocumentData>(
 
 const educationsCollection: CollectionReference<EducationDbEntity> =
   collectionReferenceOf(CollectionNames.Education.Colleges);
+
+const employmentsCollection: CollectionReference<EmploymentDbEntity> =
+  collectionReferenceOf(CollectionNames.Employment.Companies);
 const hbvResearchPapersCollection: CollectionReference<HbvResearchPaperDbEntity> =
   collectionReferenceOf(CollectionNames.HbvResearch.Papers);
 const holisticOfficeLinksCollection: CollectionReference<HolisticOfficeLink> =
@@ -46,6 +50,7 @@ const organizationsCollection: CollectionReference<Organization> =
 
 export {
   educationsCollection,
+  employmentsCollection,
   hbvResearchPapersCollection,
   holisticOfficeLinksCollection,
   holisticOfficeModulesCollection,

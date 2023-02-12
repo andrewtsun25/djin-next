@@ -31,7 +31,7 @@ const mapHbvResearchPaperDbEntityToHbvResearchPaper: AsyncMapperFunction<
     startDate: startDate.toDate(),
     endDate: endDate.toDate(),
     ...rest,
-  } as HbvResearchPaper;
+  };
 };
 
 const listHbvResearchPapers: ListerForFirestoreCollection<HbvResearchPaper> =
