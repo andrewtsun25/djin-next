@@ -40,7 +40,7 @@ const listEmployments: ListerForFirestoreCollection<Employment> =
   createListerForFirestoreCollection<EmploymentDbEntity, Employment>(
     employmentsCollection,
     mapEmploymentDbEntityToEmployment,
-    orderBy("startDate", "asc")
+    orderBy("startDate", "desc")
   );
 
 export default listEmployments;
