@@ -2,6 +2,7 @@ import { MartialArtsStudio, MartialArtsStyle } from "../../types/api";
 import {
   AsyncMapperFunction,
   createGetterByIdForFirestoreCollection,
+  GetterByIdForFirestoreCollection,
   martialArtsStylesCollection,
 } from "../firestore";
 import { MartialArtsStyleDbEntity } from "../../types/db";
@@ -24,9 +25,10 @@ const mapMartialArtsStyleDbEntityToMartialArtsStyle: AsyncMapperFunction<
   } as MartialArtsStyle;
 };
 
-const getMartialArtsStyle = createGetterByIdForFirestoreCollection(
-  martialArtsStylesCollection,
-  mapMartialArtsStyleDbEntityToMartialArtsStyle
-);
+const getMartialArtsStyle: GetterByIdForFirestoreCollection<MartialArtsStyle> =
+  createGetterByIdForFirestoreCollection(
+    martialArtsStylesCollection,
+    mapMartialArtsStyleDbEntityToMartialArtsStyle
+  );
 
 export default getMartialArtsStyle;

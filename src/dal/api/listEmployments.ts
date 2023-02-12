@@ -1,23 +1,24 @@
 import { orderBy } from "firebase/firestore";
-import { HbvResearchPaperDbEntity } from "../../types/db";
+import { EmploymentDbEntity } from "../../types/db";
 import getOrganization from "./getOrganization";
-import { HbvResearchPaper } from "../../types/api";
+import { Employment, JobType } from "../../types/api";
 import { isNil } from "lodash";
 import {
   AsyncMapperFunction,
   createListerForFirestoreCollection,
-  hbvResearchPapersCollection,
   ListerForFirestoreCollection,
 } from "../firestore";
+import { employmentsCollection } from "../firestore/collections";
 
-const mapHbvResearchPaperDbEntityToHbvResearchPaper: AsyncMapperFunction<
-  HbvResearchPaperDbEntity,
-  HbvResearchPaper
-> = async (dbEntity: HbvResearchPaperDbEntity): Promise<HbvResearchPaper> => {
+const mapEmploymentDbEntityToEmployment: AsyncMapperFunction<
+  EmploymentDbEntity,
+  Employment
+> = async (dbEntity: EmploymentDbEntity): Promise<Employment> => {
   const {
     organization: organizationRef,
     startDate,
     endDate,
+    jobType,
     ...rest
   } = dbEntity;
   const organization = await getOrganization(organizationRef.id);
@@ -29,19 +30,17 @@ const mapHbvResearchPaperDbEntityToHbvResearchPaper: AsyncMapperFunction<
   return {
     organization,
     startDate: startDate.toDate(),
-    endDate: endDate.toDate(),
+    endDate: endDate?.toDate(),
+    jobType: jobType as JobType,
     ...rest,
   };
 };
 
-const listHbvResearchPapers: ListerForFirestoreCollection<HbvResearchPaper> =
-  createListerForFirestoreCollection<
-    HbvResearchPaperDbEntity,
-    HbvResearchPaper
-  >(
-    hbvResearchPapersCollection,
-    mapHbvResearchPaperDbEntityToHbvResearchPaper,
+const listEmployments: ListerForFirestoreCollection<Employment> =
+  createListerForFirestoreCollection<EmploymentDbEntity, Employment>(
+    employmentsCollection,
+    mapEmploymentDbEntityToEmployment,
     orderBy("startDate", "asc")
   );
 
-export default listHbvResearchPapers;
+export default listEmployments;

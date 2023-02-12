@@ -1,3 +1,4 @@
+import type { EmploymentDbEntity } from "./EmploymentDbEntity";
 import type { EducationDbEntity } from "./EducationDbEntity";
 import type { HbvResearchPaperDbEntity } from "./HbvResearchPaperDbEntity";
 import type { HolisticOfficeLinkDbEntity } from "./HolisticOfficeLinkDbEntity";
@@ -8,6 +9,7 @@ import type { MusicScoreDbEntity } from "./MusicScoreDbEntity";
 
 export type {
   EducationDbEntity,
+  EmploymentDbEntity,
   HbvResearchPaperDbEntity,
   HolisticOfficeLinkDbEntity,
   MartialArtsStyleDbEntity,
