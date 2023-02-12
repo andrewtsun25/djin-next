@@ -15,6 +15,8 @@ interface SoundCloudPlayerProps {
   showUser?: boolean;
   singleActive?: boolean;
   startTrack?: number;
+  height?: number | string | undefined;
+  width?: number | string | undefined;
 }
 
 const BASE_URL = "https://w.soundcloud.com/player";
@@ -31,6 +33,8 @@ const SoundCloudWidget: React.FC<SoundCloudPlayerProps> = ({
   showUser = true,
   singleActive = true,
   startTrack = 0,
+  height = "100%",
+  width = "100%",
 }: SoundCloudPlayerProps) => {
   const src = useMemo(() => {
     const playerUrl = new URL(BASE_URL);
@@ -67,6 +71,8 @@ const SoundCloudWidget: React.FC<SoundCloudPlayerProps> = ({
       frameBorder="no"
       style={{ margin: 0, padding: 0 }}
       src={src.toString()}
+      width={width}
+      height={height}
     />
   );
 };

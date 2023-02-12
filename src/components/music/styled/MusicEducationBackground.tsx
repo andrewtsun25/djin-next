@@ -5,9 +5,9 @@ import { Urls } from "../../../const/url";
 const musicEducationBackgroundUrl = `${Urls.AssetRoot}/education/bg/pbla_bg.jpg`;
 
 const MusicEducationBackground = styled(Box)({
-  backgroundSize: "cover",
   background: `url(${musicEducationBackgroundUrl}) no-repeat center center fixed`,
-  height: "100vh",
+  backgroundSize: "cover",
+  minHeight: "100vh",
 });
 
 export default MusicEducationBackground;
