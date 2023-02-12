@@ -1,6 +1,7 @@
-import { QueryDocumentSnapshot } from "firebase/firestore";
-
-export type MapperFunction<DbType, ApiType> = (d: DbType) => ApiType;
+export type MapperFunction<DbType, ApiType> = (
+  d: DbType,
+  id: string
+) => ApiType;
 
 export type AsyncMapperFunction<DbType, ApiType> = (
   d: DbType,

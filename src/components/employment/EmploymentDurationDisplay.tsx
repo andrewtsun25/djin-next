@@ -11,7 +11,11 @@ interface EmploymentDurationDisplayProps {
 const EmploymentDurationDisplay = ({
   employments,
 }: EmploymentDurationDisplayProps) => {
+  // Setting current time this way prevents hydration issues.
   const [currentTime, setCurrentTime] = useState<DateTime>();
+  useEffect(() => {
+    setCurrentTime(DateTime.now());
+  }, []);
   const totalTimeOfEmployment: string = useMemo(() => {
     if (isNil(currentTime)) {
       return "Calculating...";
@@ -22,31 +26,27 @@ const EmploymentDurationDisplay = ({
           startDate: employmentStartDate,
           endDate: employmentEndDate,
         }: Employment) => {
-          const endDate = !isNil(employmentEndDate)
+          const endDate: DateTime = !isNil(employmentEndDate)
             ? DateTime.fromJSDate(employmentEndDate)
             : currentTime;
-          const startDate = DateTime.fromJSDate(employmentStartDate);
+          const startDate: DateTime = DateTime.fromJSDate(employmentStartDate);
           return endDate.diff(startDate, ["years", "months", "days"]);
         }
       )
-      .reduce((duration1: Duration, duration2: Duration) =>
-        duration1.plus(duration2)
+      .reduce(
+        (duration1: Duration, duration2: Duration) => duration1.plus(duration2),
+        Duration.fromObject({ minutes: 0 })
       )
       .normalize()
       .shiftTo("years", "months");
-    const years = totalDuration.get("years");
-    const months = Math.round(totalDuration.get("months"));
+    const years: number = totalDuration.get("years");
+    const months: number = Math.round(totalDuration.get("months"));
     return `${years} year(s) and ${months} month(s)`;
   }, [employments, currentTime]);
 
-  useEffect(() => {
-    setCurrentTime(DateTime.now());
-  }, []);
-
+  // render
   return (
-    <EmploymentText>
-      Total Length of Employment: {totalTimeOfEmployment}
-    </EmploymentText>
+    <EmploymentText>Total Duration: {totalTimeOfEmployment}</EmploymentText>
   );
 };
 

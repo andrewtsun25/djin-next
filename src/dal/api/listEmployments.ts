@@ -1,7 +1,7 @@
 import { orderBy } from "firebase/firestore";
 import { EmploymentDbEntity } from "../../types/db";
 import getOrganization from "./getOrganization";
-import { Employment, JobType } from "../../types/api";
+import { Employment, JobType, Organization } from "../../types/api";
 import { isNil } from "lodash";
 import {
   AsyncMapperFunction,
@@ -16,12 +16,15 @@ const mapEmploymentDbEntityToEmployment: AsyncMapperFunction<
 > = async (dbEntity: EmploymentDbEntity): Promise<Employment> => {
   const {
     organization: organizationRef,
+    responsibilities,
     startDate,
     endDate,
     jobType,
     ...rest
   } = dbEntity;
-  const organization = await getOrganization(organizationRef.id);
+  const organization: Organization | null = await getOrganization(
+    organizationRef.id
+  );
   if (isNil(organization)) {
     throw new Error(
       `Organization information for ${organizationRef.id} is missing`
@@ -32,6 +35,7 @@ const mapEmploymentDbEntityToEmployment: AsyncMapperFunction<
     startDate: startDate.toDate(),
     endDate: endDate?.toDate(),
     jobType: jobType as JobType,
+    responsibilities: responsibilities ?? [],
     ...rest,
   };
 };

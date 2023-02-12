@@ -8,7 +8,7 @@ export interface EmploymentDbEntity {
   startDate: Timestamp;
   endDate?: Timestamp;
   description: string;
-  responsibilities: string[];
+  responsibilities?: string[];
   skills: string[];
   skillTypes: string[];
   domains: string[];

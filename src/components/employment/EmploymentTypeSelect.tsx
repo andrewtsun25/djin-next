@@ -47,41 +47,38 @@ const EmploymentTypeSelect: React.FC<EmploymentTypeSelectProps> = ({
     setEmploymentTypesSelected(newEmploymentTypesSelected);
   };
   return (
-    <EmploymentTypeSelectContainer>
-      <EmploymentText sx={{ mr: 2 }}>View internships by:</EmploymentText>
-      <FormControl>
-        <InputLabel id="demo-multiple-checkbox-label">Tag</InputLabel>
-        <Select
-          labelId="employment-type-selection-label"
-          id="employment-type-selection"
-          multiple
-          value={employmentTypesSelected}
-          onChange={handleChange}
-          input={<OutlinedInput label="Types of Employment" />}
-          renderValue={(selected: JobType[]) => (
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-              {selected.map((value: JobType) => (
-                <Chip key={value} label={value} />
-              ))}
-            </Box>
-          )}
-          MenuProps={MenuProps}
-        >
-          <MenuItem key={JobType.FullTime} value={JobType.FullTime}>
-            <Checkbox
-              checked={employmentTypesSelected.indexOf(JobType.FullTime) > -1}
-            />
-            <ListItemText primary={JobType.FullTime} />
-          </MenuItem>
-          <MenuItem key={JobType.Internship} value={JobType.Internship}>
-            <Checkbox
-              checked={employmentTypesSelected.indexOf(JobType.Internship) > -1}
-            />
-            <ListItemText primary={JobType.Internship} />
-          </MenuItem>
-        </Select>
-      </FormControl>
-    </EmploymentTypeSelectContainer>
+    <FormControl>
+      <InputLabel id="demo-multiple-checkbox-label">Employment Type</InputLabel>
+      <Select
+        labelId="employment-type-selection-label"
+        id="employment-type-selection"
+        multiple
+        value={employmentTypesSelected}
+        onChange={handleChange}
+        input={<OutlinedInput label="Types of Employment" />}
+        renderValue={(selected: JobType[]) => (
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+            {selected.map((value: JobType) => (
+              <Chip key={value} label={value} />
+            ))}
+          </Box>
+        )}
+        MenuProps={MenuProps}
+      >
+        <MenuItem key={JobType.FullTime} value={JobType.FullTime}>
+          <Checkbox
+            checked={employmentTypesSelected.indexOf(JobType.FullTime) > -1}
+          />
+          <ListItemText primary={JobType.FullTime} />
+        </MenuItem>
+        <MenuItem key={JobType.Internship} value={JobType.Internship}>
+          <Checkbox
+            checked={employmentTypesSelected.indexOf(JobType.Internship) > -1}
+          />
+          <ListItemText primary={JobType.Internship} />
+        </MenuItem>
+      </Select>
+    </FormControl>
   );
 };
 

@@ -6,6 +6,7 @@ import type { MartialArtsStudioDbEntity } from "./MartialArtsStudioDbEntity";
 import type { MartialArtsStyleDbEntity } from "./MartialArtsStyleDbEntity";
 import type { MusicInstrumentDbEntity } from "./MusicInstrumentDbEntity";
 import type { MusicScoreDbEntity } from "./MusicScoreDbEntity";
+import type { OrganizationDbEntity } from "./OrganizationDbEntity";
 
 export type {
   EducationDbEntity,
@@ -16,4 +17,5 @@ export type {
   MartialArtsStudioDbEntity,
   MusicInstrumentDbEntity,
   MusicScoreDbEntity,
+  OrganizationDbEntity,
 };

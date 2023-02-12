@@ -8,13 +8,14 @@ import {
   EmploymentPageTitle,
   EmploymentText,
   EmploymentResumeLink,
-  EmploymentTypeSelectContainer,
   EmploymentPageHeaderContainer,
 } from "../../../src/components/employment/styled";
 import {
+  EmploymentCard,
   EmploymentDurationDisplay,
   EmploymentTypeSelect,
 } from "../../../src/components/employment";
+import { Grid } from "@mui/material";
 
 interface EmploymentPageProps {
   employments: Employment[];
@@ -39,10 +40,14 @@ const EmploymentPage = ({ employments }: EmploymentNextPageProps) => {
     JobType.FullTime,
     JobType.Internship,
   ]);
-  const selectedEmployments = useMemo(
+  const selectedEmployments: Employment[] = useMemo(
     () =>
       employments.filter((employment) => filterBy.includes(employment.jobType)),
     [filterBy, employments]
+  );
+  console.log(
+    "Employments w/o responsibilities: ",
+    employments.filter((employment) => !employment.responsibilities)
   );
   return (
     <>
@@ -71,6 +76,13 @@ const EmploymentPage = ({ employments }: EmploymentNextPageProps) => {
           />
           <EmploymentDurationDisplay employments={selectedEmployments} />
         </EmploymentPageHeaderContainer>
+        <Grid container direction="row">
+          {selectedEmployments.map((employment, index) => (
+            <Grid item xs={12} md={6} lg={4} xl={3} key={index}>
+              <EmploymentCard employment={employment} />
+            </Grid>
+          ))}
+        </Grid>
       </EmploymentBackground>
     </>
   );
