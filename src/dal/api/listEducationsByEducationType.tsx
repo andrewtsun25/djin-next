@@ -1,7 +1,7 @@
 import { orderBy, where } from "firebase/firestore";
 import {
   Education,
-  EduType,
+  EducationType,
   Organization,
   StudentOrganization,
 } from "../../types/api";
@@ -43,14 +43,14 @@ const mapEducationDbEntityToEducation: AsyncMapperFunction<
     startDate: startDate.toDate(),
     organization,
     studentOrganizations,
-    type: type as EduType,
+    type: type as EducationType,
     ...rest,
   };
 };
 
 // Memoize creation of lister function to prevent re-declaration per fetch
 const createListerOfEducationsForEducationType = memoize(
-  (educationId: EduType): ListerForFirestoreCollection<Education> => {
+  (educationId: EducationType): ListerForFirestoreCollection<Education> => {
     return createListerForFirestoreCollection(
       educationsCollection,
       mapEducationDbEntityToEducation,
@@ -61,7 +61,7 @@ const createListerOfEducationsForEducationType = memoize(
 );
 
 async function listEducationsByEducationType(
-  educationId: EduType
+  educationId: EducationType
 ): Promise<Education[]> {
   const lister: ListerForFirestoreCollection<Education> =
     createListerOfEducationsForEducationType(educationId);

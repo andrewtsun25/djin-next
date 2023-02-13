@@ -1,6 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { listEducationsByEducationType } from "../../../src/dal/api";
-import { Education, EduType } from "../../../src/types/api";
+import { Education, EducationType } from "../../../src/types/api";
 import Head from "next/head";
 import { CodingEducationBackground } from "../../../src/components/coding/styled";
 import { Container } from "@mui/material";
@@ -15,7 +15,7 @@ interface CodingEducationPageProps {
 export const getStaticProps: GetStaticProps<
   CodingEducationPageProps
 > = async () => {
-  const educations = await listEducationsByEducationType(EduType.CODING);
+  const educations = await listEducationsByEducationType(EducationType.CODING);
   return {
     props: {
       educations,

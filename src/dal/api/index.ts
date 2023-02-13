@@ -6,6 +6,7 @@ import listHbvResearchPapers from "./listHbvResearchPapers";
 import listHolisticOfficeModules from "./listHolisticOfficeModules";
 import listHolisticOfficeLinks from "./listHolisticOfficeLinks";
 import listMusicScores from "./listMusicScores";
+import listProjects from "./listProjects";
 
 export {
   getMartialArtsStyle,
@@ -16,4 +17,5 @@ export {
   listHolisticOfficeModules,
   listHolisticOfficeLinks,
   listMusicScores,
+  listProjects,
 };

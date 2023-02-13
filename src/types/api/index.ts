@@ -1,5 +1,5 @@
 import type { Education } from "./Education";
-import { EduType } from "./EduType";
+import { EducationType } from "./EducationType";
 import type { Employment } from "./Employment";
 import type { HbvResearchPaper } from "./HbvResearchPaper";
 import type { Organization } from "./Organization";
@@ -13,6 +13,7 @@ import { MartialArtsStyleType } from "./MartialArtsStyleType";
 import type { MusicScore } from "./MusicScore";
 import type { MusicInstrument } from "./MusicInstrument";
 import { JobType } from "./JobType";
+import type { Project } from "./Project";
 import type { StudentOrganization } from "./StudentOrganization";
 
 export type {
@@ -26,10 +27,11 @@ export type {
   MartialArtsStyle,
   MusicInstrument,
   MusicScore,
+  Project,
   StudentOrganization,
 };
 export {
-  EduType,
+  EducationType,
   JobType,
   HolisticOfficeLinkType,
   MusicInstrumentType,

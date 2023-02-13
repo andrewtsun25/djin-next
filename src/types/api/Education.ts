@@ -1,4 +1,4 @@
-import { EduType, Organization, StudentOrganization } from "../api";
+import { EducationType, Organization, StudentOrganization } from "../api";
 
 export interface Education {
   department?: string;
@@ -13,5 +13,5 @@ export interface Education {
   syllabusUrls?: Record<string, string>;
 
   studentOrganizations: StudentOrganization[];
-  type: EduType;
+  type: EducationType;
 }
