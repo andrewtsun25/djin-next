@@ -1,3 +1,4 @@
 import ProjectCard from "./ProjectCard";
+import ProjectOrganizationSelect from "./ProjectOrganizationSelect";
 
-export { ProjectCard };
+export { ProjectCard, ProjectOrganizationSelect };

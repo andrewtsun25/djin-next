@@ -4,22 +4,9 @@ import { MultiSelect } from "../select";
 import { identity } from "lodash";
 
 interface EmploymentTypeSelectProps {
-  employmentTypes: JobType[];
   employmentTypesSelected: JobType[];
   setEmploymentTypesSelected(jobType: JobType[]): void;
 }
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
 
 const employmentTypes: JobType[] = [JobType.FullTime, JobType.Internship];
 const EmploymentTypeSelect: React.FC<EmploymentTypeSelectProps> = ({
@@ -37,6 +24,7 @@ const EmploymentTypeSelect: React.FC<EmploymentTypeSelectProps> = ({
       getOptionLabel={identity}
       inputLabel="Employment Type"
       onChange={handleChange}
+      freeSolo={false}
     />
   );
 };
