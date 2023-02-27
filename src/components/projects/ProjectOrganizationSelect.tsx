@@ -1,33 +1,30 @@
 import React from "react";
 import { Organization } from "../../types/api";
 import { MultiSelect } from "../select";
-import { Chip, useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/system";
+import { Chip, useMediaQuery, useTheme } from "@mui/material";
 
 interface ProjectOrganizationSelectProps {
   organizations: Organization[];
-  organizationsSelected: Organization[];
-  setOrganizationsSelected(employments: Organization[]): void;
+  selectedOrganizations: Organization[];
+  setSelectedOrganizations(employments: Organization[]): void;
 }
 const ProjectOrganizationSelect: React.FC<ProjectOrganizationSelectProps> = ({
   organizations,
-  organizationsSelected,
-  setOrganizationsSelected,
+  selectedOrganizations,
+  setSelectedOrganizations,
 }: ProjectOrganizationSelectProps) => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up("md"));
-  const handleChange = (_: React.SyntheticEvent, value: Organization[]) => {
-    console.log("New Value = ", value);
-    setOrganizationsSelected(value);
-  };
+  const handleChange = (_: React.SyntheticEvent, value: Organization[]) =>
+    setSelectedOrganizations(value);
   return (
     <MultiSelect
       limitTags={5}
       freeSolo={false}
-      sx={{ width: isMd ? 500 : "75%", backgroundColor: "white" }}
+      sx={{ width: isMd ? 500 : "75%", m: 1 }}
       getOptionLabel={(option: Organization): string => option.name}
       options={organizations}
-      value={organizationsSelected}
+      value={selectedOrganizations}
       inputLabel="Organization"
       inputPlaceholder="Organization"
       onChange={handleChange}

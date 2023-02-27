@@ -4,7 +4,8 @@ import { styled } from "@mui/material/styles";
 const ProjectSelectionContainer = styled(Box)(({ theme }) => ({
   borderRadius: 10,
   backgroundColor: theme.palette.background.paper,
-  padding: theme.spacing(2),
+  padding: theme.spacing(1),
+  margin: theme.spacing(2),
   display: "flex",
   flexDirection: "column",
   [theme.breakpoints.up("md")]: {

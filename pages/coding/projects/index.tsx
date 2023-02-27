@@ -12,8 +12,9 @@ import { Grid } from "@mui/material";
 import {
   ProjectCard,
   ProjectOrganizationSelect,
+  ProjectSkillSelect,
 } from "../../../src/components/projects";
-import { sortBy, uniqBy } from "lodash";
+import { sortBy, uniq, uniqBy } from "lodash";
 
 interface ProjectsPageProps {
   projects: Project[];
@@ -45,16 +46,27 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
   const [selectedOrganizations, setSelectedOrganizations] = useState<
     Organization[]
   >([]);
+  const skills: string[] = useMemo(
+    () => uniq(projects.map((project) => project.skills).flat()).sort(),
+    [projects]
+  );
+  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const displayedProjects = useMemo(() => {
     const selectedOrganizationsIds = selectedOrganizations.map(
       (organization) => organization.id
     );
-    return projects.filter((project) =>
-      selectedOrganizationsIds.length < 1
-        ? true
-        : selectedOrganizationsIds.includes(project.organization.id)
-    );
-  }, [projects, selectedOrganizations]);
+    return projects
+      .filter(({ organization: { id: organizationId } }) =>
+        selectedOrganizationsIds.length < 1
+          ? true
+          : selectedOrganizationsIds.includes(organizationId)
+      )
+      .filter(({ skills: projectSkills }) =>
+        selectedSkills.length < 1
+          ? true
+          : selectedSkills.some((skill) => projectSkills.includes(skill))
+      );
+  }, [projects, selectedOrganizations, selectedSkills]);
   return (
     <>
       <Head>
@@ -65,8 +77,13 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
         <ProjectSelectionContainer>
           <ProjectOrganizationSelect
             organizations={organizations}
-            organizationsSelected={selectedOrganizations}
-            setOrganizationsSelected={setSelectedOrganizations}
+            selectedOrganizations={selectedOrganizations}
+            setSelectedOrganizations={setSelectedOrganizations}
+          />
+          <ProjectSkillSelect
+            skills={skills}
+            selectedSkills={selectedSkills}
+            setSelectedSkills={setSelectedSkills}
           />
         </ProjectSelectionContainer>
         <Grid container direction="row">
