@@ -18,6 +18,7 @@ const mapProjectDbEntityToProject: AsyncMapperFunction<
     startDate,
     endDate,
     organization: organizationRef,
+    responsibilities,
     ...rest
   } = dbEntity;
   const organization: Organization | null = await getOrganization(
@@ -32,6 +33,7 @@ const mapProjectDbEntityToProject: AsyncMapperFunction<
     startDate: startDate.toDate(),
     endDate: endDate?.toDate(),
     organization,
+    responsibilities: responsibilities ?? [],
     ...rest,
   };
 };

@@ -7,7 +7,7 @@ export interface ProjectDbEntity {
   endDate?: Timestamp;
   mediaUrl: string;
   description: string;
-  responsibilities: string[];
+  responsibilities?: string[];
   organization: DocumentReference<Organization>;
   skills: string[];
   disclaimer?: string;
