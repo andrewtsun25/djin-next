@@ -75,20 +75,20 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
       : !isNil(skillsInQuery)
       ? decodeURIComponent(skillsInQuery)
           .split(",")
-          .filter((s) => s.length > 0)
+          .filter((skill) => skill.length > 0)
       : [];
   }, [router.query]);
-  const displayedProjects: Project[] = useMemo(
+  const selectedProjects: Project[] = useMemo(
     () =>
       projects
         .filter(({ organization: { id: organizationId } }) =>
           selectedOrganizationsIds.length < 1
-            ? true
+            ? true // bypass filter if no organizations specified
             : selectedOrganizationsIds.includes(organizationId)
         )
         .filter(({ skills: projectSkills }) =>
           selectedSkills.length < 1
-            ? true
+            ? true // bypass filter if no project skills specified
             : selectedSkills.some((skill) => projectSkills.includes(skill))
         ),
     [projects, selectedOrganizationsIds, selectedSkills]
@@ -140,7 +140,7 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
           />
         </ProjectSelectionContainer>
         <Grid container direction="row">
-          {displayedProjects.map((project) => (
+          {selectedProjects.map((project) => (
             <Grid item xs={12} md={6} lg={4} xl={3} key={project.name}>
               <ProjectCard project={project} />
             </Grid>

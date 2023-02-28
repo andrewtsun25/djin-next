@@ -16,6 +16,8 @@ import {
   EmploymentTypeSelect,
 } from "../../../src/components/employment";
 import { Grid } from "@mui/material";
+import { useRouter } from "next/router";
+import { isNil } from "lodash";
 
 interface EmploymentPageProps {
   employments: Employment[];
@@ -35,15 +37,42 @@ type EmploymentNextPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 const RESUME_URL =
   "https://docs.google.com/document/d/1fIQ8ceaV1BW7FmWvPe8aGGlLVFtXxLcHDIOf7swxXzw/edit?usp=sharing";
 
+const EMPLOYMENT_TYPES_QUERY_PARAM = "employmentTypes";
+
 const EmploymentPage = ({ employments }: EmploymentNextPageProps) => {
-  const [filterBy, setFilterBy] = useState<JobType[]>([
-    JobType.FullTime,
-    JobType.Internship,
-  ]);
+  const router = useRouter();
+  const selectedEmploymentTypes: JobType[] = useMemo(() => {
+    const { [EMPLOYMENT_TYPES_QUERY_PARAM]: employmentTypesInQuery } =
+      router.query;
+    return Array.isArray(employmentTypesInQuery)
+      ? employmentTypesInQuery.map((et) => et as JobType)
+      : !isNil(employmentTypesInQuery)
+      ? decodeURIComponent(employmentTypesInQuery)
+          .split(",")
+          .map((et) => et as JobType)
+      : [];
+  }, [router.query]);
+  const setSelectedEmploymentTypes = (newEmploymentTypes: JobType[]) => {
+    // Determine new query parameters
+    const newQueryParams: Record<string, string> = {};
+    // Only include employment types in query string if they exist.
+    if (newEmploymentTypes.length > 0) {
+      newQueryParams[EMPLOYMENT_TYPES_QUERY_PARAM] =
+        newEmploymentTypes.join(",");
+    }
+    // Generate new URL and push the state.
+    router.replace({ query: newQueryParams }, undefined, {
+      shallow: true,
+    });
+  };
   const selectedEmployments: Employment[] = useMemo(
     () =>
-      employments.filter((employment) => filterBy.includes(employment.jobType)),
-    [filterBy, employments]
+      employments.filter((employment) =>
+        selectedEmploymentTypes.length < 1
+          ? true // bypass filter if no employment type specified
+          : selectedEmploymentTypes.includes(employment.jobType)
+      ),
+    [selectedEmploymentTypes, employments]
   );
   return (
     <>
@@ -67,8 +96,8 @@ const EmploymentPage = ({ employments }: EmploymentNextPageProps) => {
             .
           </EmploymentText>
           <EmploymentTypeSelect
-            employmentTypesSelected={filterBy}
-            setEmploymentTypesSelected={setFilterBy}
+            selectedEmploymentTypes={selectedEmploymentTypes}
+            setSelectedEmploymentTypes={setSelectedEmploymentTypes}
           />
           <EmploymentDurationDisplay employments={selectedEmployments} />
         </EmploymentPageHeaderContainer>
