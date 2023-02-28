@@ -45,10 +45,6 @@ const EmploymentPage = ({ employments }: EmploymentNextPageProps) => {
       employments.filter((employment) => filterBy.includes(employment.jobType)),
     [filterBy, employments]
   );
-  console.log(
-    "Employments w/o responsibilities: ",
-    employments.filter((employment) => !employment.responsibilities)
-  );
   return (
     <>
       <Head>

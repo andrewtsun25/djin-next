@@ -42,7 +42,7 @@ const EmploymentCard: React.FC<EmploymentCardProps> = ({
       <IconLink
         icon={<AppsIcon />}
         text="Projects"
-        href={`/coding/projects?organization=${organization.id}`}
+        href={`/coding/projects?organizations=${organization.id}`}
         target="_self"
       />
       <Typography paragraph>{description}</Typography>

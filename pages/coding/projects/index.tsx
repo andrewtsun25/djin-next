@@ -1,7 +1,7 @@
 import { Organization, Project } from "../../../src/types/api";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { listProjects } from "../../../src/dal/api";
-import React, { useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Head from "next/head";
 import {
   ProjectsBackground,
@@ -14,7 +14,10 @@ import {
   ProjectOrganizationSelect,
   ProjectSkillSelect,
 } from "../../../src/components/projects";
-import { sortBy, uniq, uniqBy } from "lodash";
+import { isNil, sortBy, uniq, uniqBy } from "lodash";
+import { useRouter } from "next/router";
+
+const BASE_PATH = "/coding/projects";
 
 interface ProjectsPageProps {
   projects: Project[];
@@ -32,6 +35,7 @@ export const getStaticProps: GetStaticProps<ProjectsPageProps> = async () => {
 type ProjectsNextPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
+  const router = useRouter();
   const organizations: Organization[] = useMemo(
     () =>
       sortBy(
@@ -43,30 +47,83 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
       ),
     [projects]
   );
-  const [selectedOrganizations, setSelectedOrganizations] = useState<
-    Organization[]
-  >([]);
   const skills: string[] = useMemo(
     () => uniq(projects.map((project) => project.skills).flat()).sort(),
     [projects]
   );
-  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
-  const displayedProjects = useMemo(() => {
-    const selectedOrganizationsIds = selectedOrganizations.map(
-      (organization) => organization.id
-    );
-    return projects
-      .filter(({ organization: { id: organizationId } }) =>
-        selectedOrganizationsIds.length < 1
-          ? true
-          : selectedOrganizationsIds.includes(organizationId)
-      )
-      .filter(({ skills: projectSkills }) =>
-        selectedSkills.length < 1
-          ? true
-          : selectedSkills.some((skill) => projectSkills.includes(skill))
+  const selectedOrganizationsIds: string[] = useMemo(() => {
+    const { organizations: organizationIdsInQuery } = router.query;
+    return Array.isArray(organizationIdsInQuery)
+      ? organizationIdsInQuery
+      : !isNil(organizationIdsInQuery)
+      ? decodeURIComponent(organizationIdsInQuery).split(",")
+      : [];
+  }, [router.query]);
+  const selectedOrganizations = useMemo(
+    () =>
+      organizations.filter((organization) =>
+        selectedOrganizationsIds.includes(organization.id)
+      ),
+    [organizations, selectedOrganizationsIds]
+  );
+  const selectedSkills: string[] = useMemo(() => {
+    const { skills: skillsInQuery } = router.query;
+    return Array.isArray(skillsInQuery)
+      ? skillsInQuery
+      : !isNil(skillsInQuery)
+      ? decodeURIComponent(skillsInQuery)
+          .split(",")
+          .filter((s) => s.length > 0)
+      : [];
+  }, [router.query]);
+  const displayedProjects = useMemo(
+    () =>
+      projects
+        .filter(({ organization: { id: organizationId } }) =>
+          selectedOrganizationsIds.length < 1
+            ? true
+            : selectedOrganizationsIds.includes(organizationId)
+        )
+        .filter(({ skills: projectSkills }) =>
+          selectedSkills.length < 1
+            ? true
+            : selectedSkills.some((skill) => projectSkills.includes(skill))
+        ),
+    [projects, selectedOrganizationsIds, selectedSkills]
+  );
+  const updateQueryParameters = (
+    newOrganizations: Organization[],
+    newSkills: string[]
+  ) => {
+    // Determine new query parameters
+    const searchParams = new URLSearchParams();
+    // Only include organizations in query string if they exist.
+    if (newOrganizations.length > 0) {
+      searchParams.append(
+        "organizations",
+        newOrganizations.map((o) => o.id).join(",")
       );
-  }, [projects, selectedOrganizations, selectedSkills]);
+    }
+    // Only include skills in query string if they exist.
+    if (newSkills.length > 0) {
+      searchParams.append("skills", newSkills.join(","));
+    }
+    const searchParamsAsStr = searchParams.toString();
+    // Generate new URL and push the state.
+    const newUrl: string =
+      searchParamsAsStr.length > 0
+        ? `${BASE_PATH}?${searchParamsAsStr}`
+        : BASE_PATH;
+    router.replace(newUrl, undefined, {
+      shallow: true,
+    });
+  };
+  const setSelectedOrganizations = (newOrganizations: Organization[]) => {
+    updateQueryParameters(newOrganizations, selectedSkills);
+  };
+  const setSelectedSkills = (newSkills: string[]) => {
+    updateQueryParameters(selectedOrganizations, newSkills);
+  };
   return (
     <>
       <Head>
