@@ -17,7 +17,8 @@ import {
 import { isNil, sortBy, uniq, uniqBy } from "lodash";
 import { useRouter } from "next/router";
 
-const BASE_PATH = "/coding/projects";
+const SKILLS_QUERY_PARAM = "skills";
+const ORGANIZATIONS_QUERY_PARAM = "organizations";
 
 interface ProjectsPageProps {
   projects: Project[];
@@ -52,7 +53,8 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
     [projects]
   );
   const selectedOrganizationsIds: string[] = useMemo(() => {
-    const { organizations: organizationIdsInQuery } = router.query;
+    const { [ORGANIZATIONS_QUERY_PARAM]: organizationIdsInQuery } =
+      router.query;
     return Array.isArray(organizationIdsInQuery)
       ? organizationIdsInQuery
       : !isNil(organizationIdsInQuery)
@@ -67,7 +69,7 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
     [organizations, selectedOrganizationsIds]
   );
   const selectedSkills: string[] = useMemo(() => {
-    const { skills: skillsInQuery } = router.query;
+    const { [SKILLS_QUERY_PARAM]: skillsInQuery } = router.query;
     return Array.isArray(skillsInQuery)
       ? skillsInQuery
       : !isNil(skillsInQuery)
@@ -76,7 +78,7 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
           .filter((s) => s.length > 0)
       : [];
   }, [router.query]);
-  const displayedProjects = useMemo(
+  const displayedProjects: Project[] = useMemo(
     () =>
       projects
         .filter(({ organization: { id: organizationId } }) =>
@@ -96,25 +98,19 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
     newSkills: string[]
   ) => {
     // Determine new query parameters
-    const searchParams = new URLSearchParams();
+    const newQueryParams: Record<string, string> = {};
     // Only include organizations in query string if they exist.
     if (newOrganizations.length > 0) {
-      searchParams.append(
-        "organizations",
-        newOrganizations.map((o) => o.id).join(",")
-      );
+      newQueryParams[ORGANIZATIONS_QUERY_PARAM] = newOrganizations
+        .map((o) => o.id)
+        .join(",");
     }
     // Only include skills in query string if they exist.
     if (newSkills.length > 0) {
-      searchParams.append("skills", newSkills.join(","));
+      newQueryParams[SKILLS_QUERY_PARAM] = newSkills.join(",");
     }
-    const searchParamsAsStr = searchParams.toString();
     // Generate new URL and push the state.
-    const newUrl: string =
-      searchParamsAsStr.length > 0
-        ? `${BASE_PATH}?${searchParamsAsStr}`
-        : BASE_PATH;
-    router.replace(newUrl, undefined, {
+    router.replace({ query: newQueryParams }, undefined, {
       shallow: true,
     });
   };
