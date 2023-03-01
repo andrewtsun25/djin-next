@@ -20,10 +20,10 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   project: {
-    name,
+    name: projectName,
     startDate,
     endDate,
-    organization,
+    organization: { name: organizationName, logoUrl },
     mediaUrl,
     description,
     responsibilities,
@@ -34,11 +34,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }: ProjectCardProps) => (
   <ProjectCardContainer variant="outlined">
     <DurationWithOrganizationCardHeader
-      title={name}
-      subtitle={organization.name}
+      title={projectName}
+      subtitle={organizationName}
       startDate={startDate}
       endDate={endDate}
-      logoUrl={organization.logoUrl}
+      logoUrl={logoUrl}
     />
     <ProjectCardMedia image={mediaUrl} />
     <CardContent>
