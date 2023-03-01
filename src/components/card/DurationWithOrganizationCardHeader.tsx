@@ -1,9 +1,9 @@
 import { Avatar, CardHeader } from "@mui/material";
+import { isNil } from "lodash";
 import { DateTime } from "luxon";
 import React from "react";
 
 import { CurrentBadge } from "./styled";
-import { isNil } from "lodash";
 
 interface DurationWithOrganizationCardHeaderProps {
   title: string;

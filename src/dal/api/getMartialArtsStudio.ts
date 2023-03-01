@@ -1,11 +1,11 @@
 import { MartialArtsStudio } from "../../types/api";
+import { MartialArtsStudioDbEntity } from "../../types/db";
 import {
   createGetterByIdForFirestoreCollection,
   GetterByIdForFirestoreCollection,
   MapperFunction,
   martialArtsStudiosCollection,
 } from "../firestore";
-import { MartialArtsStudioDbEntity } from "../../types/db";
 
 const mapMartialArtsStudioDbEntityToMartialArtsStudio: MapperFunction<
   MartialArtsStudioDbEntity,

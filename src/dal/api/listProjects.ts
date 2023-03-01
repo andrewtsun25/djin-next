@@ -1,12 +1,13 @@
+import { orderBy } from "firebase/firestore";
+import { isNil } from "lodash";
+
+import { Organization, Project } from "../../types/api";
+import { ProjectDbEntity } from "../../types/db";
 import {
   AsyncMapperFunction,
   createListerForFirestoreCollection,
   ListerForFirestoreCollection,
 } from "../firestore";
-import { ProjectDbEntity } from "../../types/db";
-import { Organization, Project } from "../../types/api";
-import { isNil } from "lodash";
-import { orderBy } from "firebase/firestore";
 import { projectsCollection } from "../firestore/collections";
 import getOrganization from "./getOrganization";
 

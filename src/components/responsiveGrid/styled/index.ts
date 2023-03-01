@@ -1,13 +1,13 @@
 import ResponsiveGridContainer from "./ResponsiveGridContainer";
-import ResponsiveGridTitle from "./ResponsiveGridTitle";
 import ResponsiveGridItemIconButton from "./ResponsiveGridItemIconButton";
 import ResponsiveGridItemImageListItem from "./ResponsiveGridItemImageListItem";
 import ResponsiveGridItemImageListItemBar from "./ResponsiveGridItemImageListItemBar";
+import ResponsiveGridTitle from "./ResponsiveGridTitle";
 
 export {
   ResponsiveGridContainer,
-  ResponsiveGridTitle,
   ResponsiveGridItemIconButton,
   ResponsiveGridItemImageListItem,
   ResponsiveGridItemImageListItemBar,
+  ResponsiveGridTitle,
 };

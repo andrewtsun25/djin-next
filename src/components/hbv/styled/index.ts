@@ -2,20 +2,20 @@ import HbvBackground from "./HbvBackground";
 import HbvContentTypography from "./HbvContentTypography";
 import HbvItalicizedTypography from "./HbvItalicizedTypography";
 import HbvLink from "./HbvLink";
-import HbvTitle from "./HbvTitle";
-import HbvResearchCardList from "./HbvResearchCardList";
+import HbvPageContentContainer from "./HbvPageContentContainer";
 import HbvResearchCardContainer from "./HbvResearchCardContainer";
 import HbvResearchCardIconLink from "./HbvResearchCardIconLink";
-import HbvPageContentContainer from "./HbvPageContentContainer";
+import HbvResearchCardList from "./HbvResearchCardList";
+import HbvTitle from "./HbvTitle";
 
 export {
   HbvBackground,
   HbvContentTypography,
   HbvItalicizedTypography,
   HbvLink,
-  HbvTitle,
-  HbvResearchCardList,
+  HbvPageContentContainer,
   HbvResearchCardContainer,
   HbvResearchCardIconLink,
-  HbvPageContentContainer,
+  HbvResearchCardList,
+  HbvTitle,
 };

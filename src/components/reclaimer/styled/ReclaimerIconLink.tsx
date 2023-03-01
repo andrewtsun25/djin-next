@@ -1,4 +1,5 @@
 import { styled } from "@mui/material/styles";
+
 import { IconLink } from "../../text";
 
 const ReclaimerIconLink = styled(IconLink)({

@@ -1,9 +1,9 @@
+import { MusicInstrument } from "../../types/api";
 import {
   createGetterByIdForFirestoreCollection,
   GetterByIdForFirestoreCollection,
   musicInstrumentsCollection,
 } from "../firestore";
-import { MusicInstrument } from "../../types/api";
 
 const getMusicInstrument: GetterByIdForFirestoreCollection<MusicInstrument> =
   createGetterByIdForFirestoreCollection(musicInstrumentsCollection);

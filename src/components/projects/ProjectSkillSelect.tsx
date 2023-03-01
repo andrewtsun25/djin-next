@@ -1,6 +1,7 @@
-import React from "react";
-import { MultiSelect } from "../select";
 import { useMediaQuery, useTheme } from "@mui/material";
+import React from "react";
+
+import { MultiSelect } from "../select";
 
 interface ProjectSkillSelectProps {
   skills: string[];

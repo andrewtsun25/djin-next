@@ -1,7 +1,8 @@
+import { identity } from "lodash";
 import React from "react";
+
 import { EmploymentType } from "../../types/api";
 import { MultiSelect } from "../select";
-import { identity } from "lodash";
 
 interface EmploymentTypeSelectProps {
   selectedEmploymentTypes: EmploymentType[];

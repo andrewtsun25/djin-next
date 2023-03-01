@@ -1,19 +1,20 @@
+import { QueryConstraint } from "@firebase/firestore";
 import {
   CollectionReference,
   getDocs,
-  query,
   Query,
+  query,
   QuerySnapshot,
 } from "firebase/firestore";
-import { QueryConstraint } from "@firebase/firestore";
+
+import createListerAsyncMapperFunction, {
+  ListerAsyncMapperFunction,
+} from "./createListerAsyncMapperFunction";
 import {
   AsyncMapperFunction,
   identityMapper,
   MapperFunction,
 } from "./mapperFunction";
-import createListerAsyncMapperFunction, {
-  ListerAsyncMapperFunction,
-} from "./createListerAsyncMapperFunction";
 
 export type ListerForFirestoreCollection<ApiType> = () => Promise<ApiType[]>;
 

@@ -1,3 +1,9 @@
+import DescriptionIcon from "@mui/icons-material/Description";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import MusicNoteIcon from "@mui/icons-material/MusicNote";
+import ShopIcon from "@mui/icons-material/Shop";
+import WebIcon from "@mui/icons-material/Web";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import {
   Container,
   Fade,
@@ -7,13 +13,9 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import DescriptionIcon from "@mui/icons-material/Description";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import MusicNoteIcon from "@mui/icons-material/MusicNote";
-import ShopIcon from "@mui/icons-material/Shop";
-import WebIcon from "@mui/icons-material/Web";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+import Head from "next/head";
 import React from "react";
+
 import {
   ReclaimerBackground,
   ReclaimerCenteredGrid,
@@ -25,7 +27,6 @@ import {
   ReclaimerTitle,
 } from "../../../src/components/reclaimer/styled";
 import { Urls } from "../../../src/const/url";
-import Head from "next/head";
 
 const gameImg = `${Urls.AssetRoot}/reclaimer/img/reclaimer_game.png`;
 const reclaimerWebsite = "https://alextomkow.itch.io/reclaimer";

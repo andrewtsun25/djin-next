@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import React from "react";
+
 import BulletPoints, { BULLET_POINT_ROLE } from "./BulletPoints";
 
 describe("BulletPoints", () => {

@@ -1,13 +1,14 @@
-import { Project } from "../../types/api";
-import React from "react";
-import { CardContent, Typography } from "@mui/material";
-import { DurationWithOrganizationCardHeader } from "../card";
-import { BulletPoints, IconLink } from "../text";
-import SkillChips from "../text/SkillChips";
-import { map } from "lodash";
-import { StorybookIcon } from "../icons";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkIcon from "@mui/icons-material/Link";
+import { CardContent, Typography } from "@mui/material";
+import { map } from "lodash";
+import React from "react";
+
+import { Project } from "../../types/api";
+import { DurationWithOrganizationCardHeader } from "../card";
+import { StorybookIcon } from "../icons";
+import { BulletPoints, IconLink } from "../text";
+import SkillChips from "../text/SkillChips";
 import {
   ProjectCardContainer,
   ProjectCardMedia,

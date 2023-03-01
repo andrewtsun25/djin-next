@@ -1,4 +1,3 @@
-import React, { HTMLAttributeAnchorTarget } from "react";
 import {
   ListItemButton,
   ListItemIcon,
@@ -6,6 +5,8 @@ import {
   SxProps,
   Theme,
 } from "@mui/material";
+import React, { HTMLAttributeAnchorTarget } from "react";
+
 import { NextLinkComposed, NextLinkComposedProps } from "./NextLinkComposed";
 
 interface HyperlistLinkItemProps {

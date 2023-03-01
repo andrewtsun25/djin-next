@@ -1,4 +1,5 @@
 import { DocumentReference, Timestamp } from "firebase/firestore";
+
 import { MartialArtsStudio } from "../api";
 
 export interface MartialArtsStyleDbEntity {

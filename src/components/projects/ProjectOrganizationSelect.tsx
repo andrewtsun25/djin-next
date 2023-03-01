@@ -1,7 +1,8 @@
+import { Chip, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
+
 import { Organization } from "../../types/api";
 import { MultiSelect } from "../select";
-import { Chip, useMediaQuery, useTheme } from "@mui/material";
 
 interface ProjectOrganizationSelectProps {
   organizations: Organization[];

@@ -1,10 +1,11 @@
-import { Employment } from "../../types/api";
-import React from "react";
+import AppsIcon from "@mui/icons-material/Apps";
 import { CardContent, Typography } from "@mui/material";
+import React from "react";
+
+import { Employment } from "../../types/api";
+import { DurationWithOrganizationCardHeader } from "../card";
 import { BulletPoints, IconLink } from "../text";
 import SkillChips from "../text/SkillChips";
-import AppsIcon from "@mui/icons-material/Apps";
-import { DurationWithOrganizationCardHeader } from "../card";
 import {
   EmploymentCardContainer,
   EmploymentCardMedia,

@@ -1,4 +1,5 @@
 import { DocumentReference, Timestamp } from "firebase/firestore";
+
 import { Organization } from "../api";
 
 export interface HbvResearchPaperDbEntity {

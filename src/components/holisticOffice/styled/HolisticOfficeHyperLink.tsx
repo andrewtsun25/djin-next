@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { styled } from "@mui/material/styles";
+import Link from "next/link";
 
 const HOLISTIC_OFFICE_LINK_COLOR = "#308575";
 

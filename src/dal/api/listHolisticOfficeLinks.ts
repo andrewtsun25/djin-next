@@ -1,9 +1,10 @@
 import { orderBy } from "firebase/firestore";
+
 import { HolisticOfficeLink } from "../../types/api";
 import {
   createListerForFirestoreCollection,
-  ListerForFirestoreCollection,
   holisticOfficeLinksCollection,
+  ListerForFirestoreCollection,
 } from "../firestore";
 
 const listHolisticOfficeLinks: ListerForFirestoreCollection<HolisticOfficeLink> =

@@ -1,5 +1,6 @@
 import { DocumentSnapshot } from "firebase/firestore";
 import { isNil } from "lodash";
+
 import { AsyncMapperFunction, MapperFunction } from "./mapperFunction";
 
 export type GetterAsyncMapperFunction<DbType, ApiType = DbType> = (

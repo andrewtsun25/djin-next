@@ -1,4 +1,6 @@
 import { SxProps, Theme } from "@mui/material";
+import { Property } from "csstype";
+import Image from "next/image";
 import React from "react";
 
 import {
@@ -6,9 +8,6 @@ import {
   ResponsiveGridItemImageListItem,
   ResponsiveGridItemImageListItemBar,
 } from "./styled";
-
-import Image from "next/image";
-import { Property } from "csstype";
 import ObjectFit = Property.ObjectFit;
 import { useRouter } from "next/router";
 

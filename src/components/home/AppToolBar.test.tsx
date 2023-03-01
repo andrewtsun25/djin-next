@@ -1,6 +1,7 @@
 import { fireEvent, render } from "@testing-library/react";
-import AppToolBar, { MENU_BUTTON_ROLE } from "./AppToolBar";
 import * as nextRouter from "next/router";
+
+import AppToolBar, { MENU_BUTTON_ROLE } from "./AppToolBar";
 
 const mockNextRouter = nextRouter as unknown as {
   useRouter: () => { asRouter: string };

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { styled } from "@mui/material/styles";
+import Image from "next/image";
 
 const ReclaimerImage = styled(Image)(({ theme }) => ({
   maxWidth: "100%",

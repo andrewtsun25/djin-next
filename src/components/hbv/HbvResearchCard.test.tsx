@@ -1,5 +1,6 @@
-import { HbvResearchPaper, Organization } from "../../types/api";
 import { render } from "@testing-library/react";
+
+import { HbvResearchPaper, Organization } from "../../types/api";
 import HbvResearchCard from "./HbvResearchCard";
 
 describe("HbvResearchCard", () => {

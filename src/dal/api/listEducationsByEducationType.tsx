@@ -1,20 +1,21 @@
 import { orderBy, where } from "firebase/firestore";
+import { isNil, memoize } from "lodash";
+
 import {
   Education,
   EducationType,
   Organization,
   StudentOrganization,
 } from "../../types/api";
+import { EducationDbEntity } from "../../types/db";
 import {
   AsyncMapperFunction,
   createListerForFirestoreCollection,
   ListerForFirestoreCollection,
 } from "../firestore";
 import { educationsCollection } from "../firestore/collections";
-import { isNil, memoize } from "lodash";
-import { EducationDbEntity } from "../../types/db";
-import listStudentOrganizationsByEducationType from "./listStudentOrganizationsForEducation";
 import getOrganization from "./getOrganization";
+import listStudentOrganizationsByEducationType from "./listStudentOrganizationsForEducation";
 
 // Memoize creation of mapper function to prevent re-declaration per fetch
 const mapEducationDbEntityToEducation: AsyncMapperFunction<

@@ -1,18 +1,19 @@
 import { Fade } from "@mui/material";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import Head from "next/head";
+
 import {
   HbvBackground,
   HbvContentTypography,
   HbvItalicizedTypography,
   HbvLink,
-  HbvTitle,
+  HbvPageContentContainer,
   HbvResearchCard,
   HbvResearchCardList,
-  HbvPageContentContainer,
+  HbvTitle,
 } from "../../../src/components/hbv";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { HbvResearchPaper } from "../../../src/types/api";
 import { listHbvResearchPapers } from "../../../src/dal/api";
-import Head from "next/head";
+import { HbvResearchPaper } from "../../../src/types/api";
 
 const HEP_B_LINK = "https://med.stanford.edu/liver/education/whatishepb.html";
 

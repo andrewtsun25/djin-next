@@ -1,6 +1,7 @@
+import { Box, Typography } from "@mui/material";
 import Link, { LinkProps } from "next/link";
 import React, { HTMLAttributeAnchorTarget } from "react";
-import { Box, Typography } from "@mui/material";
+
 import { IconLinkContentContainer } from "./styled";
 
 const ICON_LINK_ARIA_LABEL = "Hyperlink With Icon";

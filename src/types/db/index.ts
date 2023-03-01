@@ -1,5 +1,5 @@
-import type { EmploymentDbEntity } from "./EmploymentDbEntity";
 import type { EducationDbEntity } from "./EducationDbEntity";
+import type { EmploymentDbEntity } from "./EmploymentDbEntity";
 import type { HbvResearchPaperDbEntity } from "./HbvResearchPaperDbEntity";
 import type { HolisticOfficeLinkDbEntity } from "./HolisticOfficeLinkDbEntity";
 import type { MartialArtsStudioDbEntity } from "./MartialArtsStudioDbEntity";
@@ -14,8 +14,8 @@ export type {
   EmploymentDbEntity,
   HbvResearchPaperDbEntity,
   HolisticOfficeLinkDbEntity,
-  MartialArtsStyleDbEntity,
   MartialArtsStudioDbEntity,
+  MartialArtsStyleDbEntity,
   MusicInstrumentDbEntity,
   MusicScoreDbEntity,
   OrganizationDbEntity,

@@ -1,14 +1,15 @@
 import { orderBy } from "firebase/firestore";
-import { EmploymentDbEntity } from "../../types/db";
-import getOrganization from "./getOrganization";
-import { Employment, EmploymentType, Organization } from "../../types/api";
 import { isNil } from "lodash";
+
+import { Employment, EmploymentType, Organization } from "../../types/api";
+import { EmploymentDbEntity } from "../../types/db";
 import {
   AsyncMapperFunction,
   createListerForFirestoreCollection,
   ListerForFirestoreCollection,
 } from "../firestore";
 import { employmentsCollection } from "../firestore/collections";
+import getOrganization from "./getOrganization";
 
 const mapEmploymentDbEntityToEmployment: AsyncMapperFunction<
   EmploymentDbEntity,

@@ -1,11 +1,11 @@
 import { Organization } from "../../types/api";
+import { OrganizationDbEntity } from "../../types/db";
 import {
   createGetterByIdForFirestoreCollection,
   GetterByIdForFirestoreCollection,
   MapperFunction,
   organizationsCollection,
 } from "../firestore";
-import { OrganizationDbEntity } from "../../types/db";
 
 const mapOrganizationDbEntityToOrganization: MapperFunction<
   OrganizationDbEntity,

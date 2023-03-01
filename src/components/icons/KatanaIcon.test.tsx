@@ -1,4 +1,5 @@
 import {render} from "@testing-library/react";
+
 import {KatanaIcon} from "./KatanaIcon";
 
 describe("KatanaIcon", () => {

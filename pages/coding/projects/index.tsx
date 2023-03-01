@@ -1,21 +1,22 @@
-import { Organization, Project } from "../../../src/types/api";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { listProjects } from "../../../src/dal/api";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import Head from "next/head";
-import {
-  ProjectsBackground,
-  ProjectSelectionContainer,
-  ProjectsPageTitle,
-} from "../../../src/components/projects/styled";
 import { Grid } from "@mui/material";
+import { isNil, sortBy, uniq, uniqBy } from "lodash";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+
 import {
   ProjectCard,
   ProjectOrganizationSelect,
   ProjectSkillSelect,
 } from "../../../src/components/projects";
-import { isNil, sortBy, uniq, uniqBy } from "lodash";
-import { useRouter } from "next/router";
+import {
+  ProjectsBackground,
+  ProjectSelectionContainer,
+  ProjectsPageTitle,
+} from "../../../src/components/projects/styled";
+import { listProjects } from "../../../src/dal/api";
+import { Organization, Project } from "../../../src/types/api";
 
 const SKILLS_QUERY_PARAM = "skills";
 const ORGANIZATIONS_QUERY_PARAM = "organizations";

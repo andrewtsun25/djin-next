@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
 import { isNil } from "lodash";
 import { DateTime, Duration } from "luxon";
+import React, { useEffect, useMemo, useState } from "react";
+
 import { Employment } from "../../types/api";
 import { EmploymentText } from "./styled";
 

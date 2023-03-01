@@ -1,8 +1,9 @@
-import Head from "next/head";
 import { Container } from "@mui/material";
+import Head from "next/head";
 import React from "react";
-import { SoundCloudWidget } from "../../../src/components/music";
+
 import { EdmBackground, EdmTitle } from "../../../src/components/edm/styled";
+import { SoundCloudWidget } from "../../../src/components/music";
 
 const EDM_SOUND_CLOUD_PLAYLIST_URL =
   "https://api.soundcloud.com/playlists/545171379";

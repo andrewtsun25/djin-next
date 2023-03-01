@@ -1,5 +1,6 @@
-import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
+
 import { Urls } from "../../../const/url";
 
 const employmentBackgroundUrl = `${Urls.AssetRoot}/employment/bg/office_bg.png`;

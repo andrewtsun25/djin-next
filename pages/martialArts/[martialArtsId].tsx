@@ -1,12 +1,4 @@
 import {
-  MartialArtsBackground,
-  MartialArtsStudioGridTile,
-} from "../../src/components/martialArts";
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import { getMartialArtsStyle } from "../../src/dal/api";
-import { MartialArtsStudio, MartialArtsStyle } from "../../src/types/api";
-import { isNil } from "lodash";
-import {
   Fade,
   Grid,
   Grow,
@@ -14,7 +6,15 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import MartialArtsContentContainer from "../../src/components/martialArts/styled/MartialArtsContentContainer";
+import { isNil } from "lodash";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { ParsedUrlQuery } from "querystring";
+import React from "react";
+
+import {
+  MartialArtsBackground,
+  MartialArtsStudioGridTile,
+} from "../../src/components/martialArts";
 import {
   MartialArtsBlackBeltRank,
   MartialArtsDescription,
@@ -28,10 +28,11 @@ import {
   MartialArtsStudioGridSection,
   MartialArtsStudioGridTitle,
 } from "../../src/components/martialArts/styled";
+import MartialArtsContentContainer from "../../src/components/martialArts/styled/MartialArtsContentContainer";
 import MartialArtsImageSection from "../../src/components/martialArts/styled/MartialArtsImageSection";
-import { ParsedUrlQuery } from "querystring";
-import React from "react";
 import { ResponsiveGrid } from "../../src/components/responsiveGrid";
+import { getMartialArtsStyle } from "../../src/dal/api";
+import { MartialArtsStudio, MartialArtsStyle } from "../../src/types/api";
 
 interface MartialArtsPageProps {
   martialArtsStyle: MartialArtsStyle;
