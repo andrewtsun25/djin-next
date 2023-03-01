@@ -75,7 +75,7 @@ exports[`SiteLayout renders 1`] = `
     >
       <div
         aria-hidden="true"
-        class="MuiBackdrop-root css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop"
+        class="MuiBackdrop-root MuiModal-backdrop css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop"
         style="opacity: 0; visibility: hidden;"
       />
       <div
