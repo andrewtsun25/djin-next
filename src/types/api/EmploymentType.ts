@@ -1,6 +1,6 @@
-enum JobType {
+enum EmploymentType {
   FullTime = "Full-Time",
   Internship = "Internship",
 }
 
-export { JobType };
+export { EmploymentType };

@@ -49,7 +49,6 @@ const SoundCloudWidget: React.FC<SoundCloudPlayerProps> = ({
     playerUrl.searchParams.append("show_user", showUser.toString());
     playerUrl.searchParams.append("single_active", singleActive.toString());
     playerUrl.searchParams.append("start_track", startTrack.toString());
-    console.log("playerUrl: ", playerUrl.toString());
     return playerUrl;
   }, [
     url,

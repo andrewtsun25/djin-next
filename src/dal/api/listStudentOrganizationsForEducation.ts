@@ -1,5 +1,5 @@
 import { collection, orderBy } from "firebase/firestore";
-import { EduType, StudentOrganization } from "../../types/api";
+import { EducationType, StudentOrganization } from "../../types/api";
 import {
   createListerForFirestoreCollection,
   ListerForFirestoreCollection,

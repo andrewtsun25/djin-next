@@ -1,5 +1,5 @@
 import { Organization } from "./Organization";
-import { JobType } from "./JobType";
+import { EmploymentType } from "./EmploymentType";
 
 export interface Employment {
   organization: Organization;
@@ -12,5 +12,5 @@ export interface Employment {
   skills: string[];
   skillTypes: string[];
   domains: string[];
-  jobType: JobType;
+  employmentType: EmploymentType;
 }

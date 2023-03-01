@@ -1,4 +1,4 @@
-export enum EduType {
+export enum EducationType {
   CODING = "coding",
   MUSIC = "music",
 }

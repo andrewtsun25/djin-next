@@ -17,6 +17,8 @@ import {
   MartialArtsStyleDbEntity,
   MusicInstrumentDbEntity,
   MusicScoreDbEntity,
+  OrganizationDbEntity,
+  ProjectDbEntity,
 } from "../../types/db";
 import CollectionNames from "../../const/collectionNames";
 
@@ -45,8 +47,11 @@ const musicInstrumentsCollection: CollectionReference<MusicInstrumentDbEntity> =
   collectionReferenceOf(CollectionNames.Music.Instruments);
 const musicScoresCollection: CollectionReference<MusicScoreDbEntity> =
   collectionReferenceOf(CollectionNames.Music.Scores);
-const organizationsCollection: CollectionReference<Organization> =
+const organizationsCollection: CollectionReference<OrganizationDbEntity> =
   collectionReferenceOf(CollectionNames.Shared.Organizations);
+
+const projectsCollection: CollectionReference<ProjectDbEntity> =
+  collectionReferenceOf(CollectionNames.Project.Projects);
 
 export {
   educationsCollection,
@@ -59,4 +64,5 @@ export {
   musicInstrumentsCollection,
   musicScoresCollection,
   organizationsCollection,
+  projectsCollection,
 };

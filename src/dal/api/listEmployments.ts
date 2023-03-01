@@ -1,7 +1,7 @@
 import { orderBy } from "firebase/firestore";
 import { EmploymentDbEntity } from "../../types/db";
 import getOrganization from "./getOrganization";
-import { Employment, JobType, Organization } from "../../types/api";
+import { Employment, EmploymentType, Organization } from "../../types/api";
 import { isNil } from "lodash";
 import {
   AsyncMapperFunction,
@@ -19,7 +19,7 @@ const mapEmploymentDbEntityToEmployment: AsyncMapperFunction<
     responsibilities,
     startDate,
     endDate,
-    jobType,
+    jobType: employmentType,
     ...rest
   } = dbEntity;
   const organization: Organization | null = await getOrganization(
@@ -34,7 +34,7 @@ const mapEmploymentDbEntityToEmployment: AsyncMapperFunction<
     organization,
     startDate: startDate.toDate(),
     endDate: endDate?.toDate(),
-    jobType: jobType as JobType,
+    employmentType: employmentType as EmploymentType,
     responsibilities: responsibilities ?? [],
     ...rest,
   };
