@@ -1,20 +1,23 @@
 import React from "react";
-import { JobType } from "../../types/api";
+import { EmploymentType } from "../../types/api";
 import { MultiSelect } from "../select";
 import { identity } from "lodash";
 
 interface EmploymentTypeSelectProps {
-  selectedEmploymentTypes: JobType[];
-  setSelectedEmploymentTypes(jobType: JobType[]): void;
+  selectedEmploymentTypes: EmploymentType[];
+  setSelectedEmploymentTypes(employmentType: EmploymentType[]): void;
 }
 
-const employmentTypes: JobType[] = [JobType.FullTime, JobType.Internship];
+const employmentTypes: EmploymentType[] = [
+  EmploymentType.FullTime,
+  EmploymentType.Internship,
+];
 const EmploymentTypeSelect: React.FC<EmploymentTypeSelectProps> = ({
   selectedEmploymentTypes,
   setSelectedEmploymentTypes,
 }: EmploymentTypeSelectProps) => {
   const handleChange = (_: React.SyntheticEvent, value: string[]) => {
-    setSelectedEmploymentTypes(value.map((v) => v as JobType));
+    setSelectedEmploymentTypes(value.map((v) => v as EmploymentType));
   };
   return (
     <MultiSelect

@@ -12,7 +12,7 @@ import type { MartialArtsStyle } from "./MartialArtsStyle";
 import { MartialArtsStyleType } from "./MartialArtsStyleType";
 import type { MusicScore } from "./MusicScore";
 import type { MusicInstrument } from "./MusicInstrument";
-import { JobType } from "./JobType";
+import { EmploymentType } from "./EmploymentType";
 import type { Project } from "./Project";
 import type { StudentOrganization } from "./StudentOrganization";
 
@@ -32,7 +32,7 @@ export type {
 };
 export {
   EducationType,
-  JobType,
+  EmploymentType,
   HolisticOfficeLinkType,
   MusicInstrumentType,
   MartialArtsStyleType,

@@ -25,7 +25,7 @@ const EmploymentCard: React.FC<EmploymentCardProps> = ({
     description,
     responsibilities,
     skills,
-    jobType,
+    employmentType,
   },
 }: EmploymentCardProps) => (
   <EmploymentCardContainer variant="outlined">
@@ -38,7 +38,7 @@ const EmploymentCard: React.FC<EmploymentCardProps> = ({
     />
     <EmploymentCardMedia image={mediaUrl} />
     <CardContent>
-      <EmploymentJobChip label={jobType} size="small" />
+      <EmploymentJobChip label={employmentType} size="small" />
       <IconLink
         icon={<AppsIcon />}
         text="Projects"

@@ -1,7 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import React, { useMemo, useState } from "react";
-import { Employment, JobType } from "../../../src/types/api";
+import React, { useMemo } from "react";
+import { Employment, EmploymentType } from "../../../src/types/api";
 import { listEmployments } from "../../../src/dal/api";
 import {
   EmploymentBackground,
@@ -41,18 +41,18 @@ const EMPLOYMENT_TYPES_QUERY_PARAM = "employmentTypes";
 
 const EmploymentPage = ({ employments }: EmploymentNextPageProps) => {
   const router = useRouter();
-  const selectedEmploymentTypes: JobType[] = useMemo(() => {
+  const selectedEmploymentTypes: EmploymentType[] = useMemo(() => {
     const { [EMPLOYMENT_TYPES_QUERY_PARAM]: employmentTypesInQuery } =
       router.query;
     return Array.isArray(employmentTypesInQuery)
-      ? employmentTypesInQuery.map((et) => et as JobType)
+      ? employmentTypesInQuery.map((et) => et as EmploymentType)
       : !isNil(employmentTypesInQuery)
       ? decodeURIComponent(employmentTypesInQuery)
           .split(",")
-          .map((et) => et as JobType)
+          .map((et) => et as EmploymentType)
       : [];
   }, [router.query]);
-  const setSelectedEmploymentTypes = (newEmploymentTypes: JobType[]) => {
+  const setSelectedEmploymentTypes = (newEmploymentTypes: EmploymentType[]) => {
     // Determine new query parameters
     const newQueryParams: Record<string, string> = {};
     // Only include employment types in query string if they exist.
@@ -70,7 +70,7 @@ const EmploymentPage = ({ employments }: EmploymentNextPageProps) => {
       employments.filter((employment) =>
         selectedEmploymentTypes.length < 1
           ? true // bypass filter if no employment type specified
-          : selectedEmploymentTypes.includes(employment.jobType)
+          : selectedEmploymentTypes.includes(employment.employmentType)
       ),
     [selectedEmploymentTypes, employments]
   );
