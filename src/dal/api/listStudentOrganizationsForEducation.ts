@@ -2,7 +2,7 @@ import { collection, orderBy } from "firebase/firestore";
 import { memoize } from "lodash";
 
 import CollectionNames from "../../const/collectionNames";
-import { EducationType, StudentOrganization } from "../../types/api";
+import { StudentOrganization } from "../../types/api";
 import {
   createListerForFirestoreCollection,
   ListerForFirestoreCollection,

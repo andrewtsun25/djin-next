@@ -3,7 +3,7 @@ import { isNil, sortBy, uniq, uniqBy } from "lodash";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 
 import {
   ProjectCard,

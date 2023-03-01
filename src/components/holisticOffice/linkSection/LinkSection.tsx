@@ -1,7 +1,7 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 
-import { HolisticOfficeLink, HolisticOfficeLinkType } from "../../../types/api";
+import { HolisticOfficeLink } from "../../../types/api";
 import {
   HolisticOfficeLinkSectionContainer,
   HolisticOfficeLinkSectionTitle,

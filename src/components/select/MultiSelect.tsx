@@ -29,7 +29,6 @@ function MultiSelect<
 >({
   inputLabel,
   inputPlaceholder,
-  getOptionLabel,
   ...rest
 }: MultiSelectProps<T, DisableClearable, FreeSolo>): ReactElement<
   MultiSelectProps<T, DisableClearable, FreeSolo>

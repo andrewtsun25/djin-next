@@ -4,8 +4,6 @@ import React, { HTMLAttributeAnchorTarget } from "react";
 
 import { IconLinkContentContainer } from "./styled";
 
-const ICON_LINK_ARIA_LABEL = "Hyperlink With Icon";
-
 interface IconLinkProps extends LinkProps {
   icon: JSX.Element;
   text: string;

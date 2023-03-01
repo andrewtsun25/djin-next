@@ -5,11 +5,7 @@ import {
 } from "firebase/firestore";
 
 import CollectionNames from "../../const/collectionNames";
-import {
-  HolisticOfficeLink,
-  HolisticOfficeModule,
-  Organization,
-} from "../../types/api";
+import { HolisticOfficeLink, HolisticOfficeModule } from "../../types/api";
 import {
   EducationDbEntity,
   EmploymentDbEntity,

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HolisticOfficeLink, HolisticOfficeLinkType } from "../../../types/api";
+import { HolisticOfficeLink } from "../../../types/api";
 import { HolisticOfficeLinkListIconLink } from "../styled";
 import HolisticOfficeLinkListUnorderedList from "../styled/HolisticOfficeLinkListUnorderedList";
 

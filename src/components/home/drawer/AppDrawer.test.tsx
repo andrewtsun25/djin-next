@@ -21,6 +21,4 @@ describe("AppDrawer", () => {
     fireEvent.click(closeButton);
     expect(setIsAppDrawerOpen).toHaveBeenCalledWith(false);
   });
-
-  it("closes the drawer", () => {});
 });

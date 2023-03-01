@@ -77,15 +77,4 @@ describe("AppToolBar", () => {
     const menuButton = queryByRole(MENU_BUTTON_ROLE);
     expect(menuButton).toBeNull();
   });
-
-  it("renders with a sticky header if the app isn't on the home page", () => {
-    mockNextRouter.useRouter = createUseRouter("/");
-    const isAppDrawerOpen = true;
-    const { queryByRole } = render(
-      <AppToolBar
-        isAppDrawerOpen={isAppDrawerOpen}
-        setIsAppDrawerOpen={setIsAppDrawerOpen}
-      />
-    );
-  });
 });
