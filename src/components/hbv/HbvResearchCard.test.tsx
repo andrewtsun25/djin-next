@@ -1,5 +1,6 @@
-import { HbvResearchPaper, Organization } from "../../types/api";
 import { render } from "@testing-library/react";
+
+import { HbvResearchPaper } from "../../types/api";
 import HbvResearchCard from "./HbvResearchCard";
 
 describe("HbvResearchCard", () => {
@@ -7,6 +8,7 @@ describe("HbvResearchCard", () => {
     const hbvResearchPaper: HbvResearchPaper = {
       name: "Name",
       organization: {
+        id: "id",
         name: "Organization",
         logoUrl: "https://via.placeholder.com/300.png",
       },

@@ -1,7 +1,8 @@
+import LaunchIcon from "@mui/icons-material/Launch";
 import React from "react";
+
 import { MartialArtsStudio } from "../../types/api";
 import { ResponsiveGridItem } from "../responsiveGrid";
-import LaunchIcon from "@mui/icons-material/Launch";
 
 interface MartialArtsStudioGridTileProps {
   studio: MartialArtsStudio;

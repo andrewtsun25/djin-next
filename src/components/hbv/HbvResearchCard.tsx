@@ -1,12 +1,13 @@
+import DescriptionIcon from "@mui/icons-material/Description";
 import { CardContent, Slide, Typography } from "@mui/material";
+import React from "react";
+
 import { BulletPoints } from "../../components/text";
 import { HbvResearchPaper } from "../../types/api";
-import DescriptionIcon from "@mui/icons-material/Description";
-import React from "react";
-import HbvResearchCardIconLink from "./styled/HbvResearchCardIconLink";
-import HbvResearchCardContainer from "./styled/HbvResearchCardContainer";
 import { DurationWithOrganizationCardHeader } from "../card";
 import SkillChips from "../text/SkillChips";
+import HbvResearchCardContainer from "./styled/HbvResearchCardContainer";
+import HbvResearchCardIconLink from "./styled/HbvResearchCardIconLink";
 
 interface HbvResearchCardProps {
   hbvResearchPaper: HbvResearchPaper;

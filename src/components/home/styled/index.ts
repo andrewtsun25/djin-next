@@ -1,5 +1,5 @@
-import AppDrawerContainer, { appDrawerWidth } from "./AppDrawerContainer";
 import AppDrawerCloseButtonContainer from "./AppDrawerCloseButtonContainer";
+import AppDrawerContainer, { appDrawerWidth } from "./AppDrawerContainer";
 import AppToolBarBrandContainer from "./AppToolBarBrandContainer";
 import AppToolBarLogo from "./AppToolBarLogo";
 import CollapsibleListHyperLinkListItem from "./CollapsibleListHyperLinkListItem";
@@ -9,9 +9,9 @@ import HomeTextContainer from "./HomeTextContainer";
 import HomeTitleTypography from "./HomeTitleTypography";
 
 export {
-  appDrawerWidth,
   AppDrawerCloseButtonContainer,
   AppDrawerContainer,
+  appDrawerWidth,
   AppToolBarBrandContainer,
   AppToolBarLogo,
   CollapsibleListHyperLinkListItem,

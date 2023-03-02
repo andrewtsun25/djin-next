@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
 import { isNil } from "lodash";
 import { DateTime, Duration } from "luxon";
+import React, { useEffect, useMemo, useState } from "react";
+
 import { Employment } from "../../types/api";
 import { EmploymentText } from "./styled";
 
@@ -39,9 +40,27 @@ const EmploymentDurationDisplay = ({
       )
       .normalize()
       .shiftTo("years", "months");
-    const years: number = totalDuration.get("years");
-    const months: number = Math.round(totalDuration.get("months"));
-    return `${years} year(s) and ${months} month(s)`;
+    let years: number = totalDuration.get("years");
+    let months: number = Math.round(totalDuration.get("months"));
+    // Add excess months into years, make sure months < 12
+    if (months >= 12) {
+      years += Math.floor(months / 12);
+      months = months % 12;
+    }
+    // Correctly pluralize years
+    const yearString =
+      years === 1 ? `${years} year` : years > 0 ? `${years} years` : "";
+    // Correctly pluralize months, don't show months if 0 months.
+    const monthString =
+      months === 1 ? `${months} month` : months > 0 ? `${months} months` : "";
+    // Correctly pluralize months, don't show months if 0 months and some years.
+    return yearString.length > 0 && monthString.length > 0
+      ? `${yearString} and ${monthString}`
+      : yearString.length > 0 && monthString.length === 0
+      ? yearString
+      : yearString.length === 0 && monthString.length === 0
+      ? "0 months"
+      : monthString; // yearString.length === 0 && monthString.length > 0
   }, [employments, currentTime]);
 
   // render

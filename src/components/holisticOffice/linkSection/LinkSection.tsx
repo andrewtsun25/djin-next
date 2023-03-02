@@ -1,11 +1,12 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
-import LinkList from "./LinkList";
+
+import { HolisticOfficeLink } from "../../../types/api";
 import {
   HolisticOfficeLinkSectionContainer,
   HolisticOfficeLinkSectionTitle,
 } from "../styled";
-import { HolisticOfficeLink, HolisticOfficeLinkType } from "../../../types/api";
+import LinkList from "./LinkList";
 
 interface LinkSectionProps {
   title: string;

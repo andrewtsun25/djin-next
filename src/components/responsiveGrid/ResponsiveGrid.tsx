@@ -1,15 +1,15 @@
 import {
   ImageList,
   ImageListItem,
-  useTheme,
-  useMediaQuery,
   SxProps,
   Theme,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import React, { ReactElement } from "react";
 
-import { ResponsiveGridContainer, ResponsiveGridTitle } from "./styled";
 import { SoundCloudWidget } from "../music";
+import { ResponsiveGridContainer, ResponsiveGridTitle } from "./styled";
 
 interface ResponsiveGridProps<T> {
   title?: string;

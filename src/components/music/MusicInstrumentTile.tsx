@@ -1,7 +1,8 @@
-import { MusicInstrument } from "../../types/api";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
-import { ResponsiveGridItem } from "../responsiveGrid";
 import React from "react";
+
+import { MusicInstrument } from "../../types/api";
+import { ResponsiveGridItem } from "../responsiveGrid";
 
 interface MusicInstrumentTileProps {
   musicInstrument: MusicInstrument;

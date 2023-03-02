@@ -1,13 +1,13 @@
 import { MartialArtsStudio, MartialArtsStyle } from "../../types/api";
+import { MartialArtsStyleDbEntity } from "../../types/db";
+import { isNotNil } from "../../util";
 import {
   AsyncMapperFunction,
   createGetterByIdForFirestoreCollection,
   GetterByIdForFirestoreCollection,
   martialArtsStylesCollection,
 } from "../firestore";
-import { MartialArtsStyleDbEntity } from "../../types/db";
 import getMartialArtsStudio from "./getMartialArtsStudio";
-import { isNotNil } from "../../util";
 
 const mapMartialArtsStyleDbEntityToMartialArtsStyle: AsyncMapperFunction<
   MartialArtsStyleDbEntity,

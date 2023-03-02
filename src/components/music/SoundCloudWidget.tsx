@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import { Property } from "csstype";
 
 // The props mirror the SoundCloud Widget API: https://developers.soundcloud.com/docs/api/html5-widget
 

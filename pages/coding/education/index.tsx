@@ -1,12 +1,13 @@
+import { Container } from "@mui/material";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import Head from "next/head";
+import React from "react";
+
+import { CodingEducationBackground } from "../../../src/components/coding/styled";
+import { EducationCard } from "../../../src/components/education";
+import { EducationPageTitle } from "../../../src/components/education/styled";
 import { listEducationsByEducationType } from "../../../src/dal/api";
 import { Education, EducationType } from "../../../src/types/api";
-import Head from "next/head";
-import { CodingEducationBackground } from "../../../src/components/coding/styled";
-import { Container } from "@mui/material";
-import { EducationPageTitle } from "../../../src/components/education/styled";
-import React from "react";
-import { EducationCard } from "../../../src/components/education";
 
 interface CodingEducationPageProps {
   educations: Education[];

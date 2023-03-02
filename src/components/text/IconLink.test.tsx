@@ -1,5 +1,6 @@
 import BugReportIcon from "@mui/icons-material/BugReport";
 import { render } from "@testing-library/react";
+
 import IconLink from "./IconLink";
 
 describe("IconLink", () => {

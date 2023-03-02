@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import { HomeBackground, HomeTextContainer } from "../src/components/home";
 import {
   HomeDescriptionTypography,

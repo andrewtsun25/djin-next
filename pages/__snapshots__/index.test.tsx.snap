@@ -6,7 +6,7 @@ exports[`Home Page renders 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="MuiBox-root css-5sxmmy"
+        class="MuiBox-root css-l5098g"
       >
         <div
           class="MuiBox-root css-59whaf"
@@ -27,7 +27,7 @@ exports[`Home Page renders 1`] = `
   </body>,
   "container": <div>
     <div
-      class="MuiBox-root css-5sxmmy"
+      class="MuiBox-root css-l5098g"
     >
       <div
         class="MuiBox-root css-59whaf"

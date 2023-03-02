@@ -1,3 +1,5 @@
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
 import {
   Collapse,
   List,
@@ -5,8 +7,6 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import ExpandLess from "@mui/icons-material/ExpandLess";
-import ExpandMore from "@mui/icons-material/ExpandMore";
 import React, { PropsWithChildren, useState } from "react";
 
 interface CollapsibleListPropsWithoutChildren {

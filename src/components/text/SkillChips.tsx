@@ -1,4 +1,5 @@
 import React from "react";
+
 import { SkillChip, SkillChipContainer } from "./styled";
 
 interface SkillChipsProps {

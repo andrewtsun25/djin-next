@@ -1,7 +1,8 @@
+import { identity } from "lodash";
 import React from "react";
+
 import { EmploymentType } from "../../types/api";
 import { MultiSelect } from "../select";
-import { identity } from "lodash";
 
 interface EmploymentTypeSelectProps {
   selectedEmploymentTypes: EmploymentType[];
@@ -21,7 +22,7 @@ const EmploymentTypeSelect: React.FC<EmploymentTypeSelectProps> = ({
   };
   return (
     <MultiSelect
-      sx={{ width: 350 }}
+      sx={{ width: 330, m: 1 }}
       options={employmentTypes}
       value={selectedEmploymentTypes}
       getOptionLabel={identity}

@@ -1,6 +1,7 @@
-import { HolisticOfficeModule } from "../../../types/api";
-import React from "react";
 import { Grow, Typography } from "@mui/material";
+import React from "react";
+
+import { HolisticOfficeModule } from "../../../types/api";
 import { HolisticOfficeModulePaper } from "../styled";
 
 interface ModuleInfoProps {

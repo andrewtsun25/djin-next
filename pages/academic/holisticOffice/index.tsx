@@ -1,30 +1,31 @@
+import DescriptionIcon from "@mui/icons-material/Description";
+import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
 import { Fade, Grow, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import Head from "next/head";
+import { useMemo } from "react";
+
 import {
   HolisticOfficeBackground,
+  HolisticOfficeHyperLink,
   HolisticOfficeImage,
   HolisticOfficeImageLink,
   HolisticOfficeImageLinkImage,
-  HolisticOfficeHyperLink,
   HolisticOfficePageContainer,
   HolisticOfficePageHeading,
 } from "../../../src/components/holisticOffice";
+import { LinkSection } from "../../../src/components/holisticOffice/linkSection";
+import { ModuleInfoGrid } from "../../../src/components/holisticOffice/modulesGrid";
 import { Urls } from "../../../src/const/url";
+import {
+  listHolisticOfficeLinks,
+  listHolisticOfficeModules,
+} from "../../../src/dal/api";
 import {
   HolisticOfficeLink,
   HolisticOfficeLinkType,
   HolisticOfficeModule,
 } from "../../../src/types/api";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import {
-  listHolisticOfficeLinks,
-  listHolisticOfficeModules,
-} from "../../../src/dal/api";
-import { ModuleInfoGrid } from "../../../src/components/holisticOffice/modulesGrid";
-import { useMemo } from "react";
-import { LinkSection } from "../../../src/components/holisticOffice/linkSection";
-import DescriptionIcon from "@mui/icons-material/Description";
-import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
-import Head from "next/head";
 
 const logoUrl = `${Urls.AssetRoot}/holisticOffice/logo/holistic_office_logo.png`;
 const websiteImg = `${Urls.AssetRoot}/holisticOffice/img/holistic_office_website.png`;

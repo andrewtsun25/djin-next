@@ -1,5 +1,6 @@
-import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
+
 import { Urls } from "../../../const/url";
 
 const codingEducationBackgroundUrl = `${Urls.AssetRoot}/education/bg/hogwarts_bg.jpg`;

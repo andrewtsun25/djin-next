@@ -1,21 +1,23 @@
-import { Organization, Project } from "../../../src/types/api";
+import { Grid } from "@mui/material";
+import { isNil, sortBy, uniq, uniqBy } from "lodash";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { listProjects } from "../../../src/dal/api";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import React, { useMemo } from "react";
+
+import {
+  ProjectCard,
+  ProjectCount,
+  ProjectOrganizationSelect,
+  ProjectSkillSelect,
+} from "../../../src/components/projects";
 import {
   ProjectsBackground,
   ProjectSelectionContainer,
   ProjectsPageTitle,
 } from "../../../src/components/projects/styled";
-import { Grid } from "@mui/material";
-import {
-  ProjectCard,
-  ProjectOrganizationSelect,
-  ProjectSkillSelect,
-} from "../../../src/components/projects";
-import { isNil, sortBy, uniq, uniqBy } from "lodash";
-import { useRouter } from "next/router";
+import { listProjects } from "../../../src/dal/api";
+import { Organization, Project } from "../../../src/types/api";
 
 const SKILLS_QUERY_PARAM = "skills";
 const ORGANIZATIONS_QUERY_PARAM = "organizations";
@@ -138,6 +140,7 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
             selectedSkills={selectedSkills}
             setSelectedSkills={setSelectedSkills}
           />
+          <ProjectCount projects={selectedProjects} />
         </ProjectSelectionContainer>
         <Grid container direction="row">
           {selectedProjects.map((project) => (

@@ -1,23 +1,24 @@
+import { Grid } from "@mui/material";
+import { isNil } from "lodash";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React, { useMemo } from "react";
-import { Employment, EmploymentType } from "../../../src/types/api";
-import { listEmployments } from "../../../src/dal/api";
-import {
-  EmploymentBackground,
-  EmploymentPageTitle,
-  EmploymentText,
-  EmploymentResumeLink,
-  EmploymentPageHeaderContainer,
-} from "../../../src/components/employment/styled";
+
 import {
   EmploymentCard,
   EmploymentDurationDisplay,
   EmploymentTypeSelect,
 } from "../../../src/components/employment";
-import { Grid } from "@mui/material";
-import { useRouter } from "next/router";
-import { isNil } from "lodash";
+import {
+  EmploymentBackground,
+  EmploymentPageHeaderContainer,
+  EmploymentPageTitle,
+  EmploymentResumeLink,
+  EmploymentText,
+} from "../../../src/components/employment/styled";
+import { listEmployments } from "../../../src/dal/api";
+import { Employment, EmploymentType } from "../../../src/types/api";
 
 interface EmploymentPageProps {
   employments: Employment[];
@@ -80,11 +81,11 @@ const EmploymentPage = ({ employments }: EmploymentNextPageProps) => {
         <title>d.jin - Employment</title>
       </Head>
       <EmploymentBackground>
+        <EmploymentPageTitle variant="h2">
+          Coding Employment
+        </EmploymentPageTitle>
         <EmploymentPageHeaderContainer>
-          <EmploymentPageTitle variant="h2">
-            Coding Employment
-          </EmploymentPageTitle>
-          <EmploymentText>
+          <EmploymentText sx={{ m: 2 }}>
             A more official, detailed résumé can be obtained{" "}
             <EmploymentResumeLink
               href={RESUME_URL}

@@ -1,10 +1,11 @@
-import React from "react";
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import React from "react";
+
 import logo from "../../../public/logos/logo.png";
 import { AppToolBarBrandContainer, AppToolBarLogo } from "./styled";
-import { useRouter } from "next/router";
 
 interface AppToolBarProps {
   isAppDrawerOpen: boolean;

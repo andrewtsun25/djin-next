@@ -1,16 +1,17 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { listMusicScores } from "../../../src/dal/api";
-import { MusicInstrument, MusicScore } from "../../../src/types/api";
-import Head from "next/head";
 import { alpha, Container, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/system";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import Head from "next/head";
 import React from "react";
+
+import { MusicInstrumentTile } from "../../../src/components/music";
 import {
   ScoresBackground,
   ScoresTitle,
 } from "../../../src/components/music/styled";
-import { MusicInstrumentTile } from "../../../src/components/music";
-import { useTheme } from "@mui/system";
 import { ResponsiveGrid } from "../../../src/components/responsiveGrid";
+import { listMusicScores } from "../../../src/dal/api";
+import { MusicInstrument, MusicScore } from "../../../src/types/api";
 
 interface ScoresPageProps {
   scores: MusicScore[];

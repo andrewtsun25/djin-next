@@ -1,8 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 import { FirebaseOptions } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 const config: FirebaseOptions = {
   apiKey: process.env.FIREBBASE_API_KEY,

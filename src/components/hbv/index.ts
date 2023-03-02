@@ -1,21 +1,21 @@
+import HbvResearchCard from "./HbvResearchCard";
 import {
   HbvBackground,
   HbvContentTypography,
   HbvItalicizedTypography,
   HbvLink,
-  HbvTitle,
-  HbvResearchCardList,
   HbvPageContentContainer,
+  HbvResearchCardList,
+  HbvTitle,
 } from "./styled";
-import HbvResearchCard from "./HbvResearchCard";
 
 export {
   HbvBackground,
   HbvContentTypography,
   HbvItalicizedTypography,
   HbvLink,
-  HbvTitle,
-  HbvResearchCardList,
-  HbvResearchCard,
   HbvPageContentContainer,
+  HbvResearchCard,
+  HbvResearchCardList,
+  HbvTitle,
 };

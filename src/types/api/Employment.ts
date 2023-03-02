@@ -1,5 +1,5 @@
-import { Organization } from "./Organization";
 import { EmploymentType } from "./EmploymentType";
+import { Organization } from "./Organization";
 
 export interface Employment {
   organization: Organization;

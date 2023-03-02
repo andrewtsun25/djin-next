@@ -3,12 +3,9 @@ import {
   CollectionReference,
   DocumentData,
 } from "firebase/firestore";
-import { db } from "./db";
-import {
-  HolisticOfficeLink,
-  HolisticOfficeModule,
-  Organization,
-} from "../../types/api";
+
+import CollectionNames from "../../const/collectionNames";
+import { HolisticOfficeLink, HolisticOfficeModule } from "../../types/api";
 import {
   EducationDbEntity,
   EmploymentDbEntity,
@@ -20,7 +17,7 @@ import {
   OrganizationDbEntity,
   ProjectDbEntity,
 } from "../../types/db";
-import CollectionNames from "../../const/collectionNames";
+import { db } from "./db";
 
 function collectionReferenceOf<T = DocumentData>(
   collectionId: string

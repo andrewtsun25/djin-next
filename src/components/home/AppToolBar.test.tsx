@@ -1,6 +1,7 @@
 import { fireEvent, render } from "@testing-library/react";
-import AppToolBar, { MENU_BUTTON_ROLE } from "./AppToolBar";
 import * as nextRouter from "next/router";
+
+import AppToolBar, { MENU_BUTTON_ROLE } from "./AppToolBar";
 
 const mockNextRouter = nextRouter as unknown as {
   useRouter: () => { asRouter: string };
@@ -75,16 +76,5 @@ describe("AppToolBar", () => {
     );
     const menuButton = queryByRole(MENU_BUTTON_ROLE);
     expect(menuButton).toBeNull();
-  });
-
-  it("renders with a sticky header if the app isn't on the home page", () => {
-    mockNextRouter.useRouter = createUseRouter("/");
-    const isAppDrawerOpen = true;
-    const { queryByRole } = render(
-      <AppToolBar
-        isAppDrawerOpen={isAppDrawerOpen}
-        setIsAppDrawerOpen={setIsAppDrawerOpen}
-      />
-    );
   });
 });

@@ -1,5 +1,5 @@
-import { MartialArtsStyleType } from "./MartialArtsStyleType";
 import { MartialArtsStudio } from "./MartialArtsStudio";
+import { MartialArtsStyleType } from "./MartialArtsStyleType";
 
 export interface MartialArtsStyle {
   type: MartialArtsStyleType;

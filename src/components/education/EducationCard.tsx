@@ -1,10 +1,11 @@
-import { Education } from "../../types/api";
-import React from "react";
-import { CardContent, Slide, Typography } from "@mui/material";
-import { DurationWithOrganizationCardHeader } from "../card";
-import { map } from "lodash";
-import { IconLink } from "../text";
 import SchoolIcon from "@mui/icons-material/School";
+import { CardContent, Slide, Typography } from "@mui/material";
+import { map } from "lodash";
+import React from "react";
+
+import { Education } from "../../types/api";
+import { DurationWithOrganizationCardHeader } from "../card";
+import { IconLink } from "../text";
 import { EducationCardContainer } from "./styled";
 
 interface EducationCardProps {

@@ -1,4 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
+
 import AppDrawer, { CLOSE_BUTTON_ROLE } from "./AppDrawer";
 
 describe("AppDrawer", () => {
@@ -20,6 +21,4 @@ describe("AppDrawer", () => {
     fireEvent.click(closeButton);
     expect(setIsAppDrawerOpen).toHaveBeenCalledWith(false);
   });
-
-  it("closes the drawer", () => {});
 });

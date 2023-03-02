@@ -1,4 +1,5 @@
 import { QueryDocumentSnapshot } from "firebase/firestore";
+
 import { AsyncMapperFunction, MapperFunction } from "./mapperFunction";
 
 export type ListerAsyncMapperFunction<DbType, ApiType = DbType> = (

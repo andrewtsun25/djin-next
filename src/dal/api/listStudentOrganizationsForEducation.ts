@@ -1,12 +1,13 @@
 import { collection, orderBy } from "firebase/firestore";
-import { EducationType, StudentOrganization } from "../../types/api";
+import { memoize } from "lodash";
+
+import CollectionNames from "../../const/collectionNames";
+import { StudentOrganization } from "../../types/api";
 import {
   createListerForFirestoreCollection,
   ListerForFirestoreCollection,
 } from "../firestore";
 import { educationsCollection } from "../firestore/collections";
-import CollectionNames from "../../const/collectionNames";
-import { memoize } from "lodash";
 
 // Memoize creation of lister function to prevent re-declaration per fetch
 const createListerOfStudentOrganizationsForEducationType = memoize(
