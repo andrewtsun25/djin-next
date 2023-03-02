@@ -7,6 +7,7 @@ import React, { useMemo } from "react";
 
 import {
   ProjectCard,
+  ProjectCount,
   ProjectOrganizationSelect,
   ProjectSkillSelect,
 } from "../../../src/components/projects";
@@ -139,6 +140,7 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
             selectedSkills={selectedSkills}
             setSelectedSkills={setSelectedSkills}
           />
+          <ProjectCount projects={selectedProjects} />
         </ProjectSelectionContainer>
         <Grid container direction="row">
           {selectedProjects.map((project) => (

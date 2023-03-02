@@ -12,7 +12,6 @@ const ProjectSelectionContainer = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   [theme.breakpoints.up("md")]: {
     flexDirection: "row",
-    justifyContent: "left",
   },
 }));
 
