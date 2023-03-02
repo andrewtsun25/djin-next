@@ -15,14 +15,12 @@ import SportsMmaIcon from "@mui/icons-material/SportsMma";
 import WorkIcon from "@mui/icons-material/Work";
 import { Button, Divider, List, Theme, Typography } from "@mui/material";
 import { useTheme } from "@mui/system";
-import { noop } from "lodash";
 import React, { useMemo } from "react";
 
 import {
   FistIcon,
   KatanaIcon,
   MusicScoreIcon,
-  StorybookIcon,
   TaekwondoIcon,
 } from "../../icons";
 import {
@@ -48,6 +46,8 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
 }: AppDrawerProps) => {
   const theme: Theme = useTheme();
   const isLTR = useMemo(() => theme.direction === "ltr", [theme]);
+  const openDrawer = () => setIsAppDrawerOpen(true);
+  const closeDrawer = () => setIsAppDrawerOpen(false);
 
   return (
     <AppDrawerContainer
@@ -59,14 +59,11 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
       }}
       anchor={isLTR ? "left" : "right"}
       open={isAppDrawerOpen}
-      onClose={noop}
-      onOpen={noop}
+      onClose={closeDrawer}
+      onOpen={openDrawer}
     >
       <AppDrawerCloseButtonContainer>
-        <Button
-          role={CLOSE_BUTTON_ROLE}
-          onClick={() => setIsAppDrawerOpen(false)}
-        >
+        <Button role={CLOSE_BUTTON_ROLE} onClick={closeDrawer}>
           {isLTR ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           <Typography sx={{ ml: 0.5 }}>Close</Typography>
         </Button>
@@ -166,12 +163,13 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
           to="mailto:djtaeyong@gmail.com"
           target="_blank"
         />
-        <HyperLinkListItem
+        {/* TODO: re-enable Storybook Icon once storybook is enabled */}
+        {/* <HyperLinkListItem
           icon={<StorybookIcon />}
           text="Site Storybook"
           to="https://storybook.djin.dev/"
           target="_blank"
-        />
+        /> */}
       </List>
     </AppDrawerContainer>
   );
