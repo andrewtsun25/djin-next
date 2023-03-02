@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 import { Urls } from "../../../const/url";
 
-const employmentBackgroundUrl = `${Urls.AssetRoot}/employment/bg/office_bg.png`;
+const employmentBackgroundUrl = `${Urls.AssetRoot}/employment/bg/anduril_office.png`;
 
 const EmploymentBackground = styled(Box)({
   background: `url(${employmentBackgroundUrl}) no-repeat center center fixed`,

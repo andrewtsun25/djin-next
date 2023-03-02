@@ -22,7 +22,7 @@ const EmploymentTypeSelect: React.FC<EmploymentTypeSelectProps> = ({
   };
   return (
     <MultiSelect
-      sx={{ width: 350 }}
+      sx={{ width: 330, m: 1 }}
       options={employmentTypes}
       value={selectedEmploymentTypes}
       getOptionLabel={identity}

@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 import { Urls } from "../../../const/url";
 
-const musicEducationBackgroundUrl = `${Urls.AssetRoot}/education/bg/pbla_bg.jpg`;
+const musicEducationBackgroundUrl = `${Urls.AssetRoot}/education/bg/pioneer_cdj_bg.jpeg`;
 
 const MusicEducationBackground = styled(Box)({
   background: `url(${musicEducationBackgroundUrl}) no-repeat center center fixed`,
