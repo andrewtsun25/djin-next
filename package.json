@@ -1,6 +1,6 @@
 {
   "name": "djin-next",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -35,6 +35,7 @@
     "next-superjson-plugin": "^0.5.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sharp": "^0.31.3",
     "superjson": "^1.12.2",
     "typescript": "^4.9.5"
   },
