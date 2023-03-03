@@ -1721,10 +1721,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:^13.2.2":
-  version: 13.2.2
-  resolution: "@next/font@npm:13.2.2"
-  checksum: 6b0e0081c0c1eef6c44f1c4b54b7e3953a89c2eac97ec99fdda96c10f9637d21e55cf32d784c5a58399473304557e558643aee43ebdc652500e07241f2b41160
+"@next/font@npm:^13.2.3":
+  version: 13.2.3
+  resolution: "@next/font@npm:13.2.3"
+  checksum: 241baec8c441448df2d7e7755eca4876e018a874555ddd22816585b50f03eac357f15576762ad1011b4a4c245e7dba9675ae7ec4289196943a51bc25fa203863
   languageName: node
   linkType: hard
 
@@ -3582,7 +3582,7 @@ __metadata:
     "@fontsource/roboto": ^4.5.8
     "@mui/icons-material": ^5.11.11
     "@mui/material": ^5.11.11
-    "@next/font": ^13.2.2
+    "@next/font": ^13.2.3
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^14.0.0
     "@types/lodash": ^4.14.191
