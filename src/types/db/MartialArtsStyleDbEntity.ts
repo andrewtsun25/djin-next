@@ -6,7 +6,7 @@ export interface MartialArtsStyleDbEntity {
   type: string;
   name: string;
   logoUrl: string;
-  blackBeltRank: number;
+  expLevel: string;
   description: string;
   biography: string[];
   mediaUrl: string;

@@ -1,6 +1,6 @@
 import MartialArtsBackground from "./MartialArtsBackground";
-import MartialArtsBlackBeltRank from "./MartialArtsBlackBeltRank";
 import MartialArtsDescription from "./MartialArtsDescription";
+import MartialArtsExperienceLevel from "./MartialArtsExperienceLevel";
 import MartialArtsFigure from "./MartialArtsFigure";
 import MartialArtsFigureCaption from "./MartialArtsFigureCaption";
 import MartialArtsImage from "./MartialArtsImage";
@@ -13,8 +13,8 @@ import MartialArtsStudioGridTitle from "./MartialArtsStudioGridTitle";
 
 export {
   MartialArtsBackground,
-  MartialArtsBlackBeltRank,
   MartialArtsDescription,
+  MartialArtsExperienceLevel,
   MartialArtsFigure,
   MartialArtsFigureCaption,
   MartialArtsImage,

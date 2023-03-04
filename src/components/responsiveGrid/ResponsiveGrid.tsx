@@ -33,7 +33,7 @@ function ResponsiveGrid<T>({
   const titleVariant = isMedium ? "h4" : isSmall ? "h5" : "h6";
   return (
     <ResponsiveGridContainer sx={sx}>
-      <ImageList cols={cols} gap={10}>
+      <ImageList cols={cols} gap={isSmall ? 10 : 20}>
         {title && (
           <ImageListItem cols={cols} style={{ height: "auto" }}>
             <ResponsiveGridTitle paragraph variant={titleVariant}>
@@ -43,7 +43,11 @@ function ResponsiveGrid<T>({
         )}
         {embedUrl && (
           <ImageListItem cols={cols} rows={1}>
-            <SoundCloudWidget url={embedUrl} showArtWork={isSmall} />
+            <SoundCloudWidget
+              url={embedUrl}
+              showArtWork={isSmall}
+              style={{ borderRadius: 10 }}
+            />
           </ImageListItem>
         )}
         {items.map((item: T, index: number) => renderGridTile(item, index))}

@@ -8,6 +8,8 @@ import { SoundCloudWidget } from "../../../src/components/music";
 const EDM_SOUND_CLOUD_PLAYLIST_URL =
   "https://api.soundcloud.com/playlists/545171379";
 
+const WIDGET_HEIGHT = 800;
+
 const EdmPage = () => {
   return (
     <>
@@ -17,7 +19,10 @@ const EdmPage = () => {
       <EdmBackground>
         <Container maxWidth="lg">
           <EdmTitle variant="h2">EDM Tracks</EdmTitle>
-          <SoundCloudWidget url={EDM_SOUND_CLOUD_PLAYLIST_URL} height={800} />
+          <SoundCloudWidget
+            url={EDM_SOUND_CLOUD_PLAYLIST_URL}
+            style={{ height: WIDGET_HEIGHT, borderRadius: 10 }}
+          />
         </Container>
       </EdmBackground>
     </>

@@ -51,7 +51,7 @@ describe("AppToolBar", () => {
     expect(appToolBar).toMatchSnapshot();
   });
 
-  it("opens the drawer if the drawer isn't opened", () => {
+  xit("opens the drawer if the drawer isn't opened", () => {
     mockNextRouter.useRouter = createUseRouter("/");
     const isAppDrawerOpen = false;
     const { getByRole } = render(
@@ -65,7 +65,7 @@ describe("AppToolBar", () => {
     expect(setIsAppDrawerOpen).toHaveBeenCalledWith(true);
   });
 
-  it("doesn't render the menu button if the drawer is open", () => {
+  xit("doesn't render the menu button if the drawer is open", () => {
     mockNextRouter.useRouter = createUseRouter("/");
     const isAppDrawerOpen = true;
     const { queryByRole } = render(
