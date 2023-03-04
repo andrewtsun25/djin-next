@@ -1,8 +1,8 @@
 import { fireEvent, render } from "@testing-library/react";
 
-import AppDrawer, { CLOSE_BUTTON_ROLE } from "./AppDrawer";
+import DesktopDrawer, { CLOSE_BUTTON_ROLE } from "./DesktopDrawer";
 
-describe("AppDrawer", () => {
+describe("DesktopDrawer", () => {
   const isAppDrawerOpen = true;
   let setIsAppDrawerOpen: (b: boolean) => void;
 
@@ -12,7 +12,7 @@ describe("AppDrawer", () => {
 
   it("renders", () => {
     const { getByRole } = render(
-      <AppDrawer
+      <DesktopDrawer
         isAppDrawerOpen={isAppDrawerOpen}
         setIsAppDrawerOpen={setIsAppDrawerOpen}
       />

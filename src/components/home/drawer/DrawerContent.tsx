@@ -1,7 +1,5 @@
 import AlbumIcon from "@mui/icons-material/Album";
 import AppsIcon from "@mui/icons-material/Apps";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import CodeIcon from "@mui/icons-material/Code";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -13,9 +11,8 @@ import SchoolIcon from "@mui/icons-material/School";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import SportsMmaIcon from "@mui/icons-material/SportsMma";
 import WorkIcon from "@mui/icons-material/Work";
-import { Button, Divider, List, Theme, Typography } from "@mui/material";
-import { useTheme } from "@mui/system";
-import React, { useMemo } from "react";
+import { Divider, List } from "@mui/material";
+import React from "react";
 
 import {
   FistIcon,
@@ -25,51 +22,15 @@ import {
   TaekwondoIcon,
 } from "../../icons";
 import {
-  AppDrawerCloseButtonContainer,
-  AppDrawerContainer,
   CollapsibleListHyperLinkListItem,
+  DrawerContentContainer,
 } from "../styled";
 import CollapsibleList from "./CollapsibleList";
 import HyperLinkListItem from "./HyperLinkListItem";
 
-interface AppDrawerProps {
-  isAppDrawerOpen: boolean;
-  setIsAppDrawerOpen(newIsDrawerOpen: boolean): void;
-}
-
-export const CLOSE_BUTTON_ROLE = "switch";
-
-const drawerWidth = 300;
-
-const AppDrawer: React.FC<AppDrawerProps> = ({
-  isAppDrawerOpen,
-  setIsAppDrawerOpen,
-}: AppDrawerProps) => {
-  const theme: Theme = useTheme();
-  const isLTR = useMemo(() => theme.direction === "ltr", [theme]);
-  const openDrawer = () => setIsAppDrawerOpen(true);
-  const closeDrawer = () => setIsAppDrawerOpen(false);
-
+const DrawerContent: React.FC = () => {
   return (
-    <AppDrawerContainer
-      sx={{
-        "& .MuiDrawer-paper": {
-          width: drawerWidth,
-          boxSizing: "border-box",
-        },
-      }}
-      anchor={isLTR ? "left" : "right"}
-      open={isAppDrawerOpen}
-      onClose={closeDrawer}
-      onOpen={openDrawer}
-    >
-      <AppDrawerCloseButtonContainer>
-        <Button role={CLOSE_BUTTON_ROLE} onClick={closeDrawer}>
-          {isLTR ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          <Typography sx={{ ml: 0.5 }}>Close</Typography>
-        </Button>
-      </AppDrawerCloseButtonContainer>
-      <Divider />
+    <DrawerContentContainer>
       <List>
         <CollapsibleList icon={<CodeIcon />} name="Coding">
           <CollapsibleListHyperLinkListItem
@@ -177,8 +138,8 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
           target="_blank"
         /> */}
       </List>
-    </AppDrawerContainer>
+    </DrawerContentContainer>
   );
 };
 
-export default AppDrawer;
+export default DrawerContent;

@@ -1,5 +1,5 @@
 import AppToolBar from "./AppToolBar";
-import { AppDrawer } from "./drawer";
+import { DesktopDrawer } from "./drawer";
 import { HomeBackground, HomeTextContainer } from "./styled";
 
-export { AppDrawer, AppToolBar, HomeBackground, HomeTextContainer };
+export { AppToolBar, DesktopDrawer, HomeBackground, HomeTextContainer };

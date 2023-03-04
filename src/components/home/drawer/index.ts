@@ -1,3 +1,3 @@
-import AppDrawer from "./AppDrawer";
+import DesktopDrawer from "./DesktopDrawer";
 
-export { AppDrawer };
+export { DesktopDrawer };

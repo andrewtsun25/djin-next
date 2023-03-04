@@ -3,9 +3,9 @@ import { styled } from "@mui/material/styles";
 
 export const appDrawerWidth = 400;
 
-const AppDrawerContainer = styled(SwipeableDrawer)({
+const DesktopDrawerContainer = styled(SwipeableDrawer)({
   width: appDrawerWidth,
   flexShrink: 0,
 });
 
-export default AppDrawerContainer;
+export default DesktopDrawerContainer;

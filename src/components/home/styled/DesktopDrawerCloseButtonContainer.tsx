@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const AppDrawerCloseButtonContainer = styled(Box)(({ theme }) => ({
+const DesktopDrawerCloseButtonContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-end",
@@ -10,4 +10,4 @@ const AppDrawerCloseButtonContainer = styled(Box)(({ theme }) => ({
   paddingBottom: theme.spacing(0.75),
 }));
 
-export default AppDrawerCloseButtonContainer;
+export default DesktopDrawerCloseButtonContainer;
