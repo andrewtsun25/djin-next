@@ -20,6 +20,7 @@ import React, { useMemo } from "react";
 import {
   FistIcon,
   KatanaIcon,
+  MuayThaiIcon,
   MusicScoreIcon,
   TaekwondoIcon,
 } from "../../icons";
@@ -137,6 +138,11 @@ const AppDrawer: React.FC<AppDrawerProps> = ({
             icon={<KatanaIcon />}
             text="Haidong Gumdo"
             to="/martialArts/hdgd"
+          />
+          <CollapsibleListHyperLinkListItem
+            icon={<MuayThaiIcon />}
+            text="Muay Thai"
+            to="/martialArts/muaythai"
           />
         </CollapsibleList>
         <CollapsibleList icon={<SchoolIcon />} name={"Academic Work"}>

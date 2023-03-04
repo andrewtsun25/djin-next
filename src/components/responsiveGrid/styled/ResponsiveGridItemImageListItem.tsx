@@ -14,7 +14,7 @@ const ResponsiveGridItemImageListItem = styled(ImageListItem)(({ theme }) => ({
   },
   background: "white",
   padding: theme.spacing(1),
-  borderRadius: 10,
+  borderRadius: 15,
   overflow: "hidden",
 }));
 

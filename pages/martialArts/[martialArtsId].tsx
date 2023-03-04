@@ -16,8 +16,8 @@ import {
   MartialArtsStudioGridTile,
 } from "../../src/components/martialArts";
 import {
-  MartialArtsBlackBeltRank,
   MartialArtsDescription,
+  MartialArtsExperienceLevel,
   MartialArtsFigure,
   MartialArtsFigureCaption,
   MartialArtsImage,
@@ -48,6 +48,7 @@ export const getStaticPaths: GetStaticPaths<MartialArtsParams> = async () => {
       { params: { martialArtsId: "itfTkd" } },
       { params: { martialArtsId: "wtTkd" } },
       { params: { martialArtsId: "hdgd" } },
+      { params: { martialArtsId: "muaythai" } },
     ],
     fallback: false, // can also be true or 'blocking'
   };
@@ -86,7 +87,7 @@ const MartialArtsPage = ({
     name,
     description,
     biography,
-    blackBeltRank,
+    expLevel,
     mediaUrl,
     mediaCaption,
     studios,
@@ -100,15 +101,7 @@ const MartialArtsPage = ({
       <Fade in>
         <MartialArtsContentContainer maxWidth="lg">
           <MartialArtsPageHeading>
-            {isLarge && (
-              <MartialArtsLogoImage
-                src={logoUrl}
-                alt={`${type}_logo`}
-                height={200}
-                width={200}
-              />
-            )}
-            <MartialArtsPageTitle variant={isLarge ? "h1" : "h3"}>
+            <MartialArtsPageTitle variant={isLarge ? "h2" : "h4"}>
               {name}
             </MartialArtsPageTitle>
             {isLarge && (
@@ -120,9 +113,9 @@ const MartialArtsPage = ({
               />
             )}
           </MartialArtsPageHeading>
-          <MartialArtsBlackBeltRank variant={isLarge ? "h4" : "h5"}>
-            Current Rank: {blackBeltRank} 단
-          </MartialArtsBlackBeltRank>
+          <MartialArtsExperienceLevel variant={isLarge ? "h4" : "h5"}>
+            Experience Level: {expLevel}
+          </MartialArtsExperienceLevel>
           <MartialArtsPageContentGrid container spacing={3}>
             <Grid item xs={12} lg={6}>
               <MartialArtsDescription paragraph>
@@ -136,12 +129,12 @@ const MartialArtsPage = ({
             </Grid>
             <MartialArtsImageSection item xs={12} lg={6}>
               <Grow in>
-                <MartialArtsFigure>
+                <MartialArtsFigure component="figure">
                   <MartialArtsImage
                     src={mediaUrl}
                     alt={`${type}_img`}
-                    height={600}
-                    width={800}
+                    height={1400}
+                    width={1600}
                   />
                   <MartialArtsFigureCaption>
                     <Typography variant="subtitle1" align="center">

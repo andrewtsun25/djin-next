@@ -53,7 +53,7 @@ const ScoresPage = ({ scores }: ScoresNextPageProps) => {
               sx={{
                 backgroundColor: alpha("#fff", 0.75),
                 padding: 2,
-                borderRadius: 2,
+                borderRadius: 10,
                 margin: `20px auto`,
               }}
               key={name}
