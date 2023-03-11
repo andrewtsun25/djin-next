@@ -25,8 +25,8 @@ const DesktopDrawer: React.FC<AppDrawerProps> = ({
 }: AppDrawerProps) => {
   const theme: Theme = useTheme();
   const isLTR = useMemo(() => theme.direction === "ltr", [theme]);
-  const openDrawer = () => setIsAppDrawerOpen(true);
-  const closeDrawer = () => setIsAppDrawerOpen(false);
+  const handleOpen = () => setIsAppDrawerOpen(true);
+  const handleClose = () => setIsAppDrawerOpen(false);
 
   return (
     <DesktopDrawerContainer
@@ -38,11 +38,11 @@ const DesktopDrawer: React.FC<AppDrawerProps> = ({
       }}
       anchor={isLTR ? "left" : "right"}
       open={isAppDrawerOpen}
-      onClose={closeDrawer}
-      onOpen={openDrawer}
+      onClose={handleClose}
+      onOpen={handleOpen}
     >
       <DesktopDrawerCloseButtonContainer>
-        <Button role={CLOSE_BUTTON_ROLE} onClick={closeDrawer}>
+        <Button role={CLOSE_BUTTON_ROLE} onClick={handleClose}>
           {isLTR ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           <Typography sx={{ ml: 0.5 }}>Close</Typography>
         </Button>

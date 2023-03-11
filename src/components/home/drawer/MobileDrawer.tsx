@@ -8,7 +8,7 @@ import {
 } from "../styled";
 import DrawerContent from "./DrawerContent";
 
-export const DRAWER_EDGE = 56;
+export const DRAWER_EDGE = 50;
 
 interface MobileDrawerProps {
   isAppDrawerOpen: boolean;
@@ -19,6 +19,8 @@ const MobileDrawer = ({
   isAppDrawerOpen,
   setIsAppDrawerOpen,
 }: MobileDrawerProps) => {
+  const handleClose = () => setIsAppDrawerOpen(false);
+  const handleOpen = () => setIsAppDrawerOpen(true);
   const iOS =
     typeof navigator !== "undefined" &&
     /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -28,8 +30,8 @@ const MobileDrawer = ({
       disableDiscovery={iOS}
       anchor="bottom"
       open={isAppDrawerOpen}
-      onClose={() => setIsAppDrawerOpen(false)}
-      onOpen={() => setIsAppDrawerOpen(true)}
+      onClose={handleClose}
+      onOpen={handleOpen}
       swipeAreaWidth={DRAWER_EDGE}
       disableSwipeToOpen={false}
       ModalProps={{
@@ -39,7 +41,9 @@ const MobileDrawer = ({
       <MobileDrawerHandle>
         <MobileDrawerPuller />
         <MobileDrawerHandleText>
-          Pull up for site navigation
+          {isAppDrawerOpen
+            ? "Pull down to close"
+            : "Pull up for site navigation"}
         </MobileDrawerHandleText>
       </MobileDrawerHandle>
       <DrawerContent />
