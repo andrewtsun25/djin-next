@@ -1,13 +1,12 @@
-import { orderBy } from "firebase/firestore";
 import { isNil } from "lodash";
 
 import { HbvResearchPaper } from "../../types/api";
 import { HbvResearchPaperDbEntity } from "../../types/db";
 import {
   AsyncMapperFunction,
-  createListerForFirestoreCollection,
+  createListerForFirestoreQuery,
   hbvResearchPapersCollection,
-  ListerForFirestoreCollection,
+  ListerForFirestoreQuery,
 } from "../firestore";
 import getOrganization from "./getOrganization";
 
@@ -35,14 +34,10 @@ const mapHbvResearchPaperDbEntityToHbvResearchPaper: AsyncMapperFunction<
   };
 };
 
-const listHbvResearchPapers: ListerForFirestoreCollection<HbvResearchPaper> =
-  createListerForFirestoreCollection<
-    HbvResearchPaperDbEntity,
-    HbvResearchPaper
-  >(
-    hbvResearchPapersCollection,
-    mapHbvResearchPaperDbEntityToHbvResearchPaper,
-    orderBy("startDate", "asc")
+const listHbvResearchPapers: ListerForFirestoreQuery<HbvResearchPaper> =
+  createListerForFirestoreQuery<HbvResearchPaperDbEntity, HbvResearchPaper>(
+    hbvResearchPapersCollection.orderBy("startDate", "asc"),
+    mapHbvResearchPaperDbEntityToHbvResearchPaper
   );
 
 export default listHbvResearchPapers;

@@ -1,8 +1,8 @@
 import { Organization } from "../../types/api";
 import { OrganizationDbEntity } from "../../types/db";
 import {
-  createGetterByIdForFirestoreCollection,
-  GetterByIdForFirestoreCollection,
+  createGetterByIdForFirestoreQuery,
+  GetterByIdForFirestoreQuery,
   MapperFunction,
   organizationsCollection,
 } from "../firestore";
@@ -15,8 +15,8 @@ const mapOrganizationDbEntityToOrganization: MapperFunction<
   id: organizationId,
 });
 
-const getOrganization: GetterByIdForFirestoreCollection<Organization> =
-  createGetterByIdForFirestoreCollection(
+const getOrganization: GetterByIdForFirestoreQuery<Organization> =
+  createGetterByIdForFirestoreQuery(
     organizationsCollection,
     mapOrganizationDbEntityToOrganization
   );

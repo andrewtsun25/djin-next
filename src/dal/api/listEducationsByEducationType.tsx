@@ -1,4 +1,3 @@
-import { orderBy, where } from "firebase/firestore";
 import { isNil, memoize } from "lodash";
 
 import {
@@ -10,8 +9,8 @@ import {
 import { EducationDbEntity } from "../../types/db";
 import {
   AsyncMapperFunction,
-  createListerForFirestoreCollection,
-  ListerForFirestoreCollection,
+  createListerForFirestoreQuery,
+  ListerForFirestoreQuery,
 } from "../firestore";
 import { educationsCollection } from "../firestore/collections";
 import getOrganization from "./getOrganization";
@@ -51,12 +50,12 @@ const mapEducationDbEntityToEducation: AsyncMapperFunction<
 
 // Memoize creation of lister function to prevent re-declaration per fetch
 const createListerOfEducationsForEducationType = memoize(
-  (educationId: EducationType): ListerForFirestoreCollection<Education> => {
-    return createListerForFirestoreCollection(
-      educationsCollection,
-      mapEducationDbEntityToEducation,
-      where("type", "==", educationId),
-      orderBy("startDate", "asc")
+  (educationId: EducationType): ListerForFirestoreQuery<Education> => {
+    return createListerForFirestoreQuery(
+      educationsCollection
+        .where("type", "==", educationId)
+        .orderBy("startDate", "desc"),
+      mapEducationDbEntityToEducation
     );
   }
 );
@@ -64,7 +63,7 @@ const createListerOfEducationsForEducationType = memoize(
 async function listEducationsByEducationType(
   educationId: EducationType
 ): Promise<Education[]> {
-  const lister: ListerForFirestoreCollection<Education> =
+  const lister: ListerForFirestoreQuery<Education> =
     createListerOfEducationsForEducationType(educationId);
   return await lister();
 }

@@ -1,54 +1,45 @@
-import {
-  collection,
-  CollectionReference,
-  DocumentData,
-} from "firebase/firestore";
+import { CollectionReference } from "firebase-admin/firestore";
 
 import CollectionNames from "../../const/collectionNames";
-import { HolisticOfficeLink, HolisticOfficeModule } from "../../types/api";
-import {
-  EducationDbEntity,
-  EmploymentDbEntity,
-  HbvResearchPaperDbEntity,
-  MartialArtsStudioDbEntity,
-  MartialArtsStyleDbEntity,
-  MusicInstrumentDbEntity,
-  MusicScoreDbEntity,
-  OrganizationDbEntity,
-  ProjectDbEntity,
-} from "../../types/db";
 import { db } from "./db";
 
-function collectionReferenceOf<T = DocumentData>(
-  collectionId: string
-): CollectionReference<T> {
-  return collection(db, collectionId) as CollectionReference<T>;
+function collectionReferenceOf(collectionId: string): CollectionReference {
+  return db.collection(collectionId);
 }
 
-const educationsCollection: CollectionReference<EducationDbEntity> =
-  collectionReferenceOf(CollectionNames.Education.Colleges);
+const educationsCollection: CollectionReference = collectionReferenceOf(
+  CollectionNames.Education.Colleges
+);
 
-const employmentsCollection: CollectionReference<EmploymentDbEntity> =
-  collectionReferenceOf(CollectionNames.Employment.Companies);
-const hbvResearchPapersCollection: CollectionReference<HbvResearchPaperDbEntity> =
-  collectionReferenceOf(CollectionNames.HbvResearch.Papers);
-const holisticOfficeLinksCollection: CollectionReference<HolisticOfficeLink> =
+const employmentsCollection: CollectionReference = collectionReferenceOf(
+  CollectionNames.Employment.Companies
+);
+const hbvResearchPapersCollection: CollectionReference = collectionReferenceOf(
+  CollectionNames.HbvResearch.Papers
+);
+const holisticOfficeLinksCollection: CollectionReference =
   collectionReferenceOf(CollectionNames.HolisticOffice.Links);
-const holisticOfficeModulesCollection: CollectionReference<HolisticOfficeModule> =
+const holisticOfficeModulesCollection: CollectionReference =
   collectionReferenceOf(CollectionNames.HolisticOffice.Modules);
-const martialArtsStudiosCollection: CollectionReference<MartialArtsStudioDbEntity> =
-  collectionReferenceOf(CollectionNames.MartialArts.Studios);
-const martialArtsStylesCollection: CollectionReference<MartialArtsStyleDbEntity> =
-  collectionReferenceOf(CollectionNames.MartialArts.Styles);
-const musicInstrumentsCollection: CollectionReference<MusicInstrumentDbEntity> =
-  collectionReferenceOf(CollectionNames.Music.Instruments);
-const musicScoresCollection: CollectionReference<MusicScoreDbEntity> =
-  collectionReferenceOf(CollectionNames.Music.Scores);
-const organizationsCollection: CollectionReference<OrganizationDbEntity> =
-  collectionReferenceOf(CollectionNames.Shared.Organizations);
+const martialArtsStudiosCollection: CollectionReference = collectionReferenceOf(
+  CollectionNames.MartialArts.Studios
+);
+const martialArtsStylesCollection: CollectionReference = collectionReferenceOf(
+  CollectionNames.MartialArts.Styles
+);
+const musicInstrumentsCollection: CollectionReference = collectionReferenceOf(
+  CollectionNames.Music.Instruments
+);
+const musicScoresCollection: CollectionReference = collectionReferenceOf(
+  CollectionNames.Music.Scores
+);
+const organizationsCollection: CollectionReference = collectionReferenceOf(
+  CollectionNames.Shared.Organizations
+);
 
-const projectsCollection: CollectionReference<ProjectDbEntity> =
-  collectionReferenceOf(CollectionNames.Project.Projects);
+const projectsCollection: CollectionReference = collectionReferenceOf(
+  CollectionNames.Project.Projects
+);
 
 export {
   educationsCollection,

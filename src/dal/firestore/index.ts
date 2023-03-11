@@ -8,15 +8,15 @@ import {
   musicScoresCollection,
   organizationsCollection,
 } from "./collections";
-import type { GetterByIdForFirestoreCollection } from "./createGetterByIdForFirestoreCollection";
-import createGetterByIdForFirestoreCollection from "./createGetterByIdForFirestoreCollection";
-import type { ListerForFirestoreCollection } from "./createListerForFirestoreCollection";
-import createListerForFirestoreCollection from "./createListerForFirestoreCollection";
+import type { GetterByIdForFirestoreQuery } from "./createGetterByIdForFirestoreQuery";
+import createGetterByIdForFirestoreQuery from "./createGetterByIdForFirestoreQuery";
+import type { ListerForFirestoreQuery } from "./createListerForFirestoreQuery";
+import createListerForFirestoreQuery from "./createListerForFirestoreQuery";
 import type { AsyncMapperFunction, MapperFunction } from "./mapperFunction";
 
 export {
-  createGetterByIdForFirestoreCollection,
-  createListerForFirestoreCollection,
+  createGetterByIdForFirestoreQuery,
+  createListerForFirestoreQuery,
   hbvResearchPapersCollection,
   holisticOfficeLinksCollection,
   holisticOfficeModulesCollection,
@@ -28,7 +28,7 @@ export {
 };
 export type {
   AsyncMapperFunction,
-  GetterByIdForFirestoreCollection,
-  ListerForFirestoreCollection,
+  GetterByIdForFirestoreQuery,
+  ListerForFirestoreQuery,
   MapperFunction,
 };

@@ -16,7 +16,7 @@ const MusicInstrumentTile: React.FC<MusicInstrumentTileProps> = ({
     title={name}
     icon={<CloudDownloadIcon />}
     mediaUrl={mediaUrl}
-    mediaSizingStrategy="cover"
+    imageStyle={{ objectFit: "cover" }}
   />
 );
 

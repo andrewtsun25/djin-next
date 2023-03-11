@@ -17,7 +17,7 @@ const MartialArtsStudioGridTile: React.FC<MartialArtsStudioGridTileProps> = ({
       title={name}
       subtitle={city}
       icon={<LaunchIcon />}
-      mediaSizingStrategy="contain"
+      imageStyle={{ objectFit: "contain" }}
     />
   );
 };

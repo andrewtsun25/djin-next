@@ -1,7 +1,6 @@
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { Button, Divider, Theme, Typography } from "@mui/material";
-import { useTheme } from "@mui/system";
+import { Button, Divider, Theme, Typography, useTheme } from "@mui/material";
 import React, { useMemo } from "react";
 
 import {
@@ -25,8 +24,8 @@ const DesktopDrawer: React.FC<AppDrawerProps> = ({
 }: AppDrawerProps) => {
   const theme: Theme = useTheme();
   const isLTR = useMemo(() => theme.direction === "ltr", [theme]);
-  const openDrawer = () => setIsAppDrawerOpen(true);
-  const closeDrawer = () => setIsAppDrawerOpen(false);
+  const handleOpen = () => setIsAppDrawerOpen(true);
+  const handleClose = () => setIsAppDrawerOpen(false);
 
   return (
     <DesktopDrawerContainer
@@ -38,11 +37,11 @@ const DesktopDrawer: React.FC<AppDrawerProps> = ({
       }}
       anchor={isLTR ? "left" : "right"}
       open={isAppDrawerOpen}
-      onClose={closeDrawer}
-      onOpen={openDrawer}
+      onClose={handleClose}
+      onOpen={handleOpen}
     >
       <DesktopDrawerCloseButtonContainer>
-        <Button role={CLOSE_BUTTON_ROLE} onClick={closeDrawer}>
+        <Button role={CLOSE_BUTTON_ROLE} onClick={handleClose}>
           {isLTR ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           <Typography sx={{ ml: 0.5 }}>Close</Typography>
         </Button>

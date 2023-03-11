@@ -35,7 +35,7 @@ const SoundCloudWidget: React.FC<SoundCloudPlayerProps> = ({
 }: SoundCloudPlayerProps) => {
   const src = useMemo(() => {
     const playerUrl = new URL(BASE_URL);
-    playerUrl.searchParams.append("url", encodeURIComponent(url));
+    playerUrl.searchParams.append("url", url);
     playerUrl.searchParams.append("auto_play", autoPlay.toString());
     playerUrl.searchParams.append("buying", buying.toString());
     color && playerUrl.searchParams.append("color", color);

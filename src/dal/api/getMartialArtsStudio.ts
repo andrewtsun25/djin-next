@@ -1,8 +1,8 @@
 import { MartialArtsStudio } from "../../types/api";
 import { MartialArtsStudioDbEntity } from "../../types/db";
 import {
-  createGetterByIdForFirestoreCollection,
-  GetterByIdForFirestoreCollection,
+  createGetterByIdForFirestoreQuery,
+  GetterByIdForFirestoreQuery,
   MapperFunction,
   martialArtsStudiosCollection,
 } from "../firestore";
@@ -18,8 +18,8 @@ const mapMartialArtsStudioDbEntityToMartialArtsStudio: MapperFunction<
   } as MartialArtsStudio;
 };
 
-const getMartialArtsStudio: GetterByIdForFirestoreCollection<MartialArtsStudio> =
-  createGetterByIdForFirestoreCollection(
+const getMartialArtsStudio: GetterByIdForFirestoreQuery<MartialArtsStudio> =
+  createGetterByIdForFirestoreQuery(
     martialArtsStudiosCollection,
     mapMartialArtsStudioDbEntityToMartialArtsStudio
   );

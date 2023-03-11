@@ -37,7 +37,7 @@ const ReclaimerPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Reclaimer</title>
+        <title>d.jin Reclaimer</title>
       </Head>
       <ReclaimerBackground>
         <Fade in>

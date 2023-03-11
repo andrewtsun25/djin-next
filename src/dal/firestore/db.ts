@@ -1,20 +1,21 @@
-import { initializeApp } from "firebase/app";
+import { AppOptions, cert, getApps, initializeApp } from "firebase-admin/app";
 // See: https://firebase.google.com/docs/web/learn-more#config-object
-import { FirebaseOptions } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase-admin/firestore";
 
-const config: FirebaseOptions = {
-  apiKey: process.env.FIREBBASE_API_KEY,
-  authDomain: "djin-dev.firebaseapp.com",
-  projectId: "djin-dev",
-  storageBucket: "djin-dev.appspot.com",
-  messagingSenderId: "491248123522",
-  appId: "1:491248123522:web:f49fcc67aaa94d70787e9b",
-  measurementId: "G-3KT3E4JR9B",
+const config: AppOptions = {
+  credential: cert({
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n"), // replace `\n` characters
+  }),
+  databaseURL: `'https://${process.env.FIREBASE_PROJECT_ID}.firebaseio.com`,
 };
 
-// Initialize Firebase
-const app = initializeApp(config);
+// Initialize Firebase only once, see https://www.reddit.com/r/Firebase/comments/ve4qwl/you_called_initializeapp_more_than_once_issue/
+if (getApps().length < 1) {
+  // App was not initialized, initialize it...
+  initializeApp(config);
+}
 
 // Initialize Cloud Firestore and get a reference to the service
-export const db = getFirestore(app);
+export const db = getFirestore();
