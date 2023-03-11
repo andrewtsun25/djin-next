@@ -1,10 +1,7 @@
 import {
   CollectionReference,
-  doc,
-  DocumentReference,
   DocumentSnapshot,
-  getDoc,
-} from "firebase/firestore";
+} from "firebase-admin/firestore";
 
 import {
   createGetterAsyncMapperFunction,
@@ -16,7 +13,7 @@ import {
   MapperFunction,
 } from "./mapperFunction";
 
-export type GetterByIdForFirestoreCollection<ApiType> = (
+export type GetterByIdForFirestoreQuery<ApiType> = (
   id: string
 ) => Promise<ApiType | null>;
 
@@ -24,24 +21,18 @@ export default function createGetterByIdForFirestoreCollection<
   DbType,
   ApiType = DbType
 >(
-  collection: CollectionReference<DbType>,
+  collection: CollectionReference,
   mapper:
     | MapperFunction<DbType, ApiType>
     | AsyncMapperFunction<DbType, ApiType> = identityMapper
-): GetterByIdForFirestoreCollection<ApiType> {
+): GetterByIdForFirestoreQuery<ApiType> {
   return async (id: string): Promise<ApiType | null> => {
-    const documentReference: DocumentReference<DbType> = doc<DbType>(
-      collection,
-      id
-    );
-    const documentSnapshot: DocumentSnapshot<DbType> = await getDoc(
-      documentReference
-    );
+    const documentSnapshot: DocumentSnapshot = await collection.doc(id).get();
     const getterAsyncMapperFunction: GetterAsyncMapperFunction<
       DbType,
       ApiType
     > = createGetterAsyncMapperFunction(mapper);
-    return documentSnapshot.exists()
+    return documentSnapshot.exists
       ? getterAsyncMapperFunction(documentSnapshot, documentSnapshot.id)
       : null;
   };

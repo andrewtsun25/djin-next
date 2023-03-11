@@ -1,26 +1,23 @@
-import { collection, orderBy } from "firebase/firestore";
 import { memoize } from "lodash";
 
 import CollectionNames from "../../const/collectionNames";
 import { StudentOrganization } from "../../types/api";
 import {
-  createListerForFirestoreCollection,
-  ListerForFirestoreCollection,
+  createListerForFirestoreQuery,
+  ListerForFirestoreQuery,
 } from "../firestore";
 import { educationsCollection } from "../firestore/collections";
 
 // Memoize creation of lister function to prevent re-declaration per fetch
 const createListerOfStudentOrganizationsForEducationType = memoize(
-  (educationId: string): ListerForFirestoreCollection<StudentOrganization> => {
-    const studentOrganizationsCollection = collection(
-      educationsCollection,
-      educationId,
-      CollectionNames.Education.StudentOrganizations
-    );
-    return createListerForFirestoreCollection(
+  (educationId: string): ListerForFirestoreQuery<StudentOrganization> => {
+    const studentOrganizationsCollection = educationsCollection
+      .doc(educationId)
+      .collection(CollectionNames.Education.StudentOrganizations)
+      .orderBy("name", "asc");
+    return createListerForFirestoreQuery(
       studentOrganizationsCollection,
-      undefined,
-      orderBy("name", "asc")
+      undefined
     );
   }
 );
@@ -28,7 +25,7 @@ const createListerOfStudentOrganizationsForEducationType = memoize(
 async function listStudentOrganizationsForEducation(
   educationId: string
 ): Promise<StudentOrganization[]> {
-  const lister: ListerForFirestoreCollection<StudentOrganization> =
+  const lister: ListerForFirestoreQuery<StudentOrganization> =
     createListerOfStudentOrganizationsForEducationType(educationId);
   return await lister();
 }

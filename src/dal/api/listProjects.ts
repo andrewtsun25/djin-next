@@ -1,12 +1,11 @@
-import { orderBy } from "firebase/firestore";
 import { isNil } from "lodash";
 
 import { Organization, Project } from "../../types/api";
 import { ProjectDbEntity } from "../../types/db";
 import {
   AsyncMapperFunction,
-  createListerForFirestoreCollection,
-  ListerForFirestoreCollection,
+  createListerForFirestoreQuery,
+  ListerForFirestoreQuery,
 } from "../firestore";
 import { projectsCollection } from "../firestore/collections";
 import getOrganization from "./getOrganization";
@@ -39,11 +38,10 @@ const mapProjectDbEntityToProject: AsyncMapperFunction<
   };
 };
 
-const listProjects: ListerForFirestoreCollection<Project> =
-  createListerForFirestoreCollection<ProjectDbEntity, Project>(
-    projectsCollection,
-    mapProjectDbEntityToProject,
-    orderBy("startDate", "desc")
+const listProjects: ListerForFirestoreQuery<Project> =
+  createListerForFirestoreQuery<ProjectDbEntity, Project>(
+    projectsCollection.orderBy("startDate", "desc"),
+    mapProjectDbEntityToProject
   );
 
 export default listProjects;

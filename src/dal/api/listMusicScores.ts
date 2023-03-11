@@ -1,4 +1,3 @@
-import { orderBy } from "firebase/firestore";
 import { entries, isNil } from "lodash";
 
 import {
@@ -9,8 +8,8 @@ import {
 import { MusicInstrumentDbEntity, MusicScoreDbEntity } from "../../types/db";
 import {
   AsyncMapperFunction,
-  createListerForFirestoreCollection,
-  ListerForFirestoreCollection,
+  createListerForFirestoreQuery,
+  ListerForFirestoreQuery,
   musicScoresCollection,
 } from "../firestore";
 import getMusicInstrument from "./getMusicInstrument";
@@ -48,11 +47,10 @@ const mapMusicScoreDbEntityToMusicScore: AsyncMapperFunction<
   };
 };
 
-const listMusicScores: ListerForFirestoreCollection<MusicScore> =
-  createListerForFirestoreCollection<MusicScoreDbEntity, MusicScore>(
-    musicScoresCollection,
-    mapMusicScoreDbEntityToMusicScore,
-    orderBy("date", "desc")
+const listMusicScores: ListerForFirestoreQuery<MusicScore> =
+  createListerForFirestoreQuery<MusicScoreDbEntity, MusicScore>(
+    musicScoresCollection.orderBy("date", "desc"),
+    mapMusicScoreDbEntityToMusicScore
   );
 
 export default listMusicScores;

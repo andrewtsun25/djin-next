@@ -1,14 +1,10 @@
-import { orderBy } from "firebase/firestore";
 import { isNil } from "lodash";
 
 import { Employment, EmploymentType, Organization } from "../../types/api";
 import { EmploymentDbEntity } from "../../types/db";
-import {
-  AsyncMapperFunction,
-  createListerForFirestoreCollection,
-  ListerForFirestoreCollection,
-} from "../firestore";
+import { AsyncMapperFunction, ListerForFirestoreQuery } from "../firestore";
 import { employmentsCollection } from "../firestore/collections";
+import createListerForFirestoreQuery from "../firestore/createListerForFirestoreQuery";
 import getOrganization from "./getOrganization";
 
 const mapEmploymentDbEntityToEmployment: AsyncMapperFunction<
@@ -41,11 +37,10 @@ const mapEmploymentDbEntityToEmployment: AsyncMapperFunction<
   };
 };
 
-const listEmployments: ListerForFirestoreCollection<Employment> =
-  createListerForFirestoreCollection<EmploymentDbEntity, Employment>(
-    employmentsCollection,
-    mapEmploymentDbEntityToEmployment,
-    orderBy("startDate", "desc")
+const listEmployments: ListerForFirestoreQuery<Employment> =
+  createListerForFirestoreQuery<EmploymentDbEntity, Employment>(
+    employmentsCollection.orderBy("startDate", "desc"),
+    mapEmploymentDbEntityToEmployment
   );
 
 export default listEmployments;

@@ -1,9 +1,9 @@
-import { QueryDocumentSnapshot } from "firebase/firestore";
+import { QueryDocumentSnapshot } from "firebase-admin/firestore";
 
 import { AsyncMapperFunction, MapperFunction } from "./mapperFunction";
 
 export type ListerAsyncMapperFunction<DbType, ApiType = DbType> = (
-  doc: QueryDocumentSnapshot<DbType>
+  doc: QueryDocumentSnapshot
 ) => Promise<ApiType>;
 
 export default function createListerAsyncMapperFunction<
@@ -12,6 +12,6 @@ export default function createListerAsyncMapperFunction<
 >(
   mapper: MapperFunction<DbType, ApiType> | AsyncMapperFunction<DbType, ApiType>
 ) {
-  return async (doc: QueryDocumentSnapshot<DbType>): Promise<ApiType> =>
-    mapper(doc.data(), doc.id);
+  return async (doc: QueryDocumentSnapshot): Promise<ApiType> =>
+    mapper(doc.data() as DbType, doc.id);
 }

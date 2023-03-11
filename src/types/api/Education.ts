@@ -11,7 +11,6 @@ export interface Education {
   residentialCollege?: string;
   startDate: Date;
   syllabusUrls?: Record<string, string>;
-
   studentOrganizations: StudentOrganization[];
   type: EducationType;
 }
