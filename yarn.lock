@@ -114,7 +114,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-module-imports@npm:^7.16.7, @babel/helper-module-imports@npm:^7.18.6":
+"@babel/helper-module-imports@npm:^7.13.12, @babel/helper-module-imports@npm:^7.16.7, @babel/helper-module-imports@npm:^7.18.6":
   version: 7.18.6
   resolution: "@babel/helper-module-imports@npm:7.18.6"
   dependencies:
@@ -408,7 +408,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.0.0, @babel/types@npm:^7.18.6, @babel/types@npm:^7.20.2, @babel/types@npm:^7.20.7, @babel/types@npm:^7.21.0, @babel/types@npm:^7.21.2, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.8.3":
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.13.17, @babel/types@npm:^7.18.6, @babel/types@npm:^7.20.2, @babel/types@npm:^7.20.7, @babel/types@npm:^7.21.0, @babel/types@npm:^7.21.2, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.8.3":
   version: 7.21.2
   resolution: "@babel/types@npm:7.21.2"
   dependencies:
@@ -2983,6 +2983,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"babel-plugin-superjson-next@npm:^0.4.5":
+  version: 0.4.5
+  resolution: "babel-plugin-superjson-next@npm:0.4.5"
+  dependencies:
+    "@babel/helper-module-imports": ^7.13.12
+    "@babel/types": ^7.13.17
+    hoist-non-react-statics: ^3.3.2
+  peerDependencies:
+    next: ">=9.0.0"
+    superjson: 1.x
+  checksum: 38550039b1f124d798567abfa2bfba5ebfb578fc5de3bb3ce7de727097776b23e9192b21f1f9b7a106ef75b5dc46cbfb7e9ed4f29d56efd0ee453c3ac3f4d151
+  languageName: node
+  linkType: hard
+
 "babel-preset-current-node-syntax@npm:^1.0.0":
   version: 1.0.1
   resolution: "babel-preset-current-node-syntax@npm:1.0.1"
@@ -3714,6 +3728,8 @@ __metadata:
     "@types/react-dom": ^18.0.11
     "@typescript-eslint/eslint-plugin": ^5.54.0
     "@typescript-eslint/parser": ^5.54.0
+    babel-plugin-superjson-next: ^0.4.5
+    clsx: ^1.2.1
     eslint: ^8.35.0
     eslint-config-next: ^13.2.3
     eslint-config-prettier: ^8.6.0
@@ -3727,7 +3743,6 @@ __metadata:
     lodash: ^4.17.21
     luxon: ^3.3.0
     next: ^13.2.3
-    next-superjson-plugin: ^0.5.6
     node-mocks-http: ^1.12.1
     prettier: ^2.8.4
     react: ^18.2.0
@@ -6962,18 +6977,6 @@ __metadata:
   version: 0.6.3
   resolution: "negotiator@npm:0.6.3"
   checksum: b8ffeb1e262eff7968fc90a2b6767b04cfd9842582a9d0ece0af7049537266e7b2506dfb1d107a32f06dd849ab2aea834d5830f7f4d0e5cb7d36e1ae55d021d9
-  languageName: node
-  linkType: hard
-
-"next-superjson-plugin@npm:^0.5.6":
-  version: 0.5.6
-  resolution: "next-superjson-plugin@npm:0.5.6"
-  dependencies:
-    hoist-non-react-statics: ^3.3.2
-  peerDependencies:
-    next: ^13
-    superjson: ^1
-  checksum: 1f3c540664c07d146201dd1cda9c690b0302b0b8dff169280e963ac508f800e684d02425178ad9cf2acfde03f1d55b17040716f65e95ca823a56983b5955d67c
   languageName: node
   linkType: hard
 

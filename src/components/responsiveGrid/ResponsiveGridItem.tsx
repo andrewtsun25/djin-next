@@ -1,15 +1,13 @@
 import { SxProps, Theme } from "@mui/material";
-import { Property } from "csstype";
 import Image from "next/image";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { CSSProperties } from "react";
 
 import {
   ResponsiveGridItemIconButton,
   ResponsiveGridItemImageListItem,
   ResponsiveGridItemImageListItemBar,
 } from "./styled";
-import ObjectFit = Property.ObjectFit;
-import { useRouter } from "next/router";
 
 interface ResponsiveGridItemProps {
   linkUrl?: string;
@@ -17,7 +15,7 @@ interface ResponsiveGridItemProps {
   title: string;
   subtitle?: string;
   icon: JSX.Element;
-  mediaSizingStrategy?: ObjectFit;
+  imageStyle?: CSSProperties;
   sx?: SxProps<Theme>;
 }
 
@@ -27,18 +25,13 @@ const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
   subtitle,
   linkUrl,
   icon,
-  mediaSizingStrategy,
+  imageStyle = { objectFit: "contain" },
   sx,
 }: ResponsiveGridItemProps) => {
   const router = useRouter();
   return (
     <ResponsiveGridItemImageListItem cols={1} rows={1} sx={sx}>
-      <Image
-        src={mediaUrl}
-        alt={`Image of ${title}`}
-        fill
-        style={{ objectFit: mediaSizingStrategy ?? "contain" }}
-      />
+      <Image src={mediaUrl} alt={`Image of ${title}`} fill style={imageStyle} />
       <ResponsiveGridItemImageListItemBar
         title={title}
         subtitle={subtitle}

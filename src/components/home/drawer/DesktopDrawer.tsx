@@ -1,7 +1,6 @@
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { Button, Divider, Theme, Typography } from "@mui/material";
-import { useTheme } from "@mui/system";
+import { Button, Divider, Theme, Typography, useTheme } from "@mui/material";
 import React, { useMemo } from "react";
 
 import {

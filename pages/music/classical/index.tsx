@@ -1,5 +1,4 @@
-import { alpha, Container, useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/system";
+import { alpha, Container, useMediaQuery, useTheme } from "@mui/material";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import React from "react";
