@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { isNil } from "lodash";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
 import React from "react";
 
@@ -97,66 +98,71 @@ const MartialArtsPage = ({
   const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
-    <MartialArtsBackground>
-      <Fade in>
-        <MartialArtsContentContainer maxWidth="lg">
-          <MartialArtsPageHeading>
-            <MartialArtsPageTitle variant={isLarge ? "h2" : "h4"}>
-              {name}
-            </MartialArtsPageTitle>
-            {isLarge && (
-              <MartialArtsLogoImage
-                src={logoUrl}
-                alt={`${type}_logo`}
-                height={200}
-                width={200}
+    <>
+      <Head>
+        <title>d.jin - {name}</title>
+      </Head>
+      <MartialArtsBackground>
+        <Fade in>
+          <MartialArtsContentContainer maxWidth="lg">
+            <MartialArtsPageHeading>
+              <MartialArtsPageTitle variant={isLarge ? "h2" : "h4"}>
+                {name}
+              </MartialArtsPageTitle>
+              {isLarge && (
+                <MartialArtsLogoImage
+                  src={logoUrl}
+                  alt={`${type}_logo`}
+                  height={200}
+                  width={200}
+                />
+              )}
+            </MartialArtsPageHeading>
+            <MartialArtsExperienceLevel variant={isLarge ? "h4" : "h5"}>
+              Experience Level: {expLevel}
+            </MartialArtsExperienceLevel>
+            <MartialArtsPageContentGrid container spacing={3}>
+              <Grid item xs={12} lg={6}>
+                <MartialArtsDescription paragraph>
+                  {description}
+                </MartialArtsDescription>
+                {biography.map((paragraph: string, index: number) => (
+                  <Typography paragraph key={index}>
+                    {paragraph}
+                  </Typography>
+                ))}
+              </Grid>
+              <MartialArtsImageSection item xs={12} lg={6}>
+                <Grow in>
+                  <MartialArtsFigure component="figure">
+                    <MartialArtsImage
+                      src={mediaUrl}
+                      alt={`${type}_img`}
+                      height={1400}
+                      width={1600}
+                    />
+                    <MartialArtsFigureCaption>
+                      <Typography variant="subtitle1" align="center">
+                        {mediaCaption}
+                      </Typography>
+                    </MartialArtsFigureCaption>
+                  </MartialArtsFigure>
+                </Grow>
+              </MartialArtsImageSection>
+            </MartialArtsPageContentGrid>
+            <MartialArtsStudioGridSection>
+              <MartialArtsStudioGridTitle variant="h2">
+                Studios
+              </MartialArtsStudioGridTitle>
+              <ResponsiveGrid
+                items={studios}
+                renderGridTile={renderMartialArtsStudioGridTile}
               />
-            )}
-          </MartialArtsPageHeading>
-          <MartialArtsExperienceLevel variant={isLarge ? "h4" : "h5"}>
-            Experience Level: {expLevel}
-          </MartialArtsExperienceLevel>
-          <MartialArtsPageContentGrid container spacing={3}>
-            <Grid item xs={12} lg={6}>
-              <MartialArtsDescription paragraph>
-                {description}
-              </MartialArtsDescription>
-              {biography.map((paragraph: string, index: number) => (
-                <Typography paragraph key={index}>
-                  {paragraph}
-                </Typography>
-              ))}
-            </Grid>
-            <MartialArtsImageSection item xs={12} lg={6}>
-              <Grow in>
-                <MartialArtsFigure component="figure">
-                  <MartialArtsImage
-                    src={mediaUrl}
-                    alt={`${type}_img`}
-                    height={1400}
-                    width={1600}
-                  />
-                  <MartialArtsFigureCaption>
-                    <Typography variant="subtitle1" align="center">
-                      {mediaCaption}
-                    </Typography>
-                  </MartialArtsFigureCaption>
-                </MartialArtsFigure>
-              </Grow>
-            </MartialArtsImageSection>
-          </MartialArtsPageContentGrid>
-          <MartialArtsStudioGridSection>
-            <MartialArtsStudioGridTitle variant="h2">
-              Studios
-            </MartialArtsStudioGridTitle>
-            <ResponsiveGrid
-              items={studios}
-              renderGridTile={renderMartialArtsStudioGridTile}
-            />
-          </MartialArtsStudioGridSection>
-        </MartialArtsContentContainer>
-      </Fade>
-    </MartialArtsBackground>
+            </MartialArtsStudioGridSection>
+          </MartialArtsContentContainer>
+        </Fade>
+      </MartialArtsBackground>
+    </>
   );
 };
 

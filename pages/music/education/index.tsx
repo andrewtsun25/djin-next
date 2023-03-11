@@ -32,7 +32,7 @@ const MusicEducationPage = ({ educations }: MusicEducationNextPageProps) => {
   return (
     <>
       <Head>
-        <title>Music Education</title>
+        <title>d.jin - Music Education</title>
       </Head>
       <MusicEducationBackground>
         <Container maxWidth="lg">

@@ -38,7 +38,7 @@ const HbvResearchPage = ({ hbvResearchPapers }: HbvResearchNextPageProps) => {
   return (
     <>
       <Head>
-        <title>HBV Research</title>
+        <title>d.jin - HBV Research</title>
       </Head>
       <HbvBackground>
         <Fade in>

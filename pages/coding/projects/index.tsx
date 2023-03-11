@@ -125,7 +125,7 @@ const ProjectsPage = ({ projects }: ProjectsNextPageProps) => {
   return (
     <>
       <Head>
-        <title>d.jin - Projects</title>
+        <title>d.jin - Coding Projects</title>
       </Head>
       <ProjectsBackground>
         <ProjectsPageTitle variant="h2">Coding Projects</ProjectsPageTitle>

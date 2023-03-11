@@ -31,7 +31,7 @@ type CodingEducationNextPageProps = InferGetStaticPropsType<
 const CodingEducationPage = ({ educations }: CodingEducationNextPageProps) => (
   <>
     <Head>
-      <title>Coding Education</title>
+      <title>d.jin - Coding Education</title>
     </Head>
     <CodingEducationBackground>
       <Container maxWidth="lg">

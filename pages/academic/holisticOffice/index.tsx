@@ -77,7 +77,7 @@ const HolisticOfficePage = ({
   return (
     <>
       <Head>
-        <title>Holistic Office</title>
+        <title>d.jin - Holistic Office</title>
       </Head>
       <HolisticOfficeBackground>
         <Fade in>
