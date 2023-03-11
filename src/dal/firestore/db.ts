@@ -1,4 +1,4 @@
-import { AppOptions, cert, getApps,initializeApp } from "firebase-admin/app";
+import { AppOptions, cert, getApps, initializeApp } from "firebase-admin/app";
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 import { getFirestore } from "firebase-admin/firestore";
 
@@ -8,7 +8,7 @@ const config: AppOptions = {
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
     privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n"), // replace `\n` characters
   }),
-  databaseURL: process.env.FIREBASE_DATABASE_NAME,
+  databaseURL: `'https://${process.env.FIREBASE_DATABASE_NAME}.firebaseio.com`,
 };
 
 // Initialize Firebase only once, see https://www.reddit.com/r/Firebase/comments/ve4qwl/you_called_initializeapp_more_than_once_issue/

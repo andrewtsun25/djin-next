@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -51,5 +51,6 @@
     "jest-environment-jsdom": "^29.4.3",
     "node-mocks-http": "^1.12.1",
     "prettier": "^2.8.4"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
