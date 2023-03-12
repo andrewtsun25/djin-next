@@ -6,8 +6,11 @@ const HEP_B_JADE = "#308575";
 const teamHbvBg = `${Urls.AssetRoot}/hbvResearch/bg/team_hbv_bg.png`;
 
 const HbvBackground = styled(Box)({
+  background: `url(${teamHbvBg}) ${HEP_B_JADE} no-repeat center center fixed`,
   backgroundSize: "cover",
-  background: `url(${teamHbvBg}) ${HEP_B_JADE} no-repeat center center/70% fixed`,
+  width: "100%",
+  height: "100%",
+  minHeight: "100vh",
 });
 
 export default HbvBackground;

@@ -9,6 +9,8 @@ const EdmBackground = styled(Box)(({ theme }) => ({
   background: `url(${edmBg}) no-repeat center center fixed`,
   backgroundSize: "cover",
   padding: theme.spacing(4),
+  height: "100%",
+  width: "100%",
   minHeight: "100vh",
 }));
 

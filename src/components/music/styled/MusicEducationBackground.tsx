@@ -8,6 +8,8 @@ const musicEducationBackgroundUrl = `${Urls.AssetRoot}/education/bg/pioneer_cdj_
 const MusicEducationBackground = styled(Box)({
   background: `url(${musicEducationBackgroundUrl}) no-repeat center center fixed`,
   backgroundSize: "cover",
+  height: "100%",
+  width: "100%",
   minHeight: "100vh",
 });
 

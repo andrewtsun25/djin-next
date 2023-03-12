@@ -6,6 +6,7 @@ const HOLISTIC_OFFICE_GREEN = "#e2f1e9";
 const HolisticOfficeBackground = styled(Box)({
   backgroundColor: HOLISTIC_OFFICE_GREEN,
   width: "100vw",
+  minHeight: "100vh",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",

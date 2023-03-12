@@ -10,6 +10,7 @@ const CodingEducationBackground = styled(Box)(({ theme }) => ({
   backgroundSize: "cover",
   width: "100%",
   height: "100%",
+  minHeight: "100vh",
   padding: theme.spacing(2),
 }));
 
