@@ -8,6 +8,8 @@ const employmentBackgroundUrl = `${Urls.AssetRoot}/employment/bg/anduril_office.
 const EmploymentBackground = styled(Box)({
   background: `url(${employmentBackgroundUrl}) no-repeat center center fixed`,
   backgroundSize: "cover",
+  height: "100%",
+  width: "100%",
   minHeight: "100vh",
 });
 
