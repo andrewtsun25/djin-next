@@ -7,7 +7,7 @@ import { ThemeProvider } from "@mui/material";
 import type { AppProps } from "next/app";
 
 import { SiteLayout } from "../src/components/layout";
-import { djinTheme } from "../src/mui";
+import { djinTheme } from "../src/themes";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

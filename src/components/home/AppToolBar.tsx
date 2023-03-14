@@ -3,7 +3,6 @@ import {
   AppBar,
   IconButton,
   Toolbar,
-  Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
@@ -12,7 +11,11 @@ import { useRouter } from "next/router";
 import React from "react";
 
 import logo from "../../../public/logos/logo.png";
-import { AppToolBarBrandContainer, AppToolBarLogo } from "./styled";
+import {
+  AppToolBarBrandContainer,
+  AppToolBarLogo,
+  HomeLinkText,
+} from "./styled";
 
 interface AppToolBarProps {
   isAppDrawerOpen: boolean;
@@ -51,9 +54,7 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
         <Link href="/">
           <AppToolBarBrandContainer>
             <AppToolBarLogo src={logo} alt="d.jin website logo" />
-            <Typography variant="h5" ml={1.5}>
-              d.jin
-            </Typography>
+            <HomeLinkText variant="h5">d.jin</HomeLinkText>
           </AppToolBarBrandContainer>
         </Link>
       </Toolbar>

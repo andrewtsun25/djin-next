@@ -8,6 +8,7 @@ import DesktopDrawerContainer, {
 import DrawerContentContainer from "./DrawerContentContainer";
 import HomeBackground from "./HomeBackground";
 import HomeDescriptionTypography from "./HomeDescriptionTypography";
+import HomeLinkText from "./HomeLinkText";
 import HomeTextContainer from "./HomeTextContainer";
 import HomeTitleTypography from "./HomeTitleTypography";
 import MobileDrawerHandle from "./MobileDrawerHandle";
@@ -24,6 +25,7 @@ export {
   DrawerContentContainer,
   HomeBackground,
   HomeDescriptionTypography,
+  HomeLinkText,
   HomeTextContainer,
   HomeTitleTypography,
   MobileDrawerHandle,
