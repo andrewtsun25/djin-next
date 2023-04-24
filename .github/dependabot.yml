@@ -9,6 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 10 # number of open pull requests
     commit-message:
       # Prefix all messages with dependencies tag
       prefix: "[dependencies]: "
