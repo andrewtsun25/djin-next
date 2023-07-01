@@ -27,7 +27,7 @@
     "babel-plugin-superjson-next": "^0.4.5",
     "clsx": "^1.2.1",
     "eslint": "^8.43.0",
-    "eslint-config-next": "^13.4.6",
+    "eslint-config-next": "^13.4.7",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "firebase": "^9.23.0",
     "firebase-admin": "^11.9.0",
