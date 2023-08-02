@@ -19,7 +19,7 @@
     "@fontsource/roboto": "^5.0.5",
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.0",
-    "@types/lodash": "^4.14.195",
+    "@types/lodash": "^4.14.196",
     "@types/luxon": "^3.3.1",
     "@types/node": "20.4.4",
     "@types/react": "^18.2.17",
