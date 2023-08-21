@@ -29,7 +29,7 @@
     "eslint": "^8.47.0",
     "eslint-config-next": "^13.4.15",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "firebase": "^9.23.0",
+    "firebase": "^10.2.0",
     "firebase-admin": "^11.10.1",
     "lodash": "^4.17.21",
     "luxon": "^3.4.0",
