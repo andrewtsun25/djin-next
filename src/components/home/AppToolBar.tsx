@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useMemo } from "react";
 
 import logo from "../../../public/logos/logo.png";
 import {
@@ -24,7 +24,7 @@ interface AppToolBarProps {
 
 export const MENU_BUTTON_ROLE = "switch";
 
-const pathsWithFixedPosition = ["/"];
+const pathsWithFixedAppToolbar = ["/"];
 
 const AppToolBar: React.FC<AppToolBarProps> = ({
   isAppDrawerOpen,
@@ -33,11 +33,12 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
   const router = useRouter();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
-  const shouldBeFixed = pathsWithFixedPosition.some(
-    (path) => router.asPath === path
+  const isAppToolbarPositionFixed = useMemo(
+    () => pathsWithFixedAppToolbar.some((path) => router.asPath === path),
+    [router],
   );
   return (
-    <AppBar position={shouldBeFixed ? "fixed" : "sticky"}>
+    <AppBar position={isAppToolbarPositionFixed ? "fixed" : "sticky"}>
       <Toolbar>
         {isDesktop && (
           <IconButton
@@ -51,7 +52,7 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
             <MenuIcon />
           </IconButton>
         )}
-        <Link href="/">
+        <Link href="/" style={{ textDecoration: "none" }}>
           <AppToolBarBrandContainer>
             <AppToolBarLogo src={logo} alt="d.jin website logo" />
             <HomeLinkText variant="h5">d.jin</HomeLinkText>
