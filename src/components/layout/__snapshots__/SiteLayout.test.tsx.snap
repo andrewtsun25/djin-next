@@ -13,6 +13,7 @@ exports[`SiteLayout renders 1`] = `
         >
           <a
             href="/"
+            style="text-decoration: none;"
           >
             <div
               class="MuiBox-root css-omo8we"
@@ -339,6 +340,7 @@ exports[`SiteLayout renders 1`] = `
       >
         <a
           href="/"
+          style="text-decoration: none;"
         >
           <div
             class="MuiBox-root css-omo8we"

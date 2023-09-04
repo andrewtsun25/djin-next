@@ -13,7 +13,7 @@ const HomeBackground = styled(Box)({
   justifyContent: "center",
   alignItems: "center",
   height: "100vh",
-  background: `url(${homeBg}) no-repeat center center fixed`,
+  background: `url(${homeBg}) black no-repeat center center fixed`,
 });
 
 export default HomeBackground;

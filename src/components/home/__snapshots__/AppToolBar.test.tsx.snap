@@ -13,6 +13,7 @@ exports[`AppToolBar renders with a fixed header if tthe app is on the home page 
         >
           <a
             href="/"
+            style="text-decoration: none;"
           >
             <div
               class="MuiBox-root css-omo8we"
@@ -49,6 +50,7 @@ exports[`AppToolBar renders with a fixed header if tthe app is on the home page 
       >
         <a
           href="/"
+          style="text-decoration: none;"
         >
           <div
             class="MuiBox-root css-omo8we"
@@ -142,6 +144,7 @@ exports[`AppToolBar renders with a sticky header if the app isn't on the home pa
         >
           <a
             href="/"
+            style="text-decoration: none;"
           >
             <div
               class="MuiBox-root css-omo8we"
@@ -178,6 +181,7 @@ exports[`AppToolBar renders with a sticky header if the app isn't on the home pa
       >
         <a
           href="/"
+          style="text-decoration: none;"
         >
           <div
             class="MuiBox-root css-omo8we"
