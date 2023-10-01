@@ -22,7 +22,7 @@
     "@types/lodash": "^4.14.199",
     "@types/luxon": "^3.3.2",
     "@types/node": "20.7.2",
-    "@types/react": "^18.2.21",
+    "@types/react": "^18.2.23",
     "@types/react-dom": "^18.2.7",
     "babel-plugin-superjson-next": "^0.4.5",
     "clsx": "^2.0.0",
