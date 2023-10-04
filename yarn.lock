@@ -4089,7 +4089,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     sharp: ^0.32.6
-    superjson: ^1.13.1
+    superjson: ^1.13.3
     typescript: ^5.2.2
   languageName: unknown
   linkType: soft
@@ -9105,12 +9105,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"superjson@npm:^1.13.1":
-  version: 1.13.1
-  resolution: "superjson@npm:1.13.1"
+"superjson@npm:^1.13.3":
+  version: 1.13.3
+  resolution: "superjson@npm:1.13.3"
   dependencies:
     copy-anything: ^3.0.2
-  checksum: 9c8c664a924ce097250112428805ccc8b500018b31a91042e953d955108b8481c156005d836b413940c9fa5f124a3195f55f3a518fe76510a254a59f9151a204
+  checksum: f5aeb010f24163cb871a4bc402d9164112201c059afc247a75b03131c274aea6eec9cf08be9e4a9465fe4961689009a011584528531d52f7cc91c077e07e5c75
   languageName: node
   linkType: hard
 
