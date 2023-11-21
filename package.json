@@ -21,7 +21,7 @@
     "@mui/material": "^5.14.17",
     "@types/lodash": "^4.14.201",
     "@types/luxon": "^3.3.4",
-    "@types/node": "20.9.0",
+    "@types/node": "20.9.3",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "babel-plugin-superjson-next": "^0.4.5",
