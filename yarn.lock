@@ -1354,15 +1354,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@google-cloud/firestore@npm:^6.6.0":
-  version: 6.6.1
-  resolution: "@google-cloud/firestore@npm:6.6.1"
+"@google-cloud/firestore@npm:^6.8.0":
+  version: 6.8.0
+  resolution: "@google-cloud/firestore@npm:6.8.0"
   dependencies:
     fast-deep-equal: ^3.1.1
     functional-red-black-tree: ^1.0.1
     google-gax: ^3.5.7
-    protobufjs: ^7.0.0
-  checksum: 9f3838e07d74da34ba4cf322efd3f82e3b8f5b330ae01c0e51d717aacafe2a84caa2869989bbff87fe020086f5b8591baaaf8c643dc93c20fd3f6f2adfd67a24
+    protobufjs: ^7.2.5
+  checksum: e8e1fd7cc6fd688e771c3d2f62c2f33d23357e11ee03f6d2f2aeb0ea29378f8e62f2511936011b515bbeedf304b5e831e4f4a46b8905dbc421fe2fa521d2e43f
   languageName: node
   linkType: hard
 
@@ -4189,7 +4189,7 @@ __metadata:
     eslint-plugin-prettier: ^5.0.1
     eslint-plugin-simple-import-sort: ^10.0.0
     firebase: ^10.6.0
-    firebase-admin: ^11.11.0
+    firebase-admin: ^11.11.1
     husky: ^8.0.3
     jest: ^29.7.0
     jest-environment-jsdom: ^29.7.0
@@ -5132,14 +5132,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"firebase-admin@npm:^11.11.0":
-  version: 11.11.0
-  resolution: "firebase-admin@npm:11.11.0"
+"firebase-admin@npm:^11.11.1":
+  version: 11.11.1
+  resolution: "firebase-admin@npm:11.11.1"
   dependencies:
     "@fastify/busboy": ^1.2.1
     "@firebase/database-compat": ^0.3.4
     "@firebase/database-types": ^0.10.4
-    "@google-cloud/firestore": ^6.6.0
+    "@google-cloud/firestore": ^6.8.0
     "@google-cloud/storage": ^6.9.5
     "@types/node": ">=12.12.47"
     jsonwebtoken: ^9.0.0
@@ -5151,7 +5151,7 @@ __metadata:
       optional: true
     "@google-cloud/storage":
       optional: true
-  checksum: 0702b6b8367e90b1463df4b132131924488d2c69f9d0c49072465940708967e93cc1688f4ef76ba59920fbd4e9ca916436ae0c8eca9a6a88b1c8d12ab7fd0f5a
+  checksum: d62b76943668edb3be3b8807cf796394d98110a23dc306281aa13de6c8766510dd3cdc6a2a3126ff5292527fc26fc5a53b5214f4c9a8557c6c22a8c177a9405e
   languageName: node
   linkType: hard
 
@@ -8320,7 +8320,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs@npm:^7.2.4":
+"protobufjs@npm:^7.2.4, protobufjs@npm:^7.2.5":
   version: 7.2.5
   resolution: "protobufjs@npm:7.2.5"
   dependencies:
