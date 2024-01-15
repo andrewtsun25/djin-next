@@ -2689,7 +2689,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.10.7":
+"@types/node@npm:20.10.7, @types/node@npm:^20.10.6":
   version: 20.10.7
   resolution: "@types/node@npm:20.10.7"
   dependencies:
@@ -2704,15 +2704,6 @@ __metadata:
   dependencies:
     undici-types: ~5.26.4
   checksum: 054b296417e771ab524bea63cf3289559c6bdf290d45428f7cc68e9b00030ff7a0ece47b8c99a26b4f47a443919813bcf42beadff2f0bea7d8125fa541d92eb0
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^20.10.6":
-  version: 20.10.7
-  resolution: "@types/node@npm:20.10.7"
-  dependencies:
-    undici-types: ~5.26.4
-  checksum: 86f4f96f5169538f47bbd652ab8e3712cd307701481ff3e9ce0c1ea7d8424a38b5ac4a1d33088cdd9ea1bfe68fd27bbae005a21969aa6d9a36295904da6f09f2
   languageName: node
   linkType: hard
 
@@ -4304,7 +4295,7 @@ __metadata:
     luxon: ^3.4.4
     next: ^14.0.4
     node-mocks-http: ^1.14.1
-    prettier: ^3.1.1
+    prettier: ^3.2.2
     react: ^18.2.0
     react-dom: ^18.2.0
     sharp: ^0.33.1
@@ -8082,12 +8073,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "prettier@npm:3.1.1"
+"prettier@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "prettier@npm:3.2.2"
   bin:
     prettier: bin/prettier.cjs
-  checksum: e386855e3a1af86a748e16953f168be555ce66d6233f4ba54eb6449b88eb0c6b2ca79441b11eae6d28a7f9a5c96440ce50864b9d5f6356d331d39d6bb66c648e
+  checksum: b416e1e4b26c351403343ebe461feda631c0eee5c3cf316c711204a08f3c639f38a8f9177c75e98a690998ff82e8ddc80c6bc027fb4ef6cedb6a4db035b4fe9a
   languageName: node
   linkType: hard
 
