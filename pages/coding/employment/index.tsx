@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps<EmploymentPageProps> = async () => {
 type EmploymentNextPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 const RESUME_URL =
-  "https://docs.google.com/document/d/1fIQ8ceaV1BW7FmWvPe8aGGlLVFtXxLcHDIOf7swxXzw/edit?usp=sharing";
+  "https://docs.google.com/document/d/1RVocDw54Fpw8sKh6_ygapMjB4kZz_QFkhUxQ5nhiOx8/edit?usp=sharing";
 
 const EMPLOYMENT_TYPES_QUERY_PARAM = "employmentTypes";
 
@@ -48,10 +48,10 @@ const EmploymentPage = ({ employments }: EmploymentNextPageProps) => {
     return Array.isArray(employmentTypesInQuery)
       ? employmentTypesInQuery.map((et) => et as EmploymentType)
       : !isNil(employmentTypesInQuery)
-      ? decodeURIComponent(employmentTypesInQuery)
-          .split(",")
-          .map((et) => et as EmploymentType)
-      : [];
+        ? decodeURIComponent(employmentTypesInQuery)
+            .split(",")
+            .map((et) => et as EmploymentType)
+        : [];
   }, [router.query]);
   const setSelectedEmploymentTypes = (newEmploymentTypes: EmploymentType[]) => {
     // Determine new query parameters
@@ -71,9 +71,9 @@ const EmploymentPage = ({ employments }: EmploymentNextPageProps) => {
       employments.filter((employment) =>
         selectedEmploymentTypes.length < 1
           ? true // bypass filter if no employment type specified
-          : selectedEmploymentTypes.includes(employment.employmentType)
+          : selectedEmploymentTypes.includes(employment.employmentType),
       ),
-    [selectedEmploymentTypes, employments]
+    [selectedEmploymentTypes, employments],
   );
   return (
     <>
@@ -86,7 +86,7 @@ const EmploymentPage = ({ employments }: EmploymentNextPageProps) => {
         </EmploymentPageTitle>
         <EmploymentPageHeaderContainer>
           <EmploymentText sx={{ m: 2 }}>
-            A more official, detailed résumé can be obtained{" "}
+            My most current résumé can be obtained{" "}
             <EmploymentResumeLink
               href={RESUME_URL}
               target="_blank"
