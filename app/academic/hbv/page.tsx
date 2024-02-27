@@ -1,5 +1,4 @@
 import { Fade } from "@mui/material";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 
 import {
@@ -17,24 +16,8 @@ import { HbvResearchPaper } from "../../../src/types/api";
 
 const HEP_B_LINK = "https://med.stanford.edu/liver/education/whatishepb.html";
 
-interface HbvResearchPageProps {
-  hbvResearchPapers: HbvResearchPaper[];
-}
-
-export const getStaticProps: GetStaticProps<
-  HbvResearchPageProps
-> = async () => {
-  const hbvResearchPapers = await listHbvResearchPapers();
-  return {
-    props: {
-      hbvResearchPapers,
-    },
-  };
-};
-
-type HbvResearchNextPageProps = InferGetStaticPropsType<typeof getStaticProps>;
-
-const HbvResearchPage = ({ hbvResearchPapers }: HbvResearchNextPageProps) => {
+export default async function HbvResearchPage() {
+  const hbvResearchPapers: HbvResearchPaper[] = await listHbvResearchPapers();
   return (
     <>
       <Head>
@@ -113,6 +96,4 @@ const HbvResearchPage = ({ hbvResearchPapers }: HbvResearchNextPageProps) => {
       </HbvBackground>
     </>
   );
-};
-
-export default HbvResearchPage;
+}

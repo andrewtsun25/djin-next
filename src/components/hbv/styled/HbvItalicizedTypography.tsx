@@ -1,3 +1,5 @@
+"use client";
+
 import { styled, Typography } from "@mui/material";
 
 const HbvItalicizedTypography = styled(Typography)(({ theme }) => ({
