@@ -1,3 +1,5 @@
+"use client";
+
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 
@@ -11,7 +13,7 @@ import LinkList from "./LinkList";
 interface LinkSectionProps {
   title: string;
   description: string;
-  icon: JSX.Element;
+  icon: React.JSX.Element;
 
   links: HolisticOfficeLink[];
 }

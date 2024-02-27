@@ -1,9 +1,7 @@
 import DescriptionIcon from "@mui/icons-material/Description";
 import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
-import { Fade, Grow, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { Fade, Grow, Typography } from "@mui/material";
 import Head from "next/head";
-import { useMemo } from "react";
 
 import {
   HolisticOfficeBackground,
@@ -32,47 +30,16 @@ const websiteImg = `${Urls.AssetRoot}/holisticOffice/img/holistic_office_website
 const architectureImg = `${Urls.AssetRoot}/holisticOffice/img/holistic_office_architecture.png`;
 const holisticOfficeUrl = "https://www.holisticoffice.biz/";
 
-interface HolisticOfficePageProps {
-  holisticOfficeLinks: HolisticOfficeLink[];
-  holisticOfficeModules: HolisticOfficeModule[];
-}
-
-export const getStaticProps: GetStaticProps<
-  HolisticOfficePageProps
-> = async () => {
-  const holisticOfficeLinks = await listHolisticOfficeLinks();
-  const holisticOfficeModules = await listHolisticOfficeModules();
-  return {
-    props: {
-      holisticOfficeLinks,
-      holisticOfficeModules,
-    },
-  };
-};
-
-type HolisticOfficeNextPageProps = InferGetStaticPropsType<
-  typeof getStaticProps
->;
-
-const HolisticOfficePage = ({
-  holisticOfficeModules,
-  holisticOfficeLinks,
-}: HolisticOfficeNextPageProps) => {
-  const theme = useTheme();
-  const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
-  const codeLinks = useMemo(
-    () =>
-      holisticOfficeLinks.filter(
-        ({ type }) => type === HolisticOfficeLinkType.Code
-      ),
-    [holisticOfficeLinks]
+export default async function HolisticOfficePage() {
+  const holisticOfficeLinks: HolisticOfficeLink[] =
+    await listHolisticOfficeLinks();
+  const holisticOfficeModules: HolisticOfficeModule[] =
+    await listHolisticOfficeModules();
+  const codeLinks = holisticOfficeLinks.filter(
+    ({ type }) => type === HolisticOfficeLinkType.Code,
   );
-  const documentationLinks = useMemo(
-    () =>
-      holisticOfficeLinks.filter(
-        ({ type }) => type === HolisticOfficeLinkType.Documentation
-      ),
-    [holisticOfficeLinks]
+  const documentationLinks = holisticOfficeLinks.filter(
+    ({ type }) => type === HolisticOfficeLinkType.Documentation,
   );
   return (
     <>
@@ -116,10 +83,7 @@ const HolisticOfficePage = ({
               (AWS Elastic Beanstalk) that talks to a relational database (AWS
               RDS).
             </Typography>
-            <HolisticOfficePageHeading
-              variant={isSmall ? "h3" : "h2"}
-              align="center"
-            >
+            <HolisticOfficePageHeading variant="h3" align="center">
               Architecture
             </HolisticOfficePageHeading>
             <Grow in>
@@ -151,6 +115,4 @@ const HolisticOfficePage = ({
       </HolisticOfficeBackground>
     </>
   );
-};
-
-export default HolisticOfficePage;
+}
