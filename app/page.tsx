@@ -1,10 +1,16 @@
+import { Metadata } from "next";
+
 import { HomeBackground, HomeTextContainer } from "../src/components/home";
 import {
   HomeDescriptionTypography,
   HomeTitleTypography,
 } from "../src/components/home/styled";
 
-export default function Page() {
+export const metadata: Metadata = {
+  title: "d.jin - Home",
+};
+
+export default function HomePage() {
   return (
     <HomeBackground>
       <HomeTextContainer>

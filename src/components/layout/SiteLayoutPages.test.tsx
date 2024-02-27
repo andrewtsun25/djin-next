@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { render } from "@testing-library/react";
 
 import SiteLayoutPages from "./SiteLayoutPages";
@@ -15,7 +16,7 @@ describe("SiteLayoutPages", () => {
   it("renders", () => {
     const layout = render(
       <SiteLayoutPages>
-        <p>Hi!</p>
+        <Typography>Hi!</Typography>
       </SiteLayoutPages>,
     );
     expect(layout).toMatchSnapshot();

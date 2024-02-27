@@ -43,7 +43,9 @@ exports[`SiteLayoutPages renders 1`] = `
         class="PrivateSwipeArea-root css-n2n0ek"
         style="width: 20px;"
       />
-      <p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
         Hi!
       </p>
     </div>
@@ -370,7 +372,9 @@ exports[`SiteLayoutPages renders 1`] = `
       class="PrivateSwipeArea-root css-n2n0ek"
       style="width: 20px;"
     />
-    <p>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
       Hi!
     </p>
   </div>,
