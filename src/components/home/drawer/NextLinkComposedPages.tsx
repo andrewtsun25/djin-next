@@ -1,10 +1,8 @@
-"use client";
-
 import MuiLink, { LinkProps as MuiLinkProps } from "@mui/material/Link";
 import { styled } from "@mui/material/styles";
 import clsx from "clsx";
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 import * as React from "react";
 
 // This class is borrowed from https://mui.com/material-ui/guides/routing/#list
@@ -12,7 +10,7 @@ import * as React from "react";
 // Add support for the sx prop for consistency with the other branches.
 const Anchor = styled("a")({});
 
-export interface NextLinkComposedProps
+export interface NextLinkPagesComposedProps
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">,
     Omit<
       NextLinkProps,
@@ -22,9 +20,9 @@ export interface NextLinkComposedProps
   linkAs?: NextLinkProps["as"];
 }
 
-export const NextLinkComposed = React.forwardRef<
+export const NextLinkComposedPages = React.forwardRef<
   HTMLAnchorElement,
-  NextLinkComposedProps
+  NextLinkPagesComposedProps
 >(function NextLinkComposed(props, ref) {
   const {
     to,
@@ -61,12 +59,12 @@ export type LinkProps = {
   href: NextLinkProps["href"];
   linkAs?: NextLinkProps["as"]; // Useful when the as prop is shallow by styled().
   noLinkStyle?: boolean;
-} & Omit<NextLinkComposedProps, "to" | "linkAs" | "href"> &
+} & Omit<NextLinkPagesComposedProps, "to" | "linkAs" | "href"> &
   Omit<MuiLinkProps, "href">;
 
 // A styled version of the Next.js Link component:
 // https://nextjs.org/docs/api-reference/next/link
-const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
+const LinkPages = React.forwardRef<HTMLAnchorElement, LinkProps>(
   function Link(props, ref) {
     const {
       activeClassName = "active",
@@ -84,10 +82,10 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
       ...other
     } = props;
 
-    const nextPathname = usePathname();
+    const router = useRouter();
     const pathname = typeof href === "string" ? href : href.pathname;
     const className = clsx(classNameProps, {
-      [activeClassName]: nextPathname === pathname && activeClassName,
+      [activeClassName]: router.pathname === pathname && activeClassName,
     });
 
     const isExternal =
@@ -118,7 +116,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
 
     if (noLinkStyle) {
       return (
-        <NextLinkComposed
+        <NextLinkComposedPages
           className={className}
           ref={ref}
           {...nextjsProps}
@@ -129,7 +127,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
 
     return (
       <MuiLink
-        component={NextLinkComposed}
+        component={NextLinkComposedPages}
         className={className}
         ref={ref}
         {...nextjsProps}
@@ -139,4 +137,4 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
   },
 );
 
-export default Link;
+export default LinkPages;

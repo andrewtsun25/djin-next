@@ -1,5 +1,3 @@
-"use client";
-
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
@@ -9,7 +7,7 @@ import {
   useTheme,
 } from "@mui/material";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 import React, { useMemo } from "react";
 
 import logo from "../../../public/logos/logo.png";
@@ -28,16 +26,16 @@ export const MENU_BUTTON_ROLE = "switch";
 
 const pathsWithFixedAppToolbar = ["/"];
 
-const AppToolBar: React.FC<AppToolBarProps> = ({
+const AppToolBarPages: React.FC<AppToolBarProps> = ({
   isAppDrawerOpen,
   setIsAppDrawerOpen,
 }: AppToolBarProps) => {
-  const pathname = usePathname();
+  const router = useRouter();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
   const isAppToolbarPositionFixed = useMemo(
-    () => pathsWithFixedAppToolbar.some((pn) => pathname === pn),
-    [pathname],
+    () => pathsWithFixedAppToolbar.some((path) => router.asPath === path),
+    [router],
   );
   return (
     <AppBar position={isAppToolbarPositionFixed ? "fixed" : "sticky"}>
@@ -65,4 +63,4 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
   );
 };
 
-export { AppToolBar };
+export default AppToolBarPages;

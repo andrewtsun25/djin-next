@@ -1,13 +1,12 @@
-"use client";
-
 import { Global } from "@emotion/react";
 import { CssBaseline, useMediaQuery, useTheme } from "@mui/material";
 import React, { PropsWithChildren, useState } from "react";
 
-import { AppToolBar, DesktopDrawer } from "../home";
+import { DesktopDrawer } from "../home";
+import AppToolBarPages from "../home/AppToolBarPages";
 import MobileDrawer, { DRAWER_EDGE } from "../home/drawer/MobileDrawer";
 
-const SiteLayout: React.FC<PropsWithChildren> = ({ children }) => {
+const SiteLayoutPages: React.FC<PropsWithChildren> = ({ children }) => {
   const [isAppDrawerOpen, setIsAppDrawerOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -24,7 +23,7 @@ const SiteLayout: React.FC<PropsWithChildren> = ({ children }) => {
           }}
         />
       )}
-      <AppToolBar
+      <AppToolBarPages
         isAppDrawerOpen={isAppDrawerOpen}
         setIsAppDrawerOpen={setIsAppDrawerOpen}
       />
@@ -44,4 +43,4 @@ const SiteLayout: React.FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-export { SiteLayout };
+export default SiteLayoutPages;

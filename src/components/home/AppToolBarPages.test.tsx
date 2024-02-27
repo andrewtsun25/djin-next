@@ -1,35 +1,37 @@
 import { fireEvent, render } from "@testing-library/react";
-import * as nextNavigation from "next/navigation";
+import * as nextRouter from "next/router";
 
-import { AppToolBar, MENU_BUTTON_ROLE } from "./AppToolBar";
+import AppToolBarPages, { MENU_BUTTON_ROLE } from "./AppToolBarPages";
 
-const mockNextNavigation = nextNavigation as unknown as {
-  usePathname: () => string;
+const mockNextRouter = nextRouter as unknown as {
+  useRouter: () => { asRouter: string };
 };
 
-function createUsePathname(pathname: string) {
-  return () => pathname;
+function createUseRouter(asRouter: string) {
+  return () => ({
+    asRouter,
+  });
 }
 
-jest.mock("next/navigation", () => {
+jest.mock("next/router", () => {
   return {
     __esModule: true,
-    usePathname: null,
+    useRouter: null,
   };
 });
 
-describe("AppToolBar", () => {
+describe("AppToolBarPages", () => {
   let setIsAppDrawerOpen: (b: boolean) => void;
 
   beforeEach(() => {
     setIsAppDrawerOpen = jest.fn();
   });
 
-  it("renders with a fixed header if the app is on the home page", () => {
-    mockNextNavigation.usePathname = createUsePathname("/");
+  it("renders with a fixed header if tthe app is on the home page", () => {
+    mockNextRouter.useRouter = createUseRouter("/");
     const isAppDrawerOpen = true;
     const appToolBar = render(
-      <AppToolBar
+      <AppToolBarPages
         isAppDrawerOpen={isAppDrawerOpen}
         setIsAppDrawerOpen={setIsAppDrawerOpen}
       />,
@@ -38,10 +40,10 @@ describe("AppToolBar", () => {
   });
 
   it("renders with a sticky header if the app isn't on the home page", () => {
-    mockNextNavigation.usePathname = createUsePathname("/academic/hbv");
+    mockNextRouter.useRouter = createUseRouter("/academic/hbv");
     const isAppDrawerOpen = true;
     const appToolBar = render(
-      <AppToolBar
+      <AppToolBarPages
         isAppDrawerOpen={isAppDrawerOpen}
         setIsAppDrawerOpen={setIsAppDrawerOpen}
       />,
@@ -50,10 +52,10 @@ describe("AppToolBar", () => {
   });
 
   xit("opens the drawer if the drawer isn't opened", () => {
-    mockNextNavigation.usePathname = createUsePathname("/");
+    mockNextRouter.useRouter = createUseRouter("/");
     const isAppDrawerOpen = false;
     const { getByRole } = render(
-      <AppToolBar
+      <AppToolBarPages
         isAppDrawerOpen={isAppDrawerOpen}
         setIsAppDrawerOpen={setIsAppDrawerOpen}
       />,
@@ -64,10 +66,10 @@ describe("AppToolBar", () => {
   });
 
   xit("doesn't render the menu button if the drawer is open", () => {
-    mockNextNavigation.usePathname = createUsePathname("/");
+    mockNextRouter.useRouter = createUseRouter("/");
     const isAppDrawerOpen = true;
     const { queryByRole } = render(
-      <AppToolBar
+      <AppToolBarPages
         isAppDrawerOpen={isAppDrawerOpen}
         setIsAppDrawerOpen={setIsAppDrawerOpen}
       />,

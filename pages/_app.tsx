@@ -6,15 +6,15 @@ import "@fontsource/roboto/700.css";
 import { ThemeProvider } from "@mui/material";
 import type { AppProps } from "next/app";
 
-import { SiteLayout } from "../src/components/layout";
+import SiteLayoutPages from "../src/components/layout/SiteLayoutPages";
 import { djinTheme } from "../src/themes";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={djinTheme}>
-      <SiteLayout>
+      <SiteLayoutPages>
         <Component {...pageProps} />
-      </SiteLayout>
+      </SiteLayoutPages>
     </ThemeProvider>
   );
 }

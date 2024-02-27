@@ -1,5 +1,3 @@
-"use client";
-
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import {
@@ -16,15 +14,15 @@ interface CollapsibleListPropsWithoutChildren {
   name: string;
 }
 
-type CollapsibleListProps =
+type CollapsibleListPagesProps =
   PropsWithChildren<CollapsibleListPropsWithoutChildren>;
 
 export const LIST_ITEM_COLLAPSE_BTN_TEST_ID = "List Item Collapse Btn";
-const CollapsibleList: React.FC<CollapsibleListProps> = ({
+const CollapsibleListPages: React.FC<CollapsibleListPagesProps> = ({
   icon,
   name,
   children,
-}: CollapsibleListProps) => {
+}: CollapsibleListPagesProps) => {
   const [isListOpen, setIsListOpen] = useState<boolean>(false);
   const toggleIsListOpen = () =>
     setIsListOpen((newIsListOpen) => !newIsListOpen);
@@ -45,4 +43,4 @@ const CollapsibleList: React.FC<CollapsibleListProps> = ({
   );
 };
 
-export default CollapsibleList;
+export default CollapsibleListPages;
