@@ -1,39 +1,17 @@
-import type { Education } from "./Education";
-import { EducationType } from "./EducationType";
-import type { Employment } from "./Employment";
-import { EmploymentType } from "./EmploymentType";
-import type { HbvResearchPaper } from "./HbvResearchPaper";
-import type { HolisticOfficeLink } from "./HolisticOfficeLink";
-import { HolisticOfficeLinkType } from "./HolisticOfficeLinkType";
-import type { HolisticOfficeModule } from "./HolisticOfficeModule";
-import type { MartialArtsStudio } from "./MartialArtsStudio";
-import type { MartialArtsStyle } from "./MartialArtsStyle";
-import { MartialArtsStyleType } from "./MartialArtsStyleType";
-import type { MusicInstrument } from "./MusicInstrument";
-import { MusicInstrumentType } from "./MusicInstrumentType";
-import type { MusicScore } from "./MusicScore";
-import type { Organization } from "./Organization";
-import type { Project } from "./Project";
-import type { StudentOrganization } from "./StudentOrganization";
-
-export type {
-  Education,
-  Employment,
-  HbvResearchPaper,
-  HolisticOfficeLink,
-  HolisticOfficeModule,
-  MartialArtsStudio,
-  MartialArtsStyle,
-  MusicInstrument,
-  MusicScore,
-  Organization,
-  Project,
-  StudentOrganization,
-};
-export {
-  EducationType,
-  EmploymentType,
-  HolisticOfficeLinkType,
-  MartialArtsStyleType,
-  MusicInstrumentType,
-};
+export type { Education } from "./Education";
+export { EducationType } from "./EducationType";
+export type { Employment } from "./Employment";
+export { EmploymentType } from "./EmploymentType";
+export type { HbvResearchPaper } from "./HbvResearchPaper";
+export type { HolisticOfficeLink } from "./HolisticOfficeLink";
+export { HolisticOfficeLinkType } from "./HolisticOfficeLinkType";
+export type { HolisticOfficeModule } from "./HolisticOfficeModule";
+export type { MartialArtsStudio } from "./MartialArtsStudio";
+export type { MartialArtsStyle } from "./MartialArtsStyle";
+export { MartialArtsStyleType } from "./MartialArtsStyleType";
+export type { MusicInstrument } from "./MusicInstrument";
+export { MusicInstrumentType } from "./MusicInstrumentType";
+export type { MusicScore } from "./MusicScore";
+export type { Organization } from "./Organization";
+export type { Project } from "./Project";
+export type { StudentOrganization } from "./StudentOrganization";
