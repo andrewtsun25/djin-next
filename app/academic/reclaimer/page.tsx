@@ -4,15 +4,7 @@ import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import ShopIcon from "@mui/icons-material/Shop";
 import WebIcon from "@mui/icons-material/Web";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import {
-  Container,
-  Fade,
-  Grid,
-  Grow,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Container, Fade, Grid, Grow, Typography } from "@mui/material";
 import Head from "next/head";
 import React from "react";
 
@@ -31,9 +23,7 @@ import { Urls } from "../../../src/const/url";
 const gameImg = `${Urls.AssetRoot}/reclaimer/img/reclaimer_game.png`;
 const reclaimerWebsite = "https://alextomkow.itch.io/reclaimer";
 
-const ReclaimerPage: React.FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+export default function ReclaimerPage() {
   return (
     <>
       <Head>
@@ -42,9 +32,7 @@ const ReclaimerPage: React.FC = () => {
       <ReclaimerBackground>
         <Fade in>
           <Container maxWidth="lg">
-            <ReclaimerTitle variant={isMobile ? "h2" : "h1"}>
-              Reclaimer
-            </ReclaimerTitle>
+            <ReclaimerTitle variant="h2">Reclaimer</ReclaimerTitle>
             <Grow in>
               <ReclaimerCenteringContainer>
                 <ReclaimerImage
@@ -153,6 +141,4 @@ const ReclaimerPage: React.FC = () => {
       </ReclaimerBackground>
     </>
   );
-};
-
-export default ReclaimerPage;
+}
