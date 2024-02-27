@@ -15,6 +15,7 @@ import { Divider, List } from "@mui/material";
 import React from "react";
 
 import {
+  BjjIcon,
   FistIcon,
   KatanaIcon,
   MuayThaiIcon,
@@ -104,6 +105,11 @@ const DrawerContent: React.FC = () => {
             icon={<MuayThaiIcon />}
             text="Muay Thai"
             to="/martialArts/muaythai"
+          />
+          <CollapsibleListHyperLinkListItem
+            icon={<BjjIcon />}
+            text="Brazilian Jiu-Jitsu"
+            to="/martialArts/bjj"
           />
         </CollapsibleList>
         <CollapsibleList icon={<SchoolIcon />} name={"Academic Work"}>

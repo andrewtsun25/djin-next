@@ -1,15 +1,7 @@
-import { FistIcon } from "./FistIcon";
-import { KatanaIcon } from "./KatanaIcon";
-import { MuayThaiIcon } from "./MuayThaiIcon";
-import { MusicScoreIcon } from "./MusicScoreIcon";
-import { StorybookIcon } from "./StorybookIcon";
-import { TaekwondoIcon } from "./TaekwondoIcon";
-
-export {
-  FistIcon,
-  KatanaIcon,
-  MuayThaiIcon,
-  MusicScoreIcon,
-  StorybookIcon,
-  TaekwondoIcon,
-};
+export { BjjIcon } from "./BjjIcon";
+export { FistIcon } from "./FistIcon";
+export { KatanaIcon } from "./KatanaIcon";
+export { MuayThaiIcon } from "./MuayThaiIcon";
+export { MusicScoreIcon } from "./MusicScoreIcon";
+export { StorybookIcon } from "./StorybookIcon";
+export { TaekwondoIcon } from "./TaekwondoIcon";

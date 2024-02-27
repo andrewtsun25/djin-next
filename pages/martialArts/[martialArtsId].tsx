@@ -50,6 +50,7 @@ export const getStaticPaths: GetStaticPaths<MartialArtsParams> = async () => {
       { params: { martialArtsId: "wtTkd" } },
       { params: { martialArtsId: "hdgd" } },
       { params: { martialArtsId: "muaythai" } },
+      { params: { martialArtsId: "bjj" } },
     ],
     fallback: false, // can also be true or 'blocking'
   };
@@ -64,7 +65,7 @@ export const getStaticProps: GetStaticProps<
   const martialArtsStyle = await getMartialArtsStyle(params.martialArtsId);
   if (isNil(martialArtsStyle)) {
     throw new Error(
-      `Martial Arts Style for martialArtsId ${params.martialArtsId} could not be found`
+      `Martial Arts Style for martialArtsId ${params.martialArtsId} could not be found`,
     );
   }
   return {
@@ -78,7 +79,7 @@ type MartialArtsNextPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 const renderMartialArtsStudioGridTile = (
   studio: MartialArtsStudio,
-  index: number
+  index: number,
 ): JSX.Element => <MartialArtsStudioGridTile studio={studio} key={index} />;
 
 const MartialArtsPage = ({
