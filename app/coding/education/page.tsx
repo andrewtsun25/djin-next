@@ -1,6 +1,5 @@
 import { Container } from "@mui/material";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import Head from "next/head";
+import { Metadata } from "next";
 import React from "react";
 
 import { CodingEducationBackground } from "../../../src/components/coding/styled";
@@ -9,30 +8,15 @@ import { EducationPageTitle } from "../../../src/components/education/styled";
 import { listEducationsByEducationType } from "../../../src/dal/api";
 import { Education, EducationType } from "../../../src/types/api";
 
-interface CodingEducationPageProps {
-  educations: Education[];
-}
-
-export const getStaticProps: GetStaticProps<
-  CodingEducationPageProps
-> = async () => {
-  const educations = await listEducationsByEducationType(EducationType.CODING);
-  return {
-    props: {
-      educations,
-    },
-  };
+export const metadata: Metadata = {
+  title: "d.jin - Coding Education",
 };
 
-type CodingEducationNextPageProps = InferGetStaticPropsType<
-  typeof getStaticProps
->;
-
-const CodingEducationPage = ({ educations }: CodingEducationNextPageProps) => (
-  <>
-    <Head>
-      <title>d.jin - Coding Education</title>
-    </Head>
+export default async function CodingEducationPage() {
+  const educations: Education[] = await listEducationsByEducationType(
+    EducationType.CODING,
+  );
+  return (
     <CodingEducationBackground>
       <Container maxWidth="lg">
         <EducationPageTitle variant="h2">Coding Education</EducationPageTitle>
@@ -41,7 +25,5 @@ const CodingEducationPage = ({ educations }: CodingEducationNextPageProps) => (
         ))}
       </Container>
     </CodingEducationBackground>
-  </>
-);
-
-export default CodingEducationPage;
+  );
+}
