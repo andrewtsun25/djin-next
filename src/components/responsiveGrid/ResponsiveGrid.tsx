@@ -8,26 +8,23 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import React, { ReactElement } from "react";
+import React, { PropsWithChildren } from "react";
 
 import { SoundCloudWidget } from "../music";
 import { ResponsiveGridContainer, ResponsiveGridTitle } from "./styled";
 
-interface ResponsiveGridProps<T> {
+interface ResponsiveGridProps {
   title?: string;
-  items: T[];
-  renderGridTile(item: T, index?: number): JSX.Element;
   embedUrl?: string;
   sx?: SxProps<Theme>;
 }
 
-function ResponsiveGrid<T>({
+const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
   title,
-  items,
-  renderGridTile,
   embedUrl,
   sx,
-}: ResponsiveGridProps<T>): ReactElement<ResponsiveGridProps<T>> {
+  children,
+}: PropsWithChildren<ResponsiveGridProps>) => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.up("sm"));
   const isMedium = useMediaQuery(theme.breakpoints.up("md"));
@@ -52,10 +49,10 @@ function ResponsiveGrid<T>({
             />
           </ImageListItem>
         )}
-        {items.map((item: T, index: number) => renderGridTile(item, index))}
+        {children}
       </ImageList>
     </ResponsiveGridContainer>
   );
-}
+};
 
 export default ResponsiveGrid;
