@@ -1,12 +1,17 @@
-import { Container } from "@mui/material";
 import { Metadata } from "next";
 import React from "react";
 
 import { EducationCard } from "../../../src/components/education";
 import { EducationPageTitle } from "../../../src/components/education/styled";
-import { MusicEducationBackground } from "../../../src/components/music/styled";
+import { Background, PageContainer } from "../../../src/components/layout";
 import { listEducationsByEducationType } from "../../../src/dal/api";
 import { Education, EducationType } from "../../../src/types/api";
+
+const bgUrl =
+  "https://storage.googleapis.com/djin-dev.appspot.com/education/bg/pioneer_cdj_bg.jpeg";
+const bgAlt = "Music Education Background";
+const bgHeight = 1440;
+const bgWidth = 2560;
 
 export const metadata: Metadata = {
   title: "d.jin - Music Education",
@@ -17,15 +22,14 @@ export default async function MusicEducationPage(): Promise<React.JSX.Element> {
     EducationType.MUSIC,
   );
   return (
-    <MusicEducationBackground>
-      <Container maxWidth="lg">
-        <EducationPageTitle variant="h2" sx={{ paddingTop: 10 }}>
-          Music Education
-        </EducationPageTitle>
+    <>
+      <Background src={bgUrl} alt={bgAlt} height={bgHeight} width={bgWidth} />
+      <PageContainer>
+        <EducationPageTitle variant="h2">Music Education</EducationPageTitle>
         {educations.map((education, index) => (
           <EducationCard education={education} key={index} />
         ))}
-      </Container>
-    </MusicEducationBackground>
+      </PageContainer>
+    </>
   );
 }

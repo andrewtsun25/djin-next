@@ -11,6 +11,10 @@ import { ResponsiveGrid } from "../../../src/components/responsiveGrid";
 import { listMusicScores } from "../../../src/dal/api";
 import { MusicInstrument, MusicScore } from "../../../src/types/api";
 
+// url: https://storage.googleapis.com/djin-dev.appspot.com/education/bg/pioneer_cdj_bg.jpeg
+// 2560 w
+// 1440 h
+
 export const metadata: Metadata = {
   title: "d.jin - Music Scores",
 };

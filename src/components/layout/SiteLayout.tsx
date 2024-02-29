@@ -10,7 +10,7 @@ import MobileDrawer, { DRAWER_EDGE } from "../home/drawer/MobileDrawer";
 const SiteLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const [isAppDrawerOpen, setIsAppDrawerOpen] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
       <CssBaseline />
