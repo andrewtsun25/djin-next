@@ -1,6 +1,6 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkIcon from "@mui/icons-material/Link";
-import { CardContent, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { map } from "lodash";
 import React from "react";
 
@@ -9,11 +9,6 @@ import { DurationWithOrganizationCardHeader } from "../card";
 import { StorybookIcon } from "../icons";
 import { BulletPoints, IconLink } from "../text";
 import SkillChips from "../text/SkillChips";
-import {
-  ProjectCardContainer,
-  ProjectCardMedia,
-  ProjectDisclaimer,
-} from "./styled";
 
 interface ProjectCardProps {
   project: Project;
@@ -33,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     disclaimer,
   },
 }: ProjectCardProps) => (
-  <ProjectCardContainer variant="outlined">
+  <Card variant="outlined">
     <DurationWithOrganizationCardHeader
       title={projectName}
       subtitle={organizationName}
@@ -41,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       endDate={endDate}
       logoUrl={logoUrl}
     />
-    <ProjectCardMedia image={mediaUrl} />
+    <CardMedia image={mediaUrl} sx={{ height: 0, pt: "56.25%" }} />
     <CardContent>
       {projectUrls &&
         map(projectUrls, (url: string, urlName: string) => {
@@ -61,15 +56,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           );
         })}
       {disclaimer && (
-        <ProjectDisclaimer paragraph>
+        <Typography fontWeight="bold" paragraph>
           Disclaimer: {disclaimer}
-        </ProjectDisclaimer>
+        </Typography>
       )}
       <Typography paragraph>{description}</Typography>
       <BulletPoints points={responsibilities} />
       <SkillChips skills={skills} />
     </CardContent>
-  </ProjectCardContainer>
+  </Card>
 );
 
 export default ProjectCard;
