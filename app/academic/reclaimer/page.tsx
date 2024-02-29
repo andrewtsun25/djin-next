@@ -20,14 +20,14 @@ import {
 } from "../../../src/components/reclaimer/styled";
 import { Urls } from "../../../src/const/url";
 
-const gameImg = `${Urls.AssetRoot}/reclaimer/img/reclaimer_game.png`;
-const reclaimerWebsite = "https://alextomkow.itch.io/reclaimer";
+const gameImg: string = `${Urls.AssetRoot}/reclaimer/img/reclaimer_game.png`;
+const reclaimerWebsite: string = "https://alextomkow.itch.io/reclaimer";
 
 export const metadata: Metadata = {
   title: "d.jin - Reclaimer",
 };
 
-export default function ReclaimerPage() {
+export default function ReclaimerPage(): React.JSX.Element {
   return (
     <ReclaimerBackground>
       <Fade in>

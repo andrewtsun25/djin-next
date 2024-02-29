@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "d.jin - Employment",
 };
 
-export default async function EmploymentPage() {
+export default async function EmploymentPage(): Promise<React.JSX.Element> {
   const employments: Employment[] = await listEmployments();
   return (
     <EmploymentBackground>

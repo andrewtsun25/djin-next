@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "d.jin - Coding Projects",
 };
 
-export default async function ProjectsPage() {
+export default async function ProjectsPage(): Promise<React.JSX.Element> {
   const projects = await listProjects();
   return (
     <>

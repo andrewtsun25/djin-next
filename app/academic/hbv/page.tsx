@@ -1,5 +1,6 @@
 import { Fade } from "@mui/material";
 import { Metadata } from "next";
+import React from "react";
 
 import {
   HbvBackground,
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   title: "d.jin - HBV Research",
 };
 
-export default async function HbvResearchPage() {
+export default async function HbvResearchPage(): Promise<React.JSX.Element> {
   const hbvResearchPapers: HbvResearchPaper[] = await listHbvResearchPapers();
   return (
     <HbvBackground>

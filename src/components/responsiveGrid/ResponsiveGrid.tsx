@@ -17,6 +17,7 @@ interface ResponsiveGridProps {
   title?: string;
   embedUrl?: string;
   sx?: SxProps<Theme>;
+  children?: React.ReactNode;
 }
 
 const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({

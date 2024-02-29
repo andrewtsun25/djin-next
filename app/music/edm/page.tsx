@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "d.jin - EDM Tracks",
 };
 
-export default function EdmPage() {
+export default function EdmPage(): React.JSX.Element {
   return (
     <EdmBackground>
       <Container maxWidth="lg">

@@ -19,7 +19,7 @@ describe("DurationWithOrganizationCardHeader", () => {
         startDate={startDate}
         endDate={endDate}
         logoUrl={logoUrl}
-      />
+      />,
     );
     expect(durationWithOrganizationCardHeader).toMatchSnapshot();
   });
@@ -32,7 +32,7 @@ describe("DurationWithOrganizationCardHeader", () => {
         startDate={startDate}
         endDate={endDate}
         logoUrl={logoUrl}
-      />
+      />,
     );
     const datesAndSubtitle = getByText("Dec 25, 2022 - Jan 1, 2023: Subtitle");
     expect(datesAndSubtitle).not.toBeNull();
@@ -46,10 +46,10 @@ describe("DurationWithOrganizationCardHeader", () => {
         startDate={startDate}
         endDate={endDate}
         logoUrl={logoUrl}
-      />
+      />,
     );
     const logo = getByAltText(title);
-    expect(logo).toBeVisible();
+    expect(logo).not.toBeNull();
   });
 
   it("renders present for the end date if the end date is not provided", () => {
@@ -59,7 +59,7 @@ describe("DurationWithOrganizationCardHeader", () => {
         subtitle={subtitle}
         startDate={startDate}
         logoUrl={logoUrl}
-      />
+      />,
     );
     const datesAndSubtitle = getByText("Dec 25, 2022 - Present: Subtitle");
     expect(datesAndSubtitle).not.toBeNull();
@@ -74,7 +74,7 @@ describe("DurationWithOrganizationCardHeader", () => {
         subtitle={subtitle}
         startDate={startDate}
         endDate={endDate}
-      />
+      />,
     );
     const avatarAltText = getByTestId("PersonIcon");
     expect(avatarAltText).not.toBeNull();

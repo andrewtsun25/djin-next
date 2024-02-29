@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "d.jin - Music Scores",
 };
 
-export default async function ScoresPage() {
+export default async function ScoresPage(): Promise<React.JSX.Element> {
   const scores: MusicScore[] = await listMusicScores();
   return (
     <ScoresBackground>

@@ -2,6 +2,7 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
 import { Fade, Grow, Typography } from "@mui/material";
 import { Metadata } from "next";
+import React from "react";
 
 import {
   HolisticOfficeBackground,
@@ -34,15 +35,15 @@ export const metadata: Metadata = {
   title: "d.jin - Holistic Office",
 };
 
-export default async function HolisticOfficePage() {
+export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
   const holisticOfficeLinks: HolisticOfficeLink[] =
     await listHolisticOfficeLinks();
   const holisticOfficeModules: HolisticOfficeModule[] =
     await listHolisticOfficeModules();
-  const codeLinks = holisticOfficeLinks.filter(
+  const codeLinks: HolisticOfficeLink[] = holisticOfficeLinks.filter(
     ({ type }) => type === HolisticOfficeLinkType.Code,
   );
-  const documentationLinks = holisticOfficeLinks.filter(
+  const documentationLinks: HolisticOfficeLink[] = holisticOfficeLinks.filter(
     ({ type }) => type === HolisticOfficeLinkType.Documentation,
   );
   return (

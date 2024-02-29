@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "d.jin - Coding Education",
 };
 
-export default async function CodingEducationPage() {
+export default async function CodingEducationPage(): Promise<React.JSX.Element> {
   const educations: Education[] = await listEducationsByEducationType(
     EducationType.CODING,
   );
