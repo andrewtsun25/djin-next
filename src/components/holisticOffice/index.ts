@@ -5,7 +5,7 @@ import {
   HolisticOfficeImageLink,
   HolisticOfficeImageLinkImage,
   HolisticOfficePageContainer,
-  HolisticOfficePageHeading,
+  HolisticOfficeSectionHeader,
 } from "./styled";
 
 export {
@@ -15,5 +15,5 @@ export {
   HolisticOfficeImageLink,
   HolisticOfficeImageLinkImage,
   HolisticOfficePageContainer,
-  HolisticOfficePageHeading,
+  HolisticOfficeSectionHeader,
 };

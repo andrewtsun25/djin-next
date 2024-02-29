@@ -1,13 +1,10 @@
 "use client";
 
-import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 
 import { HolisticOfficeLink } from "../../../types/api";
-import {
-  HolisticOfficeLinkSectionContainer,
-  HolisticOfficeLinkSectionTitle,
-} from "../styled";
+import { HolisticOfficeSectionHeader } from "../styled";
 import LinkList from "./LinkList";
 
 interface LinkSectionProps {
@@ -24,16 +21,14 @@ const LinkSection: React.FC<LinkSectionProps> = ({
   links,
   icon,
 }: LinkSectionProps) => {
-  const theme = useTheme();
-  const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <HolisticOfficeLinkSectionContainer>
-      <HolisticOfficeLinkSectionTitle variant={isSmall ? "h3" : "h2"}>
+    <Box textAlign="left" width="100%">
+      <HolisticOfficeSectionHeader variant="h2">
         {title}
-      </HolisticOfficeLinkSectionTitle>
+      </HolisticOfficeSectionHeader>
       <Typography paragraph>{description}</Typography>
       <LinkList links={links} icon={icon} />
-    </HolisticOfficeLinkSectionContainer>
+    </Box>
   );
 };
 

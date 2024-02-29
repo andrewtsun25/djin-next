@@ -1,17 +1,16 @@
 import DescriptionIcon from "@mui/icons-material/Description";
 import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
-import { Fade, Grow, Typography } from "@mui/material";
+import { Box, Fade, Grow, Typography } from "@mui/material";
 import { Metadata } from "next";
 import React from "react";
 
 import {
-  HolisticOfficeBackground,
   HolisticOfficeHyperLink,
   HolisticOfficeImage,
   HolisticOfficeImageLink,
   HolisticOfficeImageLinkImage,
   HolisticOfficePageContainer,
-  HolisticOfficePageHeading,
+  HolisticOfficeSectionHeader,
 } from "../../../src/components/holisticOffice";
 import { LinkSection } from "../../../src/components/holisticOffice/linkSection";
 import { ModuleInfoGrid } from "../../../src/components/holisticOffice/modulesGrid";
@@ -35,6 +34,8 @@ export const metadata: Metadata = {
   title: "d.jin - Holistic Office",
 };
 
+const holisticOfficeGreen = "#e2f1e9";
+
 export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
   const holisticOfficeLinks: HolisticOfficeLink[] =
     await listHolisticOfficeLinks();
@@ -48,7 +49,7 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
       type === HolisticOfficeLinkType.Documentation,
   );
   return (
-    <HolisticOfficeBackground>
+    <Box sx={{ backgroundColor: holisticOfficeGreen }}>
       <Fade in>
         <HolisticOfficePageContainer maxWidth="lg">
           <HolisticOfficeImageLink href={holisticOfficeUrl} target="_blank">
@@ -84,9 +85,9 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
             file server (AWS S3) and a REST API server (AWS Elastic Beanstalk)
             that talks to a relational database (AWS RDS).
           </Typography>
-          <HolisticOfficePageHeading variant="h3" align="center">
+          <HolisticOfficeSectionHeader variant="h2" align="center">
             Architecture
-          </HolisticOfficePageHeading>
+          </HolisticOfficeSectionHeader>
           <Grow in>
             <HolisticOfficeImage
               src={architectureImg}
@@ -113,6 +114,6 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
           />
         </HolisticOfficePageContainer>
       </Fade>
-    </HolisticOfficeBackground>
+    </Box>
   );
 }
