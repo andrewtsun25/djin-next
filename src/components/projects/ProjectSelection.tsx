@@ -3,10 +3,9 @@
 import { Grid } from "@mui/material";
 import { isNil, sortBy, uniq, uniqBy } from "lodash";
 import { useQueryState } from "nuqs";
-import React, { Suspense, useMemo } from "react";
+import React, { useMemo } from "react";
 
 import { Organization, Project } from "../../types/api";
-import { Loading } from "../loading";
 import {
   ProjectCard,
   ProjectCount,
@@ -121,7 +120,7 @@ export const ProjectSelection: React.FC<ProjectSelectionProps> = ({
   );
 
   return (
-    <Suspense fallback={<Loading message="Loading projects..." />}>
+    <>
       <ProjectSelectionContainer>
         <ProjectOrganizationSelect
           organizations={organizations}
@@ -142,6 +141,6 @@ export const ProjectSelection: React.FC<ProjectSelectionProps> = ({
           </Grid>
         ))}
       </Grid>
-    </Suspense>
+    </>
   );
 };

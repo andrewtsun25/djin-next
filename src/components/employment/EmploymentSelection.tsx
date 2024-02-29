@@ -3,10 +3,9 @@
 import { Grid } from "@mui/material";
 import { isNil } from "lodash";
 import { useQueryState } from "nuqs";
-import React, { Suspense, useMemo } from "react";
+import React, { useMemo } from "react";
 
 import { Employment, EmploymentType } from "../../types/api";
-import { Loading } from "../loading";
 import {
   EmploymentCard,
   EmploymentDurationDisplay,
@@ -64,7 +63,7 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
   );
 
   return (
-    <Suspense fallback={<Loading message={"Loading employments..."} />}>
+    <>
       <EmploymentPageHeaderContainer>
         <EmploymentText sx={{ m: 2 }}>
           My most current résumé can be obtained{" "}
@@ -90,6 +89,6 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
           </Grid>
         ))}
       </Grid>
-    </Suspense>
+    </>
   );
 };

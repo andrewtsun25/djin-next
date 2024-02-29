@@ -41,10 +41,11 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
   const holisticOfficeModules: HolisticOfficeModule[] =
     await listHolisticOfficeModules();
   const codeLinks: HolisticOfficeLink[] = holisticOfficeLinks.filter(
-    ({ type }) => type === HolisticOfficeLinkType.Code,
+    ({ type }: HolisticOfficeLink) => type === HolisticOfficeLinkType.Code,
   );
   const documentationLinks: HolisticOfficeLink[] = holisticOfficeLinks.filter(
-    ({ type }) => type === HolisticOfficeLinkType.Documentation,
+    ({ type }: HolisticOfficeLink) =>
+      type === HolisticOfficeLinkType.Documentation,
   );
   return (
     <HolisticOfficeBackground>

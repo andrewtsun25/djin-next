@@ -15,7 +15,8 @@ import {
 import { listHbvResearchPapers } from "../../../src/dal/api";
 import { HbvResearchPaper } from "../../../src/types/api";
 
-const HEP_B_LINK = "https://med.stanford.edu/liver/education/whatishepb.html";
+const hepBLink: string =
+  "https://med.stanford.edu/liver/education/whatishepb.html";
 
 export const metadata: Metadata = {
   title: "d.jin - HBV Research",
@@ -54,11 +55,7 @@ export default async function HbvResearchPage(): Promise<React.JSX.Element> {
           <HbvItalicizedTypography>
             You can learn more about Hepatitis B and how Asian Americans are
             disproportionately affected{" "}
-            <HbvLink
-              href={HEP_B_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <HbvLink href={hepBLink} target="_blank" rel="noopener noreferrer">
               here
             </HbvLink>
             .
@@ -85,7 +82,7 @@ export default async function HbvResearchPage(): Promise<React.JSX.Element> {
             them.
           </HbvContentTypography>
           <HbvResearchCardList>
-            {hbvResearchPapers.map((hbvResearchPaper) => (
+            {hbvResearchPapers.map((hbvResearchPaper: HbvResearchPaper) => (
               <HbvResearchCard
                 hbvResearchPaper={hbvResearchPaper}
                 key={hbvResearchPaper.name}

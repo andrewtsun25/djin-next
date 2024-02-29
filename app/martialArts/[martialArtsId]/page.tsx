@@ -40,12 +40,14 @@ export async function generateStaticParams(): Promise<MartialArtsPageParams[]> {
   ];
 }
 
-type Props = {
+type GenerateMetadataProps = {
   params: MartialArtsPageParams;
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: GenerateMetadataProps): Promise<Metadata> {
   // read route params
   const martialArtsStyle: MartialArtsStyle | null = await getMartialArtsStyle(
     params.martialArtsId,

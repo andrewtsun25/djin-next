@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import Head from "next/head";
-import React from "react";
+import React, { Suspense } from "react";
 
+import { Loading } from "../../../src/components/loading";
 import { ProjectSelection } from "../../../src/components/projects";
 import {
   ProjectsBackground,
@@ -16,14 +16,11 @@ export const metadata: Metadata = {
 export default async function ProjectsPage(): Promise<React.JSX.Element> {
   const projects = await listProjects();
   return (
-    <>
-      <Head>
-        <title>d.jin - Coding Projects</title>
-      </Head>
-      <ProjectsBackground>
-        <ProjectsPageTitle variant="h2">Coding Projects</ProjectsPageTitle>
+    <ProjectsBackground>
+      <ProjectsPageTitle variant="h2">Coding Projects</ProjectsPageTitle>
+      <Suspense fallback={<Loading message="Loading projects..." />}>
         <ProjectSelection projects={projects} />
-      </ProjectsBackground>
-    </>
+      </Suspense>
+    </ProjectsBackground>
   );
 }
