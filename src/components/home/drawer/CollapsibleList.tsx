@@ -1,3 +1,5 @@
+"use client";
+
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import {
@@ -10,7 +12,7 @@ import {
 import React, { PropsWithChildren, useState } from "react";
 
 interface CollapsibleListPropsWithoutChildren {
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   name: string;
 }
 

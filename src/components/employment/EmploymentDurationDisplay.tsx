@@ -1,3 +1,5 @@
+"use client";
+
 import { isNil } from "lodash";
 import { DateTime, Duration } from "luxon";
 import React, { useEffect, useMemo, useState } from "react";
@@ -32,11 +34,11 @@ const EmploymentDurationDisplay = ({
             : currentTime;
           const startDate: DateTime = DateTime.fromJSDate(employmentStartDate);
           return endDate.diff(startDate, ["years", "months", "days"]);
-        }
+        },
       )
       .reduce(
         (duration1: Duration, duration2: Duration) => duration1.plus(duration2),
-        Duration.fromObject({ minutes: 0 })
+        Duration.fromObject({ minutes: 0 }),
       )
       .normalize()
       .shiftTo("years", "months");
@@ -57,10 +59,10 @@ const EmploymentDurationDisplay = ({
     return yearString.length > 0 && monthString.length > 0
       ? `${yearString} and ${monthString}`
       : yearString.length > 0 && monthString.length === 0
-      ? yearString
-      : yearString.length === 0 && monthString.length === 0
-      ? "0 months"
-      : monthString; // yearString.length === 0 && monthString.length > 0
+        ? yearString
+        : yearString.length === 0 && monthString.length === 0
+          ? "0 months"
+          : monthString; // yearString.length === 0 && monthString.length > 0
   }, [employments, currentTime]);
 
   // render

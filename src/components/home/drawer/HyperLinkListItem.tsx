@@ -14,7 +14,7 @@ interface HyperlistLinkItemProps {
   sx?: SxProps<Theme>;
   to: NextLinkComposedProps["to"];
   target?: HTMLAttributeAnchorTarget;
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   text: string;
 }
 const HyperLinkListItem: React.FC<HyperlistLinkItemProps> = ({

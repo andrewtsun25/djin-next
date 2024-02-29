@@ -1,3 +1,1 @@
-import SiteLayout from "./SiteLayout";
-
-export { SiteLayout };
+export { SiteLayout } from "./SiteLayout";

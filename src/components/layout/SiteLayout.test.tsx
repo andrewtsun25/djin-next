@@ -1,22 +1,20 @@
+import { Typography } from "@mui/material";
 import { render } from "@testing-library/react";
 
-import SiteLayout from "./SiteLayout";
-jest.mock("next/router", () => {
+import { SiteLayout } from "./SiteLayout";
+jest.mock("next/navigation", () => {
   return {
     __esModule: true,
-    useRouter: () => {
-      return {
-        asRouter: "/",
-      };
-    },
+    usePathname: () => "/",
   };
 });
-describe("SiteLayout", () => {
+
+describe("SiteLayoutPages", () => {
   it("renders", () => {
     const layout = render(
       <SiteLayout>
-        <p>Hi!</p>
-      </SiteLayout>
+        <Typography>Hi!</Typography>
+      </SiteLayout>,
     );
     expect(layout).toMatchSnapshot();
   });

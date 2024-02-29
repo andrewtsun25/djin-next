@@ -1,3 +1,5 @@
+"use client";
+
 import { Container } from "@mui/material";
 import { styled } from "@mui/material/styles";
 

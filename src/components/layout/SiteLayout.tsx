@@ -1,8 +1,10 @@
+"use client";
+
 import { Global } from "@emotion/react";
 import { CssBaseline, useMediaQuery, useTheme } from "@mui/material";
 import React, { PropsWithChildren, useState } from "react";
 
-import { AppToolBar,DesktopDrawer } from "../home";
+import { AppToolBar, DesktopDrawer } from "../home";
 import MobileDrawer, { DRAWER_EDGE } from "../home/drawer/MobileDrawer";
 
 const SiteLayout: React.FC<PropsWithChildren> = ({ children }) => {
@@ -42,4 +44,4 @@ const SiteLayout: React.FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-export default SiteLayout;
+export { SiteLayout };
