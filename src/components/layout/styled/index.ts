@@ -1,3 +1,2 @@
-export { BackgroundContainer } from "./BackgroundContainer";
-export { BackgroundImage } from "./BackgroundImage";
+export { BackgroundImageBox } from "./BackgroundImageBox";
 export { PageContainer } from "./PageContainer";

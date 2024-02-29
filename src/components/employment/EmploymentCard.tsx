@@ -1,22 +1,17 @@
 import AppsIcon from "@mui/icons-material/Apps";
-import { CardContent, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Chip, Typography } from "@mui/material";
 import React from "react";
 
 import { Employment } from "../../types/api";
 import { DurationWithOrganizationCardHeader } from "../card";
 import { BulletPoints, IconLink } from "../text";
 import SkillChips from "../text/SkillChips";
-import {
-  EmploymentCardContainer,
-  EmploymentCardMedia,
-  EmploymentJobChip,
-} from "./styled";
 
 interface EmploymentCardProps {
   employment: Employment;
 }
 
-const EmploymentCard: React.FC<EmploymentCardProps> = ({
+export const EmploymentCard: React.FC<EmploymentCardProps> = ({
   employment: {
     endDate,
     startDate,
@@ -29,7 +24,7 @@ const EmploymentCard: React.FC<EmploymentCardProps> = ({
     employmentType,
   },
 }: EmploymentCardProps) => (
-  <EmploymentCardContainer variant="outlined">
+  <Card variant="outlined">
     <DurationWithOrganizationCardHeader
       title={organization.name}
       subtitle={role}
@@ -37,9 +32,9 @@ const EmploymentCard: React.FC<EmploymentCardProps> = ({
       endDate={endDate}
       logoUrl={organization.logoUrl}
     />
-    <EmploymentCardMedia image={mediaUrl} />
+    <CardMedia image={mediaUrl} sx={{ height: 0, pt: "56.25%" }} />
     <CardContent>
-      <EmploymentJobChip label={employmentType} size="small" />
+      <Chip label={employmentType} size="small" sx={{ mb: 2 }} />
       <IconLink
         icon={<AppsIcon />}
         text="Projects"
@@ -50,7 +45,5 @@ const EmploymentCard: React.FC<EmploymentCardProps> = ({
       <BulletPoints points={responsibilities} />
       <SkillChips skills={skills} />
     </CardContent>
-  </EmploymentCardContainer>
+  </Card>
 );
-
-export default EmploymentCard;

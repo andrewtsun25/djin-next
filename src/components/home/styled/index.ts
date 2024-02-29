@@ -8,7 +8,6 @@ import DesktopDrawerContainer, {
 import DrawerContentContainer from "./DrawerContentContainer";
 import HomeDescriptionTypography from "./HomeDescriptionTypography";
 import HomeLinkText from "./HomeLinkText";
-import HomeTextContainer from "./HomeTextContainer";
 import HomeTitleTypography from "./HomeTitleTypography";
 import MobileDrawerHandle from "./MobileDrawerHandle";
 import MobileDrawerHandleText from "./MobileDrawerHandleText";
@@ -24,7 +23,6 @@ export {
   DrawerContentContainer,
   HomeDescriptionTypography,
   HomeLinkText,
-  HomeTextContainer,
   HomeTitleTypography,
   MobileDrawerHandle,
   MobileDrawerHandleText,
