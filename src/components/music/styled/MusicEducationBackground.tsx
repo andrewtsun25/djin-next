@@ -12,7 +12,7 @@ const MusicEducationBackground = styled(Box)({
   backgroundSize: "cover",
   height: "100%",
   width: "100%",
-  minHeight: "100vh",
+  // minHeight: "100vh",
 });
 
 export default MusicEducationBackground;

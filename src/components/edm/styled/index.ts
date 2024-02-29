@@ -1,4 +1,2 @@
-import EdmBackground from "./EdmBackground";
-import EdmTitle from "./EdmTitle";
-
-export { EdmBackground, EdmTitle };
+export { EdmPageContent } from "./EdmPageContent";
+export { EdmTitle } from "./EdmTitle";
