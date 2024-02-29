@@ -33,8 +33,15 @@ export default async function ScoresPage(): Promise<React.JSX.Element> {
             sx={{
               backgroundColor: "rgba(255, 255, 255, .75)",
               padding: 2,
-              borderRadius: 10,
-              margin: `20px auto`,
+              borderRadius: 5,
+              "&:not(:first-child)": {
+                mt: 2,
+              },
+              "&:not(:last-child)": {
+                mb: 2,
+              },
+              marginBlockStart: 0,
+              marginBlockEnd: 0,
             }}
             key={name}
           >

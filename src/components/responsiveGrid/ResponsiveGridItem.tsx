@@ -16,7 +16,7 @@ interface ResponsiveGridItemProps {
   mediaUrl: string;
   title: string;
   subtitle?: string;
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   imageStyle?: CSSProperties;
   sx?: SxProps<Theme>;
 }

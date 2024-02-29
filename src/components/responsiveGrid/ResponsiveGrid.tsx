@@ -2,17 +2,17 @@
 
 import {
   Box,
-  ImageList,
   ImageListItem,
   SxProps,
   Theme,
+  TypographyVariant,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import React, { PropsWithChildren } from "react";
 
 import { SoundCloudWidget } from "../music";
-import { ResponsiveGridTitle } from "./styled";
+import { ResponsiveGridImageList, ResponsiveGridTitle } from "./styled";
 
 interface ResponsiveGridProps {
   title?: string;
@@ -27,14 +27,14 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
   sx,
   children,
 }: PropsWithChildren<ResponsiveGridProps>) => {
-  const theme = useTheme();
-  const isSmall = useMediaQuery(theme.breakpoints.up("sm"));
-  const isMedium = useMediaQuery(theme.breakpoints.up("md"));
-  const cols = isMedium ? 4 : isSmall ? 2 : 1;
-  const titleVariant = isMedium ? "h4" : "h5";
+  const theme: Theme = useTheme();
+  const isSmall: boolean = useMediaQuery(theme.breakpoints.up("sm"));
+  const isMedium: boolean = useMediaQuery(theme.breakpoints.up("md"));
+  const cols: number = isMedium ? 4 : isSmall ? 2 : 1;
+  const titleVariant: TypographyVariant = isMedium ? "h4" : "h5";
   return (
     <Box sx={sx}>
-      <ImageList cols={cols} gap={isSmall ? 10 : 20}>
+      <ResponsiveGridImageList cols={cols} gap={isSmall ? 10 : 20}>
         {title && (
           <ImageListItem cols={cols} style={{ height: "auto" }}>
             <ResponsiveGridTitle paragraph variant={titleVariant}>
@@ -52,7 +52,7 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
           </ImageListItem>
         )}
         {children}
-      </ImageList>
+      </ResponsiveGridImageList>
     </Box>
   );
 };
