@@ -21,7 +21,7 @@ interface ResponsiveGridItemProps {
   sx?: SxProps<Theme>;
 }
 
-const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
+export const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
   mediaUrl,
   title,
   subtitle,
@@ -55,4 +55,3 @@ const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
 };
 
 export type { ResponsiveGridItemProps };
-export default ResponsiveGridItem;

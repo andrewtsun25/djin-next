@@ -1,19 +1,19 @@
-import { Container } from "@mui/material";
 import { Metadata } from "next";
 import React from "react";
 
+import { Background, PageContainer } from "../../../src/components/layout";
 import { MusicInstrumentTile } from "../../../src/components/music";
-import {
-  ScoresBackground,
-  ScoresTitle,
-} from "../../../src/components/music/styled";
+import { ScoresTitle } from "../../../src/components/music/styled";
 import { ResponsiveGrid } from "../../../src/components/responsiveGrid";
 import { listMusicScores } from "../../../src/dal/api";
 import { MusicInstrument, MusicScore } from "../../../src/types/api";
 
-// url: https://storage.googleapis.com/djin-dev.appspot.com/education/bg/pioneer_cdj_bg.jpeg
-// 2560 w
-// 1440 h
+// Background config
+const bgUrl =
+  "https://storage.googleapis.com/djin-dev.appspot.com/music/bg/music_score_bg.jpeg";
+const bgAlt = "Music Scores Background";
+const bgHeight = 1920;
+const bgWidth = 1080;
 
 export const metadata: Metadata = {
   title: "d.jin - Music Scores",
@@ -22,8 +22,9 @@ export const metadata: Metadata = {
 export default async function ScoresPage(): Promise<React.JSX.Element> {
   const scores: MusicScore[] = await listMusicScores();
   return (
-    <ScoresBackground>
-      <Container maxWidth="lg">
+    <>
+      <Background src={bgUrl} alt={bgAlt} height={bgHeight} width={bgWidth} />
+      <PageContainer>
         <ScoresTitle variant="h3">Music Scores</ScoresTitle>
         {scores.map(({ name, trackUrl, musicInstruments }: MusicScore) => (
           <ResponsiveGrid
@@ -45,7 +46,7 @@ export default async function ScoresPage(): Promise<React.JSX.Element> {
             ))}
           </ResponsiveGrid>
         ))}
-      </Container>
-    </ScoresBackground>
+      </PageContainer>
+    </>
   );
 }

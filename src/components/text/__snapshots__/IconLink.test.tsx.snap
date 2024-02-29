@@ -9,7 +9,7 @@ exports[`IconLink renders 1`] = `
         href="https://example.com"
       >
         <div
-          class="MuiBox-root css-1xav8rb"
+          class="MuiBox-root css-z7rxi2"
         >
           <div
             class="MuiBox-root css-1ay9vb9"
@@ -40,7 +40,7 @@ exports[`IconLink renders 1`] = `
       href="https://example.com"
     >
       <div
-        class="MuiBox-root css-1xav8rb"
+        class="MuiBox-root css-z7rxi2"
       >
         <div
           class="MuiBox-root css-1ay9vb9"

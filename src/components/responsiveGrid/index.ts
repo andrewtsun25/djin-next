@@ -1,4 +1,2 @@
-import ResponsiveGrid from "./ResponsiveGrid";
-import ResponsiveGridItem from "./ResponsiveGridItem";
-
-export { ResponsiveGrid, ResponsiveGridItem };
+export { ResponsiveGrid } from "./ResponsiveGrid";
+export { ResponsiveGridItem } from "./ResponsiveGridItem";

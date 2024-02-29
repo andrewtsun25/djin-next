@@ -49,7 +49,7 @@ exports[`HbvResearchCard renders 1`] = `
             target="_blank"
           >
             <div
-              class="MuiBox-root css-1xav8rb"
+              class="MuiBox-root css-z7rxi2"
             >
               <div
                 class="MuiBox-root css-1ay9vb9"
@@ -171,7 +171,7 @@ exports[`HbvResearchCard renders 1`] = `
           target="_blank"
         >
           <div
-            class="MuiBox-root css-1xav8rb"
+            class="MuiBox-root css-z7rxi2"
           >
             <div
               class="MuiBox-root css-1ay9vb9"

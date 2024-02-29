@@ -1,4 +1,1 @@
-import ScoresBackground from "./ScoresBackground";
-import ScoresTitle from "./ScoresTitle";
-
-export { ScoresBackground, ScoresTitle };
+export { ScoresTitle } from "./ScoresTitle";

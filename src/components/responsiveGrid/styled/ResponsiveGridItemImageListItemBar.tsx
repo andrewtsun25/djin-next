@@ -1,7 +1,7 @@
 import { ImageListItemBar } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const ResponsiveGridItemImageListItemBar = styled(ImageListItemBar)({
+export const ResponsiveGridItemImageListItemBar = styled(ImageListItemBar)({
   borderRadius: "0 0 10px 10px",
   ".MuiImageListItemBar-title": {
     textAlign: "left",
@@ -10,5 +10,3 @@ const ResponsiveGridItemImageListItemBar = styled(ImageListItemBar)({
     textAlign: "left",
   },
 });
-
-export default ResponsiveGridItemImageListItemBar;

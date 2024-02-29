@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Box,
   ImageList,
   ImageListItem,
   SxProps,
@@ -11,7 +12,7 @@ import {
 import React, { PropsWithChildren } from "react";
 
 import { SoundCloudWidget } from "../music";
-import { ResponsiveGridContainer, ResponsiveGridTitle } from "./styled";
+import { ResponsiveGridTitle } from "./styled";
 
 interface ResponsiveGridProps {
   title?: string;
@@ -20,7 +21,7 @@ interface ResponsiveGridProps {
   children?: React.ReactNode;
 }
 
-const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
+export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
   title,
   embedUrl,
   sx,
@@ -30,9 +31,9 @@ const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
   const isSmall = useMediaQuery(theme.breakpoints.up("sm"));
   const isMedium = useMediaQuery(theme.breakpoints.up("md"));
   const cols = isMedium ? 4 : isSmall ? 2 : 1;
-  const titleVariant = isMedium ? "h4" : isSmall ? "h5" : "h6";
+  const titleVariant = isMedium ? "h4" : "h5";
   return (
-    <ResponsiveGridContainer sx={sx}>
+    <Box sx={sx}>
       <ImageList cols={cols} gap={isSmall ? 10 : 20}>
         {title && (
           <ImageListItem cols={cols} style={{ height: "auto" }}>
@@ -52,8 +53,6 @@ const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
         )}
         {children}
       </ImageList>
-    </ResponsiveGridContainer>
+    </Box>
   );
 };
-
-export default ResponsiveGrid;

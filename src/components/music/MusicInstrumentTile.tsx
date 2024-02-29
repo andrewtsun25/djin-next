@@ -8,7 +8,7 @@ interface MusicInstrumentTileProps {
   musicInstrument: MusicInstrument;
 }
 
-const MusicInstrumentTile: React.FC<MusicInstrumentTileProps> = ({
+export const MusicInstrumentTile: React.FC<MusicInstrumentTileProps> = ({
   musicInstrument: { name, mediaUrl, scoreUrl },
 }: MusicInstrumentTileProps) => (
   <ResponsiveGridItem
@@ -19,5 +19,3 @@ const MusicInstrumentTile: React.FC<MusicInstrumentTileProps> = ({
     imageStyle={{ objectFit: "cover" }}
   />
 );
-
-export default MusicInstrumentTile;
