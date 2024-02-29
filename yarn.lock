@@ -4390,6 +4390,7 @@ __metadata:
     luxon: "npm:^3.4.4"
     next: "npm:^14.1.0"
     node-mocks-http: "npm:^1.14.1"
+    nuqs: "npm:^1.17.0"
     prettier: "npm:^3.2.5"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -7612,6 +7613,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mitt@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "mitt@npm:3.0.1"
+  checksum: 10/287c70d8e73ffc25624261a4989c783768aed95ecb60900f051d180cf83e311e3e59865bfd6e9d029cdb149dc20ba2f128a805e9429c5c4ce33b1416c65bbd14
+  languageName: node
+  linkType: hard
+
 "mkdirp@npm:^1.0.3, mkdirp@npm:^1.0.4":
   version: 1.0.4
   resolution: "mkdirp@npm:1.0.4"
@@ -7838,6 +7846,17 @@ __metadata:
     gauge: "npm:^4.0.3"
     set-blocking: "npm:^2.0.0"
   checksum: 10/82b123677e62deb9e7472e27b92386c09e6e254ee6c8bcd720b3011013e4168bc7088e984f4fbd53cb6e12f8b4690e23e4fa6132689313e0d0dc4feea45489bb
+  languageName: node
+  linkType: hard
+
+"nuqs@npm:^1.17.0":
+  version: 1.17.0
+  resolution: "nuqs@npm:1.17.0"
+  dependencies:
+    mitt: "npm:^3.0.1"
+  peerDependencies:
+    next: ">=13.4 <14.0.2 || ^14.0.3"
+  checksum: 10/561e32e8ce9670d64a7f8bc18be3d2ac1c9a9d3e46c556bb3b5cd8f88f8d942a6a991aa58305d784ef3a1861e9e5f97e0055bab76ea312a7607accd6a95385bd
   languageName: node
   linkType: hard
 
