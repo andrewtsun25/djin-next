@@ -5,12 +5,12 @@ import { EdmTitle } from "../../../src/components/edm/styled";
 import { Background, PageContainer } from "../../../src/components/layout";
 import { SoundCloudWidget } from "../../../src/components/music";
 
-// Background config
+// Background configuration
 const bgUrl =
   "https://storage.googleapis.com/djin-dev.appspot.com/music/bg/edc_bg.jpg";
 const bgAlt = "EDM Background";
-const bgHeight = 971;
-const bgWidth = 522;
+const bgHeight = 522;
+const bgWidth = 971;
 
 const soundCloudEdmPlaylistUrl: string =
   "https://api.soundcloud.com/playlists/545171379";

@@ -8,12 +8,12 @@ import { ResponsiveGrid } from "../../../src/components/responsiveGrid";
 import { listMusicScores } from "../../../src/dal/api";
 import { MusicInstrument, MusicScore } from "../../../src/types/api";
 
-// Background config
+// Background configuration
 const bgUrl =
   "https://storage.googleapis.com/djin-dev.appspot.com/music/bg/music_score_bg.jpeg";
 const bgAlt = "Music Scores Background";
-const bgHeight = 1920;
-const bgWidth = 1080;
+const bgHeight = 1080;
+const bgWidth = 1920;
 
 export const metadata: Metadata = {
   title: "d.jin - Music Scores",

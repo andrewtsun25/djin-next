@@ -7,6 +7,7 @@ import { Background, PageContainer } from "../../../src/components/layout";
 import { listEducationsByEducationType } from "../../../src/dal/api";
 import { Education, EducationType } from "../../../src/types/api";
 
+// Background configuration
 const bgUrl =
   "https://storage.googleapis.com/djin-dev.appspot.com/education/bg/pioneer_cdj_bg.jpeg";
 const bgAlt = "Music Education Background";
@@ -26,8 +27,11 @@ export default async function MusicEducationPage(): Promise<React.JSX.Element> {
       <Background src={bgUrl} alt={bgAlt} height={bgHeight} width={bgWidth} />
       <PageContainer>
         <EducationPageTitle variant="h2">Music Education</EducationPageTitle>
-        {educations.map((education, index) => (
-          <EducationCard education={education} key={index} />
+        {educations.map((education: Education) => (
+          <EducationCard
+            education={education}
+            key={education.organization.id}
+          />
         ))}
       </PageContainer>
     </>
