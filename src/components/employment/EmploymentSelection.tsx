@@ -3,9 +3,10 @@
 import { Grid } from "@mui/material";
 import { isNil } from "lodash";
 import { useQueryState } from "nuqs";
-import React, { useMemo } from "react";
+import React, { Suspense, useMemo } from "react";
 
 import { Employment, EmploymentType } from "../../types/api";
+import { Loading } from "../loading";
 import {
   EmploymentCard,
   EmploymentDurationDisplay,
@@ -17,10 +18,10 @@ import {
   EmploymentText,
 } from "./styled";
 
-const RESUME_URL =
+const resumeUrl =
   "https://docs.google.com/document/d/1RVocDw54Fpw8sKh6_ygapMjB4kZz_QFkhUxQ5nhiOx8/edit?usp=sharing";
-const EMPLOYMENT_TYPES_QUERY_PARAM = "types";
-const EMPLOYMENT_TYPES_SEPARATOR = ",";
+const typesQueryParameter = "types";
+const typesSeparator = ",";
 
 interface EmploymentSelectionProps {
   employments: Employment[];
@@ -32,14 +33,14 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
   const [
     selectedEmploymentTypesQueryParam,
     setSelectedEmploymentTypesQueryParam,
-  ] = useQueryState(EMPLOYMENT_TYPES_QUERY_PARAM);
+  ] = useQueryState(typesQueryParameter);
   const selectedEmploymentTypes: EmploymentType[] = useMemo(
     () =>
       isNil(selectedEmploymentTypesQueryParam) ||
       selectedEmploymentTypesQueryParam.length < 1
         ? []
         : selectedEmploymentTypesQueryParam
-            .split(EMPLOYMENT_TYPES_SEPARATOR)
+            .split(typesSeparator)
             .map((et) => et as EmploymentType),
     [selectedEmploymentTypesQueryParam],
   );
@@ -48,7 +49,7 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
   ) => {
     await setSelectedEmploymentTypesQueryParam(
       newEmploymentTypes.length > 0
-        ? newEmploymentTypes.join(EMPLOYMENT_TYPES_SEPARATOR)
+        ? newEmploymentTypes.join(typesSeparator)
         : null,
     );
   };
@@ -63,12 +64,12 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
   );
 
   return (
-    <>
+    <Suspense fallback={<Loading message={"Loading employments..."} />}>
       <EmploymentPageHeaderContainer>
         <EmploymentText sx={{ m: 2 }}>
           My most current résumé can be obtained{" "}
           <EmploymentResumeLink
-            href={RESUME_URL}
+            href={resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -89,6 +90,6 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
           </Grid>
         ))}
       </Grid>
-    </>
+    </Suspense>
   );
 };

@@ -3,9 +3,10 @@
 import { Grid } from "@mui/material";
 import { isNil, sortBy, uniq, uniqBy } from "lodash";
 import { useQueryState } from "nuqs";
-import React, { useMemo } from "react";
+import React, { Suspense, useMemo } from "react";
 
 import { Organization, Project } from "../../types/api";
+import { Loading } from "../loading";
 import {
   ProjectCard,
   ProjectCount,
@@ -14,10 +15,10 @@ import {
 } from "./index";
 import { ProjectSelectionContainer } from "./styled";
 
-const SKILLS_QUERY_PARAM = "skills";
-const SKILLS_SEPARATOR = ",";
-const ORGANIZATIONS_QUERY_PARAM = "organizations";
-const ORGANIZATIONS_SEPARATOR = ",";
+const skillsQueryParameter: string = "skills";
+const skillsSeparator: string = ",";
+const organizationsQueryParameter: string = "organizations";
+const organizationsSeparator: string = ",";
 
 interface ProjectSelectionProps {
   projects: Project[];
@@ -41,7 +42,7 @@ export const ProjectSelection: React.FC<ProjectSelectionProps> = ({
   const [
     selectedOrganizationsIdsQueryParam,
     setSelectedOrganizationsIdsQueryParam,
-  ] = useQueryState(ORGANIZATIONS_QUERY_PARAM);
+  ] = useQueryState(organizationsQueryParameter);
   const selectedOrganizationsIds: Set<string> = useMemo(
     () =>
       isNil(selectedOrganizationsIdsQueryParam) ||
@@ -49,7 +50,7 @@ export const ProjectSelection: React.FC<ProjectSelectionProps> = ({
         ? new Set<string>()
         : new Set(
             selectedOrganizationsIdsQueryParam
-              .split(ORGANIZATIONS_SEPARATOR)
+              .split(organizationsSeparator)
               .filter((organizationId: string) => organizationId.length > 0),
           ),
     [selectedOrganizationsIdsQueryParam],
@@ -67,7 +68,7 @@ export const ProjectSelection: React.FC<ProjectSelectionProps> = ({
     const newOrganizationsAsQueryParam = newOrganizations
       .map((organization: Organization) => organization.id)
       .sort()
-      .join(ORGANIZATIONS_SEPARATOR);
+      .join(organizationsSeparator);
     await setSelectedOrganizationsIdsQueryParam(
       newOrganizationsAsQueryParam.length > 0
         ? newOrganizationsAsQueryParam
@@ -80,7 +81,7 @@ export const ProjectSelection: React.FC<ProjectSelectionProps> = ({
     [projects],
   );
   const [selectedSkillsQueryParam, setSelectedSkillsQueryParam] =
-    useQueryState(SKILLS_QUERY_PARAM);
+    useQueryState(skillsQueryParameter);
   const selectedSkills: string[] = useMemo(() => {
     const selectedSkillsSet: Set<string> =
       isNil(selectedSkillsQueryParam) || selectedSkillsQueryParam.length < 1
@@ -95,7 +96,7 @@ export const ProjectSelection: React.FC<ProjectSelectionProps> = ({
     );
   }, [selectedSkillsQueryParam, skills]);
   const setSelectedSkills = async (newSkills: string[]): Promise<void> => {
-    const newSkillsAsQueryParam: string = newSkills.join(SKILLS_SEPARATOR);
+    const newSkillsAsQueryParam: string = newSkills.join(skillsSeparator);
     await setSelectedSkillsQueryParam(
       newSkillsAsQueryParam.length > 0 ? newSkillsAsQueryParam : null,
     );
@@ -120,7 +121,7 @@ export const ProjectSelection: React.FC<ProjectSelectionProps> = ({
   );
 
   return (
-    <>
+    <Suspense fallback={<Loading message="Loading projects..." />}>
       <ProjectSelectionContainer>
         <ProjectOrganizationSelect
           organizations={organizations}
@@ -141,6 +142,6 @@ export const ProjectSelection: React.FC<ProjectSelectionProps> = ({
           </Grid>
         ))}
       </Grid>
-    </>
+    </Suspense>
   );
 };
