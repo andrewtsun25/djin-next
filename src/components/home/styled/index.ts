@@ -6,7 +6,6 @@ import DesktopDrawerContainer, {
   appDrawerWidth,
 } from "./DesktopDrawerContainer";
 import DrawerContentContainer from "./DrawerContentContainer";
-import HomeBackground from "./HomeBackground";
 import HomeDescriptionTypography from "./HomeDescriptionTypography";
 import HomeLinkText from "./HomeLinkText";
 import HomeTextContainer from "./HomeTextContainer";
@@ -23,7 +22,6 @@ export {
   DesktopDrawerCloseButtonContainer,
   DesktopDrawerContainer,
   DrawerContentContainer,
-  HomeBackground,
   HomeDescriptionTypography,
   HomeLinkText,
   HomeTextContainer,
