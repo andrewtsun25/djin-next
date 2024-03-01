@@ -3,8 +3,7 @@
 import { Card } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const EducationCardContainer = styled(Card)(({ theme }) => ({
-  padding: theme.spacing(0.5),
+export const FullWidthCardContainer = styled(Card)(({ theme }) => ({
   "&:not(:first-child)": {
     marginTop: theme.spacing(2),
   },
@@ -12,5 +11,3 @@ const EducationCardContainer = styled(Card)(({ theme }) => ({
     marginBottom: theme.spacing(2),
   },
 }));
-
-export default EducationCardContainer;

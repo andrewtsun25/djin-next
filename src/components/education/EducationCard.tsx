@@ -1,12 +1,12 @@
 import SchoolIcon from "@mui/icons-material/School";
-import { CardContent, Slide, Typography } from "@mui/material";
+import { Box, CardContent, Slide, Typography } from "@mui/material";
 import { map } from "lodash";
 import React from "react";
 
 import { Education } from "../../types/api";
 import { DurationWithOrganizationCardHeader } from "../card";
+import { FullWidthCardContainer } from "../layout";
 import { IconLink } from "../text";
-import { EducationCardContainer } from "./styled";
 
 interface EducationCardProps {
   education: Education;
@@ -28,7 +28,7 @@ const EducationCard: React.FC<EducationCardProps> = ({
 }: EducationCardProps) => {
   return (
     <Slide direction="up" in mountOnEnter unmountOnExit>
-      <EducationCardContainer>
+      <FullWidthCardContainer>
         <DurationWithOrganizationCardHeader
           title={organizationName}
           subtitle={major}
@@ -37,14 +37,16 @@ const EducationCard: React.FC<EducationCardProps> = ({
           logoUrl={logoUrl}
         />
         <CardContent>
-          {map(syllabusUrls, (syllabusUrl, urlName) => (
-            <IconLink
-              key={urlName}
-              icon={<SchoolIcon />}
-              href={syllabusUrl}
-              text={urlName}
-            />
-          ))}
+          <Box mb={2}>
+            {map(syllabusUrls, (syllabusUrl, urlName) => (
+              <IconLink
+                key={urlName}
+                icon={<SchoolIcon />}
+                href={syllabusUrl}
+                text={urlName}
+              />
+            ))}
+          </Box>
           {department && (
             <Typography paragraph>
               <b>Department:</b> {department}
@@ -75,13 +77,13 @@ const EducationCard: React.FC<EducationCardProps> = ({
                         <i>{description}</i> {biography}
                       </Typography>
                     </li>
-                  )
+                  ),
                 )}
               </ul>
             </>
           )}
         </CardContent>
-      </EducationCardContainer>
+      </FullWidthCardContainer>
     </Slide>
   );
 };

@@ -5,8 +5,8 @@ import React from "react";
 import { BulletPoints } from "../../components/text";
 import { HbvResearchPaper } from "../../types/api";
 import { DurationWithOrganizationCardHeader } from "../card";
+import { FullWidthCardContainer } from "../layout";
 import SkillChips from "../text/SkillChips";
-import HbvResearchCardContainer from "./styled/HbvResearchCardContainer";
 import HbvResearchCardIconLink from "./styled/HbvResearchCardIconLink";
 
 interface HbvResearchCardProps {
@@ -27,7 +27,7 @@ const HbvResearchCard: React.FC<HbvResearchCardProps> = ({
 }: HbvResearchCardProps) => {
   return (
     <Slide direction="up" in mountOnEnter unmountOnExit>
-      <HbvResearchCardContainer>
+      <FullWidthCardContainer>
         <DurationWithOrganizationCardHeader
           title={name}
           subtitle={organization.name}
@@ -42,11 +42,13 @@ const HbvResearchCard: React.FC<HbvResearchCardProps> = ({
             icon={<DescriptionIcon />}
             target="_blank"
           />
-          <Typography paragraph>{description}</Typography>
+          <Typography mt={2} paragraph>
+            {description}
+          </Typography>
           <BulletPoints points={responsibilities} />
           <SkillChips skills={skills} />
         </CardContent>
-      </HbvResearchCardContainer>
+      </FullWidthCardContainer>
     </Slide>
   );
 };

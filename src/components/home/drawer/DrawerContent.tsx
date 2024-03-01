@@ -87,9 +87,14 @@ const DrawerContent: React.FC = () => {
         </CollapsibleList>
         <CollapsibleList icon={<SportsMmaIcon />} name="Martial Arts">
           <CollapsibleListHyperLinkListItem
-            icon={<FistIcon />}
-            text="ITF Taekwondo"
-            to="/martialArts/itfTkd"
+            icon={<MuayThaiIcon />}
+            text="Muay Thai"
+            to="/martialArts/muaythai"
+          />
+          <CollapsibleListHyperLinkListItem
+            icon={<BjjIcon />}
+            text="Brazilian Jiu-Jitsu"
+            to="/martialArts/bjj"
           />
           <CollapsibleListHyperLinkListItem
             icon={<TaekwondoIcon />}
@@ -102,14 +107,9 @@ const DrawerContent: React.FC = () => {
             to="/martialArts/hdgd"
           />
           <CollapsibleListHyperLinkListItem
-            icon={<MuayThaiIcon />}
-            text="Muay Thai"
-            to="/martialArts/muaythai"
-          />
-          <CollapsibleListHyperLinkListItem
-            icon={<BjjIcon />}
-            text="Brazilian Jiu-Jitsu"
-            to="/martialArts/bjj"
+            icon={<FistIcon />}
+            text="ITF Taekwondo"
+            to="/martialArts/itfTkd"
           />
         </CollapsibleList>
         <CollapsibleList icon={<SchoolIcon />} name={"Academic Work"}>

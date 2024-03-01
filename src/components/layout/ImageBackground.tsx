@@ -2,12 +2,18 @@ import React, { PropsWithChildren } from "react";
 
 import { BackgroundImageBox } from "./styled";
 
-interface Background2Props {
+interface ImageBackgroundProps {
   src: string;
+  backgroundColor?: string;
 }
 
-export const ImageBackground: React.FC<Background2Props> = ({
+export const ImageBackground: React.FC<ImageBackgroundProps> = ({
   src,
-}: PropsWithChildren<Background2Props>) => {
-  return <BackgroundImageBox sx={{ backgroundImage: `url(${src})` }} />;
+  backgroundColor = "transparent",
+}: PropsWithChildren<ImageBackgroundProps>) => {
+  return (
+    <BackgroundImageBox
+      sx={{ backgroundImage: `url(${src})`, backgroundColor }}
+    />
+  );
 };

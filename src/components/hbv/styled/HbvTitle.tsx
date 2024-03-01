@@ -3,7 +3,7 @@
 import { styled, Typography } from "@mui/material";
 
 const HbvTitle = styled(Typography)(({ theme }) => ({
-  paddingTop: 20,
+  marginBottom: theme.spacing(2),
   textAlign: "center",
   color: theme.palette.primary.contrastText,
 }));

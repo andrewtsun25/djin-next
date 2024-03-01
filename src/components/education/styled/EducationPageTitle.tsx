@@ -3,10 +3,8 @@
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const EducationPageTitle = styled(Typography)(({ theme }) => ({
+export const EducationPageTitle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   color: theme.palette.primary.contrastText,
   textAlign: "center",
 }));
-
-export default EducationPageTitle;

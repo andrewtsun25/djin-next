@@ -6,7 +6,7 @@ exports[`HbvResearchCard renders 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1ijjpl2-MuiPaper-root-MuiCard-root"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-x1xzmy-MuiPaper-root-MuiCard-root"
         style="webkit-transform: none; transform: none; webkit-transition: -webkit-transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms; transition: transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;"
       >
         <div
@@ -44,12 +44,12 @@ exports[`HbvResearchCard renders 1`] = `
           class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
         >
           <a
-            class="css-1d1oveo"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1mnlgc6-MuiTypography-root-MuiLink-root"
             href="https://paper-link.com"
             target="_blank"
           >
             <div
-              class="MuiBox-root css-z7rxi2"
+              class="MuiBox-root css-70qvj9"
             >
               <div
                 class="MuiBox-root css-1ay9vb9"
@@ -74,7 +74,7 @@ exports[`HbvResearchCard renders 1`] = `
             </div>
           </a>
           <p
-            class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph css-z2eky3-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph css-18194e8-MuiTypography-root"
           >
             description
           </p>
@@ -128,7 +128,7 @@ exports[`HbvResearchCard renders 1`] = `
   </body>,
   "container": <div>
     <div
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1ijjpl2-MuiPaper-root-MuiCard-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-x1xzmy-MuiPaper-root-MuiCard-root"
       style="webkit-transform: none; transform: none; webkit-transition: -webkit-transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms; transition: transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;"
     >
       <div
@@ -166,12 +166,12 @@ exports[`HbvResearchCard renders 1`] = `
         class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
       >
         <a
-          class="css-1d1oveo"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1mnlgc6-MuiTypography-root-MuiLink-root"
           href="https://paper-link.com"
           target="_blank"
         >
           <div
-            class="MuiBox-root css-z7rxi2"
+            class="MuiBox-root css-70qvj9"
           >
             <div
               class="MuiBox-root css-1ay9vb9"
@@ -196,7 +196,7 @@ exports[`HbvResearchCard renders 1`] = `
           </div>
         </a>
         <p
-          class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph css-z2eky3-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph css-18194e8-MuiTypography-root"
         >
           description
         </p>

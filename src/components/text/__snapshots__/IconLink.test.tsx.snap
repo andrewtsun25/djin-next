@@ -6,10 +6,11 @@ exports[`IconLink renders 1`] = `
   "baseElement": <body>
     <div>
       <a
+        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
         href="https://example.com"
       >
         <div
-          class="MuiBox-root css-z7rxi2"
+          class="MuiBox-root css-70qvj9"
         >
           <div
             class="MuiBox-root css-1ay9vb9"
@@ -37,10 +38,11 @@ exports[`IconLink renders 1`] = `
   </body>,
   "container": <div>
     <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
       href="https://example.com"
     >
       <div
-        class="MuiBox-root css-z7rxi2"
+        class="MuiBox-root css-70qvj9"
       >
         <div
           class="MuiBox-root css-1ay9vb9"
