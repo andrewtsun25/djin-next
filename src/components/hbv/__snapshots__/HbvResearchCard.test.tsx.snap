@@ -99,10 +99,10 @@ exports[`HbvResearchCard renders 1`] = `
             </li>
           </ul>
           <div
-            class="MuiBox-root css-am63uh"
+            class="MuiBox-root css-zqlfut"
           >
             <div
-              class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1d499cn-MuiChip-root"
+              class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1suvmod-MuiChip-root"
               role="skill"
             >
               <span
@@ -112,7 +112,7 @@ exports[`HbvResearchCard renders 1`] = `
               </span>
             </div>
             <div
-              class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1d499cn-MuiChip-root"
+              class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1suvmod-MuiChip-root"
               role="skill"
             >
               <span
@@ -221,10 +221,10 @@ exports[`HbvResearchCard renders 1`] = `
           </li>
         </ul>
         <div
-          class="MuiBox-root css-am63uh"
+          class="MuiBox-root css-zqlfut"
         >
           <div
-            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1d499cn-MuiChip-root"
+            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1suvmod-MuiChip-root"
             role="skill"
           >
             <span
@@ -234,7 +234,7 @@ exports[`HbvResearchCard renders 1`] = `
             </span>
           </div>
           <div
-            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1d499cn-MuiChip-root"
+            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1suvmod-MuiChip-root"
             role="skill"
           >
             <span

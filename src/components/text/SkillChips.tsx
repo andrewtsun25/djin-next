@@ -1,6 +1,5 @@
+import { Box, Chip } from "@mui/material";
 import React from "react";
-
-import { SkillChip, SkillChipContainer } from "./styled";
 
 interface SkillChipsProps {
   skills: string[];
@@ -10,16 +9,17 @@ const SKILL_CHIP_ROLE = "skill";
 
 const SkillChips: React.FC<SkillChipsProps> = ({ skills }: SkillChipsProps) => {
   return skills.length > 0 ? (
-    <SkillChipContainer>
+    <Box display="flex" justifyContent="left" flexWrap="wrap">
       {skills.map((skill) => (
-        <SkillChip
+        <Chip
           label={skill}
           size="small"
           key={skill}
           role={SKILL_CHIP_ROLE}
+          sx={{ m: 0.5 }}
         />
       ))}
-    </SkillChipContainer>
+    </Box>
   ) : null;
 };
 
