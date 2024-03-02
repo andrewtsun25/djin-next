@@ -6,7 +6,7 @@ exports[`SiteLayoutPages renders 1`] = `
   "baseElement": <body>
     <div>
       <header
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-11b3ww9-MuiPaper-root-MuiAppBar-root"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-7e0s21-MuiPaper-root-MuiAppBar-root"
       >
         <div
           class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
@@ -16,19 +16,18 @@ exports[`SiteLayoutPages renders 1`] = `
             style="text-decoration: none;"
           >
             <div
-              class="MuiBox-root css-omo8we"
+              class="MuiBox-root css-70qvj9"
             >
               <img
                 alt="d.jin website logo"
-                class="css-7f50zt"
                 data-nimg="1"
                 decoding="async"
-                height="40"
+                height="50"
                 loading="lazy"
-                src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
-                srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+                src="/_next/image?url=%2Fimg.jpg&w=128&q=75"
+                srcset="/_next/image?url=%2Fimg.jpg&w=64&q=75 1x, /_next/image?url=%2Fimg.jpg&w=128&q=75 2x"
                 style="color: transparent;"
-                width="40"
+                width="50"
               />
               <h5
                 class="MuiTypography-root MuiTypography-h5 css-1kjiu85-MuiTypography-root"
@@ -51,7 +50,7 @@ exports[`SiteLayoutPages renders 1`] = `
     </div>
     <div
       aria-hidden="true"
-      class="MuiDrawer-root MuiDrawer-modal MuiModal-root MuiModal-hidden css-7ouyiw-MuiModal-root-MuiDrawer-root"
+      class="MuiDrawer-root MuiDrawer-modal MuiModal-root MuiModal-hidden css-14rwq86-MuiModal-root-MuiDrawer-root"
       role="presentation"
     >
       <div
@@ -69,7 +68,7 @@ exports[`SiteLayoutPages renders 1`] = `
         tabindex="-1"
       >
         <div
-          class="MuiBox-root css-vojj79"
+          class="MuiBox-root css-c66aiw"
         >
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -102,7 +101,7 @@ exports[`SiteLayoutPages renders 1`] = `
           class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
         />
         <div
-          class="MuiBox-root css-1bjzf2p"
+          class="MuiBox-root css-sl7ei"
         >
           <ul
             class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
@@ -335,7 +334,7 @@ exports[`SiteLayoutPages renders 1`] = `
   </body>,
   "container": <div>
     <header
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-11b3ww9-MuiPaper-root-MuiAppBar-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-7e0s21-MuiPaper-root-MuiAppBar-root"
     >
       <div
         class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
@@ -345,19 +344,18 @@ exports[`SiteLayoutPages renders 1`] = `
           style="text-decoration: none;"
         >
           <div
-            class="MuiBox-root css-omo8we"
+            class="MuiBox-root css-70qvj9"
           >
             <img
               alt="d.jin website logo"
-              class="css-7f50zt"
               data-nimg="1"
               decoding="async"
-              height="40"
+              height="50"
               loading="lazy"
-              src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
-              srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+              src="/_next/image?url=%2Fimg.jpg&w=128&q=75"
+              srcset="/_next/image?url=%2Fimg.jpg&w=64&q=75 1x, /_next/image?url=%2Fimg.jpg&w=128&q=75 2x"
               style="color: transparent;"
-              width="40"
+              width="50"
             />
             <h5
               class="MuiTypography-root MuiTypography-h5 css-1kjiu85-MuiTypography-root"

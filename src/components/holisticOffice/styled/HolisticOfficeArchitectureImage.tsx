@@ -3,7 +3,7 @@
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
 
-const HolisticOfficeImage = styled(Image)(({ theme }) => ({
+export const HolisticOfficeArchitectureImage = styled(Image)(({ theme }) => ({
   height: "auto",
   padding: theme.spacing(2),
   marginTop: theme.spacing(2),
@@ -13,5 +13,3 @@ const HolisticOfficeImage = styled(Image)(({ theme }) => ({
   objectFit: "scale-down",
   maxWidth: "80vw",
 }));
-
-export default HolisticOfficeImage;

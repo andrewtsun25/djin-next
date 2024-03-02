@@ -1,19 +1,11 @@
 import {
-  HolisticOfficeBackground,
-  HolisticOfficeHyperLink,
-  HolisticOfficeImage,
-  HolisticOfficeImageLink,
-  HolisticOfficeImageLinkImage,
-  HolisticOfficePageContainer,
+  HolisticOfficeArchitectureImage,
+  HolisticOfficeLogo,
   HolisticOfficeSectionHeader,
 } from "./styled";
 
 export {
-  HolisticOfficeBackground,
-  HolisticOfficeHyperLink,
-  HolisticOfficeImage,
-  HolisticOfficeImageLink,
-  HolisticOfficeImageLinkImage,
-  HolisticOfficePageContainer,
+  HolisticOfficeArchitectureImage,
+  HolisticOfficeLogo,
   HolisticOfficeSectionHeader,
 };

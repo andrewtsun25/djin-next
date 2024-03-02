@@ -3,21 +3,18 @@
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
+  Box,
   IconButton,
   Toolbar,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useMemo } from "react";
+import React from "react";
 
 import logo from "../../../public/logos/logo.png";
-import {
-  AppToolBarBrandContainer,
-  AppToolBarLogo,
-  HomeLinkText,
-} from "./styled";
+import { HomeLinkText } from "./styled";
 
 interface AppToolBarProps {
   isAppDrawerOpen: boolean;
@@ -26,21 +23,14 @@ interface AppToolBarProps {
 
 export const MENU_BUTTON_ROLE = "switch";
 
-const pathsWithFixedAppToolbar = ["/"];
-
 const AppToolBar: React.FC<AppToolBarProps> = ({
   isAppDrawerOpen,
   setIsAppDrawerOpen,
 }: AppToolBarProps) => {
-  const pathname = usePathname();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
-  const isAppToolbarPositionFixed = useMemo(
-    () => pathsWithFixedAppToolbar.some((pn) => pathname === pn),
-    [pathname],
-  );
   return (
-    <AppBar position={isAppToolbarPositionFixed ? "fixed" : "sticky"}>
+    <AppBar position={"sticky"}>
       <Toolbar>
         {isDesktop && (
           <IconButton
@@ -55,10 +45,10 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
           </IconButton>
         )}
         <Link href="/" style={{ textDecoration: "none" }}>
-          <AppToolBarBrandContainer>
-            <AppToolBarLogo src={logo} alt="d.jin website logo" />
+          <Box display="flex" alignItems="center">
+            <Image src={logo} alt="d.jin website logo" height={50} width={50} />
             <HomeLinkText variant="h5">d.jin</HomeLinkText>
-          </AppToolBarBrandContainer>
+          </Box>
         </Link>
       </Toolbar>
     </AppBar>

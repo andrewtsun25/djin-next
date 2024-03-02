@@ -6,6 +6,7 @@ import {
   ImageListItem,
   SxProps,
   Theme,
+  Typography,
   TypographyVariant,
   useMediaQuery,
   useTheme,
@@ -13,7 +14,6 @@ import {
 import React, { PropsWithChildren } from "react";
 
 import { SoundCloudWidget } from "../music";
-import { ResponsiveGridTitle } from "./styled";
 
 interface ResponsiveGridProps {
   title?: string;
@@ -47,9 +47,17 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
       >
         {title && (
           <ImageListItem cols={cols} style={{ height: "auto" }}>
-            <ResponsiveGridTitle paragraph variant={titleVariant}>
+            <Typography
+              paragraph
+              mt={0.25}
+              mr="auto"
+              mb={0.25}
+              ml={0.25}
+              textAlign="center"
+              variant={titleVariant}
+            >
               {title}
-            </ResponsiveGridTitle>
+            </Typography>
           </ImageListItem>
         )}
         {embedUrl && (

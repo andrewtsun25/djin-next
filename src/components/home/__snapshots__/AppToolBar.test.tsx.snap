@@ -6,7 +6,7 @@ exports[`AppToolBar renders with a fixed header if the app is on the home page 1
   "baseElement": <body>
     <div>
       <header
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-11b3ww9-MuiPaper-root-MuiAppBar-root"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-7e0s21-MuiPaper-root-MuiAppBar-root"
       >
         <div
           class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
@@ -16,19 +16,18 @@ exports[`AppToolBar renders with a fixed header if the app is on the home page 1
             style="text-decoration: none;"
           >
             <div
-              class="MuiBox-root css-omo8we"
+              class="MuiBox-root css-70qvj9"
             >
               <img
                 alt="d.jin website logo"
-                class="css-7f50zt"
                 data-nimg="1"
                 decoding="async"
-                height="40"
+                height="50"
                 loading="lazy"
-                src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
-                srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+                src="/_next/image?url=%2Fimg.jpg&w=128&q=75"
+                srcset="/_next/image?url=%2Fimg.jpg&w=64&q=75 1x, /_next/image?url=%2Fimg.jpg&w=128&q=75 2x"
                 style="color: transparent;"
-                width="40"
+                width="50"
               />
               <h5
                 class="MuiTypography-root MuiTypography-h5 css-1kjiu85-MuiTypography-root"
@@ -43,7 +42,7 @@ exports[`AppToolBar renders with a fixed header if the app is on the home page 1
   </body>,
   "container": <div>
     <header
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-11b3ww9-MuiPaper-root-MuiAppBar-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-7e0s21-MuiPaper-root-MuiAppBar-root"
     >
       <div
         class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
@@ -53,19 +52,18 @@ exports[`AppToolBar renders with a fixed header if the app is on the home page 1
           style="text-decoration: none;"
         >
           <div
-            class="MuiBox-root css-omo8we"
+            class="MuiBox-root css-70qvj9"
           >
             <img
               alt="d.jin website logo"
-              class="css-7f50zt"
               data-nimg="1"
               decoding="async"
-              height="40"
+              height="50"
               loading="lazy"
-              src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
-              srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+              src="/_next/image?url=%2Fimg.jpg&w=128&q=75"
+              srcset="/_next/image?url=%2Fimg.jpg&w=64&q=75 1x, /_next/image?url=%2Fimg.jpg&w=128&q=75 2x"
               style="color: transparent;"
-              width="40"
+              width="50"
             />
             <h5
               class="MuiTypography-root MuiTypography-h5 css-1kjiu85-MuiTypography-root"
@@ -147,19 +145,18 @@ exports[`AppToolBar renders with a sticky header if the app isn't on the home pa
             style="text-decoration: none;"
           >
             <div
-              class="MuiBox-root css-omo8we"
+              class="MuiBox-root css-70qvj9"
             >
               <img
                 alt="d.jin website logo"
-                class="css-7f50zt"
                 data-nimg="1"
                 decoding="async"
-                height="40"
+                height="50"
                 loading="lazy"
-                src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
-                srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+                src="/_next/image?url=%2Fimg.jpg&w=128&q=75"
+                srcset="/_next/image?url=%2Fimg.jpg&w=64&q=75 1x, /_next/image?url=%2Fimg.jpg&w=128&q=75 2x"
                 style="color: transparent;"
-                width="40"
+                width="50"
               />
               <h5
                 class="MuiTypography-root MuiTypography-h5 css-1kjiu85-MuiTypography-root"
@@ -184,19 +181,18 @@ exports[`AppToolBar renders with a sticky header if the app isn't on the home pa
           style="text-decoration: none;"
         >
           <div
-            class="MuiBox-root css-omo8we"
+            class="MuiBox-root css-70qvj9"
           >
             <img
               alt="d.jin website logo"
-              class="css-7f50zt"
               data-nimg="1"
               decoding="async"
-              height="40"
+              height="50"
               loading="lazy"
-              src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
-              srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+              src="/_next/image?url=%2Fimg.jpg&w=128&q=75"
+              srcset="/_next/image?url=%2Fimg.jpg&w=64&q=75 1x, /_next/image?url=%2Fimg.jpg&w=128&q=75 2x"
               style="color: transparent;"
-              width="40"
+              width="50"
             />
             <h5
               class="MuiTypography-root MuiTypography-h5 css-1kjiu85-MuiTypography-root"

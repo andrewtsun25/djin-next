@@ -5,15 +5,14 @@ import { Metadata } from "next";
 import React from "react";
 
 import {
-  HolisticOfficeHyperLink,
-  HolisticOfficeImage,
-  HolisticOfficeImageLink,
-  HolisticOfficeImageLinkImage,
+  HolisticOfficeArchitectureImage,
+  HolisticOfficeLogo,
   HolisticOfficeSectionHeader,
 } from "../../../src/components/holisticOffice";
 import { LinkSection } from "../../../src/components/holisticOffice/linkSection";
 import { ModuleInfoGrid } from "../../../src/components/holisticOffice/modulesGrid";
 import { VerticallyCenteredPageContainer } from "../../../src/components/layout";
+import { MuiNextLink } from "../../../src/components/text";
 import { Urls } from "../../../src/const/url";
 import {
   listHolisticOfficeLinks,
@@ -25,6 +24,7 @@ import {
   HolisticOfficeModule,
 } from "../../../src/types/api";
 
+const holisticOfficeLinkColor = "#308575";
 const logoUrl = `${Urls.AssetRoot}/holisticOffice/logo/holistic_office_logo.png`;
 const websiteImg = `${Urls.AssetRoot}/holisticOffice/img/holistic_office_website.png`;
 const architectureImg = `${Urls.AssetRoot}/holisticOffice/img/holistic_office_architecture.png`;
@@ -52,16 +52,16 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
     <Box sx={{ backgroundColor: holisticOfficeGreen }}>
       <Fade in>
         <VerticallyCenteredPageContainer maxWidth="lg">
-          <HolisticOfficeImageLink href={holisticOfficeUrl} target="_blank">
-            <HolisticOfficeImageLinkImage
+          <MuiNextLink href={holisticOfficeUrl} target="_blank" sx={{ my: 2 }}>
+            <HolisticOfficeLogo
               src={logoUrl}
               alt="Holistic Office Logo"
               height={165}
               width={1000}
             />
-          </HolisticOfficeImageLink>
+          </MuiNextLink>
           <Grow in>
-            <HolisticOfficeImage
+            <HolisticOfficeArchitectureImage
               src={websiteImg}
               alt="Holistic Office Website Image"
               height={556}
@@ -69,9 +69,13 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
             />
           </Grow>
           <Typography paragraph sx={{ alignSelf: "flex-start" }}>
-            <HolisticOfficeHyperLink href={holisticOfficeUrl} target="_blank">
+            <MuiNextLink
+              href={holisticOfficeUrl}
+              target="_blank"
+              sx={{ color: holisticOfficeLinkColor }}
+            >
               Holistic Office
-            </HolisticOfficeHyperLink>{" "}
+            </MuiNextLink>{" "}
             is a patient EHR (Electronic Health Record) management and inventory
             management system for small to mid-sized independent clinics, and
             also my graduate school project at USC (listed as CSCI-577: Software
@@ -89,7 +93,7 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
             Architecture
           </HolisticOfficeSectionHeader>
           <Grow in>
-            <HolisticOfficeImage
+            <HolisticOfficeArchitectureImage
               src={architectureImg}
               alt="Holistic Office Architecture Diagram"
               width={1044}

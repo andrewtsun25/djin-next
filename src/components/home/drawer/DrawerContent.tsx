@@ -11,7 +11,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import SportsMmaIcon from "@mui/icons-material/SportsMma";
 import WorkIcon from "@mui/icons-material/Work";
-import { Divider, List } from "@mui/material";
+import { Box, Divider, List } from "@mui/material";
 import React from "react";
 
 import {
@@ -22,16 +22,13 @@ import {
   MusicScoreIcon,
   TaekwondoIcon,
 } from "../../icons";
-import {
-  CollapsibleListHyperLinkListItem,
-  DrawerContentContainer,
-} from "../styled";
+import { CollapsibleListHyperLinkListItem } from "../styled";
 import CollapsibleList from "./CollapsibleList";
 import HyperLinkListItem from "./HyperLinkListItem";
 
 const DrawerContent: React.FC = () => {
   return (
-    <DrawerContentContainer>
+    <Box height="100%" overflow="auto">
       <List>
         <CollapsibleList icon={<CodeIcon />} name="Coding">
           <CollapsibleListHyperLinkListItem
@@ -144,7 +141,7 @@ const DrawerContent: React.FC = () => {
           target="_blank"
         /> */}
       </List>
-    </DrawerContentContainer>
+    </Box>
   );
 };
 
