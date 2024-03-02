@@ -1,4 +1,5 @@
 import { Grow, Paper, Typography } from "@mui/material";
+import { isEmpty, map } from "lodash";
 import React from "react";
 
 import { HolisticOfficeModule } from "../../../types/api";
@@ -17,13 +18,14 @@ const ModuleInfo: React.FC<ModuleInfoProps> = ({
           {name}
         </Typography>
         <ul>
-          {Object.entries(components).map(([key, value]) => (
-            <li key={key}>
-              <Typography>
-                <b>{key}:</b> {value}
-              </Typography>
-            </li>
-          ))}
+          {!isEmpty(components) &&
+            map(components, (technologies, category) => (
+              <li key={category}>
+                <Typography>
+                  <b>{category}:</b> {technologies}
+                </Typography>
+              </li>
+            ))}
         </ul>
       </Paper>
     </Grow>

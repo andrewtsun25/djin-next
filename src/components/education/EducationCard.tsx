@@ -1,6 +1,6 @@
 import SchoolIcon from "@mui/icons-material/School";
 import { Box, CardContent, Slide, Typography } from "@mui/material";
-import { map } from "lodash";
+import { isEmpty, isNil, map } from "lodash";
 import React from "react";
 
 import { Education } from "../../types/api";
@@ -37,16 +37,18 @@ export const EducationCard: React.FC<EducationCardProps> = ({
           logoUrl={logoUrl}
         />
         <CardContent>
-          <Box mb={2}>
-            {map(syllabusUrls, (syllabusUrl, urlName) => (
-              <IconLink
-                key={urlName}
-                icon={<SchoolIcon />}
-                href={syllabusUrl}
-                text={urlName}
-              />
-            ))}
-          </Box>
+          {!isNil(syllabusUrls) && !isEmpty(syllabusUrls) && (
+            <Box mb={2}>
+              {map(syllabusUrls, (syllabusUrl, urlName) => (
+                <IconLink
+                  key={urlName}
+                  icon={<SchoolIcon />}
+                  href={syllabusUrl}
+                  text={urlName}
+                />
+              ))}
+            </Box>
+          )}
           {department && (
             <Typography paragraph>
               <b>Department:</b> {department}

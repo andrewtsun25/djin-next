@@ -142,11 +142,13 @@ export default async function MartialArtsPage({
           <Typography mt={2} mb={2} variant="h2" textAlign="center">
             Studios
           </Typography>
-          <ResponsiveGrid>
-            {studios.map((studio: MartialArtsStudio) => (
-              <MartialArtsStudioGridTile studio={studio} key={studio.name} />
-            ))}
-          </ResponsiveGrid>
+          {studios.length > 0 && (
+            <ResponsiveGrid>
+              {studios.map((studio: MartialArtsStudio) => (
+                <MartialArtsStudioGridTile studio={studio} key={studio.name} />
+              ))}
+            </ResponsiveGrid>
+          )}
         </PageContainer>
       </Fade>
     </>

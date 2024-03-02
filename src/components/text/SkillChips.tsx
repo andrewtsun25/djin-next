@@ -8,7 +8,7 @@ interface SkillChipsProps {
 const SKILL_CHIP_ROLE = "skill";
 
 const SkillChips: React.FC<SkillChipsProps> = ({ skills }: SkillChipsProps) => {
-  return skills.length > 0 ? (
+  return skills.length < 1 ? null : (
     <Box display="flex" justifyContent="left" flexWrap="wrap">
       {skills.map((skill) => (
         <Chip
@@ -20,7 +20,7 @@ const SkillChips: React.FC<SkillChipsProps> = ({ skills }: SkillChipsProps) => {
         />
       ))}
     </Box>
-  ) : null;
+  );
 };
 
 export { SKILL_CHIP_ROLE };

@@ -24,33 +24,36 @@ export default async function ScoresPage(): Promise<React.JSX.Element> {
         <Typography variant="h3" mb={2} textAlign="center">
           Music Scores
         </Typography>
-        {scores.map(({ name, trackUrl, musicInstruments }: MusicScore) => (
-          <ResponsiveGrid
-            title={name}
-            embedUrl={trackUrl}
-            sx={{
-              backgroundColor: "rgba(255, 255, 255, .75)",
-              padding: 2,
-              borderRadius: 5,
-              "&:not(:first-of-type)": {
-                mt: 2,
-              },
-              "&:not(:last-of-type)": {
-                mb: 2,
-              },
-              marginBlockStart: 0,
-              marginBlockEnd: 0,
-            }}
-            key={name}
-          >
-            {musicInstruments.map((instrument: MusicInstrument) => (
-              <MusicInstrumentTile
-                musicInstrument={instrument}
-                key={instrument.type}
-              />
-            ))}
-          </ResponsiveGrid>
-        ))}
+        {scores.length > 0 &&
+          scores.map(({ name, trackUrl, musicInstruments }: MusicScore) =>
+            musicInstruments.length < 1 ? null : (
+              <ResponsiveGrid
+                title={name}
+                embedUrl={trackUrl}
+                sx={{
+                  backgroundColor: "rgba(255, 255, 255, .75)",
+                  padding: 2,
+                  borderRadius: 5,
+                  "&:not(:first-of-type)": {
+                    mt: 2,
+                  },
+                  "&:not(:last-of-type)": {
+                    mb: 2,
+                  },
+                  marginBlockStart: 0,
+                  marginBlockEnd: 0,
+                }}
+                key={name}
+              >
+                {musicInstruments.map((instrument: MusicInstrument) => (
+                  <MusicInstrumentTile
+                    musicInstrument={instrument}
+                    key={instrument.type}
+                  />
+                ))}
+              </ResponsiveGrid>
+            ),
+          )}
       </PageContainer>
     </>
   );

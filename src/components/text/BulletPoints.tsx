@@ -14,7 +14,7 @@ export const BulletPoints: React.FC<BulletPointsProps> = ({
   className,
   style,
 }: BulletPointsProps) => {
-  return points.length > 0 ? (
+  return points.length < 1 ? null : (
     <ul className={className} style={style}>
       {points.map((point, index) => (
         <li key={index} role={BULLET_POINT_ROLE}>
@@ -22,7 +22,7 @@ export const BulletPoints: React.FC<BulletPointsProps> = ({
         </li>
       ))}
     </ul>
-  ) : null;
+  );
 };
 
 export { BULLET_POINT_ROLE };

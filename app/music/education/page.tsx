@@ -26,12 +26,13 @@ export default async function MusicEducationPage(): Promise<React.JSX.Element> {
       <ImageBackground src={bgUrl} />
       <PageContainer>
         <EducationPageTitle variant="h2">Music Education</EducationPageTitle>
-        {educations.map((education: Education) => (
-          <EducationCard
-            education={education}
-            key={education.organization.id}
-          />
-        ))}
+        {educations.length > 0 &&
+          educations.map((education: Education) => (
+            <EducationCard
+              education={education}
+              key={education.organization.id}
+            />
+          ))}
       </PageContainer>
     </>
   );

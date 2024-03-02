@@ -75,13 +75,15 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
         />
         <EmploymentDurationDisplay employments={selectedEmployments} />
       </EmploymentPageHeaderContainer>
-      <Grid container direction="row" spacing={2}>
-        {selectedEmployments.map((employment, index) => (
-          <Grid item xs={12} md={6} lg={4} xl={3} key={index}>
-            <EmploymentCard employment={employment} />
-          </Grid>
-        ))}
-      </Grid>
+      {selectedEmployments.length > 0 && (
+        <Grid container direction="row" spacing={2}>
+          {selectedEmployments.map((employment, index) => (
+            <Grid item xs={12} md={6} lg={4} xl={3} key={index}>
+              <EmploymentCard employment={employment} />
+            </Grid>
+          ))}
+        </Grid>
+      )}
     </>
   );
 };
