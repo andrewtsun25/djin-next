@@ -1,13 +1,19 @@
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { Button, Divider, Theme, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  SwipeableDrawer,
+  Theme,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import React, { useMemo } from "react";
 
-import {
-  DesktopDrawerCloseButtonContainer,
-  DesktopDrawerContainer,
-} from "../styled";
-import DrawerContent from "./DrawerContent";
+import { DrawerContent } from "./DrawerContent";
+
+const appDrawerWidth = 400;
 
 interface AppDrawerProps {
   isAppDrawerOpen: boolean;
@@ -18,7 +24,7 @@ export const CLOSE_BUTTON_ROLE = "switch";
 
 const drawerWidth = 300;
 
-const DesktopDrawer: React.FC<AppDrawerProps> = ({
+export const DesktopDrawer: React.FC<AppDrawerProps> = ({
   isAppDrawerOpen,
   setIsAppDrawerOpen,
 }: AppDrawerProps) => {
@@ -28,28 +34,34 @@ const DesktopDrawer: React.FC<AppDrawerProps> = ({
   const handleClose = () => setIsAppDrawerOpen(false);
 
   return (
-    <DesktopDrawerContainer
+    <SwipeableDrawer
       sx={{
         "& .MuiDrawer-paper": {
           width: drawerWidth,
           boxSizing: "border-box",
         },
+        width: appDrawerWidth,
+        flexShrink: 0,
       }}
       anchor={isLTR ? "left" : "right"}
       open={isAppDrawerOpen}
       onClose={handleClose}
       onOpen={handleOpen}
     >
-      <DesktopDrawerCloseButtonContainer>
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="flex-end"
+        py={0.75}
+        pr={1.5}
+      >
         <Button role={CLOSE_BUTTON_ROLE} onClick={handleClose}>
           {isLTR ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           <Typography sx={{ ml: 0.5 }}>Close</Typography>
         </Button>
-      </DesktopDrawerCloseButtonContainer>
+      </Box>
       <Divider />
       <DrawerContent />
-    </DesktopDrawerContainer>
+    </SwipeableDrawer>
   );
 };
-
-export default DesktopDrawer;

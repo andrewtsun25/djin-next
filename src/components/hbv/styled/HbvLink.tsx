@@ -1,10 +1,9 @@
 "use client";
 
 import { styled } from "@mui/material";
-import Link from "next/link";
 
-const HbvLink = styled(Link)(({ theme }) => ({
+import { MuiNextLink } from "../../text";
+
+export const HbvLink = styled(MuiNextLink)(({ theme }) => ({
   color: theme.palette.primary.contrastText,
 }));
-
-export default HbvLink;

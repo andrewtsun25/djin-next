@@ -1,22 +1,22 @@
-import { Fade } from "@mui/material";
+import { Container, Fade } from "@mui/material";
 import { Metadata } from "next";
 import React from "react";
 
 import {
-  HbvBackground,
   HbvContentTypography,
-  HbvItalicizedTypography,
   HbvLink,
-  HbvPageContentContainer,
   HbvResearchCard,
-  HbvResearchCardList,
   HbvTitle,
 } from "../../../src/components/hbv";
+import { ImageBackground } from "../../../src/components/layout";
+import { Urls } from "../../../src/const/url";
 import { listHbvResearchPapers } from "../../../src/dal/api";
 import { HbvResearchPaper } from "../../../src/types/api";
 
+const bgUrl: string = `${Urls.AssetRoot}/hbvResearch/bg/team_hbv_bg.png`;
 const hepBLink: string =
   "https://med.stanford.edu/liver/education/whatishepb.html";
+const hepBJade = "#308575";
 
 export const metadata: Metadata = {
   title: "d.jin - HBV Research",
@@ -25,13 +25,14 @@ export const metadata: Metadata = {
 export default async function HbvResearchPage(): Promise<React.JSX.Element> {
   const hbvResearchPapers: HbvResearchPaper[] = await listHbvResearchPapers();
   return (
-    <HbvBackground>
+    <>
+      <ImageBackground src={bgUrl} backgroundColor={hepBJade} />
       <Fade in>
-        <HbvPageContentContainer maxWidth="lg">
+        <Container maxWidth="lg" sx={{ p: 2 }}>
           <HbvTitle variant="h2" align="center">
             Hepatitis B Research
           </HbvTitle>
-          <HbvItalicizedTypography>
+          <HbvContentTypography sx={{ fontStyle: "italic" }}>
             The Hepatitis B Virus (HBV) is a chronic liver disease that, once
             manifested, is untreatable, leading to liver cirrhosis, liver
             failure, or liver cancer. HBV is a silent killer; patients are
@@ -51,15 +52,15 @@ export default async function HbvResearchPage(): Promise<React.JSX.Element> {
             Caucasians, and Asian Americans comprise more than half of the 1.2 -
             2 million individuals infected with HBV. HBV is one of the greatest
             racial health disparities in the US.
-          </HbvItalicizedTypography>
-          <HbvItalicizedTypography>
+          </HbvContentTypography>
+          <HbvContentTypography sx={{ fontStyle: "italic" }}>
             You can learn more about Hepatitis B and how Asian Americans are
             disproportionately affected{" "}
             <HbvLink href={hepBLink} target="_blank" rel="noopener noreferrer">
               here
             </HbvLink>
             .
-          </HbvItalicizedTypography>
+          </HbvContentTypography>
           <HbvContentTypography>
             In middle school, my maternal grandmother passed away from Hepatitis
             B. Through that experience, I took a youth leadership course at the
@@ -81,16 +82,14 @@ export default async function HbvResearchPage(): Promise<React.JSX.Element> {
             with unique opportunities to perform undergraduate research with
             them.
           </HbvContentTypography>
-          <HbvResearchCardList>
-            {hbvResearchPapers.map((hbvResearchPaper: HbvResearchPaper) => (
-              <HbvResearchCard
-                hbvResearchPaper={hbvResearchPaper}
-                key={hbvResearchPaper.name}
-              />
-            ))}
-          </HbvResearchCardList>
-        </HbvPageContentContainer>
+          {hbvResearchPapers.map((hbvResearchPaper: HbvResearchPaper) => (
+            <HbvResearchCard
+              hbvResearchPaper={hbvResearchPaper}
+              key={hbvResearchPaper.name}
+            />
+          ))}
+        </Container>
       </Fade>
-    </HbvBackground>
+    </>
   );
 }

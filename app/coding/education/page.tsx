@@ -1,12 +1,16 @@
-import { Container } from "@mui/material";
 import { Metadata } from "next";
 import React from "react";
 
-import { CodingEducationBackground } from "../../../src/components/coding/styled";
-import { EducationCard } from "../../../src/components/education";
-import { EducationPageTitle } from "../../../src/components/education/styled";
+import {
+  EducationCard,
+  EducationPageTitle,
+} from "../../../src/components/education";
+import { ImageBackground, PageContainer } from "../../../src/components/layout";
 import { listEducationsByEducationType } from "../../../src/dal/api";
 import { Education, EducationType } from "../../../src/types/api";
+
+const bgUrl =
+  "https://storage.googleapis.com/djin-dev.appspot.com/education/bg/hogwarts_bg.jpg";
 
 export const metadata: Metadata = {
   title: "d.jin - Coding Education",
@@ -17,13 +21,18 @@ export default async function CodingEducationPage(): Promise<React.JSX.Element> 
     EducationType.CODING,
   );
   return (
-    <CodingEducationBackground>
-      <Container maxWidth="lg">
+    <>
+      <ImageBackground src={bgUrl} />
+      <PageContainer>
         <EducationPageTitle variant="h2">Coding Education</EducationPageTitle>
-        {educations.map((education, index) => (
-          <EducationCard education={education} key={index} />
-        ))}
-      </Container>
-    </CodingEducationBackground>
+        {educations.length > 0 &&
+          educations.map((education: Education) => (
+            <EducationCard
+              education={education}
+              key={education.organization.id}
+            />
+          ))}
+      </PageContainer>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 
 import { HbvResearchPaper } from "../../types/api";
-import HbvResearchCard from "./HbvResearchCard";
+import { HbvResearchCard } from "./HbvResearchCard";
 
 describe("HbvResearchCard", () => {
   it("renders", () => {
@@ -21,7 +21,7 @@ describe("HbvResearchCard", () => {
       skills: ["skill1", "skill2"],
     };
     const hbvResearchCard = render(
-      <HbvResearchCard hbvResearchPaper={hbvResearchPaper} />
+      <HbvResearchCard hbvResearchPaper={hbvResearchPaper} />,
     );
     expect(hbvResearchCard).toMatchSnapshot();
   });

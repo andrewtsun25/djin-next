@@ -6,7 +6,7 @@ exports[`HbvResearchCard renders 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1ijjpl2-MuiPaper-root-MuiCard-root"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-3kwru0-MuiPaper-root-MuiCard-root"
         style="webkit-transform: none; transform: none; webkit-transition: -webkit-transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms; transition: transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;"
       >
         <div
@@ -44,37 +44,33 @@ exports[`HbvResearchCard renders 1`] = `
           class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
         >
           <a
-            class="css-1d1oveo"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1mnlgc6-MuiTypography-root-MuiLink-root"
             href="https://paper-link.com"
             target="_blank"
           >
             <div
-              class="MuiBox-root css-1xav8rb"
+              class="MuiBox-root css-101dtaq"
             >
-              <div
-                class="MuiBox-root css-1ay9vb9"
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="DescriptionIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="DescriptionIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm2 16H8v-2h8zm0-4H8v-2h8zm-3-5V3.5L18.5 9z"
-                  />
-                </svg>
-              </div>
-              <p
-                class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                <path
+                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm2 16H8v-2h8zm0-4H8v-2h8zm-3-5V3.5L18.5 9z"
+                />
+              </svg>
+              <span
+                class="MuiTypography-root MuiTypography-body1 css-1gvla80-MuiTypography-root"
               >
                 Research Paper
-              </p>
+              </span>
             </div>
           </a>
           <p
-            class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph css-z2eky3-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph css-18194e8-MuiTypography-root"
           >
             description
           </p>
@@ -99,10 +95,10 @@ exports[`HbvResearchCard renders 1`] = `
             </li>
           </ul>
           <div
-            class="MuiBox-root css-am63uh"
+            class="MuiBox-root css-zqlfut"
           >
             <div
-              class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1d499cn-MuiChip-root"
+              class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1suvmod-MuiChip-root"
               role="skill"
             >
               <span
@@ -112,7 +108,7 @@ exports[`HbvResearchCard renders 1`] = `
               </span>
             </div>
             <div
-              class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1d499cn-MuiChip-root"
+              class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1suvmod-MuiChip-root"
               role="skill"
             >
               <span
@@ -128,7 +124,7 @@ exports[`HbvResearchCard renders 1`] = `
   </body>,
   "container": <div>
     <div
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1ijjpl2-MuiPaper-root-MuiCard-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-3kwru0-MuiPaper-root-MuiCard-root"
       style="webkit-transform: none; transform: none; webkit-transition: -webkit-transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms; transition: transform 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;"
     >
       <div
@@ -166,37 +162,33 @@ exports[`HbvResearchCard renders 1`] = `
         class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
       >
         <a
-          class="css-1d1oveo"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1mnlgc6-MuiTypography-root-MuiLink-root"
           href="https://paper-link.com"
           target="_blank"
         >
           <div
-            class="MuiBox-root css-1xav8rb"
+            class="MuiBox-root css-101dtaq"
           >
-            <div
-              class="MuiBox-root css-1ay9vb9"
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="DescriptionIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                data-testid="DescriptionIcon"
-                focusable="false"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm2 16H8v-2h8zm0-4H8v-2h8zm-3-5V3.5L18.5 9z"
-                />
-              </svg>
-            </div>
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              <path
+                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm2 16H8v-2h8zm0-4H8v-2h8zm-3-5V3.5L18.5 9z"
+              />
+            </svg>
+            <span
+              class="MuiTypography-root MuiTypography-body1 css-1gvla80-MuiTypography-root"
             >
               Research Paper
-            </p>
+            </span>
           </div>
         </a>
         <p
-          class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph css-z2eky3-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph css-18194e8-MuiTypography-root"
         >
           description
         </p>
@@ -221,10 +213,10 @@ exports[`HbvResearchCard renders 1`] = `
           </li>
         </ul>
         <div
-          class="MuiBox-root css-am63uh"
+          class="MuiBox-root css-zqlfut"
         >
           <div
-            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1d499cn-MuiChip-root"
+            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1suvmod-MuiChip-root"
             role="skill"
           >
             <span
@@ -234,7 +226,7 @@ exports[`HbvResearchCard renders 1`] = `
             </span>
           </div>
           <div
-            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1d499cn-MuiChip-root"
+            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1suvmod-MuiChip-root"
             role="skill"
           >
             <span

@@ -1,0 +1,1 @@
+export { ReclaimerImage } from "./styled";

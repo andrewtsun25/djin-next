@@ -1,17 +1,17 @@
 "use client";
 
+import { Typography } from "@mui/material";
 import { isNil } from "lodash";
 import { DateTime, Duration } from "luxon";
 import React, { useEffect, useMemo, useState } from "react";
 
 import { Employment } from "../../types/api";
-import { EmploymentText } from "./styled";
 
 interface EmploymentDurationDisplayProps {
   employments: Employment[];
 }
 
-const EmploymentDurationDisplay = ({
+export const EmploymentDurationDisplay = ({
   employments,
 }: EmploymentDurationDisplayProps) => {
   // Setting current time this way prevents hydration issues.
@@ -67,8 +67,8 @@ const EmploymentDurationDisplay = ({
 
   // render
   return (
-    <EmploymentText>Total Duration: {totalTimeOfEmployment}</EmploymentText>
+    <Typography mt={2} mb={2}>
+      Total Duration: {totalTimeOfEmployment}
+    </Typography>
   );
 };
-
-export default EmploymentDurationDisplay;

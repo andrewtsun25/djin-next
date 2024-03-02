@@ -1,4 +1,7 @@
-import BulletPoints from "./BulletPoints";
-import IconLink from "./IconLink";
-
-export { BulletPoints, IconLink };
+export { BulletPoints } from "./BulletPoints";
+export { IconLink } from "./IconLink";
+export type {
+  MuiNextLinkProps,
+  NextLinkComposedProps,
+} from "./NextLinkComposed";
+export { MuiNextLink, NextLinkComposed } from "./NextLinkComposed";

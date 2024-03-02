@@ -7,19 +7,17 @@ import { ResponsiveGridItem } from "../responsiveGrid";
 interface MartialArtsStudioGridTileProps {
   studio: MartialArtsStudio;
 }
-const MartialArtsStudioGridTile: React.FC<MartialArtsStudioGridTileProps> = ({
+export const MartialArtsStudioGridTile: React.FC<
+  MartialArtsStudioGridTileProps
+> = ({
   studio: { name, logoUrl, studioUrl, city },
-}: MartialArtsStudioGridTileProps) => {
-  return (
-    <ResponsiveGridItem
-      linkUrl={studioUrl}
-      mediaUrl={logoUrl}
-      title={name}
-      subtitle={city}
-      icon={<LaunchIcon />}
-      imageStyle={{ objectFit: "contain" }}
-    />
-  );
-};
-
-export default MartialArtsStudioGridTile;
+}: MartialArtsStudioGridTileProps) => (
+  <ResponsiveGridItem
+    linkUrl={studioUrl}
+    mediaUrl={logoUrl}
+    title={name}
+    subtitle={city}
+    icon={<LaunchIcon />}
+    imageStyle={{ objectFit: "contain" }}
+  />
+);

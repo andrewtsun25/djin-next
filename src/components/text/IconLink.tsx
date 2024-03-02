@@ -1,30 +1,27 @@
 import { Box, Typography } from "@mui/material";
-import Link, { LinkProps } from "next/link";
-import React, { HTMLAttributeAnchorTarget } from "react";
+import React from "react";
 
-import { IconLinkContentContainer } from "./styled";
+import type { MuiNextLinkProps } from "./NextLinkComposed";
+import { MuiNextLink } from "./NextLinkComposed";
 
-interface IconLinkProps extends LinkProps {
-  icon: JSX.Element;
+interface IconLinkProps extends MuiNextLinkProps {
+  icon: React.JSX.Element;
   text: string;
-
-  target?: HTMLAttributeAnchorTarget | undefined;
 }
 
-const IconLink: React.FC<IconLinkProps> = ({
+export const IconLink: React.FC<IconLinkProps> = ({
   icon,
   text,
-  target,
   ...linkProps
 }: IconLinkProps) => {
   return (
-    <Link {...linkProps} target={target}>
-      <IconLinkContentContainer>
-        <Box mr={2}>{icon}</Box>
-        <Typography>{text}</Typography>
-      </IconLinkContentContainer>
-    </Link>
+    <MuiNextLink {...linkProps}>
+      <Box display="flex" alignItems="center" mb={1} mt={1}>
+        {icon}
+        <Typography component="span" ml={2}>
+          {text}
+        </Typography>
+      </Box>
+    </MuiNextLink>
   );
 };
-
-export default IconLink;

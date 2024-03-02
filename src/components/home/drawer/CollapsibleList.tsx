@@ -20,7 +20,7 @@ type CollapsibleListProps =
   PropsWithChildren<CollapsibleListPropsWithoutChildren>;
 
 export const LIST_ITEM_COLLAPSE_BTN_TEST_ID = "List Item Collapse Btn";
-const CollapsibleList: React.FC<CollapsibleListProps> = ({
+export const CollapsibleList: React.FC<CollapsibleListProps> = ({
   icon,
   name,
   children,
@@ -44,5 +44,3 @@ const CollapsibleList: React.FC<CollapsibleListProps> = ({
     </>
   );
 };
-
-export default CollapsibleList;

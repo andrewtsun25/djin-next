@@ -1,5 +1,3 @@
-import { DesktopDrawer } from "./drawer";
-import { HomeBackground, HomeTextContainer } from "./styled";
-
 export { AppToolBar } from "./AppToolBar";
-export { DesktopDrawer, HomeBackground, HomeTextContainer };
+export { DesktopDrawer, MobileDrawer, mobileDrawerEdge } from "./drawer";
+export { HomeDescriptionTypography,HomeTitleTypography } from "./styled";

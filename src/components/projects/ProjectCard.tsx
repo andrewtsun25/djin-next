@@ -1,7 +1,7 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkIcon from "@mui/icons-material/Link";
-import { CardContent, Typography } from "@mui/material";
-import { map } from "lodash";
+import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { isEmpty, isNil, map } from "lodash";
 import React from "react";
 
 import { Project } from "../../types/api";
@@ -9,17 +9,12 @@ import { DurationWithOrganizationCardHeader } from "../card";
 import { StorybookIcon } from "../icons";
 import { BulletPoints, IconLink } from "../text";
 import SkillChips from "../text/SkillChips";
-import {
-  ProjectCardContainer,
-  ProjectCardMedia,
-  ProjectDisclaimer,
-} from "./styled";
 
 interface ProjectCardProps {
   project: Project;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+export const ProjectCard: React.FC<ProjectCardProps> = ({
   project: {
     name: projectName,
     startDate,
@@ -33,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     disclaimer,
   },
 }: ProjectCardProps) => (
-  <ProjectCardContainer variant="outlined">
+  <Card variant="outlined">
     <DurationWithOrganizationCardHeader
       title={projectName}
       subtitle={organizationName}
@@ -41,35 +36,36 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       endDate={endDate}
       logoUrl={logoUrl}
     />
-    <ProjectCardMedia image={mediaUrl} />
+    <CardMedia image={mediaUrl} sx={{ height: 0, pt: "56.25%" }} />
     <CardContent>
-      {projectUrls &&
-        map(projectUrls, (url: string, urlName: string) => {
-          let icon: JSX.Element;
-          switch (urlName) {
-            case "Source Code":
-              icon = <GitHubIcon />;
-              break;
-            case "Storybook":
-              icon = <StorybookIcon />;
-              break;
-            default:
-              icon = <LinkIcon />;
-          }
-          return (
-            <IconLink key={urlName} href={url} text={urlName} icon={icon} />
-          );
-        })}
+      {!isNil(projectUrls) && !isEmpty(projectUrls) && (
+        <Box mb={2}>
+          {map(projectUrls, (url: string, urlName: string) => {
+            let icon: React.JSX.Element;
+            switch (urlName) {
+              case "Source Code":
+                icon = <GitHubIcon />;
+                break;
+              case "Storybook":
+                icon = <StorybookIcon />;
+                break;
+              default:
+                icon = <LinkIcon />;
+            }
+            return (
+              <IconLink key={urlName} href={url} text={urlName} icon={icon} />
+            );
+          })}
+        </Box>
+      )}
       {disclaimer && (
-        <ProjectDisclaimer paragraph>
+        <Typography fontWeight="bold" paragraph>
           Disclaimer: {disclaimer}
-        </ProjectDisclaimer>
+        </Typography>
       )}
       <Typography paragraph>{description}</Typography>
       <BulletPoints points={responsibilities} />
       <SkillChips skills={skills} />
     </CardContent>
-  </ProjectCardContainer>
+  </Card>
 );
-
-export default ProjectCard;

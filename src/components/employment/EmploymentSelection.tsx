@@ -1,21 +1,14 @@
 "use client";
 
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { isNil } from "lodash";
 import { useQueryState } from "nuqs";
 import React, { useMemo } from "react";
 
 import { Employment, EmploymentType } from "../../types/api";
-import {
-  EmploymentCard,
-  EmploymentDurationDisplay,
-  EmploymentTypeSelect,
-} from "./index";
-import {
-  EmploymentPageHeaderContainer,
-  EmploymentResumeLink,
-  EmploymentText,
-} from "./styled";
+import { EmploymentCard } from "./EmploymentCard";
+import { EmploymentDurationDisplay, EmploymentTypeSelect } from "./index";
+import { EmploymentPageHeaderContainer, EmploymentResumeLink } from "./styled";
 
 const resumeUrl =
   "https://docs.google.com/document/d/1RVocDw54Fpw8sKh6_ygapMjB4kZz_QFkhUxQ5nhiOx8/edit?usp=sharing";
@@ -65,7 +58,7 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
   return (
     <>
       <EmploymentPageHeaderContainer>
-        <EmploymentText sx={{ m: 2 }}>
+        <Typography sx={{ mt: 2, mb: 2 }}>
           My most current résumé can be obtained{" "}
           <EmploymentResumeLink
             href={resumeUrl}
@@ -75,20 +68,22 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
             here
           </EmploymentResumeLink>
           .
-        </EmploymentText>
+        </Typography>
         <EmploymentTypeSelect
           selectedEmploymentTypes={selectedEmploymentTypes}
           setSelectedEmploymentTypes={setSelectedEmploymentTypes}
         />
         <EmploymentDurationDisplay employments={selectedEmployments} />
       </EmploymentPageHeaderContainer>
-      <Grid container direction="row">
-        {selectedEmployments.map((employment, index) => (
-          <Grid item xs={12} md={6} lg={4} xl={3} key={index}>
-            <EmploymentCard employment={employment} />
-          </Grid>
-        ))}
-      </Grid>
+      {selectedEmployments.length > 0 && (
+        <Grid container direction="row" spacing={2}>
+          {selectedEmployments.map((employment, index) => (
+            <Grid item xs={12} md={6} lg={4} xl={3} key={index}>
+              <EmploymentCard employment={employment} />
+            </Grid>
+          ))}
+        </Grid>
+      )}
     </>
   );
 };

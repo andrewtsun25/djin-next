@@ -3,11 +3,12 @@
 import { alpha, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const ProjectSelectionContainer = styled(Box)(({ theme }) => ({
+export const ProjectSelectionContainer = styled(Box)(({ theme }) => ({
   borderRadius: 10,
   backgroundColor: alpha("#fff", 0.9),
   padding: theme.spacing(1),
-  margin: theme.spacing(2),
+  marginTop: theme.spacing(2),
+  marginBottom: theme.spacing(2),
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -16,5 +17,3 @@ const ProjectSelectionContainer = styled(Box)(({ theme }) => ({
     flexDirection: "row",
   },
 }));
-
-export default ProjectSelectionContainer;

@@ -13,7 +13,8 @@ const employmentTypes: EmploymentType[] = [
   EmploymentType.FullTime,
   EmploymentType.Internship,
 ];
-const EmploymentTypeSelect: React.FC<EmploymentTypeSelectProps> = ({
+
+export const EmploymentTypeSelect: React.FC<EmploymentTypeSelectProps> = ({
   selectedEmploymentTypes,
   setSelectedEmploymentTypes,
 }: EmploymentTypeSelectProps) => {
@@ -32,5 +33,3 @@ const EmploymentTypeSelect: React.FC<EmploymentTypeSelectProps> = ({
     />
   );
 };
-
-export default EmploymentTypeSelect;

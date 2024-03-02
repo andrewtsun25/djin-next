@@ -1,12 +1,11 @@
 "use client";
 
-import { SxProps, Theme } from "@mui/material";
+import { IconButton, SxProps, Theme } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { CSSProperties } from "react";
 
 import {
-  ResponsiveGridItemIconButton,
   ResponsiveGridItemImageListItem,
   ResponsiveGridItemImageListItemBar,
 } from "./styled";
@@ -16,12 +15,12 @@ interface ResponsiveGridItemProps {
   mediaUrl: string;
   title: string;
   subtitle?: string;
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   imageStyle?: CSSProperties;
   sx?: SxProps<Theme>;
 }
 
-const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
+export const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
   mediaUrl,
   title,
   subtitle,
@@ -39,12 +38,13 @@ const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
         subtitle={subtitle}
         actionIcon={
           linkUrl ? (
-            <ResponsiveGridItemIconButton
+            <IconButton
               aria-label={`Download ${title}`}
               onClick={() => router.push(linkUrl)}
+              sx={{ color: "rgba(255, 255, 2550.54)" }}
             >
               {icon}
-            </ResponsiveGridItemIconButton>
+            </IconButton>
           ) : (
             icon
           )
@@ -55,4 +55,3 @@ const ResponsiveGridItem: React.FC<ResponsiveGridItemProps> = ({
 };
 
 export type { ResponsiveGridItemProps };
-export default ResponsiveGridItem;

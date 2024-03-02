@@ -1,4 +1,1 @@
-import EducationCardContainer from "./EducationCardContainer";
-import EducationPageTitle from "./EducationPageTitle";
-
-export { EducationCardContainer, EducationPageTitle };
+export { EducationPageTitle } from "./EducationPageTitle";

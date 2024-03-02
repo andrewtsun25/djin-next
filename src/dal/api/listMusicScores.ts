@@ -1,4 +1,4 @@
-import { entries, isNil } from "lodash";
+import { isNil, map } from "lodash";
 
 import {
   MusicInstrument,
@@ -20,13 +20,17 @@ const mapMusicScoreDbEntityToMusicScore: AsyncMapperFunction<
 > = async (dbEntity: MusicScoreDbEntity): Promise<MusicScore> => {
   const { date, sections: sectionsMap, ...restOfMusicScore } = dbEntity;
   const musicInstruments: MusicInstrument[] = await Promise.all(
-    entries(sectionsMap).map(
-      async ([instrumentId, scoreUrl]): Promise<MusicInstrument> => {
+    map(
+      sectionsMap,
+      async (
+        scoreUrl: string,
+        instrumentId: string,
+      ): Promise<MusicInstrument> => {
         const musicInstrument: MusicInstrumentDbEntity | null =
           await getMusicInstrument(instrumentId);
         if (isNil(musicInstrument)) {
           throw new Error(
-            `Music instrument information for ${instrumentId} is missing`
+            `Music instrument information for ${instrumentId} is missing`,
           );
         }
         const { type, ...restOfMusicInstrument } = musicInstrument;
@@ -35,13 +39,13 @@ const mapMusicScoreDbEntityToMusicScore: AsyncMapperFunction<
           type: type as MusicInstrumentType,
           scoreUrl,
         };
-      }
-    )
+      },
+    ),
   );
   return {
     date: date.toDate(),
     musicInstruments: musicInstruments.sort((mi1, mi2) =>
-      mi1.name.localeCompare(mi2.name)
+      mi1.name.localeCompare(mi2.name),
     ),
     ...restOfMusicScore,
   };
@@ -50,7 +54,7 @@ const mapMusicScoreDbEntityToMusicScore: AsyncMapperFunction<
 const listMusicScores: ListerForFirestoreQuery<MusicScore> =
   createListerForFirestoreQuery<MusicScoreDbEntity, MusicScore>(
     musicScoresCollection.orderBy("date", "desc"),
-    mapMusicScoreDbEntityToMusicScore
+    mapMusicScoreDbEntityToMusicScore,
   );
 
 export default listMusicScores;

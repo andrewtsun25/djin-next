@@ -1,20 +1,18 @@
 import DescriptionIcon from "@mui/icons-material/Description";
 import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
-import { Fade, Grow, Typography } from "@mui/material";
+import { Box, Fade, Grow, Typography } from "@mui/material";
 import { Metadata } from "next";
 import React from "react";
 
 import {
-  HolisticOfficeBackground,
-  HolisticOfficeHyperLink,
-  HolisticOfficeImage,
-  HolisticOfficeImageLink,
-  HolisticOfficeImageLinkImage,
-  HolisticOfficePageContainer,
-  HolisticOfficePageHeading,
+  HolisticOfficeArchitectureImage,
+  HolisticOfficeLogo,
+  HolisticOfficeSectionHeader,
+  LinkSection,
+  ModuleInfoGrid,
 } from "../../../src/components/holisticOffice";
-import { LinkSection } from "../../../src/components/holisticOffice/linkSection";
-import { ModuleInfoGrid } from "../../../src/components/holisticOffice/modulesGrid";
+import { VerticallyCenteredPageContainer } from "../../../src/components/layout";
+import { MuiNextLink } from "../../../src/components/text";
 import { Urls } from "../../../src/const/url";
 import {
   listHolisticOfficeLinks,
@@ -26,6 +24,7 @@ import {
   HolisticOfficeModule,
 } from "../../../src/types/api";
 
+const holisticOfficeLinkColor = "#308575";
 const logoUrl = `${Urls.AssetRoot}/holisticOffice/logo/holistic_office_logo.png`;
 const websiteImg = `${Urls.AssetRoot}/holisticOffice/img/holistic_office_website.png`;
 const architectureImg = `${Urls.AssetRoot}/holisticOffice/img/holistic_office_architecture.png`;
@@ -34,6 +33,8 @@ const holisticOfficeUrl = "https://www.holisticoffice.biz/";
 export const metadata: Metadata = {
   title: "d.jin - Holistic Office",
 };
+
+const holisticOfficeGreen = "#e2f1e9";
 
 export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
   const holisticOfficeLinks: HolisticOfficeLink[] =
@@ -48,29 +49,33 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
       type === HolisticOfficeLinkType.Documentation,
   );
   return (
-    <HolisticOfficeBackground>
+    <Box sx={{ backgroundColor: holisticOfficeGreen }}>
       <Fade in>
-        <HolisticOfficePageContainer maxWidth="lg">
-          <HolisticOfficeImageLink href={holisticOfficeUrl} target="_blank">
-            <HolisticOfficeImageLinkImage
+        <VerticallyCenteredPageContainer maxWidth="lg">
+          <MuiNextLink href={holisticOfficeUrl} target="_blank" sx={{ my: 2 }}>
+            <HolisticOfficeLogo
               src={logoUrl}
               alt="Holistic Office Logo"
               height={165}
               width={1000}
             />
-          </HolisticOfficeImageLink>
+          </MuiNextLink>
           <Grow in>
-            <HolisticOfficeImage
+            <HolisticOfficeArchitectureImage
               src={websiteImg}
               alt="Holistic Office Website Image"
               height={556}
               width={1000}
             />
           </Grow>
-          <Typography paragraph>
-            <HolisticOfficeHyperLink href={holisticOfficeUrl} target="_blank">
+          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+            <MuiNextLink
+              href={holisticOfficeUrl}
+              target="_blank"
+              sx={{ color: holisticOfficeLinkColor }}
+            >
               Holistic Office
-            </HolisticOfficeHyperLink>{" "}
+            </MuiNextLink>{" "}
             is a patient EHR (Electronic Health Record) management and inventory
             management system for small to mid-sized independent clinics, and
             also my graduate school project at USC (listed as CSCI-577: Software
@@ -84,11 +89,11 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
             file server (AWS S3) and a REST API server (AWS Elastic Beanstalk)
             that talks to a relational database (AWS RDS).
           </Typography>
-          <HolisticOfficePageHeading variant="h3" align="center">
+          <HolisticOfficeSectionHeader variant="h2" align="center">
             Architecture
-          </HolisticOfficePageHeading>
+          </HolisticOfficeSectionHeader>
           <Grow in>
-            <HolisticOfficeImage
+            <HolisticOfficeArchitectureImage
               src={architectureImg}
               alt="Holistic Office Architecture Diagram"
               width={1044}
@@ -111,8 +116,8 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
             links={codeLinks}
             icon={<FolderSpecialIcon />}
           />
-        </HolisticOfficePageContainer>
+        </VerticallyCenteredPageContainer>
       </Fade>
-    </HolisticOfficeBackground>
+    </Box>
   );
 }

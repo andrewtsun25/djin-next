@@ -11,7 +11,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import SportsMmaIcon from "@mui/icons-material/SportsMma";
 import WorkIcon from "@mui/icons-material/Work";
-import { Divider, List } from "@mui/material";
+import { Box, Divider, List } from "@mui/material";
 import React from "react";
 
 import {
@@ -22,16 +22,13 @@ import {
   MusicScoreIcon,
   TaekwondoIcon,
 } from "../../icons";
-import {
-  CollapsibleListHyperLinkListItem,
-  DrawerContentContainer,
-} from "../styled";
-import CollapsibleList from "./CollapsibleList";
-import HyperLinkListItem from "./HyperLinkListItem";
+import { CollapsibleListHyperLinkListItem } from "../styled";
+import { CollapsibleList } from "./CollapsibleList";
+import { HyperLinkListItem } from "./HyperLinkListItem";
 
-const DrawerContent: React.FC = () => {
+export const DrawerContent: React.FC = () => {
   return (
-    <DrawerContentContainer>
+    <Box height="100%" overflow="auto">
       <List>
         <CollapsibleList icon={<CodeIcon />} name="Coding">
           <CollapsibleListHyperLinkListItem
@@ -87,9 +84,14 @@ const DrawerContent: React.FC = () => {
         </CollapsibleList>
         <CollapsibleList icon={<SportsMmaIcon />} name="Martial Arts">
           <CollapsibleListHyperLinkListItem
-            icon={<FistIcon />}
-            text="ITF Taekwondo"
-            to="/martialArts/itfTkd"
+            icon={<MuayThaiIcon />}
+            text="Muay Thai"
+            to="/martialArts/muaythai"
+          />
+          <CollapsibleListHyperLinkListItem
+            icon={<BjjIcon />}
+            text="Brazilian Jiu-Jitsu"
+            to="/martialArts/bjj"
           />
           <CollapsibleListHyperLinkListItem
             icon={<TaekwondoIcon />}
@@ -102,14 +104,9 @@ const DrawerContent: React.FC = () => {
             to="/martialArts/hdgd"
           />
           <CollapsibleListHyperLinkListItem
-            icon={<MuayThaiIcon />}
-            text="Muay Thai"
-            to="/martialArts/muaythai"
-          />
-          <CollapsibleListHyperLinkListItem
-            icon={<BjjIcon />}
-            text="Brazilian Jiu-Jitsu"
-            to="/martialArts/bjj"
+            icon={<FistIcon />}
+            text="ITF Taekwondo"
+            to="/martialArts/itfTkd"
           />
         </CollapsibleList>
         <CollapsibleList icon={<SchoolIcon />} name={"Academic Work"}>
@@ -144,8 +141,6 @@ const DrawerContent: React.FC = () => {
           target="_blank"
         /> */}
       </List>
-    </DrawerContentContainer>
+    </Box>
   );
 };
-
-export default DrawerContent;

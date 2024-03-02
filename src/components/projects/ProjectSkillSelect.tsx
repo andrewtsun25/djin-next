@@ -8,7 +8,7 @@ interface ProjectSkillSelectProps {
   selectedSkills: string[];
   setSelectedSkills(skills: string[]): void;
 }
-const ProjectSkillSelect: React.FC<ProjectSkillSelectProps> = ({
+export const ProjectSkillSelect: React.FC<ProjectSkillSelectProps> = ({
   skills,
   selectedSkills,
   setSelectedSkills,
@@ -30,5 +30,3 @@ const ProjectSkillSelect: React.FC<ProjectSkillSelectProps> = ({
     />
   );
 };
-
-export default ProjectSkillSelect;

@@ -2,11 +2,11 @@
 
 import { Box, styled } from "@mui/material";
 
-const MartialArtsPageHeading = styled(Box)(({ theme }) => ({
+export const MartialArtsPageHeading = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  marginTop: theme.spacing(1),
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  },
 }));
-
-export default MartialArtsPageHeading;

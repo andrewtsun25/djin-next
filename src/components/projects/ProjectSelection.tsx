@@ -6,12 +6,10 @@ import { useQueryState } from "nuqs";
 import React, { useMemo } from "react";
 
 import { Organization, Project } from "../../types/api";
-import {
-  ProjectCard,
-  ProjectCount,
-  ProjectOrganizationSelect,
-  ProjectSkillSelect,
-} from "./index";
+import { ProjectCard } from "./ProjectCard";
+import { ProjectCount } from "./ProjectCount";
+import { ProjectOrganizationSelect } from "./ProjectOrganizationSelect";
+import { ProjectSkillSelect } from "./ProjectSkillSelect";
 import { ProjectSelectionContainer } from "./styled";
 
 const skillsQueryParameter: string = "skills";
@@ -134,13 +132,15 @@ export const ProjectSelection: React.FC<ProjectSelectionProps> = ({
         />
         <ProjectCount projects={selectedProjects} />
       </ProjectSelectionContainer>
-      <Grid container direction="row">
-        {selectedProjects.map((project: Project) => (
-          <Grid item xs={12} md={6} lg={4} xl={3} key={project.name}>
-            <ProjectCard project={project} />
-          </Grid>
-        ))}
-      </Grid>
+      {selectedProjects.length > 0 && (
+        <Grid container direction="row" spacing={2}>
+          {selectedProjects.map((project: Project) => (
+            <Grid item xs={12} md={6} lg={4} xl={3} key={project.name}>
+              <ProjectCard project={project} />
+            </Grid>
+          ))}
+        </Grid>
+      )}
     </>
   );
 };

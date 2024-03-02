@@ -1,17 +1,19 @@
 "use client";
 
 import {
+  Box,
   ImageList,
   ImageListItem,
   SxProps,
   Theme,
+  Typography,
+  TypographyVariant,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import React, { PropsWithChildren } from "react";
 
 import { SoundCloudWidget } from "../music";
-import { ResponsiveGridContainer, ResponsiveGridTitle } from "./styled";
 
 interface ResponsiveGridProps {
   title?: string;
@@ -20,25 +22,42 @@ interface ResponsiveGridProps {
   children?: React.ReactNode;
 }
 
-const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
+export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
   title,
   embedUrl,
   sx,
   children,
 }: PropsWithChildren<ResponsiveGridProps>) => {
-  const theme = useTheme();
-  const isSmall = useMediaQuery(theme.breakpoints.up("sm"));
-  const isMedium = useMediaQuery(theme.breakpoints.up("md"));
-  const cols = isMedium ? 4 : isSmall ? 2 : 1;
-  const titleVariant = isMedium ? "h4" : isSmall ? "h5" : "h6";
+  const theme: Theme = useTheme();
+  const isSmall: boolean = useMediaQuery(theme.breakpoints.up("sm"));
+  const isMedium: boolean = useMediaQuery(theme.breakpoints.up("md"));
+  const cols: number = isMedium ? 4 : isSmall ? 2 : 1;
+  const titleVariant: TypographyVariant = isMedium ? "h4" : "h5";
   return (
-    <ResponsiveGridContainer sx={sx}>
-      <ImageList cols={cols} gap={isSmall ? 10 : 20}>
+    <Box sx={sx}>
+      <ImageList
+        cols={cols}
+        gap={isSmall ? 10 : 20}
+        sx={{
+          marginBlockStart: 0,
+          marginBlockEnd: 0,
+          marginInlineStart: 0,
+          marginInlineEnd: 0,
+        }}
+      >
         {title && (
           <ImageListItem cols={cols} style={{ height: "auto" }}>
-            <ResponsiveGridTitle paragraph variant={titleVariant}>
+            <Typography
+              paragraph
+              mt={0.25}
+              mr="auto"
+              mb={0.25}
+              ml={0.25}
+              textAlign="center"
+              variant={titleVariant}
+            >
               {title}
-            </ResponsiveGridTitle>
+            </Typography>
           </ImageListItem>
         )}
         {embedUrl && (
@@ -52,8 +71,6 @@ const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
         )}
         {children}
       </ImageList>
-    </ResponsiveGridContainer>
+    </Box>
   );
 };
-
-export default ResponsiveGrid;

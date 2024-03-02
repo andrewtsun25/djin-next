@@ -1,19 +1,7 @@
-import {
-  HolisticOfficeBackground,
-  HolisticOfficeHyperLink,
-  HolisticOfficeImage,
-  HolisticOfficeImageLink,
-  HolisticOfficeImageLinkImage,
-  HolisticOfficePageContainer,
-  HolisticOfficePageHeading,
-} from "./styled";
-
+export { LinkSection } from "./linkSection";
+export { ModuleInfoGrid } from "./modulesGrid";
 export {
-  HolisticOfficeBackground,
-  HolisticOfficeHyperLink,
-  HolisticOfficeImage,
-  HolisticOfficeImageLink,
-  HolisticOfficeImageLinkImage,
-  HolisticOfficePageContainer,
-  HolisticOfficePageHeading,
-};
+  HolisticOfficeArchitectureImage,
+  HolisticOfficeLogo,
+  HolisticOfficeSectionHeader,
+} from "./styled";

@@ -8,7 +8,7 @@ import React, { ReactElement } from "react";
 interface MultiSelectProps<
   T,
   DisableClearable extends boolean | undefined,
-  FreeSolo extends boolean | undefined
+  FreeSolo extends boolean | undefined,
 > extends Omit<
     AutocompleteProps<T, true, DisableClearable, FreeSolo>,
     "multiple" | "filterSelectedOptions" | "renderInput" | "renderTags"
@@ -18,14 +18,14 @@ interface MultiSelectProps<
   renderTags?: (
     value: T[],
     getTagProps: AutocompleteRenderGetTagProps,
-    ownerState: AutocompleteOwnerState<T, true, DisableClearable, FreeSolo>
+    ownerState: AutocompleteOwnerState<T, true, DisableClearable, FreeSolo>,
   ) => React.ReactNode;
 }
 
-function MultiSelect<
+export function MultiSelect<
   T,
   DisableClearable extends boolean | undefined,
-  FreeSolo extends boolean | undefined
+  FreeSolo extends boolean | undefined,
 >({
   inputLabel,
   inputPlaceholder,
@@ -48,5 +48,3 @@ function MultiSelect<
     />
   );
 }
-
-export default MultiSelect;

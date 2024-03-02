@@ -1,4 +1,7 @@
-import MartialArtsStudioGridTile from "./MartialArtsStudioGridTile";
-import { MartialArtsBackground } from "./styled";
-
-export { MartialArtsBackground, MartialArtsStudioGridTile };
+export { MartialArtsStudioGridTile } from "./MartialArtsStudioGridTile";
+export {
+  MartialArtsImage,
+  MartialArtsLogoImage,
+  MartialArtsPageHeading,
+  MartialArtsPageTitle,
+} from "./styled";

@@ -1,20 +1,18 @@
+import { Typography } from "@mui/material";
 import React from "react";
 
 import { Project } from "../../types/api";
-import { ProjectCountContainer } from "./styled";
 
 interface ProjectCountProps {
   projects: Project[];
 }
 
-const ProjectCount: React.FC<ProjectCountProps> = ({
+export const ProjectCount: React.FC<ProjectCountProps> = ({
   projects,
 }: ProjectCountProps) => {
-  const projectCount = projects.length;
-  const projectCountStr = `${projectCount} ${
+  const projectCount: number = projects.length;
+  const projectCountStr: string = `${projectCount} ${
     projectCount === 1 ? "project" : "projects"
   } selected`;
-  return <ProjectCountContainer>{projectCountStr}</ProjectCountContainer>;
+  return <Typography m={2}>{projectCountStr}</Typography>;
 };
-
-export default ProjectCount;

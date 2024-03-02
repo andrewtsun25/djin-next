@@ -9,12 +9,12 @@ interface BulletPointsProps {
 
 const BULLET_POINT_ROLE = "bulletPoint";
 
-const BulletPoints: React.FC<BulletPointsProps> = ({
+export const BulletPoints: React.FC<BulletPointsProps> = ({
   points,
   className,
   style,
 }: BulletPointsProps) => {
-  return points.length > 0 ? (
+  return points.length < 1 ? null : (
     <ul className={className} style={style}>
       {points.map((point, index) => (
         <li key={index} role={BULLET_POINT_ROLE}>
@@ -22,9 +22,8 @@ const BulletPoints: React.FC<BulletPointsProps> = ({
         </li>
       ))}
     </ul>
-  ) : null;
+  );
 };
 
 export { BULLET_POINT_ROLE };
-export default BulletPoints;
 export type { BulletPointsProps };

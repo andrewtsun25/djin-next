@@ -1,13 +1,15 @@
 import React from "react";
 
 import { HolisticOfficeLink } from "../../../types/api";
-import { HolisticOfficeLinkListIconLink } from "../styled";
-import HolisticOfficeLinkListUnorderedList from "../styled/HolisticOfficeLinkListUnorderedList";
+import { IconLink } from "../../text";
+import { HolisticOfficeLinkListUnorderedList } from "../styled/HolisticOfficeLinkListUnorderedList";
 
 interface LinkSectionContentProps {
   links: HolisticOfficeLink[];
-  icon: JSX.Element;
+  icon: React.JSX.Element;
 }
+
+const holisticOfficeLinkColor = "#308575";
 
 const LinkList: React.FC<LinkSectionContentProps> = ({
   links,
@@ -16,11 +18,12 @@ const LinkList: React.FC<LinkSectionContentProps> = ({
   return (
     <HolisticOfficeLinkListUnorderedList>
       {links.map(({ name, url }: HolisticOfficeLink) => (
-        <HolisticOfficeLinkListIconLink
+        <IconLink
           href={url}
           text={name}
           icon={icon}
           key={name}
+          sx={{ color: holisticOfficeLinkColor }}
         />
       ))}
     </HolisticOfficeLinkListUnorderedList>

@@ -1,3 +1,1 @@
-import CurrentBadge from "./CurrentBadge";
-
-export { CurrentBadge };
+export { CurrentBadge } from "./CurrentBadge";

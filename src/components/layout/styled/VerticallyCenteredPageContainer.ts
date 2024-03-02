@@ -1,12 +1,11 @@
 "use client";
 
-import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const HomeTextContainer = styled(Box)({
+import { PageContainer } from "./PageContainer";
+
+export const VerticallyCenteredPageContainer = styled(PageContainer)({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
 });
-
-export default HomeTextContainer;

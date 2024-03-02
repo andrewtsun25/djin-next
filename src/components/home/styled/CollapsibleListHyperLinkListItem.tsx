@@ -2,9 +2,9 @@
 
 import { styled } from "@mui/material/styles";
 
-import HyperLinkListItem from "../drawer/HyperLinkListItem";
+import { HyperLinkListItem } from "../drawer/HyperLinkListItem";
 
-const CollapsibleListHyperLinkListItem = styled(HyperLinkListItem)(
+export const CollapsibleListHyperLinkListItem = styled(HyperLinkListItem)(
   ({ theme }) => ({
     paddingLeft: theme.spacing(6),
   }),

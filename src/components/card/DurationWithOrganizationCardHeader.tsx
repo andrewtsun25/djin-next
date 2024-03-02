@@ -15,7 +15,7 @@ interface DurationWithOrganizationCardHeaderProps {
 
 const CURRENT_BADGE_TEST_ID = "Current Badge";
 
-const DurationWithOrganizationCardHeader: React.FC<
+export const DurationWithOrganizationCardHeader: React.FC<
   DurationWithOrganizationCardHeaderProps
 > = ({
   title,
@@ -55,6 +55,5 @@ const DurationWithOrganizationCardHeader: React.FC<
   return <CardHeader title={title} subheader={subheader} avatar={avatar} />;
 };
 
-export default DurationWithOrganizationCardHeader;
 export { CURRENT_BADGE_TEST_ID };
 export type { DurationWithOrganizationCardHeaderProps };
