@@ -9,11 +9,11 @@ import {
   HolisticOfficeImage,
   HolisticOfficeImageLink,
   HolisticOfficeImageLinkImage,
-  HolisticOfficePageContainer,
   HolisticOfficeSectionHeader,
 } from "../../../src/components/holisticOffice";
 import { LinkSection } from "../../../src/components/holisticOffice/linkSection";
 import { ModuleInfoGrid } from "../../../src/components/holisticOffice/modulesGrid";
+import { VerticallyCenteredPageContainer } from "../../../src/components/layout";
 import { Urls } from "../../../src/const/url";
 import {
   listHolisticOfficeLinks,
@@ -51,7 +51,7 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
   return (
     <Box sx={{ backgroundColor: holisticOfficeGreen }}>
       <Fade in>
-        <HolisticOfficePageContainer maxWidth="lg">
+        <VerticallyCenteredPageContainer maxWidth="lg">
           <HolisticOfficeImageLink href={holisticOfficeUrl} target="_blank">
             <HolisticOfficeImageLinkImage
               src={logoUrl}
@@ -68,7 +68,7 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
               width={1000}
             />
           </Grow>
-          <Typography paragraph>
+          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
             <HolisticOfficeHyperLink href={holisticOfficeUrl} target="_blank">
               Holistic Office
             </HolisticOfficeHyperLink>{" "}
@@ -112,7 +112,7 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
             links={codeLinks}
             icon={<FolderSpecialIcon />}
           />
-        </HolisticOfficePageContainer>
+        </VerticallyCenteredPageContainer>
       </Fade>
     </Box>
   );

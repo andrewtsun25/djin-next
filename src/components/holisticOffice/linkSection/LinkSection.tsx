@@ -26,7 +26,9 @@ const LinkSection: React.FC<LinkSectionProps> = ({
       <HolisticOfficeSectionHeader variant="h2">
         {title}
       </HolisticOfficeSectionHeader>
-      <Typography paragraph>{description}</Typography>
+      <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+        {description}
+      </Typography>
       <LinkList links={links} icon={icon} />
     </Box>
   );

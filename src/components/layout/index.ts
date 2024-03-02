@@ -1,3 +1,8 @@
 export { ImageBackground } from "./ImageBackground";
 export { SiteLayout } from "./SiteLayout";
-export { FullWidthCardContainer, PageBox, PageContainer } from "./styled";
+export {
+  FullWidthCardContainer,
+  PageBox,
+  PageContainer,
+  VerticallyCenteredPageContainer,
+} from "./styled";
