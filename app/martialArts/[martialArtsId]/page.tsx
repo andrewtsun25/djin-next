@@ -1,34 +1,26 @@
-import { Fade, Grid, Grow, Typography } from "@mui/material";
+import { Box, Fade, Grid, Grow, Typography } from "@mui/material";
 import { isNil } from "lodash";
 import { Metadata } from "next";
 import React from "react";
 
+import { ImageBackground, PageContainer } from "../../../src/components/layout";
+import { MartialArtsStudioGridTile } from "../../../src/components/martialArts";
 import {
-  MartialArtsBackground,
-  MartialArtsStudioGridTile,
-} from "../../../src/components/martialArts";
-import {
-  MartialArtsDescription,
-  MartialArtsExperienceLevel,
-  MartialArtsFigure,
-  MartialArtsFigureCaption,
   MartialArtsImage,
   MartialArtsLogoImage,
-  MartialArtsPageContentGrid,
   MartialArtsPageHeading,
   MartialArtsPageTitle,
-  MartialArtsStudioGridSection,
-  MartialArtsStudioGridTitle,
 } from "../../../src/components/martialArts/styled";
-import MartialArtsContentContainer from "../../../src/components/martialArts/styled/MartialArtsContentContainer";
-import MartialArtsImageSection from "../../../src/components/martialArts/styled/MartialArtsImageSection";
 import { ResponsiveGrid } from "../../../src/components/responsiveGrid";
+import { Urls } from "../../../src/const/url";
 import { getMartialArtsStyle } from "../../../src/dal/api";
 import { MartialArtsStudio, MartialArtsStyle } from "../../../src/types/api";
 
 interface MartialArtsPageParams {
   martialArtsId: string;
 }
+
+const bgUrl: string = `${Urls.AssetRoot}/martialArts/bg/mma_cage_bg.jpg`;
 
 export async function generateStaticParams(): Promise<MartialArtsPageParams[]> {
   return [
@@ -88,11 +80,15 @@ export default async function MartialArtsPage({
   } = martialArtsStyle;
 
   return (
-    <MartialArtsBackground>
+    <>
+      <ImageBackground src={bgUrl} />
       <Fade in>
-        <MartialArtsContentContainer maxWidth="lg">
+        <PageContainer
+          maxWidth="lg"
+          sx={{ backgroundColor: "rgba(255, 255, 255, .75)" }}
+        >
           <MartialArtsPageHeading>
-            <MartialArtsPageTitle variant="h3">{name}</MartialArtsPageTitle>
+            <MartialArtsPageTitle variant="h2">{name}</MartialArtsPageTitle>
             <MartialArtsLogoImage
               src={logoUrl}
               alt={`${type}_logo`}
@@ -100,50 +96,59 @@ export default async function MartialArtsPage({
               width={200}
             />
           </MartialArtsPageHeading>
-          <MartialArtsExperienceLevel variant="h5">
-            Experience Level: {expLevel}
-          </MartialArtsExperienceLevel>
-          <MartialArtsPageContentGrid container spacing={3}>
+          <Typography variant="h5" sx={{ my: 2 }} textAlign="center">
+            Exp Level: {expLevel}
+          </Typography>
+          <Grid container spacing={2} whiteSpace="pre-line" mt={2} mb={2}>
             <Grid item xs={12} lg={6}>
-              <MartialArtsDescription paragraph>
+              <Typography paragraph fontStyle="italic">
                 {description}
-              </MartialArtsDescription>
+              </Typography>
               {biography.map((paragraph: string, index: number) => (
                 <Typography paragraph key={index}>
                   {paragraph}
                 </Typography>
               ))}
             </Grid>
-            <MartialArtsImageSection item xs={12} lg={6}>
+            <Grid item xs={12} lg={6} display="flex" alignItems="center">
               <Grow in>
-                <MartialArtsFigure component="figure">
+                <Box
+                  component="figure"
+                  sx={{
+                    marginBlockStart: 0,
+                    marginBlockEnd: 0,
+                    marginInlineStart: 0,
+                    marginInlineEnd: 0,
+                  }}
+                >
                   <MartialArtsImage
                     src={mediaUrl}
                     alt={`${type}_img`}
                     height={1400}
                     width={1600}
                   />
-                  <MartialArtsFigureCaption>
-                    <Typography variant="subtitle1" align="center">
-                      {mediaCaption}
-                    </Typography>
-                  </MartialArtsFigureCaption>
-                </MartialArtsFigure>
+                  <Typography
+                    component="figcaption"
+                    variant="subtitle1"
+                    align="center"
+                    mt={1}
+                  >
+                    {mediaCaption}
+                  </Typography>
+                </Box>
               </Grow>
-            </MartialArtsImageSection>
-          </MartialArtsPageContentGrid>
-          <MartialArtsStudioGridSection>
-            <MartialArtsStudioGridTitle variant="h2">
-              Studios
-            </MartialArtsStudioGridTitle>
-            <ResponsiveGrid>
-              {studios.map((studio: MartialArtsStudio) => (
-                <MartialArtsStudioGridTile studio={studio} key={studio.name} />
-              ))}
-            </ResponsiveGrid>
-          </MartialArtsStudioGridSection>
-        </MartialArtsContentContainer>
+            </Grid>
+          </Grid>
+          <Typography mt={2} mb={2} variant="h2" textAlign="center">
+            Studios
+          </Typography>
+          <ResponsiveGrid>
+            {studios.map((studio: MartialArtsStudio) => (
+              <MartialArtsStudioGridTile studio={studio} key={studio.name} />
+            ))}
+          </ResponsiveGrid>
+        </PageContainer>
       </Fade>
-    </MartialArtsBackground>
+    </>
   );
 }

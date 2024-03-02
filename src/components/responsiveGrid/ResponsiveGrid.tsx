@@ -2,6 +2,7 @@
 
 import {
   Box,
+  ImageList,
   ImageListItem,
   SxProps,
   Theme,
@@ -12,7 +13,7 @@ import {
 import React, { PropsWithChildren } from "react";
 
 import { SoundCloudWidget } from "../music";
-import { ResponsiveGridImageList, ResponsiveGridTitle } from "./styled";
+import { ResponsiveGridTitle } from "./styled";
 
 interface ResponsiveGridProps {
   title?: string;
@@ -34,7 +35,16 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
   const titleVariant: TypographyVariant = isMedium ? "h4" : "h5";
   return (
     <Box sx={sx}>
-      <ResponsiveGridImageList cols={cols} gap={isSmall ? 10 : 20}>
+      <ImageList
+        cols={cols}
+        gap={isSmall ? 10 : 20}
+        sx={{
+          marginBlockStart: 0,
+          marginBlockEnd: 0,
+          marginInlineStart: 0,
+          marginInlineEnd: 0,
+        }}
+      >
         {title && (
           <ImageListItem cols={cols} style={{ height: "auto" }}>
             <ResponsiveGridTitle paragraph variant={titleVariant}>
@@ -52,7 +62,7 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
           </ImageListItem>
         )}
         {children}
-      </ResponsiveGridImageList>
+      </ImageList>
     </Box>
   );
 };

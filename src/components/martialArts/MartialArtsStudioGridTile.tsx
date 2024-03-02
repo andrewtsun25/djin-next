@@ -9,17 +9,15 @@ interface MartialArtsStudioGridTileProps {
 }
 const MartialArtsStudioGridTile: React.FC<MartialArtsStudioGridTileProps> = ({
   studio: { name, logoUrl, studioUrl, city },
-}: MartialArtsStudioGridTileProps) => {
-  return (
-    <ResponsiveGridItem
-      linkUrl={studioUrl}
-      mediaUrl={logoUrl}
-      title={name}
-      subtitle={city}
-      icon={<LaunchIcon />}
-      imageStyle={{ objectFit: "contain" }}
-    />
-  );
-};
+}: MartialArtsStudioGridTileProps) => (
+  <ResponsiveGridItem
+    linkUrl={studioUrl}
+    mediaUrl={logoUrl}
+    title={name}
+    subtitle={city}
+    icon={<LaunchIcon />}
+    imageStyle={{ objectFit: "contain" }}
+  />
+);
 
 export default MartialArtsStudioGridTile;
