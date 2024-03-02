@@ -1,6 +1,6 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkIcon from "@mui/icons-material/Link";
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { map } from "lodash";
 import React from "react";
 
@@ -38,23 +38,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     />
     <CardMedia image={mediaUrl} sx={{ height: 0, pt: "56.25%" }} />
     <CardContent>
-      {projectUrls &&
-        map(projectUrls, (url: string, urlName: string) => {
-          let icon: JSX.Element;
-          switch (urlName) {
-            case "Source Code":
-              icon = <GitHubIcon />;
-              break;
-            case "Storybook":
-              icon = <StorybookIcon />;
-              break;
-            default:
-              icon = <LinkIcon />;
-          }
-          return (
-            <IconLink key={urlName} href={url} text={urlName} icon={icon} />
-          );
-        })}
+      {projectUrls && (
+        <Box mb={2}>
+          {map(projectUrls, (url: string, urlName: string) => {
+            let icon: React.JSX.Element;
+            switch (urlName) {
+              case "Source Code":
+                icon = <GitHubIcon />;
+                break;
+              case "Storybook":
+                icon = <StorybookIcon />;
+                break;
+              default:
+                icon = <LinkIcon />;
+            }
+            return (
+              <IconLink key={urlName} href={url} text={urlName} icon={icon} />
+            );
+          })}
+        </Box>
+      )}
       {disclaimer && (
         <Typography fontWeight="bold" paragraph>
           Disclaimer: {disclaimer}

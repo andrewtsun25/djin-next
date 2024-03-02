@@ -26,6 +26,9 @@ export default function HomePage() {
         alignItems="center"
         height="100vh"
         width="100vw"
+        position="fixed"
+        left="0"
+        top="0"
       >
         <Box display="flex" flexDirection="column" alignItems="center">
           <HomeTitleTypography variant="h1">d.jin</HomeTitleTypography>

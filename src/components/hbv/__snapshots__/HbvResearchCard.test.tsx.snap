@@ -49,28 +49,24 @@ exports[`HbvResearchCard renders 1`] = `
             target="_blank"
           >
             <div
-              class="MuiBox-root css-70qvj9"
+              class="MuiBox-root css-101dtaq"
             >
-              <div
-                class="MuiBox-root css-1ay9vb9"
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="DescriptionIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="DescriptionIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm2 16H8v-2h8zm0-4H8v-2h8zm-3-5V3.5L18.5 9z"
-                  />
-                </svg>
-              </div>
-              <p
-                class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                <path
+                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm2 16H8v-2h8zm0-4H8v-2h8zm-3-5V3.5L18.5 9z"
+                />
+              </svg>
+              <span
+                class="MuiTypography-root MuiTypography-body1 css-1gvla80-MuiTypography-root"
               >
                 Research Paper
-              </p>
+              </span>
             </div>
           </a>
           <p
@@ -171,28 +167,24 @@ exports[`HbvResearchCard renders 1`] = `
           target="_blank"
         >
           <div
-            class="MuiBox-root css-70qvj9"
+            class="MuiBox-root css-101dtaq"
           >
-            <div
-              class="MuiBox-root css-1ay9vb9"
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="DescriptionIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                data-testid="DescriptionIcon"
-                focusable="false"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm2 16H8v-2h8zm0-4H8v-2h8zm-3-5V3.5L18.5 9z"
-                />
-              </svg>
-            </div>
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              <path
+                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm2 16H8v-2h8zm0-4H8v-2h8zm-3-5V3.5L18.5 9z"
+              />
+            </svg>
+            <span
+              class="MuiTypography-root MuiTypography-body1 css-1gvla80-MuiTypography-root"
             >
               Research Paper
-            </p>
+            </span>
           </div>
         </a>
         <p

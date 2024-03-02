@@ -16,9 +16,11 @@ export const IconLink: React.FC<IconLinkProps> = ({
 }: IconLinkProps) => {
   return (
     <MuiNextLink {...linkProps}>
-      <Box display="flex" alignItems="center">
-        <Box mr={2}>{icon}</Box>
-        <Typography>{text}</Typography>
+      <Box display="flex" alignItems="center" mb={1} mt={1}>
+        {icon}
+        <Typography component="span" ml={2}>
+          {text}
+        </Typography>
       </Box>
     </MuiNextLink>
   );
