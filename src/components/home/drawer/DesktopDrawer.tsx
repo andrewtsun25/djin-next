@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import React, { useMemo } from "react";
 
-import DrawerContent from "./DrawerContent";
+import { DrawerContent } from "./DrawerContent";
 
 const appDrawerWidth = 400;
 
@@ -24,7 +24,7 @@ export const CLOSE_BUTTON_ROLE = "switch";
 
 const drawerWidth = 300;
 
-const DesktopDrawer: React.FC<AppDrawerProps> = ({
+export const DesktopDrawer: React.FC<AppDrawerProps> = ({
   isAppDrawerOpen,
   setIsAppDrawerOpen,
 }: AppDrawerProps) => {
@@ -65,5 +65,3 @@ const DesktopDrawer: React.FC<AppDrawerProps> = ({
     </SwipeableDrawer>
   );
 };
-
-export default DesktopDrawer;

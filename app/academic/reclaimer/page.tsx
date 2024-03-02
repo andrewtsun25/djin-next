@@ -11,7 +11,7 @@ import {
   ImageBackground,
   VerticallyCenteredPageContainer,
 } from "../../../src/components/layout";
-import { ReclaimerImage } from "../../../src/components/reclaimer/styled";
+import { ReclaimerImage } from "../../../src/components/reclaimer";
 import { IconLink, MuiNextLink } from "../../../src/components/text";
 import { Urls } from "../../../src/const/url";
 

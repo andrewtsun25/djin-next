@@ -14,7 +14,7 @@ interface ProjectCardProps {
   project: Project;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+export const ProjectCard: React.FC<ProjectCardProps> = ({
   project: {
     name: projectName,
     startDate,
@@ -66,5 +66,3 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     </CardContent>
   </Card>
 );
-
-export default ProjectCard;

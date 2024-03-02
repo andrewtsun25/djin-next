@@ -1,4 +1,2 @@
-import ProjectSelectionContainer from "./ProjectSelectionContainer";
-import ProjectsPageTitle from "./ProjectsPageTitle";
-
-export { ProjectSelectionContainer, ProjectsPageTitle };
+export { ProjectSelectionContainer } from "./ProjectSelectionContainer";
+export { ProjectsPageTitle } from "./ProjectsPageTitle";

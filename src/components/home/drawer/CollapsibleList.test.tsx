@@ -1,7 +1,8 @@
 import BugReportIcon from "@mui/icons-material/BugReport";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 
-import CollapsibleList, {
+import {
+  CollapsibleList,
   LIST_ITEM_COLLAPSE_BTN_TEST_ID,
 } from "./CollapsibleList";
 
@@ -12,7 +13,7 @@ describe("CollapsibleList", () => {
     render(
       <CollapsibleList icon={<BugReportIcon />} name={"List Name"}>
         <p>{LIST_ITEM_TEXT}</p>
-      </CollapsibleList>
+      </CollapsibleList>,
     );
 
   it("renders", () => {

@@ -1,16 +1,16 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-import BulletPoints, { BULLET_POINT_ROLE } from "./BulletPoints";
+import { BULLET_POINT_ROLE,BulletPoints } from "./BulletPoints";
 
 describe("BulletPoints", () => {
   it("renders an array of bullet points", () => {
     const inputBulletPoints = ["point1", "point2", "point3"];
     const { getAllByRole } = render(
-      <BulletPoints points={inputBulletPoints} />
+      <BulletPoints points={inputBulletPoints} />,
     );
     const actualBulletPoints = getAllByRole(BULLET_POINT_ROLE).map(
-      (item) => item.textContent
+      (item) => item.textContent,
     );
     expect(actualBulletPoints).toEqual(inputBulletPoints);
   });

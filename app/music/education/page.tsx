@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 import React from "react";
 
-import { EducationCard } from "../../../src/components/education";
-import { EducationPageTitle } from "../../../src/components/education/styled";
+import {
+  EducationCard,
+  EducationPageTitle,
+} from "../../../src/components/education";
 import { ImageBackground, PageContainer } from "../../../src/components/layout";
 import { listEducationsByEducationType } from "../../../src/dal/api";
 import { Education, EducationType } from "../../../src/types/api";

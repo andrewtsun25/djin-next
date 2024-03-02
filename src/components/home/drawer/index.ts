@@ -1,3 +1,2 @@
-import DesktopDrawer from "./DesktopDrawer";
-
-export { DesktopDrawer };
+export { DesktopDrawer } from "./DesktopDrawer";
+export { MobileDrawer, mobileDrawerEdge } from "./MobileDrawer";

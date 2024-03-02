@@ -5,7 +5,7 @@ import React from "react";
 import {
   HomeDescriptionTypography,
   HomeTitleTypography,
-} from "../src/components/home/styled";
+} from "../src/components/home";
 import { ImageBackground } from "../src/components/layout";
 
 // Background configuration

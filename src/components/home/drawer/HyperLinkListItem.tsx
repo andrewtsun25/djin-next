@@ -18,7 +18,7 @@ interface HyperlistLinkItemProps {
   text: string;
 }
 
-const HyperLinkListItem: React.FC<HyperlistLinkItemProps> = ({
+export const HyperLinkListItem: React.FC<HyperlistLinkItemProps> = ({
   className,
   sx,
   to,
@@ -39,5 +39,3 @@ const HyperLinkListItem: React.FC<HyperlistLinkItemProps> = ({
     </ListItemButton>
   );
 };
-
-export default HyperLinkListItem;

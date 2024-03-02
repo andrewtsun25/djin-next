@@ -23,10 +23,10 @@ import {
   TaekwondoIcon,
 } from "../../icons";
 import { CollapsibleListHyperLinkListItem } from "../styled";
-import CollapsibleList from "./CollapsibleList";
-import HyperLinkListItem from "./HyperLinkListItem";
+import { CollapsibleList } from "./CollapsibleList";
+import { HyperLinkListItem } from "./HyperLinkListItem";
 
-const DrawerContent: React.FC = () => {
+export const DrawerContent: React.FC = () => {
   return (
     <Box height="100%" overflow="auto">
       <List>
@@ -144,5 +144,3 @@ const DrawerContent: React.FC = () => {
     </Box>
   );
 };
-
-export default DrawerContent;

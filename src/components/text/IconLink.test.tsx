@@ -1,7 +1,7 @@
 import BugReportIcon from "@mui/icons-material/BugReport";
 import { render } from "@testing-library/react";
 
-import IconLink from "./IconLink";
+import { IconLink } from "./IconLink";
 
 describe("IconLink", () => {
   it("renders", () => {
@@ -10,7 +10,7 @@ describe("IconLink", () => {
         icon={<BugReportIcon />}
         text="Example Link"
         href="https://example.com"
-      />
+      />,
     );
     expect(iconLink).toMatchSnapshot();
   });

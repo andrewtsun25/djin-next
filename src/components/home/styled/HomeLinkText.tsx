@@ -3,7 +3,7 @@
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const HomeLinkText = styled(Typography)(({ theme }) => ({
+export const HomeLinkText = styled(Typography)(({ theme }) => ({
   color: theme.palette.primary.contrastText,
   marginLeft: theme.spacing(1.5),
   "&:hover": {
@@ -18,5 +18,3 @@ const HomeLinkText = styled(Typography)(({ theme }) => ({
     color: theme.palette.primary.contrastText,
   },
 }));
-
-export default HomeLinkText;

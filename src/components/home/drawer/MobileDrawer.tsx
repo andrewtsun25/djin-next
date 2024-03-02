@@ -6,16 +6,16 @@ import {
   MobileDrawerHandleText,
   MobileDrawerPuller,
 } from "../styled";
-import DrawerContent from "./DrawerContent";
+import { DrawerContent } from "./DrawerContent";
 
-export const DRAWER_EDGE = 50;
+export const mobileDrawerEdge = 50;
 
 interface MobileDrawerProps {
   isAppDrawerOpen: boolean;
   setIsAppDrawerOpen(newIsDrawerOpen: boolean): void;
 }
 
-const MobileDrawer = ({
+export const MobileDrawer: React.FC<MobileDrawerProps> = ({
   isAppDrawerOpen,
   setIsAppDrawerOpen,
 }: MobileDrawerProps) => {
@@ -32,7 +32,7 @@ const MobileDrawer = ({
       open={isAppDrawerOpen}
       onClose={handleClose}
       onOpen={handleOpen}
-      swipeAreaWidth={DRAWER_EDGE}
+      swipeAreaWidth={mobileDrawerEdge}
       disableSwipeToOpen={false}
       ModalProps={{
         keepMounted: true,
@@ -50,5 +50,3 @@ const MobileDrawer = ({
     </SwipeableDrawer>
   );
 };
-
-export default MobileDrawer;

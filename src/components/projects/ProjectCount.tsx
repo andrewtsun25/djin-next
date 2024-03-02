@@ -7,7 +7,7 @@ interface ProjectCountProps {
   projects: Project[];
 }
 
-const ProjectCount: React.FC<ProjectCountProps> = ({
+export const ProjectCount: React.FC<ProjectCountProps> = ({
   projects,
 }: ProjectCountProps) => {
   const projectCount: number = projects.length;
@@ -16,5 +16,3 @@ const ProjectCount: React.FC<ProjectCountProps> = ({
   } selected`;
   return <Typography m={2}>{projectCountStr}</Typography>;
 };
-
-export default ProjectCount;

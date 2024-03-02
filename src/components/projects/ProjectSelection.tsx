@@ -6,12 +6,10 @@ import { useQueryState } from "nuqs";
 import React, { useMemo } from "react";
 
 import { Organization, Project } from "../../types/api";
-import {
-  ProjectCard,
-  ProjectCount,
-  ProjectOrganizationSelect,
-  ProjectSkillSelect,
-} from "./index";
+import { ProjectCard } from "./ProjectCard";
+import { ProjectCount } from "./ProjectCount";
+import { ProjectOrganizationSelect } from "./ProjectOrganizationSelect";
+import { ProjectSkillSelect } from "./ProjectSkillSelect";
 import { ProjectSelectionContainer } from "./styled";
 
 const skillsQueryParameter: string = "skills";

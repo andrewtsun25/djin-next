@@ -4,8 +4,10 @@ import React, { Suspense } from "react";
 import { ImageBackground } from "../../../src/components/layout";
 import { PageBox } from "../../../src/components/layout";
 import { Loading } from "../../../src/components/loading";
-import { ProjectSelection } from "../../../src/components/projects";
-import { ProjectsPageTitle } from "../../../src/components/projects/styled";
+import {
+  ProjectSelection,
+  ProjectsPageTitle,
+} from "../../../src/components/projects";
 import { Urls } from "../../../src/const/url";
 import { listProjects } from "../../../src/dal/api";
 

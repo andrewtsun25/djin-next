@@ -4,8 +4,12 @@ import { Global } from "@emotion/react";
 import { CssBaseline, useMediaQuery, useTheme } from "@mui/material";
 import React, { PropsWithChildren, useState } from "react";
 
-import { AppToolBar, DesktopDrawer } from "../home";
-import MobileDrawer, { DRAWER_EDGE } from "../home/drawer/MobileDrawer";
+import {
+  AppToolBar,
+  DesktopDrawer,
+  MobileDrawer,
+  mobileDrawerEdge,
+} from "../home";
 
 const SiteLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const [isAppDrawerOpen, setIsAppDrawerOpen] = useState(false);
@@ -18,7 +22,7 @@ const SiteLayout: React.FC<PropsWithChildren> = ({ children }) => {
         <Global
           styles={{
             ".MuiDrawer-root > .MuiPaper-root": {
-              height: `calc(50% - ${DRAWER_EDGE}px)`,
+              height: `calc(50% - ${mobileDrawerEdge}px)`,
               overflow: "visible",
             },
           }}

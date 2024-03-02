@@ -1,6 +1,6 @@
 import { fireEvent, render } from "@testing-library/react";
 
-import DesktopDrawer, { CLOSE_BUTTON_ROLE } from "./DesktopDrawer";
+import { CLOSE_BUTTON_ROLE,DesktopDrawer } from "./DesktopDrawer";
 
 describe("DesktopDrawer", () => {
   const isAppDrawerOpen = true;
@@ -15,7 +15,7 @@ describe("DesktopDrawer", () => {
       <DesktopDrawer
         isAppDrawerOpen={isAppDrawerOpen}
         setIsAppDrawerOpen={setIsAppDrawerOpen}
-      />
+      />,
     );
     const closeButton = getByRole(CLOSE_BUTTON_ROLE);
     fireEvent.click(closeButton);

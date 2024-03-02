@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import React from "react";
 
-import { EdmTitle } from "../../../src/components/edm/styled";
+import { EdmTitle } from "../../../src/components/edm";
 import { ImageBackground, PageContainer } from "../../../src/components/layout";
 import { SoundCloudWidget } from "../../../src/components/music";
 

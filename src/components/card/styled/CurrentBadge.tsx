@@ -4,7 +4,7 @@ import { Badge } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 // Stylized code taken from https://mui.com/material-ui/react-avatar/
-const CurrentBadge = styled(Badge)(({ theme }) => ({
+export const CurrentBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     backgroundColor: "#44b700",
     color: "#44b700",
@@ -32,5 +32,3 @@ const CurrentBadge = styled(Badge)(({ theme }) => ({
     },
   },
 }));
-
-export default CurrentBadge;

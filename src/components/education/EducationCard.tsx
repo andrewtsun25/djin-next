@@ -12,7 +12,7 @@ interface EducationCardProps {
   education: Education;
 }
 
-const EducationCard: React.FC<EducationCardProps> = ({
+export const EducationCard: React.FC<EducationCardProps> = ({
   education: {
     endDate,
     startDate,
@@ -87,5 +87,3 @@ const EducationCard: React.FC<EducationCardProps> = ({
     </Slide>
   );
 };
-
-export default EducationCard;

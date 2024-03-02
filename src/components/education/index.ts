@@ -1,3 +1,2 @@
-import EducationCard from "./EducationCard";
-
-export { EducationCard };
+export { EducationCard } from "./EducationCard";
+export { EducationPageTitle } from "./styled";

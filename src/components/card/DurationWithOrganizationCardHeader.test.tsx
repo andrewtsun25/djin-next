@@ -1,7 +1,8 @@
 import { render } from "@testing-library/react";
 
-import DurationWithOrganizationCardHeader, {
+import {
   CURRENT_BADGE_TEST_ID,
+  DurationWithOrganizationCardHeader,
 } from "./DurationWithOrganizationCardHeader";
 
 describe("DurationWithOrganizationCardHeader", () => {

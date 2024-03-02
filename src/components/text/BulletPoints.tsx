@@ -9,7 +9,7 @@ interface BulletPointsProps {
 
 const BULLET_POINT_ROLE = "bulletPoint";
 
-const BulletPoints: React.FC<BulletPointsProps> = ({
+export const BulletPoints: React.FC<BulletPointsProps> = ({
   points,
   className,
   style,
@@ -26,5 +26,4 @@ const BulletPoints: React.FC<BulletPointsProps> = ({
 };
 
 export { BULLET_POINT_ROLE };
-export default BulletPoints;
 export type { BulletPointsProps };

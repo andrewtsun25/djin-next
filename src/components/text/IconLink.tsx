@@ -1,15 +1,15 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-import type { MuiNextLinkProps } from "./MuiNextLink";
-import { MuiNextLink } from "./MuiNextLink";
+import type { MuiNextLinkProps } from "./NextLinkComposed";
+import { MuiNextLink } from "./NextLinkComposed";
 
 interface IconLinkProps extends MuiNextLinkProps {
   icon: React.JSX.Element;
   text: string;
 }
 
-const IconLink: React.FC<IconLinkProps> = ({
+export const IconLink: React.FC<IconLinkProps> = ({
   icon,
   text,
   ...linkProps
@@ -23,5 +23,3 @@ const IconLink: React.FC<IconLinkProps> = ({
     </MuiNextLink>
   );
 };
-
-export default IconLink;

@@ -4,13 +4,13 @@ import { Metadata } from "next";
 import React from "react";
 
 import { ImageBackground, PageContainer } from "../../../src/components/layout";
-import { MartialArtsStudioGridTile } from "../../../src/components/martialArts";
 import {
   MartialArtsImage,
   MartialArtsLogoImage,
   MartialArtsPageHeading,
   MartialArtsPageTitle,
-} from "../../../src/components/martialArts/styled";
+  MartialArtsStudioGridTile,
+} from "../../../src/components/martialArts";
 import { ResponsiveGrid } from "../../../src/components/responsiveGrid";
 import { Urls } from "../../../src/const/url";
 import { getMartialArtsStyle } from "../../../src/dal/api";

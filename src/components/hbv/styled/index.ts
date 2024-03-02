@@ -1,13 +1,5 @@
-import HbvContentTypography from "./HbvContentTypography";
-import HbvLink from "./HbvLink";
-import HbvResearchCardIconLink from "./HbvResearchCardIconLink";
-import HbvResearchCardList from "./HbvResearchCardList";
-import HbvTitle from "./HbvTitle";
-
-export {
-  HbvContentTypography,
-  HbvLink,
-  HbvResearchCardIconLink,
-  HbvResearchCardList,
-  HbvTitle,
-};
+export { HbvContentTypography } from "./HbvContentTypography";
+export { HbvLink } from "./HbvLink";
+export { HbvResearchCardIconLink } from "./HbvResearchCardIconLink";
+export { HbvResearchCardList } from "./HbvResearchCardList";
+export { HbvTitle } from "./HbvTitle";

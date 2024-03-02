@@ -9,7 +9,9 @@ interface ProjectOrganizationSelectProps {
   selectedOrganizations: Organization[];
   setSelectedOrganizations(employments: Organization[]): void;
 }
-const ProjectOrganizationSelect: React.FC<ProjectOrganizationSelectProps> = ({
+export const ProjectOrganizationSelect: React.FC<
+  ProjectOrganizationSelectProps
+> = ({
   organizations,
   selectedOrganizations,
   setSelectedOrganizations,
@@ -43,5 +45,3 @@ const ProjectOrganizationSelect: React.FC<ProjectOrganizationSelectProps> = ({
     />
   );
 };
-
-export default ProjectOrganizationSelect;

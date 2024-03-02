@@ -32,10 +32,10 @@ export default async function ScoresPage(): Promise<React.JSX.Element> {
               backgroundColor: "rgba(255, 255, 255, .75)",
               padding: 2,
               borderRadius: 5,
-              "&:not(:first-child)": {
+              "&:not(:first-of-type)": {
                 mt: 2,
               },
-              "&:not(:last-child)": {
+              "&:not(:last-of-type)": {
                 mb: 2,
               },
               marginBlockStart: 0,

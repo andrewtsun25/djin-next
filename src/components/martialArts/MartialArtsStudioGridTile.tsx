@@ -7,7 +7,9 @@ import { ResponsiveGridItem } from "../responsiveGrid";
 interface MartialArtsStudioGridTileProps {
   studio: MartialArtsStudio;
 }
-const MartialArtsStudioGridTile: React.FC<MartialArtsStudioGridTileProps> = ({
+export const MartialArtsStudioGridTile: React.FC<
+  MartialArtsStudioGridTileProps
+> = ({
   studio: { name, logoUrl, studioUrl, city },
 }: MartialArtsStudioGridTileProps) => (
   <ResponsiveGridItem
@@ -19,5 +21,3 @@ const MartialArtsStudioGridTile: React.FC<MartialArtsStudioGridTileProps> = ({
     imageStyle={{ objectFit: "contain" }}
   />
 );
-
-export default MartialArtsStudioGridTile;

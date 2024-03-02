@@ -8,9 +8,9 @@ import {
   HolisticOfficeArchitectureImage,
   HolisticOfficeLogo,
   HolisticOfficeSectionHeader,
+  LinkSection,
+  ModuleInfoGrid,
 } from "../../../src/components/holisticOffice";
-import { LinkSection } from "../../../src/components/holisticOffice/linkSection";
-import { ModuleInfoGrid } from "../../../src/components/holisticOffice/modulesGrid";
 import { VerticallyCenteredPageContainer } from "../../../src/components/layout";
 import { MuiNextLink } from "../../../src/components/text";
 import { Urls } from "../../../src/const/url";
