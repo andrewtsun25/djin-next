@@ -21,7 +21,7 @@ export default async function EmploymentPage(): Promise<React.JSX.Element> {
     <>
       <ImageBackground src={bgUrl} />
       <Box sx={{ p: 2 }}>
-        <Typography variant="h2" sx={{ mt: 2, mb: 2 }} textAlign="center">
+        <Typography variant="h2" sx={{ mb: 2 }} textAlign="center">
           Coding Employment
         </Typography>
         <Suspense fallback={<Loading message={"Loading employments..."} />}>
