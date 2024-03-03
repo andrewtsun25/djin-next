@@ -43,8 +43,8 @@ export default function ReclaimerPage(): React.JSX.Element {
             />
           </Grow>
           <Typography paragraph fontWeight="bold">
-            Update: Due to a lack of current development efforts, Reclaimer is
-            no longer available for Android on the Google Play Store.
+            Update: Reclaimer is no longer accessible for Android on the Google
+            Play Store due to the absence of ongoing development efforts.
           </Typography>
           <Typography paragraph sx={{ alignSelf: "flex-start" }}>
             <MuiNextLink
@@ -55,40 +55,44 @@ export default function ReclaimerPage(): React.JSX.Element {
             >
               Reclaimer
             </MuiNextLink>{" "}
-            is a mobile game developed on Unity in C#, playable on both Android
-            and iOS. The game was developed for an elective course, CSCI-599:
-            Mobile Social Games, at USC from January 2020 to May 2020. Players
-            start in a jail cell and have to escape the dungeon. Along the way,
-            they can pick up weapons and items in the environment, and fight
-            medieval enemies that stand in the way of their escape.
+            is a mobile game built on Unity in C#, compatible with both Android
+            and iOS platforms. The game was created as part of an elective
+            course, CSCI-599: Mobile Social Games, at USC, spanning from January
+            2020 to May 2020. Players commence in a jail cell and must navigate
+            through the dungeon to escape. Along the journey, they can collect
+            weapons and items scattered in the environment, engaging in combat
+            with medieval adversaries hindering their progress.
           </Typography>
           <Typography paragraph sx={{ alignSelf: "flex-start" }}>
-            Fighting takes place with Infinity Blade-style combat. Players can
-            attack in 4 directions using single-finger swipes. Every so often,
-            an enemy’s attack will be signaled by arrows on screen. Blocking is
-            accomplished by swiping with two fingers in the direction of the
-            arrows. Failure to do so results in getting hit. Players are
-            rewarded to respond quickly; “perfect” blocks on-time result in a
-            powerful counterattack dealt to the enemy.
+            Combat mechanics are reminiscent of Infinity Blade-style gameplay.
+            Players execute attacks in four directions through single-finger
+            swipes. Periodically, enemy attacks are indicated by arrows
+            appearing on the screen. Blocking is performed by swiping with two
+            fingers in the direction of the arrows, with failure resulting in
+            taking damage. Players are incentivized to react promptly; timely
+            &ldquo;perfect&rdquo; blocks trigger potent counterattacks against
+            foes.
           </Typography>
           <Typography paragraph sx={{ alignSelf: "flex-start" }}>
-            Players can get coins from the environment, opening chests, and
-            defeating enemies. These coins can be traded for stronger items in
-            the dungeon’s shop.
+            Coins can be acquired by exploring the environment, opening chests,
+            and defeating enemies. These coins are then utilized to purchase
+            stronger items from the dungeon&apos;s shop.
           </Typography>
           <Typography paragraph sx={{ alignSelf: "flex-start" }}>
-            My role on the team is the data analyst. For every event worth
-            tracking (fighting enemies, combat techniques, item purchases and
-            usage, etc.), I created analytics hooks to funnel Unity Analytics
-            events into a dashboard. From these events, I delivered weekly
-            reports detailing user activity in-game, providing evidence-based
-            feedback to class professors and the rest of my development team on
-            new features to develop, or existing features to re-adjust.
+            My role within the team is that of a data analyst. I implemented
+            analytics hooks for various in-game events (such as combat
+            encounters, combat maneuvers, item transactions, etc.) to channel
+            Unity Analytics events into a dashboard. Based on the insights
+            derived from these events, I compiled weekly reports outlining user
+            activity within the game, furnishing evidence-based feedback to both
+            class instructors and my development team regarding potential new
+            features to implement or existing features to refine.
           </Typography>
           <Typography paragraph sx={{ alignSelf: "flex-start" }}>
-            Media-wise, I also helped develop the video used in the trailer and
-            composed the music for the soundtrack. I also helped manage app
-            publishing to the Google Play Services.
+            Moreover, I contributed to the multimedia aspects of the project by
+            assisting in the development of the video used in the trailer and
+            composing the music for the soundtrack. Additionally, I aided in
+            managing the app publishing process to Google Play Services.
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6} md={4} lg={2}>
