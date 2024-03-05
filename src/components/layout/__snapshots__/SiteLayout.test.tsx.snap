@@ -30,7 +30,7 @@ exports[`SiteLayoutPages renders 1`] = `
                 width="50"
               />
               <h5
-                class="MuiTypography-root MuiTypography-h5 css-1kjiu85-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-h5 css-1iz0zlx-MuiTypography-root"
               >
                 d.jin
               </h5>
@@ -358,7 +358,7 @@ exports[`SiteLayoutPages renders 1`] = `
               width="50"
             />
             <h5
-              class="MuiTypography-root MuiTypography-h5 css-1kjiu85-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 css-1iz0zlx-MuiTypography-root"
             >
               d.jin
             </h5>

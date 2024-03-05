@@ -1,3 +1,1 @@
-import { isNotNil } from "./isNotNil";
-
-export { isNotNil };
+export { isNotNil } from "./isNotNil";

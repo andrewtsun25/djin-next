@@ -1,6 +1,6 @@
 {
   "name": "djin-next",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -18,6 +18,7 @@
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@fontsource/pirata-one": "^5.0.12",
     "@fontsource/roboto": "^5.0.12",
     "@mui/icons-material": "^5.15.11",
     "@mui/material": "^5.15.11",
@@ -27,7 +28,6 @@
     "@types/node": "20.11.24",
     "@types/react": "^18.2.63",
     "@types/react-dom": "^18.2.19",
-    "babel-plugin-superjson-next": "^0.4.5",
     "clsx": "^2.1.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.1.1",
@@ -41,7 +41,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.33.2",
-    "superjson": "^1.13.3",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
@@ -58,5 +57,5 @@
     "node-mocks-http": "^1.14.1",
     "prettier": "^3.2.5"
   },
-  "packageManager": "yarn@4.1.0"
+  "packageManager": "yarn@4.1.1"
 }
