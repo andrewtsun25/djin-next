@@ -17,4 +17,5 @@ export const HomeLinkText = styled(Typography)(({ theme }) => ({
   "&:visited": {
     color: theme.palette.primary.contrastText,
   },
+  fontFamily: '"Pirata One", Helvetica',
 }));

@@ -7,4 +7,5 @@ export const HomeDescriptionTypography = styled(Typography)(({ theme }) => ({
   marginTop: theme.spacing(2),
   textAlign: "center",
   color: theme.palette.primary.contrastText,
+  fontFamily: '"Pirata One", Helvetica',
 }));

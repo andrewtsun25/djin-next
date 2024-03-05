@@ -1,3 +1,6 @@
+import "@fontsource/roboto";
+import "@fontsource/pirata-one";
+
 import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import React from "react";
