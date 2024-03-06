@@ -1,14 +1,13 @@
 "use client";
 
-import { Grid } from "@mui/material";
 import { isNil, sortBy, uniq, uniqBy } from "lodash";
 import { useQueryState } from "nuqs";
 import React, { useMemo } from "react";
 
 import { Organization, Project } from "../../types/api";
-import { ProjectCard } from "./ProjectCard";
 import { ProjectCount } from "./ProjectCount";
 import { ProjectOrganizationSelect } from "./ProjectOrganizationSelect";
+import { ProjectsGrid } from "./ProjectsGrid";
 import { ProjectSkillSelect } from "./ProjectSkillSelect";
 import { ProjectSelectionContainer } from "./styled";
 
@@ -132,15 +131,7 @@ export const ProjectSelection: React.FC<ProjectSelectionProps> = ({
         />
         <ProjectCount projects={selectedProjects} />
       </ProjectSelectionContainer>
-      {selectedProjects.length > 0 && (
-        <Grid container direction="row" spacing={2}>
-          {selectedProjects.map((project: Project) => (
-            <Grid item xs={12} md={6} lg={4} xl={3} key={project.name}>
-              <ProjectCard project={project} />
-            </Grid>
-          ))}
-        </Grid>
-      )}
+      <ProjectsGrid projects={selectedProjects} />
     </>
   );
 };

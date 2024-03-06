@@ -5,11 +5,15 @@ import React from "react";
 
 import { EmploymentDurationDisplay } from "../../../../src/components/employment";
 import { ImageBackground, PageBox } from "../../../../src/components/layout";
+import { ProjectsGrid } from "../../../../src/components/projects";
 import { BulletPoints } from "../../../../src/components/text";
 import SkillChips from "../../../../src/components/text/SkillChips";
 import { Urls } from "../../../../src/const/url";
-import { getEmployment } from "../../../../src/dal/api";
-import { Employment } from "../../../../src/types/api";
+import {
+  getEmployment,
+  listProjectsByOrganizationId,
+} from "../../../../src/dal/api";
+import { Employment, Project } from "../../../../src/types/api";
 import { getTimeIntervalAsString } from "../../../../src/util/date";
 
 interface EmploymentPageParams {
@@ -68,9 +72,9 @@ export default async function EmploymentPage({
       `Employment for employmentId ${params.employmentId} could not be found`,
     );
   }
-  /*const projects: Project[] = await listProjectsByOrganizationId(
+  const projects: Project[] = await listProjectsByOrganizationId(
     employment.organization.id,
-  );*/
+  );
   return (
     <>
       <ImageBackground src={bgUrl} />
@@ -81,6 +85,7 @@ export default async function EmploymentPage({
             backgroundColor: "rgba(255, 255, 255, .90)",
           }}
           p={2}
+          mb={2}
         >
           <Typography variant="h1" mb={2} textAlign="center">
             {employment.organization.name}
@@ -103,6 +108,18 @@ export default async function EmploymentPage({
           <Typography paragraph>{employment.description}</Typography>
           <BulletPoints points={employment.responsibilities} />
           <SkillChips skills={employment.skills} />
+        </Box>
+        <Box
+          sx={{
+            borderRadius: 5,
+            backgroundColor: "rgba(255, 255, 255, .90)",
+          }}
+          p={2}
+        >
+          <Typography variant="h1" mb={2} textAlign="center">
+            Projects
+          </Typography>
+          <ProjectsGrid projects={projects} />
         </Box>
       </PageBox>
     </>
