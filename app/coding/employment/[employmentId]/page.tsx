@@ -6,6 +6,7 @@ import React from "react";
 import {
   EmploymentDateAndDurationContainer,
   EmploymentDurationDisplay,
+  EmploymentLogoImage,
   EmploymentRoleAndDateContainer,
   EmploymentRoleAndTypeContainer,
 } from "../../../../src/components/employment";
@@ -92,9 +93,19 @@ export default async function EmploymentPage({
           p={2}
           mb={2}
         >
-          <Typography variant="h2" mb={2} textAlign="center">
-            {employment.organization.name}
-          </Typography>
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Typography variant="h2" mb={2}>
+              {employment.organization.name}
+            </Typography>
+            {employment.organization.logoUrl && (
+              <EmploymentLogoImage
+                src={employment.organization.logoUrl}
+                alt={`Logo for ${employment.organization.name}`}
+                height={100}
+                width={100}
+              />
+            )}
+          </Box>
           <EmploymentRoleAndDateContainer>
             <EmploymentRoleAndTypeContainer>
               <Typography sx={{ m: 0, fontSize: "1.5rem" }}>
