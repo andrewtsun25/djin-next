@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <ImageBackground src={bgUrl} />
+      <ImageBackground src={bgUrl} backgroundColor="#000000" />
       <Box
         display="flex"
         justifyContent="center"
