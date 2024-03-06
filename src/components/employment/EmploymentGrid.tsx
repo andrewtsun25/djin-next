@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React from "react";
 
 import { Employment } from "../../types/api";
@@ -11,7 +11,7 @@ interface EmploymentGridProps {
 export const EmploymentGrid: React.FC<EmploymentGridProps> = ({
   employments,
 }: EmploymentGridProps) => {
-  return employments.length < 1 ? null : (
+  return employments.length > 0 ? (
     <Grid container direction="row" spacing={2}>
       {employments.map((employment, index) => (
         <Grid item xs={12} md={6} lg={4} xl={3} key={index}>
@@ -19,5 +19,7 @@ export const EmploymentGrid: React.FC<EmploymentGridProps> = ({
         </Grid>
       ))}
     </Grid>
+  ) : (
+    <Typography textAlign="center">No employments to display.</Typography>
   );
 };

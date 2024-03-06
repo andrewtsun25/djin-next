@@ -90,7 +90,7 @@ export default async function EmploymentPage({
           <Typography variant="h1" mb={2} textAlign="center">
             {employment.organization.name}
           </Typography>
-          <Typography variant="h2" textAlign="center">
+          <Typography variant="h2" mt={2} mb={2} textAlign="center">
             {employment.role}
           </Typography>
           <Typography
@@ -116,7 +116,7 @@ export default async function EmploymentPage({
           }}
           p={2}
         >
-          <Typography variant="h1" mb={2} textAlign="center">
+          <Typography variant="h2" mb={2} textAlign="center">
             Projects
           </Typography>
           <ProjectsGrid projects={projects} />

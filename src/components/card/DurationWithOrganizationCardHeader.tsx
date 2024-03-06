@@ -1,5 +1,5 @@
-import { Avatar, CardHeader } from "@mui/material";
-import React from "react";
+import { Avatar, CardHeader, SxProps, Theme } from "@mui/material";
+import React, { MouseEventHandler } from "react";
 
 import { getTimeIntervalAsString } from "../../util/date";
 import { CurrentBadge } from "./styled";
@@ -10,6 +10,8 @@ interface DurationWithOrganizationCardHeaderProps {
   startDate: Date;
   endDate?: Date | null;
   logoUrl?: string;
+  onClick?: MouseEventHandler<React.ReactElement> | undefined;
+  sx?: SxProps<Theme>;
 }
 
 const CURRENT_BADGE_TEST_ID = "Current Badge";
@@ -22,6 +24,8 @@ export const DurationWithOrganizationCardHeader: React.FC<
   startDate,
   endDate,
   logoUrl,
+  onClick,
+  sx,
 }: DurationWithOrganizationCardHeaderProps) => {
   const subheader = `${getTimeIntervalAsString(startDate, endDate)}: ${subtitle}`;
   const baseAvatar: React.ReactNode = <Avatar alt={title} src={logoUrl} />;
@@ -40,7 +44,15 @@ export const DurationWithOrganizationCardHeader: React.FC<
       {baseAvatar}
     </CurrentBadge>
   );
-  return <CardHeader title={title} subheader={subheader} avatar={avatar} />;
+  return (
+    <CardHeader
+      sx={sx}
+      title={title}
+      subheader={subheader}
+      avatar={avatar}
+      onClick={onClick}
+    />
+  );
 };
 
 export { CURRENT_BADGE_TEST_ID };
