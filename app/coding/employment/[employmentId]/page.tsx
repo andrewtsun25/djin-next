@@ -3,7 +3,12 @@ import { isNil } from "lodash";
 import { Metadata } from "next";
 import React from "react";
 
-import { EmploymentDurationDisplay } from "../../../../src/components/employment";
+import {
+  EmploymentDateAndDurationContainer,
+  EmploymentDurationDisplay,
+  EmploymentRoleAndDateContainer,
+  EmploymentRoleTypography,
+} from "../../../../src/components/employment";
 import { ImageBackground, PageBox } from "../../../../src/components/layout";
 import { ProjectsGrid } from "../../../../src/components/projects";
 import { BulletPoints } from "../../../../src/components/text";
@@ -90,21 +95,23 @@ export default async function EmploymentPage({
           <Typography variant="h1" mb={2} textAlign="center">
             {employment.organization.name}
           </Typography>
-          <Typography variant="h2" mt={2} mb={2} textAlign="center">
-            {employment.role}
-          </Typography>
-          <Typography
-            mb={2}
-            mt={2}
-            textAlign="center"
-            sx={{ fontSize: "1.5em" }}
-          >
-            {getTimeIntervalAsString(employment.startDate, employment.endDate)}
-          </Typography>
-          <EmploymentDurationDisplay
-            employments={[employment]}
-            sx={{ textAlign: "center", fontSize: "1.5em" }}
-          />
+          <EmploymentRoleAndDateContainer>
+            <EmploymentRoleTypography variant="h2">
+              {employment.role}
+            </EmploymentRoleTypography>
+            <EmploymentDateAndDurationContainer>
+              <Typography sx={{ m: 0, fontSize: "1.25rem" }}>
+                {getTimeIntervalAsString(
+                  employment.startDate,
+                  employment.endDate,
+                )}
+              </Typography>
+              <EmploymentDurationDisplay
+                employments={[employment]}
+                sx={{ m: 0, fontSize: "1.25rem" }}
+              />
+            </EmploymentDateAndDurationContainer>
+          </EmploymentRoleAndDateContainer>
           <Typography paragraph>{employment.description}</Typography>
           <BulletPoints points={employment.responsibilities} />
           <SkillChips skills={employment.skills} />

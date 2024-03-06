@@ -69,7 +69,7 @@ export const EmploymentDurationDisplay = ({
 
   // render
   return (
-    <Typography mt={2} mb={2} sx={sx}>
+    <Typography sx={{ mt: 2, mb: 2, ...sx }}>
       Total Duration: {totalTimeOfEmployment}
     </Typography>
   );
