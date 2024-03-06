@@ -6,10 +6,8 @@ import {
 import { employmentsCollection } from "../firestore/collections";
 import { mapEmploymentDbEntityToEmployment } from "../mapper";
 
-const getEmployment: GetterByIdForFirestoreQuery<Employment> =
+export const getEmployment: GetterByIdForFirestoreQuery<Employment> =
   createGetterByIdForFirestoreQuery(
     employmentsCollection,
     mapEmploymentDbEntityToEmployment,
   );
-
-export default getEmployment;

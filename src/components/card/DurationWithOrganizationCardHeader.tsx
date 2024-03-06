@@ -1,8 +1,7 @@
 import { Avatar, CardHeader } from "@mui/material";
-import { isNil } from "lodash";
-import { DateTime } from "luxon";
 import React from "react";
 
+import { getTimeIntervalAsString } from "../../util/date";
 import { CurrentBadge } from "./styled";
 
 interface DurationWithOrganizationCardHeaderProps {
@@ -24,18 +23,7 @@ export const DurationWithOrganizationCardHeader: React.FC<
   endDate,
   logoUrl,
 }: DurationWithOrganizationCardHeaderProps) => {
-  const startDateTime: DateTime = DateTime.fromJSDate(startDate);
-  const {
-    monthShort: startDateMonth,
-    year: startDateYear,
-    day: startDateDay,
-  } = startDateTime;
-  const endDateTime: DateTime | null | undefined = !isNil(endDate)
-    ? DateTime.fromJSDate(endDate)
-    : endDate;
-  const subheader = !isNil(endDateTime)
-    ? `${startDateMonth} ${startDateDay}, ${startDateYear} - ${endDateTime.monthShort} ${endDateTime.day}, ${endDateTime.year}: ${subtitle}`
-    : `${startDateMonth} ${startDateDay}, ${startDateYear} - Present: ${subtitle}`;
+  const subheader = `${getTimeIntervalAsString(startDate, endDate)}: ${subtitle}`;
   const baseAvatar: React.ReactNode = <Avatar alt={title} src={logoUrl} />;
   const avatar: React.ReactNode = endDate ? (
     baseAvatar
