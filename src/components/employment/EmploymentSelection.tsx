@@ -1,12 +1,12 @@
 "use client";
 
-import { Grid, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { isNil } from "lodash";
 import { useQueryState } from "nuqs";
 import React, { useMemo } from "react";
 
 import { Employment, EmploymentType } from "../../types/api";
-import { EmploymentCard } from "./EmploymentCard";
+import { EmploymentGrid } from "./EmploymentGrid";
 import { EmploymentDurationDisplay, EmploymentTypeSelect } from "./index";
 import { EmploymentPageHeaderContainer, EmploymentResumeLink } from "./styled";
 
@@ -75,15 +75,7 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
         />
         <EmploymentDurationDisplay employments={selectedEmployments} />
       </EmploymentPageHeaderContainer>
-      {selectedEmployments.length > 0 && (
-        <Grid container direction="row" spacing={2}>
-          {selectedEmployments.map((employment, index) => (
-            <Grid item xs={12} md={6} lg={4} xl={3} key={index}>
-              <EmploymentCard employment={employment} />
-            </Grid>
-          ))}
-        </Grid>
-      )}
+      <EmploymentGrid employments={employments} />
     </>
   );
 };

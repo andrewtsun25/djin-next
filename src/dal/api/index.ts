@@ -7,7 +7,8 @@ import listHolisticOfficeLinks from "./listHolisticOfficeLinks";
 import listHolisticOfficeModules from "./listHolisticOfficeModules";
 import listMusicScores from "./listMusicScores";
 import listProjects from "./listProjects";
-
+export { getEmployment } from "./getEmployment";
+export { listProjectsByOrganizationId } from "./listProjectsByOrganizationId";
 export {
   getMartialArtsStyle,
   getOrganization,

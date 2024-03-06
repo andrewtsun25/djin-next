@@ -1,8 +1,7 @@
-import { Avatar, CardHeader } from "@mui/material";
-import { isNil } from "lodash";
-import { DateTime } from "luxon";
-import React from "react";
+import { Avatar, CardHeader, SxProps, Theme } from "@mui/material";
+import React, { MouseEventHandler } from "react";
 
+import { getTimeIntervalAsString } from "../../util/date";
 import { CurrentBadge } from "./styled";
 
 interface DurationWithOrganizationCardHeaderProps {
@@ -11,6 +10,8 @@ interface DurationWithOrganizationCardHeaderProps {
   startDate: Date;
   endDate?: Date | null;
   logoUrl?: string;
+  onClick?: MouseEventHandler<React.ReactElement> | undefined;
+  sx?: SxProps<Theme>;
 }
 
 const CURRENT_BADGE_TEST_ID = "Current Badge";
@@ -23,19 +24,10 @@ export const DurationWithOrganizationCardHeader: React.FC<
   startDate,
   endDate,
   logoUrl,
+  onClick,
+  sx,
 }: DurationWithOrganizationCardHeaderProps) => {
-  const startDateTime: DateTime = DateTime.fromJSDate(startDate);
-  const {
-    monthShort: startDateMonth,
-    year: startDateYear,
-    day: startDateDay,
-  } = startDateTime;
-  const endDateTime: DateTime | null | undefined = !isNil(endDate)
-    ? DateTime.fromJSDate(endDate)
-    : endDate;
-  const subheader = !isNil(endDateTime)
-    ? `${startDateMonth} ${startDateDay}, ${startDateYear} - ${endDateTime.monthShort} ${endDateTime.day}, ${endDateTime.year}: ${subtitle}`
-    : `${startDateMonth} ${startDateDay}, ${startDateYear} - Present: ${subtitle}`;
+  const subheader = `${getTimeIntervalAsString(startDate, endDate)}: ${subtitle}`;
   const baseAvatar: React.ReactNode = <Avatar alt={title} src={logoUrl} />;
   const avatar: React.ReactNode = endDate ? (
     baseAvatar
@@ -52,7 +44,15 @@ export const DurationWithOrganizationCardHeader: React.FC<
       {baseAvatar}
     </CurrentBadge>
   );
-  return <CardHeader title={title} subheader={subheader} avatar={avatar} />;
+  return (
+    <CardHeader
+      sx={sx}
+      title={title}
+      subheader={subheader}
+      avatar={avatar}
+      onClick={onClick}
+    />
+  );
 };
 
 export { CURRENT_BADGE_TEST_ID };
