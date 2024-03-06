@@ -7,8 +7,6 @@ import { ImageBackground, PageContainer } from "../../../src/components/layout";
 import {
   MartialArtsImage,
   MartialArtsLogoImage,
-  MartialArtsPageHeading,
-  MartialArtsPageTitle,
   MartialArtsStudioGridTile,
 } from "../../../src/components/martialArts";
 import { ResponsiveGrid } from "../../../src/components/responsiveGrid";
@@ -87,19 +85,21 @@ export default async function MartialArtsPage({
           maxWidth="lg"
           sx={{ backgroundColor: "rgba(255, 255, 255, .75)" }}
         >
-          <MartialArtsPageHeading>
-            <MartialArtsPageTitle variant="h2">{name}</MartialArtsPageTitle>
+          <Box display="flex" flexDirection="column" alignItems="center" mb={2}>
+            <Typography variant="h2" mb={2}>
+              {name}
+            </Typography>
             <MartialArtsLogoImage
               src={logoUrl}
               alt={`${type}_logo`}
               height={200}
               width={200}
             />
-          </MartialArtsPageHeading>
-          <Typography variant="h5" sx={{ my: 2 }} textAlign="center">
-            Exp Level: {expLevel}
-          </Typography>
-          <Grid container spacing={2} whiteSpace="pre-line" mt={2} mb={2}>
+            <Typography sx={{ fontSize: "1.5rem" }} mt={2}>
+              Exp Level: {expLevel}
+            </Typography>
+          </Box>
+          <Grid container spacing={2} whiteSpace="pre-line" mb={2}>
             <Grid item xs={12} lg={6}>
               <Typography paragraph fontStyle="italic">
                 {description}
