@@ -7,7 +7,7 @@ import {
   EmploymentDateAndDurationContainer,
   EmploymentDurationDisplay,
   EmploymentRoleAndDateContainer,
-  EmploymentRoleTypography,
+  EmploymentRoleAndTypeContainer,
 } from "../../../../src/components/employment";
 import { ImageBackground, PageBox } from "../../../../src/components/layout";
 import { ProjectsGrid } from "../../../../src/components/projects";
@@ -92,15 +92,20 @@ export default async function EmploymentPage({
           p={2}
           mb={2}
         >
-          <Typography variant="h1" mb={2} textAlign="center">
+          <Typography variant="h2" mb={2} textAlign="center">
             {employment.organization.name}
           </Typography>
           <EmploymentRoleAndDateContainer>
-            <EmploymentRoleTypography variant="h2">
-              {employment.role}
-            </EmploymentRoleTypography>
+            <EmploymentRoleAndTypeContainer>
+              <Typography sx={{ m: 0, fontSize: "1.5rem" }}>
+                {employment.role}
+              </Typography>
+              <Typography sx={{ m: 0, fontSize: "1.15rem" }}>
+                {employment.employmentType}
+              </Typography>
+            </EmploymentRoleAndTypeContainer>
             <EmploymentDateAndDurationContainer>
-              <Typography sx={{ m: 0, fontSize: "1.25rem" }}>
+              <Typography sx={{ m: 0, fontSize: "1.5rem" }}>
                 {getTimeIntervalAsString(
                   employment.startDate,
                   employment.endDate,
@@ -108,7 +113,7 @@ export default async function EmploymentPage({
               </Typography>
               <EmploymentDurationDisplay
                 employments={[employment]}
-                sx={{ m: 0, fontSize: "1.25rem" }}
+                sx={{ m: 0, fontSize: "1.15rem" }}
               />
             </EmploymentDateAndDurationContainer>
           </EmploymentRoleAndDateContainer>

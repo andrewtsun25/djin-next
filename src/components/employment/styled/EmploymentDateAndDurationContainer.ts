@@ -8,6 +8,5 @@ export const EmploymentDateAndDurationContainer = styled(Box)(({ theme }) => ({
   textAlign: "right",
   [theme.breakpoints.down("sm")]: {
     textAlign: "center",
-    marginTop: theme.spacing(2),
   },
 }));

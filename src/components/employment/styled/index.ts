@@ -2,4 +2,4 @@ export { EmploymentDateAndDurationContainer } from "./EmploymentDateAndDurationC
 export { EmploymentPageHeaderContainer } from "./EmploymentPageHeaderContainer";
 export { EmploymentResumeLink } from "./EmploymentResumeLink";
 export { EmploymentRoleAndDateContainer } from "./EmploymentRoleAndDateContainer";
-export { EmploymentRoleTypography } from "./EmploymentRoleTypography";
+export { EmploymentRoleAndTypeContainer } from "./EmploymentRoleAndTypeContainer";

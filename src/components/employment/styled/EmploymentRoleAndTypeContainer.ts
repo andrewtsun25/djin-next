@@ -1,9 +1,9 @@
 "use client";
 
-import { Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-export const EmploymentRoleTypography = styled(Typography)(({ theme }) => ({
+export const EmploymentRoleAndTypeContainer = styled(Box)(({ theme }) => ({
   margin: 0,
   textAlign: "left",
   [theme.breakpoints.down("sm")]: {

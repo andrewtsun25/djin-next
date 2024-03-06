@@ -4,5 +4,5 @@ export { EmploymentTypeSelect } from "./EmploymentTypeSelect";
 export {
   EmploymentDateAndDurationContainer,
   EmploymentRoleAndDateContainer,
-  EmploymentRoleTypography,
+  EmploymentRoleAndTypeContainer,
 } from "./styled";
