@@ -11,7 +11,11 @@ import {
   ResponsiveSpaceBetweenFlexBox,
 } from "../../../../src/components/layout";
 import { ProjectLinks } from "../../../../src/components/projects";
-import { BulletPoints, SkillChips } from "../../../../src/components/text";
+import {
+  BulletPoints,
+  MuiNextLink,
+  SkillChips,
+} from "../../../../src/components/text";
 import { Urls } from "../../../../src/const/url";
 import { getProject } from "../../../../src/dal/api";
 import { Project } from "../../../../src/types/api";
@@ -105,7 +109,7 @@ export default async function EmploymentPage({
     name: projectName,
     startDate,
     endDate,
-    organization: { name: organizationName, logoUrl },
+    organization: { id: organizationId, name: organizationName, logoUrl },
     mediaUrl,
     description,
     responsibilities,
@@ -139,15 +143,17 @@ export default async function EmploymentPage({
                 width={40}
               />
             )}
-            <Typography
-              sx={{
-                m: 0,
-                ml: logoUrl ? 1 : 0,
-                fontSize: "1.5rem",
-              }}
-            >
-              {organizationName}
-            </Typography>
+            <MuiNextLink href={`/coding/employment/${organizationId}`}>
+              <Typography
+                sx={{
+                  m: 0,
+                  ml: logoUrl ? 1 : 0,
+                  fontSize: "1.5rem",
+                }}
+              >
+                {organizationName}
+              </Typography>
+            </MuiNextLink>
           </Box>
           <Typography sx={{ m: 0, fontSize: "1.5rem" }}>
             {getTimeIntervalAsString(startDate, endDate)}
