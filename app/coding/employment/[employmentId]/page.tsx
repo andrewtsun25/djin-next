@@ -98,7 +98,7 @@ export default async function EmploymentPage({
           mb={2}
         >
           <Box display="flex" flexDirection="column" alignItems="center">
-            <Typography variant="h2" mb={2}>
+            <Typography variant="h2" mb={2} textAlign="center">
               {employment.organization.name}
             </Typography>
             {employment.organization.logoUrl && (
