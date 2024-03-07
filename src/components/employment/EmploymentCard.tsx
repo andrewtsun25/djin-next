@@ -7,8 +7,7 @@ import React from "react";
 
 import { Employment } from "../../types/api";
 import { DurationWithOrganizationCardHeader } from "../card";
-import { BulletPoints, IconLink } from "../text";
-import SkillChips from "../text/SkillChips";
+import { BulletPoints, IconLink, SkillChips } from "../text";
 
 interface EmploymentCardProps {
   employment: Employment;

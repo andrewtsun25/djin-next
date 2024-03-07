@@ -3,9 +3,12 @@ import { isNil } from "lodash";
 import { Metadata } from "next";
 import React from "react";
 
-import { ImageBackground, PageContainer } from "../../../src/components/layout";
 import {
-  MartialArtsImage,
+  FullWidthImage,
+  ImageBackground,
+  PageContainer,
+} from "../../../src/components/layout";
+import {
   MartialArtsLogoImage,
   MartialArtsStudioGridTile,
 } from "../../../src/components/martialArts";
@@ -121,9 +124,9 @@ export default async function MartialArtsPage({
                     marginInlineEnd: 0,
                   }}
                 >
-                  <MartialArtsImage
+                  <FullWidthImage
                     src={mediaUrl}
-                    alt={`${type}_img`}
+                    alt={`${type} image`}
                     height={1400}
                     width={1600}
                   />

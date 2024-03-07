@@ -8,13 +8,15 @@ import {
   EmploymentDateAndDurationContainer,
   EmploymentDurationDisplay,
   EmploymentLogoImage,
-  EmploymentRoleAndDateContainer,
   EmploymentRoleAndTypeContainer,
 } from "../../../../src/components/employment";
-import { ImageBackground, PageBox } from "../../../../src/components/layout";
+import {
+  ImageBackground,
+  PageBox,
+  ResponsiveSpaceBetweenFlexBox,
+} from "../../../../src/components/layout";
 import { ProjectsGrid } from "../../../../src/components/projects";
-import { BulletPoints } from "../../../../src/components/text";
-import SkillChips from "../../../../src/components/text/SkillChips";
+import { BulletPoints, SkillChips } from "../../../../src/components/text";
 import { Urls } from "../../../../src/const/url";
 import {
   getEmployment,
@@ -108,7 +110,7 @@ export default async function EmploymentPage({
               />
             )}
           </Box>
-          <EmploymentRoleAndDateContainer>
+          <ResponsiveSpaceBetweenFlexBox>
             <EmploymentRoleAndTypeContainer>
               <Typography sx={{ m: 0, fontSize: "1.5rem" }}>
                 {employment.role}
@@ -129,7 +131,7 @@ export default async function EmploymentPage({
                 sx={{ m: 0, fontSize: "1.15rem" }}
               />
             </EmploymentDateAndDurationContainer>
-          </EmploymentRoleAndDateContainer>
+          </ResponsiveSpaceBetweenFlexBox>
           <Typography paragraph>{employment.description}</Typography>
           <BulletPoints points={employment.responsibilities} />
           <SkillChips skills={employment.skills} />
