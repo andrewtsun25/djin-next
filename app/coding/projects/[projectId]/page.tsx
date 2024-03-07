@@ -30,7 +30,7 @@ const bgUrl = `${Urls.AssetRoot}/projects/bg/matrix_bg.png`;
 export async function generateStaticParams(): Promise<ProjectPageParams[]> {
   return [
     { projectId: "adaCompliantPointOfSaleSurveyInvitations" },
-    { projectId: "areaguides" },
+    { projectId: "areaGuides" },
     { projectId: "bizcoinSurveysMobileAppV2" },
     { projectId: "bizcoinSurveysPanelistActivationApi" },
     { projectId: "bizcoinSurveysWebPortalV1" },
