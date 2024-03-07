@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import React from "react";
 
 import {
+  EmploymentBackButton,
   EmploymentDateAndDurationContainer,
   EmploymentDurationDisplay,
   EmploymentLogoImage,
@@ -85,6 +86,7 @@ export default async function EmploymentPage({
     <>
       <ImageBackground src={bgUrl} />
       <PageBox>
+        <EmploymentBackButton />
         <Box
           sx={{
             borderRadius: 5,
