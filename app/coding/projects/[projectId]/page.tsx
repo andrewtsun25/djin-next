@@ -30,7 +30,7 @@ const bgUrl = `${Urls.AssetRoot}/projects/bg/matrix_bg.png`;
 export async function generateStaticParams(): Promise<ProjectPageParams[]> {
   return [
     { projectId: "adaCompliantPointOfSaleSurveyInvitations" },
-    /* { projectId: "areaguides" },
+    { projectId: "areaguides" },
     { projectId: "bizcoinSurveysMobileAppV2" },
     { projectId: "bizcoinSurveysPanelistActivationApi" },
     { projectId: "bizcoinSurveysWebPortalV1" },
@@ -70,7 +70,7 @@ export async function generateStaticParams(): Promise<ProjectPageParams[]> {
     { projectId: "viTelex" },
     { projectId: "vocFeedbackBigCommercePlugin" },
     { projectId: "vocFeedbackShopifyPlugin" },
-    { projectId: "withoutabox" } */
+    { projectId: "withoutabox" },
   ];
 }
 
@@ -159,7 +159,7 @@ export default async function EmploymentPage({
             {getTimeIntervalAsString(startDate, endDate)}
           </Typography>
         </ResponsiveSpaceBetweenFlexBox>
-        <SkillChips skills={skills} />
+        <SkillChips skills={skills} sx={{ mb: 2 }} />
         <ProjectLinks
           projectUrls={projectUrls}
           sx={{ mt: 2, mb: 2 }}
