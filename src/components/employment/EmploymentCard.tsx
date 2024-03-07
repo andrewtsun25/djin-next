@@ -1,14 +1,13 @@
 "use client";
 
-import AppsIcon from "@mui/icons-material/Apps";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { Card, CardContent, CardMedia, Chip, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 import { Employment } from "../../types/api";
 import { DurationWithOrganizationCardHeader } from "../card";
-import { BulletPoints, IconLink } from "../text";
-import SkillChips from "../text/SkillChips";
+import { IconLink, SkillChips } from "../text";
 
 interface EmploymentCardProps {
   employment: Employment;
@@ -16,20 +15,20 @@ interface EmploymentCardProps {
 
 export const EmploymentCard: React.FC<EmploymentCardProps> = ({
   employment: {
+    id,
     endDate,
     startDate,
     role,
     organization,
     mediaUrl,
     description,
-    responsibilities,
     skills,
     employmentType,
   },
 }: EmploymentCardProps) => {
   const router = useRouter();
-  const onCardHeaderClick = () =>
-    router.push(`/coding/employment/${organization.id}`);
+  const employmentSpecificPageUrl = `/coding/employment/${id}`;
+  const routeToEmployment = () => router.push(employmentSpecificPageUrl);
   return (
     <Card variant="outlined">
       <DurationWithOrganizationCardHeader
@@ -38,24 +37,43 @@ export const EmploymentCard: React.FC<EmploymentCardProps> = ({
         startDate={startDate}
         endDate={endDate}
         logoUrl={organization.logoUrl}
-        onClick={onCardHeaderClick}
+        onClick={routeToEmployment}
         sx={{
           "&:hover": {
             cursor: "pointer",
           },
         }}
       />
-      <CardMedia image={mediaUrl} sx={{ height: 0, pt: "56.25%" }} />
+      <CardMedia
+        image={mediaUrl}
+        sx={{
+          height: 0,
+          pt: "56.25%",
+          "&:hover": {
+            cursor: "pointer",
+          },
+        }}
+        onClick={routeToEmployment}
+      />
       <CardContent>
         <Chip label={employmentType} size="small" sx={{ mb: 2 }} />
         <IconLink
-          icon={<AppsIcon />}
-          text="Projects"
-          href={`/coding/projects?organizations=${organization.id}`}
-          target="_self"
+          icon={<OpenInNewIcon />}
+          text="Learn More"
+          href={employmentSpecificPageUrl}
         />
-        <Typography paragraph>{description}</Typography>
-        <BulletPoints points={responsibilities} />
+        <Typography
+          paragraph
+          sx={{
+            mt: 2,
+            overflow: "hidden",
+            display: "-webkit-box",
+            WebkitBoxOrient: "vertical",
+            WebkitLineClamp: 8,
+          }}
+        >
+          {description}
+        </Typography>
         <SkillChips skills={skills} />
       </CardContent>
     </Card>

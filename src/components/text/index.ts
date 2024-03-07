@@ -5,3 +5,4 @@ export type {
   NextLinkComposedProps,
 } from "./NextLinkComposed";
 export { MuiNextLink, NextLinkComposed } from "./NextLinkComposed";
+export { SkillChips } from "./SkillChips";

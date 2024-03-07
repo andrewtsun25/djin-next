@@ -8,7 +8,7 @@ import { AsyncMapperFunction } from "../firestore";
 export const mapEmploymentDbEntityToEmployment: AsyncMapperFunction<
   EmploymentDbEntity,
   Employment
-> = async (dbEntity: EmploymentDbEntity): Promise<Employment> => {
+> = async (dbEntity: EmploymentDbEntity, id: string): Promise<Employment> => {
   const {
     organization: organizationRef,
     responsibilities,
@@ -31,6 +31,7 @@ export const mapEmploymentDbEntityToEmployment: AsyncMapperFunction<
     endDate: endDate?.toDate(),
     employmentType: employmentType as EmploymentType,
     responsibilities: responsibilities ?? [],
+    id,
     ...rest,
   };
 };

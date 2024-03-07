@@ -1,14 +1,14 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-import SkillChips, { SKILL_CHIP_ROLE } from "./SkillChips";
+import { SKILL_CHIP_ROLE,SkillChips } from "./SkillChips";
 
 describe("SkillChips", () => {
   it("renders an array of skills", () => {
     const inputSkills = ["skill1", "skill2", "skill3"];
     const { getAllByRole } = render(<SkillChips skills={inputSkills} />);
     const actualSkills = getAllByRole(SKILL_CHIP_ROLE).map(
-      (item) => item.textContent
+      (item) => item.textContent,
     );
     expect(actualSkills).toEqual(inputSkills);
   });

@@ -2,11 +2,10 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import { CardContent, Slide, Typography } from "@mui/material";
 import React from "react";
 
-import { BulletPoints } from "../../components/text";
 import { HbvResearchPaper } from "../../types/api";
 import { DurationWithOrganizationCardHeader } from "../card";
 import { FullWidthCardContainer } from "../layout";
-import SkillChips from "../text/SkillChips";
+import { BulletPoints, SkillChips } from "../text";
 import { HbvResearchCardIconLink } from "./styled";
 
 interface HbvResearchCardProps {

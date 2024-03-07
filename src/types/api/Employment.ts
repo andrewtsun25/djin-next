@@ -2,6 +2,7 @@ import { EmploymentType } from "./EmploymentType";
 import { Organization } from "./Organization";
 
 export interface Employment {
+  id: string;
   organization: Organization;
   mediaUrl: string;
   role: string;

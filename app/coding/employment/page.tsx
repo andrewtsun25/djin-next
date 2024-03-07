@@ -24,7 +24,7 @@ export default async function EmploymentsPage(): Promise<React.JSX.Element> {
         <Typography variant="h2" sx={{ mb: 2 }} textAlign="center">
           Coding Employment
         </Typography>
-        <Suspense fallback={<Loading message={"Loading employments..."} />}>
+        <Suspense fallback={<Loading message={"Loading employment..."} />}>
           <EmploymentSelection employments={employments} />
         </Suspense>
       </PageBox>
