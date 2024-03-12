@@ -89,7 +89,7 @@ export default async function MartialArtsPage({
           sx={{ backgroundColor: "rgba(255, 255, 255, .75)" }}
         >
           <Box display="flex" flexDirection="column" alignItems="center" mb={2}>
-            <Typography variant="h2" mb={2}>
+            <Typography variant="h2" mb={2} textAlign="center">
               {name}
             </Typography>
             <MartialArtsLogoImage
