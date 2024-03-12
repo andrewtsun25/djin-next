@@ -1,9 +1,8 @@
 const path = require("path");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    // swcPlugins: [["next-superjson-plugin", {}]],
-  },
+  experimental: {},
   reactStrictMode: true,
   images: {
     remotePatterns: [
