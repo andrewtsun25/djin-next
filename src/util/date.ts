@@ -1,6 +1,11 @@
 import { isNil } from "lodash";
 import { DateTime } from "luxon";
 
+/**
+ * Represents a time interval in string format
+ * @param startDate - The start date
+ * @param endDate - The end date. If omitted, will represent this value as 'Present'
+ */
 export function getTimeIntervalAsString(
   startDate: Date,
   endDate?: Date | null,
