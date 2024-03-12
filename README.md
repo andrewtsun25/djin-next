@@ -114,6 +114,8 @@ Prior to committing files to the repo, all files must pass the following:
 Do not test:
 - Constants (`src/const/`)
 - Next.js pages (`app/`)
+- Styled Components (i.e. components styled with MUI's [`styled` function](https://mui.com/system/styled/), 
+located in `src/components/**/styled/`)
 - Types (`src/types/`)
 - Themes (`src/themes/`)
 
