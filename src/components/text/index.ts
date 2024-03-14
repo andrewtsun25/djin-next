@@ -6,3 +6,4 @@ export type {
 } from "./NextLinkComposed";
 export { MuiNextLink, NextLinkComposed } from "./NextLinkComposed";
 export { SkillChips } from "./SkillChips";
+export { Title } from "./styled";

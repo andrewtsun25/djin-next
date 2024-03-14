@@ -58,7 +58,7 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
   return (
     <>
       <EmploymentPageHeaderContainer>
-        <Typography sx={{ mt: 2, mb: 2 }}>
+        <Typography textAlign="center" mt={2} mb={2}>
           My most current résumé can be obtained{" "}
           <EmploymentResumeLink
             href={resumeUrl}
@@ -73,7 +73,10 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
           selectedEmploymentTypes={selectedEmploymentTypes}
           setSelectedEmploymentTypes={setSelectedEmploymentTypes}
         />
-        <EmploymentDurationDisplay employments={selectedEmployments} />
+        <EmploymentDurationDisplay
+          sx={{ textAlign: "center" }}
+          employments={selectedEmployments}
+        />
       </EmploymentPageHeaderContainer>
       <EmploymentGrid employments={selectedEmployments} />
     </>

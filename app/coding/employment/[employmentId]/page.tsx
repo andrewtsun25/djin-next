@@ -16,7 +16,11 @@ import {
   ResponsiveSpaceBetweenFlexBox,
 } from "../../../../src/components/layout";
 import { ProjectsGrid } from "../../../../src/components/projects";
-import { BulletPoints, SkillChips } from "../../../../src/components/text";
+import {
+  BulletPoints,
+  SkillChips,
+  Title,
+} from "../../../../src/components/text";
 import { Urls } from "../../../../src/const/url";
 import {
   getEmployment,
@@ -98,9 +102,9 @@ export default async function EmploymentPage({
           mb={2}
         >
           <Box display="flex" flexDirection="column" alignItems="center">
-            <Typography variant="h2" mb={2} textAlign="center">
+            <Title variant="h2" mb={2} textAlign="center">
               {employment.organization.name}
-            </Typography>
+            </Title>
             {employment.organization.logoUrl && (
               <EmploymentLogoImage
                 src={employment.organization.logoUrl}
@@ -143,9 +147,9 @@ export default async function EmploymentPage({
           }}
           p={2}
         >
-          <Typography variant="h2" mb={2} textAlign="center">
+          <Title variant="h2" mb={2}>
             Projects
-          </Typography>
+          </Title>
           <ProjectsGrid projects={projects} />
         </Box>
       </PageBox>

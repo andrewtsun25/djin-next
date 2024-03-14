@@ -12,7 +12,7 @@ import {
   VerticallyCenteredPageContainer,
 } from "../../../src/components/layout";
 import { ReclaimerImage } from "../../../src/components/reclaimer";
-import { IconLink, MuiNextLink } from "../../../src/components/text";
+import { IconLink, MuiNextLink, Title } from "../../../src/components/text";
 import { Urls } from "../../../src/const/url";
 
 const bgUrl: string = `${Urls.AssetRoot}/reclaimer/bg/reclaimer_bg.png`;
@@ -31,9 +31,7 @@ export default function ReclaimerPage(): React.JSX.Element {
       <ImageBackground src={bgUrl} />
       <Fade in>
         <VerticallyCenteredPageContainer sx={{ color: lightPurple }}>
-          <Typography variant="h2" textAlign="center">
-            Reclaimer
-          </Typography>
+          <Title variant="h2">Reclaimer</Title>
           <Grow in>
             <ReclaimerImage
               src={gameImg}
