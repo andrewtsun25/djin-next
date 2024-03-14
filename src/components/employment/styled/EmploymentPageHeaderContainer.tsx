@@ -10,5 +10,6 @@ export const EmploymentPageHeaderContainer = styled(Box)(({ theme }) => ({
   backgroundColor: alpha("#fff", 0.75),
   marginTop: theme.spacing(2),
   marginBottom: theme.spacing(2),
+  padding: theme.spacing(2),
   borderRadius: 10,
 }));
