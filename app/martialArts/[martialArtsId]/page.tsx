@@ -13,6 +13,7 @@ import {
   MartialArtsStudioGridTile,
 } from "../../../src/components/martialArts";
 import { ResponsiveGrid } from "../../../src/components/responsiveGrid";
+import { Title } from "../../../src/components/text";
 import { Urls } from "../../../src/const/url";
 import { getMartialArtsStyle } from "../../../src/dal/api";
 import { MartialArtsStudio, MartialArtsStyle } from "../../../src/types/api";
@@ -89,9 +90,9 @@ export default async function MartialArtsPage({
           sx={{ backgroundColor: "rgba(255, 255, 255, .75)" }}
         >
           <Box display="flex" flexDirection="column" alignItems="center" mb={2}>
-            <Typography variant="h2" mb={2} textAlign="center">
+            <Title variant="h2" mb={2}>
               {name}
-            </Typography>
+            </Title>
             <MartialArtsLogoImage
               src={logoUrl}
               alt={`${type}_logo`}
@@ -142,9 +143,9 @@ export default async function MartialArtsPage({
               </Grow>
             </Grid>
           </Grid>
-          <Typography mt={2} mb={2} variant="h2" textAlign="center">
+          <Title mt={2} mb={2} variant="h2">
             Studios
-          </Typography>
+          </Title>
           {studios.length > 0 && (
             <ResponsiveGrid>
               {studios.map((studio: MartialArtsStudio) => (

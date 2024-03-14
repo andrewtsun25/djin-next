@@ -1,10 +1,10 @@
-import { Typography } from "@mui/material";
 import { Metadata } from "next";
 import React from "react";
 
 import { ImageBackground, PageContainer } from "../../../src/components/layout";
 import { MusicInstrumentTile } from "../../../src/components/music";
 import { ResponsiveGrid } from "../../../src/components/responsiveGrid";
+import { Title } from "../../../src/components/text";
 import { listMusicScores } from "../../../src/dal/api";
 import { MusicInstrument, MusicScore } from "../../../src/types/api";
 
@@ -21,9 +21,9 @@ export default async function ScoresPage(): Promise<React.JSX.Element> {
     <>
       <ImageBackground src={bgUrl} />
       <PageContainer>
-        <Typography variant="h3" mb={2} textAlign="center">
+        <Title variant="h3" mb={2}>
           Music Scores
-        </Typography>
+        </Title>
         {scores.length > 0 &&
           scores.map(({ name, trackUrl, musicInstruments }: MusicScore) =>
             musicInstruments.length < 1 ? null : (

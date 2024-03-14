@@ -28,7 +28,7 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
   setIsAppDrawerOpen,
 }: AppToolBarProps) => {
   const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
   return (
     <AppBar position={"sticky"}>
       <Toolbar>

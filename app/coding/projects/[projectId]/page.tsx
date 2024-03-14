@@ -15,6 +15,7 @@ import {
   BulletPoints,
   MuiNextLink,
   SkillChips,
+  Title,
 } from "../../../../src/components/text";
 import { Urls } from "../../../../src/const/url";
 import { getProject } from "../../../../src/dal/api";
@@ -124,9 +125,9 @@ export default async function EmploymentPage({
         maxWidth="lg"
         sx={{ backgroundColor: "rgba(255, 255, 255, .90)" }}
       >
-        <Typography variant="h2" mb={2} textAlign="center">
+        <Title variant="h2" mb={2} textAlign="center">
           {projectName}
-        </Typography>
+        </Title>
         <FullWidthImage
           src={mediaUrl}
           alt={`${projectName} image`}

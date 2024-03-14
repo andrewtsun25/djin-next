@@ -1,10 +1,10 @@
-import { Typography } from "@mui/material";
 import { Metadata } from "next";
 import React, { Suspense } from "react";
 
 import { EmploymentSelection } from "../../../src/components/employment";
 import { ImageBackground, PageBox } from "../../../src/components/layout";
 import { Loading } from "../../../src/components/loading";
+import { Title } from "../../../src/components/text";
 import { Urls } from "../../../src/const/url";
 import { listEmployments } from "../../../src/dal/api";
 import { Employment } from "../../../src/types/api";
@@ -21,9 +21,9 @@ export default async function EmploymentsPage(): Promise<React.JSX.Element> {
     <>
       <ImageBackground src={bgUrl} />
       <PageBox>
-        <Typography variant="h2" sx={{ mb: 2 }} textAlign="center">
+        <Title variant="h2" sx={{ mb: 2 }}>
           Coding Employment
-        </Typography>
+        </Title>
         <Suspense fallback={<Loading message={"Loading employment..."} />}>
           <EmploymentSelection employments={employments} />
         </Suspense>

@@ -1,9 +1,10 @@
 "use client";
 
-import { styled, Typography } from "@mui/material";
+import { styled } from "@mui/material";
 
-export const HbvTitle = styled(Typography)(({ theme }) => ({
+import { Title } from "../../text";
+
+export const HbvTitle = styled(Title)(({ theme }) => ({
   marginBottom: theme.spacing(2),
-  textAlign: "center",
   color: theme.palette.primary.contrastText,
 }));

@@ -105,8 +105,8 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
           </Grow>
           <ModuleInfoGrid modules={holisticOfficeModules} />
           <LinkSection
-            title="Documentation"
-            description="The documentation provided encompasses a range of project facets beyond the source code itself."
+            title="Documents"
+            description="The documents provided encompasses a range of project facets beyond the source code itself."
             links={documentationLinks}
             icon={<DescriptionIcon />}
           />
