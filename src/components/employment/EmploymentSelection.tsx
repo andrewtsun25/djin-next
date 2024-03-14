@@ -75,7 +75,7 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
         />
         <EmploymentDurationDisplay employments={selectedEmployments} />
       </EmploymentPageHeaderContainer>
-      <EmploymentGrid employments={employments} />
+      <EmploymentGrid employments={selectedEmployments} />
     </>
   );
 };
