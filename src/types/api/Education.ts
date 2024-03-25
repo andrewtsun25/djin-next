@@ -6,7 +6,6 @@ export interface Education {
   endDate?: Date;
   gpa: number;
   major: string;
-  minors?: string[];
   organization: Organization;
   residentialCollege?: string;
   startDate: Date;

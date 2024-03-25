@@ -8,6 +8,7 @@ import { DurationWithOrganizationCardHeader } from "../card";
 import { FullWidthCardContainer } from "../layout";
 import { IconLink } from "../text";
 
+export const syllabusUrlsContainerTestId = "syllabusUrlsContainer";
 interface EducationCardProps {
   education: Education;
 }
@@ -38,8 +39,8 @@ export const EducationCard: React.FC<EducationCardProps> = ({
         />
         <CardContent>
           {!isNil(syllabusUrls) && !isEmpty(syllabusUrls) && (
-            <Box mb={2}>
-              {map(syllabusUrls, (syllabusUrl, urlName) => (
+            <Box mb={2} data-testid={syllabusUrlsContainerTestId}>
+              {map(syllabusUrls, (syllabusUrl: string, urlName: string) => (
                 <IconLink
                   key={urlName}
                   icon={<SchoolIcon />}
