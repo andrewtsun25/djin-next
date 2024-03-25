@@ -27,7 +27,7 @@ export const DurationWithOrganizationCardHeader: React.FC<
   onClick,
   sx,
 }: DurationWithOrganizationCardHeaderProps) => {
-  const subheader = `${getTimeIntervalAsString(startDate, endDate)}: ${subtitle}`;
+  const subheader: string = `${getTimeIntervalAsString(startDate, endDate)}: ${subtitle}`;
   const baseAvatar: React.ReactNode = <Avatar alt={title} src={logoUrl} />;
   const avatar: React.ReactNode = endDate ? (
     baseAvatar
