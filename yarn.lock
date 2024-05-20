@@ -4214,7 +4214,7 @@ __metadata:
     luxon: "npm:^3.4.4"
     next: "npm:^14.2.3"
     node-mocks-http: "npm:^1.14.1"
-    nuqs: "npm:^1.17.2"
+    nuqs: "npm:^1.17.4"
     prettier: "npm:^3.2.5"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -7619,14 +7619,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuqs@npm:^1.17.2":
-  version: 1.17.2
-  resolution: "nuqs@npm:1.17.2"
+"nuqs@npm:^1.17.4":
+  version: 1.17.4
+  resolution: "nuqs@npm:1.17.4"
   dependencies:
     mitt: "npm:^3.0.1"
   peerDependencies:
     next: ">=13.4 <14.0.2 || ^14.0.3"
-  checksum: 10/26390678234ff08e6a8bb5a9a31c25d8b7496630a0d018147503c412c206aee22eae6d4daf485b7ba9cb32dbd4ef6973f4a558c97663222ee1c6cd734a4b887e
+  checksum: 10/342fce98ceafd211dd45384e39a804c10350c7cb775d6d54479a97fb7c1dab46e9a2df0bb435c5bf31331638d1ef2fbef5b705b92da6f1ebc2df61cc2abdbd41
   languageName: node
   linkType: hard
 
