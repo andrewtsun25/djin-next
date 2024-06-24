@@ -33,7 +33,7 @@
     "eslint-config-next": "^14.2.4",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "firebase": "^10.12.2",
-    "firebase-admin": "^12.1.1",
+    "firebase-admin": "^12.2.0",
     "lodash": "^4.17.21",
     "luxon": "^3.4.4",
     "next": "^14.2.4",
