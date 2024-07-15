@@ -1983,9 +1983,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material-nextjs@npm:^5.15.11":
-  version: 5.15.11
-  resolution: "@mui/material-nextjs@npm:5.15.11"
+"@mui/material-nextjs@npm:^5.16.1":
+  version: 5.16.1
+  resolution: "@mui/material-nextjs@npm:5.16.1"
   dependencies:
     "@babel/runtime": "npm:^7.23.9"
   peerDependencies:
@@ -2002,7 +2002,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 10/aecd561f04a471e2ee9382740ec7a0fb0b04d49a9d1fee5be919b54c98671186cc20885b5571d04ff198e06c3ee75449037a95d84cea829f78bcf5b2495376b7
+  checksum: 10/5eb37e070ff10498318d5b6df5884471d6df7285f3beec75a3585979ad5418f990b1a0d5d25cac5e4d2e0b2444d3cd755ee064f788050bdf588a820ca58dc6aa
   languageName: node
   linkType: hard
 
@@ -4180,7 +4180,7 @@ __metadata:
     "@fontsource/roboto": "npm:^5.0.13"
     "@mui/icons-material": "npm:^5.16.0"
     "@mui/material": "npm:^5.16.0"
-    "@mui/material-nextjs": "npm:^5.15.11"
+    "@mui/material-nextjs": "npm:^5.16.1"
     "@testing-library/jest-dom": "npm:^6.4.6"
     "@testing-library/react": "npm:^15.0.7"
     "@types/jest": "npm:^29.5.12"
