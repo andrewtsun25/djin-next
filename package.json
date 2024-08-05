@@ -22,7 +22,7 @@
     "@fontsource/roboto": "^5.0.13",
     "@mui/icons-material": "^5.16.5",
     "@mui/material": "^5.16.5",
-    "@mui/material-nextjs": "^5.16.4",
+    "@mui/material-nextjs": "^5.16.6",
     "@types/lodash": "^4.17.7",
     "@types/luxon": "^3.4.2",
     "@types/node": "22.0.0",
