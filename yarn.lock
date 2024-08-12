@@ -2643,7 +2643,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0, @types/node@npm:^20.10.3":
+"@types/node@npm:*, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0":
   version: 20.11.25
   resolution: "@types/node@npm:20.11.25"
   dependencies:
@@ -2658,6 +2658,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~6.13.0"
   checksum: 10/c2ac1340509646b6c673b27fae2a46e501a97e540e7221be4dd2e0be7a0f61efefb5bf3be8bedf2dbce245fa49cfc49bba77bce73fa3c4296d0d19521ced3222
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.0.1":
+  version: 22.2.0
+  resolution: "@types/node@npm:22.2.0"
+  dependencies:
+    undici-types: "npm:~6.13.0"
+  checksum: 10/2957c5c81f1a07a1210f28382adae65c11070c301e395fa819448516f1a2a710054b29e0ec7d8e28624afbcd90dae810403a497109545dea835b554fc76edf6c
   languageName: node
   linkType: hard
 
@@ -4176,7 +4185,7 @@ __metadata:
     eslint-plugin-prettier: "npm:^5.2.1"
     eslint-plugin-simple-import-sort: "npm:^12.1.1"
     firebase: "npm:^10.12.5"
-    firebase-admin: "npm:^12.3.0"
+    firebase-admin: "npm:^12.3.1"
     husky: "npm:^9.1.4"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
@@ -5035,16 +5044,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"firebase-admin@npm:^12.3.0":
-  version: 12.3.0
-  resolution: "firebase-admin@npm:12.3.0"
+"firebase-admin@npm:^12.3.1":
+  version: 12.3.1
+  resolution: "firebase-admin@npm:12.3.1"
   dependencies:
     "@fastify/busboy": "npm:^3.0.0"
     "@firebase/database-compat": "npm:^1.0.2"
     "@firebase/database-types": "npm:^1.0.0"
     "@google-cloud/firestore": "npm:^7.7.0"
     "@google-cloud/storage": "npm:^7.7.0"
-    "@types/node": "npm:^20.10.3"
+    "@types/node": "npm:^22.0.1"
     farmhash-modern: "npm:^1.1.0"
     jsonwebtoken: "npm:^9.0.0"
     jwks-rsa: "npm:^3.1.0"
@@ -5055,7 +5064,7 @@ __metadata:
       optional: true
     "@google-cloud/storage":
       optional: true
-  checksum: 10/9c7b8a3fbbb6f22621f7adfa25ed8cdac4e9188fc435fc89d302327af2bea76ac7f1968859acdbe16a3c7d3f6832142251112819bb178d01dcd1b225315ecc84
+  checksum: 10/d000b45ba27121b649184db7ed59028413105f86717d30546b164d599b4ca60ff4324f3f707682e2cad5c525cebc33b6244279da44097ba9fb14611d28ab2255
   languageName: node
   linkType: hard
 
