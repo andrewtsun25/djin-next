@@ -1341,10 +1341,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/roboto@npm:^5.0.14":
-  version: 5.0.14
-  resolution: "@fontsource/roboto@npm:5.0.14"
-  checksum: 10/3feff6b8fa0b423b74776f772151ab5b4f0e0cdec002df5f6990e6fa1df65fd43fceea4cdd26ae85f8001daa60faee87bc7c38fab8f331c198d9ec27398874e1
+"@fontsource/roboto@npm:^5.0.15":
+  version: 5.0.15
+  resolution: "@fontsource/roboto@npm:5.0.15"
+  checksum: 10/99e1aaf6b1d7cda566c3eb03b44f5b6250d27d2e49ba5364beae3295eaa422983bc0e799aad71ba81958cf7ce0eb0c237d50f266166e930d04d9178a8d9c7295
   languageName: node
   linkType: hard
 
@@ -4185,7 +4185,7 @@ __metadata:
     "@emotion/react": "npm:^11.13.3"
     "@emotion/styled": "npm:^11.13.0"
     "@fontsource/pirata-one": "npm:^5.0.14"
-    "@fontsource/roboto": "npm:^5.0.14"
+    "@fontsource/roboto": "npm:^5.0.15"
     "@mui/icons-material": "npm:^6.0.1"
     "@mui/material": "npm:^5.16.7"
     "@mui/material-nextjs": "npm:^5.16.6"
