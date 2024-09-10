@@ -2000,18 +2000,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material-nextjs@npm:^5.16.6":
-  version: 5.16.6
-  resolution: "@mui/material-nextjs@npm:5.16.6"
+"@mui/material-nextjs@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "@mui/material-nextjs@npm:6.0.2"
   dependencies:
-    "@babel/runtime": "npm:^7.23.9"
+    "@babel/runtime": "npm:^7.25.0"
   peerDependencies:
     "@emotion/cache": ^11.11.0
+    "@emotion/react": ^11.11.4
     "@emotion/server": ^11.11.0
-    "@mui/material": ^5.0.0
-    "@types/react": ^17.0.0 || ^18.0.0
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
     next: ^13.0.0 || ^14.0.0
-    react: ^17.0.0 || ^18.0.0
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@emotion/cache":
       optional: true
@@ -2019,7 +2019,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 10/bb58bd301944a0e8569ffc06e62f546c0aa89b025cd563030f4e7fba20b668d3b215a8ebf1c12bbf0df0449674414908e708a504c4dfa45345f9b8cd33f10e55
+  checksum: 10/56d4f1acb75b8feb9806f0b4fb8741a03c252a7670e92043a6b11666682a6458e9b904cb007fabb2c87978c1cd9dc9de1d7c177c9b6a67dcb5905cec8cd694d7
   languageName: node
   linkType: hard
 
@@ -4268,7 +4268,7 @@ __metadata:
     "@fontsource/roboto": "npm:^5.0.15"
     "@mui/icons-material": "npm:^6.0.2"
     "@mui/material": "npm:^5.16.7"
-    "@mui/material-nextjs": "npm:^5.16.6"
+    "@mui/material-nextjs": "npm:^6.0.2"
     "@testing-library/jest-dom": "npm:^6.5.0"
     "@testing-library/react": "npm:^16.0.1"
     "@types/jest": "npm:^29.5.12"
