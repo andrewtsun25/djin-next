@@ -20,7 +20,7 @@
     "@emotion/styled": "^11.13.0",
     "@fontsource/pirata-one": "^5.0.15",
     "@fontsource/roboto": "^5.0.15",
-    "@mui/icons-material": "^6.0.2",
+    "@mui/icons-material": "^6.1.0",
     "@mui/material": "^5.16.7",
     "@mui/material-nextjs": "^5.16.6",
     "@types/lodash": "^4.17.7",
