@@ -4281,7 +4281,7 @@ __metadata:
     luxon: "npm:^3.5.0"
     next: "npm:^14.2.15"
     node-mocks-http: "npm:^1.16.1"
-    nuqs: "npm:^1.20.0"
+    nuqs: "npm:^2.0.4"
     prettier: "npm:^3.3.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -7600,14 +7600,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuqs@npm:^1.20.0":
-  version: 1.20.0
-  resolution: "nuqs@npm:1.20.0"
+"nuqs@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "nuqs@npm:2.0.4"
   dependencies:
     mitt: "npm:^3.0.1"
   peerDependencies:
-    next: ">=13.4 <14.0.2 || ^14.0.3"
-  checksum: 10/1b308b7b74d7b79a057f01e09bd2c3814125d3879c3a919c8e7257e33272f315bc945e1293fb8b9fd725e8e19db7fe06da6060f8c2262a0302253c6d0bb94534
+    "@remix-run/react": ">= 2"
+    next: ">= 14.2.0"
+    react: ">= 18.2.0"
+    react-router-dom: ">= 6"
+  peerDependenciesMeta:
+    "@remix-run/react":
+      optional: true
+    next:
+      optional: true
+    react-router-dom:
+      optional: true
+  checksum: 10/4ab0ef2c57e4fdce9860075546b355ac04ac1a78202e9b8faf79c24adabf9a5d8544139d9364a394fe75624f0cdb974ccb2d3c00c62ffcdeb4af5790df201a0e
   languageName: node
   linkType: hard
 
