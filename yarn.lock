@@ -1966,19 +1966,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/icons-material@npm:^6.1.6":
-  version: 6.1.6
-  resolution: "@mui/icons-material@npm:6.1.6"
+"@mui/icons-material@npm:^6.1.8":
+  version: 6.1.8
+  resolution: "@mui/icons-material@npm:6.1.8"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
   peerDependencies:
-    "@mui/material": ^6.1.6
+    "@mui/material": ^6.1.8
     "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
     react: ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10/c26b597382d9e1abbf9b73a5efe0edf385b52040828c5700cba26443b705b27e5a63236cb8abe68247c9829025f71746fca663356d9d6d32c4c1499279a0b797
+  checksum: 10/fe816453a1ba212b94ed54d87072243ce0b68542a8f2dc682b1ac3f09c8380c0e78aa1908b65b8bbe045b79f5c6d204e0fa78337543cbe3e96beb18b82d28d68
   languageName: node
   linkType: hard
 
@@ -4227,7 +4227,7 @@ __metadata:
     "@emotion/styled": "npm:^11.13.0"
     "@fontsource/pirata-one": "npm:^5.1.0"
     "@fontsource/roboto": "npm:^5.1.0"
-    "@mui/icons-material": "npm:^6.1.6"
+    "@mui/icons-material": "npm:^6.1.8"
     "@mui/material": "npm:^5.16.7"
     "@mui/material-nextjs": "npm:^5.16.6"
     "@testing-library/jest-dom": "npm:^6.6.3"
