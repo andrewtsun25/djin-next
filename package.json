@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.13.1",
-    "@emotion/react": "^11.13.5",
+    "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.13.5",
     "@fontsource/pirata-one": "^5.1.0",
     "@fontsource/roboto": "^5.1.0",
