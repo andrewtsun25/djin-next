@@ -4262,7 +4262,7 @@ __metadata:
     lodash: "npm:^4.17.21"
     luxon: "npm:^3.5.0"
     next: "npm:^14.2.15"
-    node-mocks-http: "npm:^1.16.1"
+    node-mocks-http: "npm:^1.16.2"
     nuqs: "npm:^2.2.3"
     prettier: "npm:^3.4.2"
     react: "npm:^18.3.1"
@@ -7522,9 +7522,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-mocks-http@npm:^1.16.1":
-  version: 1.16.1
-  resolution: "node-mocks-http@npm:1.16.1"
+"node-mocks-http@npm:^1.16.2":
+  version: 1.16.2
+  resolution: "node-mocks-http@npm:1.16.2"
   dependencies:
     accepts: "npm:^1.3.7"
     content-disposition: "npm:^0.5.3"
@@ -7544,7 +7544,7 @@ __metadata:
       optional: true
     "@types/node":
       optional: true
-  checksum: 10/6f45f752fdabd2669469c113e1df7123ec011877f12fd5179736591e6df4152fa07b550d72ada9768552580d9609cad5eb117b7b50409ae641ee26dd36cfd11b
+  checksum: 10/63269343071c389795c418468a167d92aa13eda3936aaa79f8159025e01502ec982469fd11f04395b7ad2241d2f4fd65ca84eac29973c4d941d86a4ba2e56f90
   languageName: node
   linkType: hard
 
