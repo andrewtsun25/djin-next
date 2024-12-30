@@ -1311,10 +1311,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/pirata-one@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "@fontsource/pirata-one@npm:5.1.0"
-  checksum: 10/107d131eec80eddb0e72a2c1471568ce4540504a7cff9fe3614f8e7dadbd04124b7d99fd8d03a4c27143c891129c41f07edf8883e7fd63c055dbe4f9569d48ad
+"@fontsource/pirata-one@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "@fontsource/pirata-one@npm:5.1.1"
+  checksum: 10/39c46603cd4d987234652702a0578b049dcc1732d832e06fbecac854f5ada73e7aebf1376cce78042b31db788b5d133bb558d263abc8e41341d86447e0bb147b
   languageName: node
   linkType: hard
 
@@ -4213,7 +4213,7 @@ __metadata:
     "@emotion/cache": "npm:^11.14.0"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.0"
-    "@fontsource/pirata-one": "npm:^5.1.0"
+    "@fontsource/pirata-one": "npm:^5.1.1"
     "@fontsource/roboto": "npm:^5.1.1"
     "@mui/icons-material": "npm:^6.3.0"
     "@mui/material": "npm:^5.16.7"
