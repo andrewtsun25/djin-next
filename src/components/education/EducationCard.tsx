@@ -50,23 +50,23 @@ export const EducationCard: React.FC<EducationCardProps> = ({
             </Box>
           )}
           {department && (
-            <Typography variant="body1">
+            <Typography>
               <b>Department:</b> {department}
             </Typography>
           )}
           {residentialCollege && (
-            <Typography variant="body1">
+            <Typography>
               <b>Residential College:</b> {residentialCollege}
             </Typography>
           )}
-          <Typography variant="body1">
+          <Typography>
             <b>GPA:</b> {gpa.toFixed(3)}{" "}
             <i>(Transcript is available upon request.)</i>
           </Typography>
-          <Typography variant="body1">{description}</Typography>
+          <Typography>{description}</Typography>
           {studentOrganizations.length > 0 && (
             <>
-              <Typography variant="body1">
+              <Typography>
                 During my time at {organizationName}, I was involved in the
                 following student organizations:
               </Typography>
