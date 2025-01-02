@@ -31,7 +31,7 @@ const LinkSection: React.FC<LinkSectionProps> = ({
       <HolisticOfficeSectionHeader variant="h2">
         {title}
       </HolisticOfficeSectionHeader>
-      <Typography component="p" sx={{ alignSelf: "flex-start" }}>
+      <Typography variant="body1" sx={{ alignSelf: "flex-start" }}>
         {description}
       </Typography>
       <LinkList links={links} icon={icon} />

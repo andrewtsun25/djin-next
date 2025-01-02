@@ -42,7 +42,6 @@ export const HbvResearchCard: React.FC<HbvResearchCardProps> = ({
             target="_blank"
           />
           <Typography
-            component="p"
             sx={{
               mt: 2,
             }}

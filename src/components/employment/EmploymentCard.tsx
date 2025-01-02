@@ -63,13 +63,13 @@ export const EmploymentCard: React.FC<EmploymentCardProps> = ({
           href={employmentSpecificPageUrl}
         />
         <Typography
-          paragraph
           sx={{
             mt: 2,
             overflow: "hidden",
             display: "-webkit-box",
             WebkitBoxOrient: "vertical",
             WebkitLineClamp: 8,
+            mb: 2,
           }}
         >
           {description}
