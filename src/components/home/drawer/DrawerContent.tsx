@@ -28,7 +28,11 @@ import { HyperLinkListItem } from "./HyperLinkListItem";
 
 export const DrawerContent: React.FC = () => {
   return (
-    <Box height="100%" overflow="auto">
+    (<Box
+      sx={{
+        height: "100%",
+        overflow: "auto"
+      }}>
       <List>
         <CollapsibleList icon={<CodeIcon />} name="Coding">
           <CollapsibleListHyperLinkListItem
@@ -141,6 +145,6 @@ export const DrawerContent: React.FC = () => {
           target="_blank"
         /> */}
       </List>
-    </Box>
+    </Box>)
   );
 };

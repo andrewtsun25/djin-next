@@ -68,7 +68,7 @@ export default async function HolisticOfficePage(): Promise<React.JSX.Element> {
               width={1000}
             />
           </Grow>
-          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+          <Typography component="p" sx={{ alignSelf: "flex-start" }}>
             <MuiNextLink
               href={holisticOfficeUrl}
               target="_blank"

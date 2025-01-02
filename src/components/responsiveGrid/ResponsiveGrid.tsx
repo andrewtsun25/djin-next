@@ -34,7 +34,7 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
   const cols: number = isMedium ? 4 : isSmall ? 2 : 1;
   const titleVariant: TypographyVariant = isMedium ? "h4" : "h5";
   return (
-    <Box sx={sx}>
+    (<Box sx={sx}>
       <ImageList
         cols={cols}
         gap={isSmall ? 10 : 20}
@@ -49,13 +49,14 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
           <ImageListItem cols={cols} style={{ height: "auto" }}>
             <Typography
               paragraph
-              mt={0.25}
-              mr="auto"
-              mb={0.25}
-              ml={0.25}
-              textAlign="center"
               variant={titleVariant}
-            >
+              sx={{
+                mt: 0.25,
+                mr: "auto",
+                mb: 0.25,
+                ml: 0.25,
+                textAlign: "center"
+              }}>
               {title}
             </Typography>
           </ImageListItem>
@@ -71,6 +72,6 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
         )}
         {children}
       </ImageList>
-    </Box>
+    </Box>)
   );
 };

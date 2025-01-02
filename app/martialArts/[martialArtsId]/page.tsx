@@ -105,11 +105,11 @@ export default async function MartialArtsPage({
           </Box>
           <Grid container spacing={2} whiteSpace="pre-line" mb={2}>
             <Grid item xs={12} lg={6}>
-              <Typography paragraph fontStyle="italic">
+              <Typography component="p" fontStyle="italic">
                 {description}
               </Typography>
               {biography.map((paragraph: string, index: number) => (
-                <Typography paragraph key={index}>
+                <Typography component="p" key={index}>
                   {paragraph}
                 </Typography>
               ))}

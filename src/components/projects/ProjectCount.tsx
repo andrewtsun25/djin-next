@@ -14,5 +14,9 @@ export const ProjectCount: React.FC<ProjectCountProps> = ({
   const projectCountStr: string = `${projectCount} ${
     projectCount === 1 ? "project" : "projects"
   } selected`;
-  return <Typography m={2}>{projectCountStr}</Typography>;
+  return (
+    <Typography sx={{
+      m: 2
+    }}>{projectCountStr}</Typography>
+  );
 };

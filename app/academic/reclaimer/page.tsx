@@ -40,11 +40,11 @@ export default function ReclaimerPage(): React.JSX.Element {
               height={562}
             />
           </Grow>
-          <Typography paragraph fontWeight="bold">
+          <Typography component="p" fontWeight="bold">
             Update: Reclaimer is no longer accessible for Android on the Google
             Play Store due to the absence of ongoing development efforts.
           </Typography>
-          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+          <Typography component="p" sx={{ alignSelf: "flex-start" }}>
             <MuiNextLink
               href={reclaimerWebsite}
               target="_blank"
@@ -61,7 +61,7 @@ export default function ReclaimerPage(): React.JSX.Element {
             weapons and items scattered in the environment, engaging in combat
             with medieval adversaries hindering their progress.
           </Typography>
-          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+          <Typography component="p" sx={{ alignSelf: "flex-start" }}>
             Combat mechanics are reminiscent of Infinity Blade-style gameplay.
             Players execute attacks in four directions through single-finger
             swipes. Periodically, enemy attacks are indicated by arrows
@@ -71,12 +71,12 @@ export default function ReclaimerPage(): React.JSX.Element {
             &ldquo;perfect&rdquo; blocks trigger potent counterattacks against
             foes.
           </Typography>
-          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+          <Typography component="p" sx={{ alignSelf: "flex-start" }}>
             Coins can be acquired by exploring the environment, opening chests,
             and defeating enemies. These coins are then utilized to purchase
             stronger items from the dungeon&apos;s shop.
           </Typography>
-          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+          <Typography component="p" sx={{ alignSelf: "flex-start" }}>
             My role within the team is that of a data analyst. I implemented
             analytics hooks for various in-game events (such as combat
             encounters, combat maneuvers, item transactions, etc.) to channel
@@ -86,7 +86,7 @@ export default function ReclaimerPage(): React.JSX.Element {
             class instructors and my development team regarding potential new
             features to implement or existing features to refine.
           </Typography>
-          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+          <Typography component="p" sx={{ alignSelf: "flex-start" }}>
             Moreover, I contributed to the multimedia aspects of the project by
             assisting in the development of the video used in the trailer and
             composing the music for the soundtrack. Additionally, I aided in

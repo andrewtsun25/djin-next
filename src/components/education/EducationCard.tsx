@@ -38,7 +38,7 @@ export const EducationCard: React.FC<EducationCardProps> = ({
         />
         <CardContent>
           {!isNil(syllabusUrls) && !isEmpty(syllabusUrls) && (
-            <Box mb={2}>
+            <Box sx={{ mb: 2 }}>
               {map(syllabusUrls, (syllabusUrl, urlName) => (
                 <IconLink
                   key={urlName}
@@ -50,23 +50,23 @@ export const EducationCard: React.FC<EducationCardProps> = ({
             </Box>
           )}
           {department && (
-            <Typography paragraph>
+            <Typography component="p">
               <b>Department:</b> {department}
             </Typography>
           )}
           {residentialCollege && (
-            <Typography paragraph>
+            <Typography component="p">
               <b>Residential College:</b> {residentialCollege}
             </Typography>
           )}
-          <Typography paragraph>
+          <Typography component="p">
             <b>GPA:</b> {gpa.toFixed(3)}{" "}
             <i>(Transcript is available upon request.)</i>
           </Typography>
-          <Typography paragraph>{description}</Typography>
+          <Typography component="p">{description}</Typography>
           {studentOrganizations.length > 0 && (
             <>
-              <Typography paragraph>
+              <Typography component="p">
                 During my time at {organizationName}, I was involved in the
                 following student organizations:
               </Typography>

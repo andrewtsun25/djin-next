@@ -20,6 +20,8 @@ export const EmploymentGrid: React.FC<EmploymentGridProps> = ({
       ))}
     </Grid>
   ) : (
-    <Typography textAlign="center">No employments to display.</Typography>
+    <Typography sx={{
+      textAlign: "center"
+    }}>No employments to display.</Typography>
   );
 };

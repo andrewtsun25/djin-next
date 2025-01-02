@@ -34,7 +34,7 @@ export const DesktopDrawer: React.FC<AppDrawerProps> = ({
   const handleClose = () => setIsAppDrawerOpen(false);
 
   return (
-    <SwipeableDrawer
+    (<SwipeableDrawer
       sx={{
         "& .MuiDrawer-paper": {
           width: drawerWidth,
@@ -49,12 +49,13 @@ export const DesktopDrawer: React.FC<AppDrawerProps> = ({
       onOpen={handleOpen}
     >
       <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="flex-end"
-        py={0.75}
-        pr={1.5}
-      >
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          py: 0.75,
+          pr: 1.5
+        }}>
         <Button role={CLOSE_BUTTON_ROLE} onClick={handleClose}>
           {isLTR ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           <Typography sx={{ ml: 0.5 }}>Close</Typography>
@@ -62,6 +63,6 @@ export const DesktopDrawer: React.FC<AppDrawerProps> = ({
       </Box>
       <Divider />
       <DrawerContent />
-    </SwipeableDrawer>
+    </SwipeableDrawer>)
   );
 };

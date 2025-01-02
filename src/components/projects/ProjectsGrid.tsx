@@ -19,6 +19,8 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({
       ))}
     </Grid>
   ) : (
-    <Typography textAlign="center">No projects to display.</Typography>
+    <Typography sx={{
+      textAlign: "center"
+    }}>No projects to display.</Typography>
   );
 };

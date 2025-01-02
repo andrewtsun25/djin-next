@@ -170,7 +170,7 @@ export default async function EmploymentPage({
             Disclaimer: {disclaimer}
           </Typography>
         )}
-        <Typography paragraph>{description}</Typography>
+        <Typography component="p">{description}</Typography>
         <BulletPoints points={responsibilities} />
       </PageContainer>
     </>
