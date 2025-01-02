@@ -3,6 +3,7 @@ import "@fontsource/pirata-one";
 
 import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import React from "react";
 
 import { SiteLayout } from "../src/components/layout";
@@ -50,7 +51,9 @@ export default function rootLayout({ children }: RootLayoutProps) {
       <body>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={djinTheme}>
-            <SiteLayout>{children}</SiteLayout>
+            <NuqsAdapter>
+              <SiteLayout>{children}</SiteLayout>
+            </NuqsAdapter>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
