@@ -36,7 +36,7 @@ export async function generateStaticParams(): Promise<MartialArtsPageParams[]> {
 
 type GenerateMetadataProps = {
   params: MartialArtsPageParams;
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export async function generateMetadata({
@@ -56,11 +56,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function MartialArtsPage({
-  params,
-}: {
-  params: MartialArtsPageParams;
+export default async function MartialArtsPage(props: {
+  params: Promise<MartialArtsPageParams>;
 }): Promise<React.JSX.Element> {
+  const params = await props.params;
   const martialArtsStyle: MartialArtsStyle | null = await getMartialArtsStyle(
     params.martialArtsId,
   );
