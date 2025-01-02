@@ -136,7 +136,7 @@ export default async function EmploymentPage({
               />
             </EmploymentDateAndDurationContainer>
           </ResponsiveSpaceBetweenFlexBox>
-          <Typography paragraph>{employment.description}</Typography>
+          <Typography>{employment.description}</Typography>
           <BulletPoints points={employment.responsibilities} />
           <SkillChips skills={employment.skills} />
         </Box>

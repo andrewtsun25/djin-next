@@ -55,30 +55,33 @@ export const EmploymentSelection: React.FC<EmploymentSelectionProps> = ({
     [selectedEmploymentTypes, employments],
   );
 
-  return (
-    <>
-      <EmploymentPageHeaderContainer>
-        <Typography textAlign="center" mt={2} mb={2}>
-          My most current résumé can be obtained{" "}
-          <EmploymentResumeLink
-            href={resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            here
-          </EmploymentResumeLink>
-          .
-        </Typography>
-        <EmploymentTypeSelect
-          selectedEmploymentTypes={selectedEmploymentTypes}
-          setSelectedEmploymentTypes={setSelectedEmploymentTypes}
-        />
-        <EmploymentDurationDisplay
-          sx={{ textAlign: "center" }}
-          employments={selectedEmployments}
-        />
-      </EmploymentPageHeaderContainer>
-      <EmploymentGrid employments={selectedEmployments} />
-    </>
-  );
+  return (<>
+    <EmploymentPageHeaderContainer>
+      <Typography
+        sx={{
+          textAlign: "center",
+          mt: 2,
+          mb: 2
+        }}>
+        My most current résumé can be obtained{" "}
+        <EmploymentResumeLink
+          href={resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          here
+        </EmploymentResumeLink>
+        .
+      </Typography>
+      <EmploymentTypeSelect
+        selectedEmploymentTypes={selectedEmploymentTypes}
+        setSelectedEmploymentTypes={setSelectedEmploymentTypes}
+      />
+      <EmploymentDurationDisplay
+        sx={{ textAlign: "center" }}
+        employments={selectedEmployments}
+      />
+    </EmploymentPageHeaderContainer>
+    <EmploymentGrid employments={selectedEmployments} />
+  </>);
 };

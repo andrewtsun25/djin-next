@@ -22,13 +22,16 @@ const LinkSection: React.FC<LinkSectionProps> = ({
   icon,
 }: LinkSectionProps) => {
   return (
-    <Box textAlign="left" width="100%">
+    <Box
+      sx={{
+        textAlign: "left",
+        width: "100%",
+      }}
+    >
       <HolisticOfficeSectionHeader variant="h2">
         {title}
       </HolisticOfficeSectionHeader>
-      <Typography paragraph sx={{ alignSelf: "flex-start" }}>
-        {description}
-      </Typography>
+      <Typography sx={{ alignSelf: "flex-start" }}>{description}</Typography>
       <LinkList links={links} icon={icon} />
     </Box>
   );

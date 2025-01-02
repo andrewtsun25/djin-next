@@ -48,13 +48,14 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
         {title && (
           <ImageListItem cols={cols} style={{ height: "auto" }}>
             <Typography
-              paragraph
-              mt={0.25}
-              mr="auto"
-              mb={0.25}
-              ml={0.25}
-              textAlign="center"
               variant={titleVariant}
+              sx={{
+                mt: 0.25,
+                mr: "auto",
+                mb: 0.25,
+                ml: 0.25,
+                textAlign: "center",
+              }}
             >
               {title}
             </Typography>

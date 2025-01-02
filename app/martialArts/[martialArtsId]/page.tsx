@@ -1,4 +1,4 @@
-import { Box, Fade, Grid, Grow, Typography } from "@mui/material";
+import { Box, Fade, Grid2, Grow, Typography } from "@mui/material";
 import { isNil } from "lodash";
 import { Metadata } from "next";
 import React from "react";
@@ -89,8 +89,15 @@ export default async function MartialArtsPage({
           maxWidth="lg"
           sx={{ backgroundColor: "rgba(255, 255, 255, .75)" }}
         >
-          <Box display="flex" flexDirection="column" alignItems="center" mb={2}>
-            <Title variant="h2" mb={2}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              mb: 2,
+            }}
+          >
+            <Title variant="h2" sx={{ mb: 2 }}>
               {name}
             </Title>
             <MartialArtsLogoImage
@@ -99,22 +106,25 @@ export default async function MartialArtsPage({
               height={200}
               width={200}
             />
-            <Typography sx={{ fontSize: "1.5rem" }} mt={2}>
+            <Typography sx={{ fontSize: "1.5rem", mt: 2 }}>
               Exp Level: {expLevel}
             </Typography>
           </Box>
-          <Grid container spacing={2} whiteSpace="pre-line" mb={2}>
-            <Grid item xs={12} lg={6}>
-              <Typography paragraph fontStyle="italic">
+          <Grid2 container spacing={2} sx={{ mb: 2, whiteSpace: "pre-line" }}>
+            <Grid2 size={{ xs: 12, lg: 6 }}>
+              <Typography sx={{ mt: 2, mb: 2, fontStyle: "italic" }}>
                 {description}
               </Typography>
               {biography.map((paragraph: string, index: number) => (
-                <Typography paragraph key={index}>
+                <Typography sx={{ mt: 2, mb: 2 }} key={index}>
                   {paragraph}
                 </Typography>
               ))}
-            </Grid>
-            <Grid item xs={12} lg={6} display="flex" alignItems="center">
+            </Grid2>
+            <Grid2
+              size={{ xs: 12, lg: 6 }}
+              sx={{ display: "flex", alignItems: "center" }}
+            >
               <Grow in>
                 <Box
                   component="figure"
@@ -134,16 +144,15 @@ export default async function MartialArtsPage({
                   <Typography
                     component="figcaption"
                     variant="subtitle1"
-                    align="center"
-                    mt={1}
+                    sx={{ align: "center", mt: 1 }}
                   >
                     {mediaCaption}
                   </Typography>
                 </Box>
               </Grow>
-            </Grid>
-          </Grid>
-          <Title mt={2} mb={2} variant="h2">
+            </Grid2>
+          </Grid2>
+          <Title sx={{ mt: 2, mb: 2 }} variant="h2">
             Studios
           </Title>
           {studios.length > 0 && (

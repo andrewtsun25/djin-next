@@ -13,7 +13,12 @@ export const SkillChips: React.FC<SkillChipsProps> = ({
   sx,
 }: SkillChipsProps) => {
   return skills.length < 1 ? null : (
-    <Box display="flex" justifyContent="left" flexWrap="wrap" sx={sx}>
+    <Box
+      sx={[{
+        display: "flex",
+        justifyContent: "left",
+        flexWrap: "wrap"
+      }, ...(Array.isArray(sx) ? sx : [sx])]}>
       {skills.map((skill) => (
         <Chip
           label={skill}

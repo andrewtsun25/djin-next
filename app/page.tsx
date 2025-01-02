@@ -30,7 +30,13 @@ export default function HomePage() {
         left="0"
         top="0"
       >
-        <Box display="flex" flexDirection="column" alignItems="center">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <HomeTitleTypography variant="h1">d.jin</HomeTitleTypography>
           <HomeDescriptionTypography variant="h4">
             Coder. DJ. Music Producer. Martial Artist.

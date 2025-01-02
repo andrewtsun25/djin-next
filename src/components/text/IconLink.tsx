@@ -15,13 +15,21 @@ export const IconLink: React.FC<IconLinkProps> = ({
   ...linkProps
 }: IconLinkProps) => {
   return (
-    <MuiNextLink {...linkProps}>
-      <Box display="flex" alignItems="center" mb={1} mt={1}>
+    (<MuiNextLink {...linkProps}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          mb: 1,
+          mt: 1
+        }}>
         {icon}
-        <Typography component="span" ml={2}>
+        <Typography component="span" sx={{
+          ml: 2
+        }}>
           {text}
         </Typography>
       </Box>
-    </MuiNextLink>
+    </MuiNextLink>)
   );
 };

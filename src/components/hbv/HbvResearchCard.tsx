@@ -41,7 +41,11 @@ export const HbvResearchCard: React.FC<HbvResearchCardProps> = ({
             icon={<DescriptionIcon />}
             target="_blank"
           />
-          <Typography mt={2} paragraph>
+          <Typography
+            sx={{
+              mt: 2,
+            }}
+          >
             {description}
           </Typography>
           <BulletPoints points={responsibilities} />

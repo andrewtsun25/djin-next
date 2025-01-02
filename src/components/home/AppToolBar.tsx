@@ -30,7 +30,7 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
   return (
-    <AppBar position={"sticky"}>
+    (<AppBar position={"sticky"}>
       <Toolbar>
         {isDesktop && (
           <IconButton
@@ -45,13 +45,17 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
           </IconButton>
         )}
         <Link href="/" style={{ textDecoration: "none" }}>
-          <Box display="flex" alignItems="center">
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center"
+            }}>
             <Image src={logo} alt="d.jin website logo" height={50} width={50} />
             <HomeLinkText variant="h5">d.jin</HomeLinkText>
           </Box>
         </Link>
       </Toolbar>
-    </AppBar>
+    </AppBar>)
   );
 };
 

@@ -63,8 +63,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           href={projectSpecificPageUrl}
         />
         <Typography
-          paragraph
           sx={{
+            mb: 2,
             mt: 2,
             overflow: "hidden",
             display: "-webkit-box",

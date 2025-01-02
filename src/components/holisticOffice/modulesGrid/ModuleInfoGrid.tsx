@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid2 } from "@mui/material";
 import React from "react";
 
 import { HolisticOfficeModule } from "../../../types/api";
@@ -12,13 +12,13 @@ const ModuleInfoGrid: React.FC<ModulesGridProps> = ({
   modules,
 }: ModulesGridProps) => {
   return modules.length < 1 ? null : (
-    <Grid container spacing={2}>
+    <Grid2 container spacing={2}>
       {modules.map((module) => (
-        <Grid item xs={12} sm={6} md={4} key={module.name}>
+        <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={module.name}>
           <ModuleInfo module={module} />
-        </Grid>
+        </Grid2>
       ))}
-    </Grid>
+    </Grid2>
   );
 };
 

@@ -3,7 +3,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import WebIcon from "@mui/icons-material/Web";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import { Fade, Grid, Grow, Typography } from "@mui/material";
+import { Fade, Grid2, Grow, Typography } from "@mui/material";
 import { Metadata } from "next";
 import React from "react";
 
@@ -12,6 +12,7 @@ import {
   VerticallyCenteredPageContainer,
 } from "../../../src/components/layout";
 import { ReclaimerImage } from "../../../src/components/reclaimer";
+import { ReclaimerTypography } from "../../../src/components/reclaimer/styled";
 import { IconLink, MuiNextLink, Title } from "../../../src/components/text";
 import { Urls } from "../../../src/const/url";
 
@@ -40,11 +41,11 @@ export default function ReclaimerPage(): React.JSX.Element {
               height={562}
             />
           </Grow>
-          <Typography paragraph fontWeight="bold">
+          <Typography fontWeight="bold" sx={{ mt: 1, mb: 1 }}>
             Update: Reclaimer is no longer accessible for Android on the Google
             Play Store due to the absence of ongoing development efforts.
           </Typography>
-          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+          <ReclaimerTypography>
             <MuiNextLink
               href={reclaimerWebsite}
               target="_blank"
@@ -60,8 +61,8 @@ export default function ReclaimerPage(): React.JSX.Element {
             through the dungeon to escape. Along the journey, they can collect
             weapons and items scattered in the environment, engaging in combat
             with medieval adversaries hindering their progress.
-          </Typography>
-          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+          </ReclaimerTypography>
+          <ReclaimerTypography>
             Combat mechanics are reminiscent of Infinity Blade-style gameplay.
             Players execute attacks in four directions through single-finger
             swipes. Periodically, enemy attacks are indicated by arrows
@@ -70,13 +71,13 @@ export default function ReclaimerPage(): React.JSX.Element {
             taking damage. Players are incentivized to react promptly; timely
             &ldquo;perfect&rdquo; blocks trigger potent counterattacks against
             foes.
-          </Typography>
-          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+          </ReclaimerTypography>
+          <ReclaimerTypography>
             Coins can be acquired by exploring the environment, opening chests,
             and defeating enemies. These coins are then utilized to purchase
             stronger items from the dungeon&apos;s shop.
-          </Typography>
-          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+          </ReclaimerTypography>
+          <ReclaimerTypography>
             My role within the team is that of a data analyst. I implemented
             analytics hooks for various in-game events (such as combat
             encounters, combat maneuvers, item transactions, etc.) to channel
@@ -85,15 +86,15 @@ export default function ReclaimerPage(): React.JSX.Element {
             activity within the game, furnishing evidence-based feedback to both
             class instructors and my development team regarding potential new
             features to implement or existing features to refine.
-          </Typography>
-          <Typography paragraph sx={{ alignSelf: "flex-start" }}>
+          </ReclaimerTypography>
+          <ReclaimerTypography>
             Moreover, I contributed to the multimedia aspects of the project by
             assisting in the development of the video used in the trailer and
             composing the music for the soundtrack. Additionally, I aided in
             managing the app publishing process to Google Play Services.
-          </Typography>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6} md={4} lg={2}>
+          </ReclaimerTypography>
+          <Grid2 container spacing={2} sx={{ width: "100%" }}>
+            <Grid2 size={{ xs: 12, sm: 6, md: 4, lg: 2.4 }}>
               <IconLink
                 href={reclaimerWebsite}
                 text="Official Game Site"
@@ -101,8 +102,8 @@ export default function ReclaimerPage(): React.JSX.Element {
                 target="_blank"
                 sx={{ color: "#ba4ef8" }}
               />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={2}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, sm: 6, md: 4, lg: 2.4 }}>
               <IconLink
                 href="https://docs.google.com/document/d/1kCaNgljvQoYSivE1K8k4781hS_qSFREjGe788UiPb6M/edit"
                 text="Game Design Doc"
@@ -110,8 +111,8 @@ export default function ReclaimerPage(): React.JSX.Element {
                 target="_blank"
                 sx={{ color: "#ba4ef8" }}
               />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={2}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, sm: 6, md: 4, lg: 2.4 }}>
               <IconLink
                 href="https://soundcloud.com/djtaeyong/sets/reclaimer-ost"
                 text="Reclaimer OST"
@@ -119,8 +120,8 @@ export default function ReclaimerPage(): React.JSX.Element {
                 target="_blank"
                 sx={{ color: "#ba4ef8" }}
               />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={2}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, sm: 6, md: 4, lg: 2.4 }}>
               <IconLink
                 href="https://www.youtube.com/watch?v=iCcWpw9RU9g"
                 text="Trailer"
@@ -128,8 +129,8 @@ export default function ReclaimerPage(): React.JSX.Element {
                 target="_blank"
                 sx={{ color: "#ba4ef8" }}
               />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={2}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, sm: 6, md: 4, lg: 2.4 }}>
               <IconLink
                 href="https://play.google.com/store/apps/details?id=com.RedPandaStudios.Reclaimer"
                 text="Source Code"
@@ -137,8 +138,8 @@ export default function ReclaimerPage(): React.JSX.Element {
                 target="_blank"
                 sx={{ color: "#ba4ef8" }}
               />
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
         </VerticallyCenteredPageContainer>
       </Fade>
     </>
