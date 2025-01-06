@@ -80,9 +80,10 @@ type GenerateMetadataProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({
-  params,
-}: GenerateMetadataProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: GenerateMetadataProps,
+): Promise<Metadata> {
+  const params: ProjectPageParams = await props.params;
   // read route params
   const project: Project | null = await getProject(params.projectId);
   if (isNil(project)) {
@@ -98,7 +99,7 @@ export async function generateMetadata({
 export default async function EmploymentPage(props: {
   params: Promise<ProjectPageParams>;
 }): Promise<React.JSX.Element> {
-  const params = await props.params;
+  const params: ProjectPageParams = await props.params;
   const project: Project | null = await getProject(params.projectId);
   if (isNil(project)) {
     throw new Error(
