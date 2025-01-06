@@ -38,7 +38,9 @@ export const SoundCloudWidget: React.FC<SoundCloudPlayerProps> = ({
     playerUrl.searchParams.append("url", url);
     playerUrl.searchParams.append("auto_play", autoPlay.toString());
     playerUrl.searchParams.append("buying", buying.toString());
-    color && playerUrl.searchParams.append("color", color);
+    if (color) {
+      playerUrl.searchParams.append("color", color);
+    }
     playerUrl.searchParams.append("download", download.toString());
     playerUrl.searchParams.append("sharing", sharing.toString());
     playerUrl.searchParams.append("show_artwork", showArtWork.toString());
