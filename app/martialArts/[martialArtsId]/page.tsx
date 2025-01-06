@@ -35,7 +35,7 @@ export async function generateStaticParams(): Promise<MartialArtsPageParams[]> {
 }
 
 type GenerateMetadataProps = {
-  params: MartialArtsPageParams;
+  params: Promise<MartialArtsPageParams>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 

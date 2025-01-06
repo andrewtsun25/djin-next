@@ -51,7 +51,7 @@ export async function generateStaticParams(): Promise<EmploymentPageParams[]> {
 }
 
 type GenerateMetadataProps = {
-  params: EmploymentPageParams;
+  params: Promise<EmploymentPageParams>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 

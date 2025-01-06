@@ -76,7 +76,7 @@ export async function generateStaticParams(): Promise<ProjectPageParams[]> {
 }
 
 type GenerateMetadataProps = {
-  params: ProjectPageParams;
+  params: Promise<ProjectPageParams>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
