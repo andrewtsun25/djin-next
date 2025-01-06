@@ -1,39 +1,20 @@
-import {
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  SxProps,
-  Theme,
-} from "@mui/material";
-import React, { HTMLAttributeAnchorTarget } from "react";
+import { ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import React from "react";
 
-import { NextLinkComposed, NextLinkComposedProps } from "../../text";
+type ListItemButtonProps = React.ComponentProps<typeof ListItemButton>;
 
-interface HyperlistLinkItemProps {
-  className?: string;
-  sx?: SxProps<Theme>;
-  to: NextLinkComposedProps["to"];
-  target?: HTMLAttributeAnchorTarget;
+interface HyperLinkListItemProps extends ListItemButtonProps {
   icon: React.JSX.Element;
   text: string;
 }
 
-export const HyperLinkListItem: React.FC<HyperlistLinkItemProps> = ({
-  className,
-  sx,
-  to,
+export const HyperLinkListItem: React.FC<HyperLinkListItemProps> = ({
   icon,
   text,
-  target,
-}: HyperlistLinkItemProps) => {
+  ...listItemButtonProps
+}: HyperLinkListItemProps) => {
   return (
-    <ListItemButton
-      className={className}
-      sx={sx}
-      component={NextLinkComposed}
-      to={to}
-      target={target}
-    >
+    <ListItemButton {...listItemButtonProps}>
       <ListItemIcon>{icon}</ListItemIcon>
       <ListItemText primary={text} />
     </ListItemButton>
