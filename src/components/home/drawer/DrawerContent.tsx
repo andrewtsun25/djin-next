@@ -28,38 +28,39 @@ import { HyperLinkListItem } from "./HyperLinkListItem";
 
 export const DrawerContent: React.FC = () => {
   return (
-    (<Box
+    <Box
       sx={{
         height: "100%",
-        overflow: "auto"
-      }}>
+        overflow: "auto",
+      }}
+    >
       <List>
         <CollapsibleList icon={<CodeIcon />} name="Coding">
           <CollapsibleListHyperLinkListItem
             icon={<WorkIcon />}
             text="Employment"
-            to="/coding/employment"
+            href="/coding/employment"
           />
           <CollapsibleListHyperLinkListItem
             icon={<SchoolIcon />}
             text="Education"
-            to="/coding/education"
+            href="/coding/education"
           />
           <CollapsibleListHyperLinkListItem
             icon={<AppsIcon />}
             text="Projects"
-            to="/coding/projects"
+            href="/coding/projects"
           />
           <CollapsibleListHyperLinkListItem
             icon={<LinkedInIcon />}
             text="LinkedIn"
-            to="https://linkedin.com/in/andrewtsun25"
+            href="https://linkedin.com/in/andrewtsun25"
             target="_blank"
           />
           <CollapsibleListHyperLinkListItem
             icon={<GitHubIcon />}
             text="GitHub"
-            to="https://github.com/andrewtsun25"
+            href="https://github.com/andrewtsun25"
             target="_blank"
           />
         </CollapsibleList>
@@ -67,22 +68,22 @@ export const DrawerContent: React.FC = () => {
           <CollapsibleListHyperLinkListItem
             icon={<SchoolIcon />}
             text={"Education"}
-            to="/music/education"
+            href="/music/education"
           />
           <CollapsibleListHyperLinkListItem
             icon={<AlbumIcon />}
             text={"EDM"}
-            to="/music/edm"
+            href="/music/edm"
           />
           <CollapsibleListHyperLinkListItem
             icon={<MusicScoreIcon />}
             text={"Classical"}
-            to="/music/classical"
+            href="/music/classical"
           />
           <CollapsibleListHyperLinkListItem
             icon={<HeadphonesIcon />}
             text={"SoundCloud"}
-            to="https://soundcloud.com/djtaeyong"
+            href="https://soundcloud.com/djtaeyong"
             target="_blank"
           />
         </CollapsibleList>
@@ -90,61 +91,61 @@ export const DrawerContent: React.FC = () => {
           <CollapsibleListHyperLinkListItem
             icon={<MuayThaiIcon />}
             text="Muay Thai"
-            to="/martialArts/muaythai"
+            href="/martialArts/muaythai"
           />
           <CollapsibleListHyperLinkListItem
             icon={<BjjIcon />}
             text="Brazilian Jiu-Jitsu"
-            to="/martialArts/bjj"
+            href="/martialArts/bjj"
           />
           <CollapsibleListHyperLinkListItem
             icon={<TaekwondoIcon />}
             text="WT Taekwondo"
-            to="/martialArts/wtTkd"
+            href="/martialArts/wtTkd"
           />
           <CollapsibleListHyperLinkListItem
             icon={<KatanaIcon />}
             text="Haidong Gumdo"
-            to="/martialArts/hdgd"
+            href="/martialArts/hdgd"
           />
           <CollapsibleListHyperLinkListItem
             icon={<FistIcon />}
             text="ITF Taekwondo"
-            to="/martialArts/itfTkd"
+            href="/martialArts/itfTkd"
           />
         </CollapsibleList>
         <CollapsibleList icon={<SchoolIcon />} name={"Academic Work"}>
           <CollapsibleListHyperLinkListItem
             icon={<LocalHospitalIcon />}
             text="HBV Research"
-            to="/academic/hbv"
+            href="/academic/hbv"
           />
           <CollapsibleListHyperLinkListItem
             icon={<LocalPharmacyIcon />}
             text="Holistic Office"
-            to="/academic/holisticOffice"
+            href="/academic/holisticOffice"
           />
           <CollapsibleListHyperLinkListItem
             icon={<SportsEsportsIcon />}
             text={"Reclaimer"}
-            to="/academic/reclaimer"
+            href="/academic/reclaimer"
           />
         </CollapsibleList>
         <Divider />
         <HyperLinkListItem
           icon={<ContactMailIcon />}
           text="Contact"
-          to="mailto:djtaeyong@gmail.com"
+          href="mailto:djtaeyong@gmail.com"
           target="_blank"
         />
         {/* TODO: re-enable Storybook Icon once storybook is enabled */}
         {/* <HyperLinkListItem
           icon={<StorybookIcon />}
           text="Site Storybook"
-          to="https://storybook.djin.dev/"
+          href="https://storybook.djin.dev/"
           target="_blank"
         /> */}
       </List>
-    </Box>)
+    </Box>
   );
 };

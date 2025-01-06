@@ -51,13 +51,14 @@ export async function generateStaticParams(): Promise<EmploymentPageParams[]> {
 }
 
 type GenerateMetadataProps = {
-  params: EmploymentPageParams;
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<EmploymentPageParams>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({
-  params,
-}: GenerateMetadataProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: GenerateMetadataProps,
+): Promise<Metadata> {
+  const params: EmploymentPageParams = await props.params;
   // read route params
   const employment: Employment | null = await getEmployment(
     params.employmentId,
@@ -72,11 +73,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function EmploymentPage({
-  params,
-}: {
-  params: EmploymentPageParams;
+export default async function EmploymentPage(props: {
+  params: Promise<EmploymentPageParams>;
 }): Promise<React.JSX.Element> {
+  const params: EmploymentPageParams = await props.params;
   const employment: Employment | null = await getEmployment(
     params.employmentId,
   );

@@ -137,7 +137,7 @@ component.
 
 ## MUI Integration
 
-When using hyperlinks, use the `MuiNextLink` component found in `src/components/text/NextLinkComposed.tsx` file. 
+When using hyperlinks, use the `MuiNextLink` component found in `src/components/text/MuiNextLink.tsx` file. 
 
 If any MUI components need [to be composed via the `component` prop](https://mui.com/material-ui/guides/composition/) 
 that needs to integrate with [Next.js's Link component](https://nextjs.org/docs/pages/api-reference/components/link), 

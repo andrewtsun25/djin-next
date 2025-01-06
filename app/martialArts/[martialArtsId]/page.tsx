@@ -35,13 +35,14 @@ export async function generateStaticParams(): Promise<MartialArtsPageParams[]> {
 }
 
 type GenerateMetadataProps = {
-  params: MartialArtsPageParams;
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<MartialArtsPageParams>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({
-  params,
-}: GenerateMetadataProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: GenerateMetadataProps,
+): Promise<Metadata> {
+  const params: MartialArtsPageParams = await props.params;
   // read route params
   const martialArtsStyle: MartialArtsStyle | null = await getMartialArtsStyle(
     params.martialArtsId,
@@ -56,11 +57,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function MartialArtsPage({
-  params,
-}: {
-  params: MartialArtsPageParams;
+export default async function MartialArtsPage(props: {
+  params: Promise<MartialArtsPageParams>;
 }): Promise<React.JSX.Element> {
+  const params: MartialArtsPageParams = await props.params;
   const martialArtsStyle: MartialArtsStyle | null = await getMartialArtsStyle(
     params.martialArtsId,
   );
@@ -144,7 +144,7 @@ export default async function MartialArtsPage({
                   <Typography
                     component="figcaption"
                     variant="subtitle1"
-                    sx={{ align: "center", mt: 1 }}
+                    sx={{ textAlign: "center", mt: 1 }}
                   >
                     {mediaCaption}
                   </Typography>

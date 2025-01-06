@@ -10,7 +10,7 @@ import {
   useTheme,
 } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 import logo from "../../../public/logos/logo.png";
@@ -27,10 +27,11 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
   isAppDrawerOpen,
   setIsAppDrawerOpen,
 }: AppToolBarProps) => {
+  const router = useRouter(); // Required since Next 15 doesn't like <a> with nested elementsyarn
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
   return (
-    (<AppBar position={"sticky"}>
+    <AppBar position={"sticky"}>
       <Toolbar>
         {isDesktop && (
           <IconButton
@@ -44,18 +45,18 @@ const AppToolBar: React.FC<AppToolBarProps> = ({
             <MenuIcon />
           </IconButton>
         )}
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center"
-            }}>
-            <Image src={logo} alt="d.jin website logo" height={50} width={50} />
-            <HomeLinkText variant="h5">d.jin</HomeLinkText>
-          </Box>
-        </Link>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+          }}
+          onClick={() => router.push("/")}
+        >
+          <Image src={logo} alt="d.jin website logo" height={50} width={50} />
+          <HomeLinkText variant="h5">d.jin</HomeLinkText>
+        </Box>
       </Toolbar>
-    </AppBar>)
+    </AppBar>
   );
 };
 
