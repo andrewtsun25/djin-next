@@ -1840,9 +1840,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material-nextjs@npm:^6.3.0":
-  version: 6.3.0
-  resolution: "@mui/material-nextjs@npm:6.3.0"
+"@mui/material-nextjs@npm:^6.3.1":
+  version: 6.3.1
+  resolution: "@mui/material-nextjs@npm:6.3.1"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
   peerDependencies:
@@ -1859,7 +1859,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 10/0208b66936ae3f9604b56e0ac32bf94ea4d4201d5acc49e52029c9a8a0fba7b658e4244e436b1115bfb607c4da8e34fc5a1ccd65609786caa13098c68f550333
+  checksum: 10/ae0e0c74e25c1a7dc6e116fd48b779c46ef9740de8c1bbbf29b5c311fc86610cb32262a1dedd9068cee92ad1acc22e6a0324e374864f87ccb72a7c3b04dca121
   languageName: node
   linkType: hard
 
@@ -4074,7 +4074,7 @@ __metadata:
     "@fontsource/roboto": "npm:^5.1.1"
     "@mui/icons-material": "npm:^6.3.0"
     "@mui/material": "npm:^6.3.0"
-    "@mui/material-nextjs": "npm:^6.3.0"
+    "@mui/material-nextjs": "npm:^6.3.1"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^16.1.0"
     "@types/jest": "npm:^29.5.14"
