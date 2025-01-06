@@ -1,8 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-import type { MuiNextLinkProps } from "./NextLinkComposed";
-import { MuiNextLink } from "./NextLinkComposed";
+import { MuiNextLink, MuiNextLinkProps } from "./MuiNextLink";
 
 interface IconLinkProps extends MuiNextLinkProps {
   icon: React.JSX.Element;
@@ -13,23 +12,25 @@ export const IconLink: React.FC<IconLinkProps> = ({
   icon,
   text,
   ...linkProps
-}: IconLinkProps) => {
-  return (
-    (<MuiNextLink {...linkProps}>
-      <Box
+}: IconLinkProps) => (
+  <MuiNextLink {...linkProps}>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        mb: 1,
+        mt: 1,
+      }}
+    >
+      {icon}
+      <Typography
+        component="span"
         sx={{
-          display: "flex",
-          alignItems: "center",
-          mb: 1,
-          mt: 1
-        }}>
-        {icon}
-        <Typography component="span" sx={{
-          ml: 2
-        }}>
-          {text}
-        </Typography>
-      </Box>
-    </MuiNextLink>)
-  );
-};
+          ml: 2,
+        }}
+      >
+        {text}
+      </Typography>
+    </Box>
+  </MuiNextLink>
+);

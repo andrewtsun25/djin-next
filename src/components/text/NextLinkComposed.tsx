@@ -1,10 +1,8 @@
 "use client";
 
-import MuiLink, { LinkProps as MuiLinkProps } from "@mui/material/Link";
+import { LinkProps as MuiLinkProps } from "@mui/material/Link";
 import { styled } from "@mui/material/styles";
-import clsx from "clsx";
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
-import { usePathname } from "next/navigation";
 import * as React from "react";
 
 // This class is borrowed from https://mui.com/material-ui/guides/routing/#list
@@ -63,77 +61,3 @@ export type MuiNextLinkProps = {
   noLinkStyle?: boolean;
 } & Omit<NextLinkComposedProps, "to" | "linkAs" | "href"> &
   Omit<MuiLinkProps, "href">;
-
-// A styled version of the Next.js Link component:
-// https://nextjs.org/docs/api-reference/next/link
-export const MuiNextLink = React.forwardRef<
-  HTMLAnchorElement,
-  MuiNextLinkProps
->(function Link(props, ref) {
-  const {
-    activeClassName = "active",
-    as,
-    className: classNameProps,
-    href,
-    legacyBehavior,
-    linkAs: linkAsProp,
-    locale,
-    noLinkStyle,
-    prefetch,
-    replace,
-    scroll,
-    shallow,
-    ...other
-  } = props;
-
-  const nextPathname = usePathname();
-  const pathname = typeof href === "string" ? href : href.pathname;
-  const className = clsx(classNameProps, {
-    [activeClassName]: nextPathname === pathname && activeClassName,
-  });
-
-  const isExternal =
-    typeof href === "string" &&
-    (href.indexOf("http") === 0 || href.indexOf("mailto:") === 0);
-
-  if (isExternal) {
-    if (noLinkStyle) {
-      return <Anchor className={className} href={href} ref={ref} {...other} />;
-    }
-
-    return <MuiLink className={className} href={href} ref={ref} {...other} />;
-  }
-
-  const linkAs = linkAsProp || as;
-  const nextjsProps = {
-    to: href,
-    linkAs,
-    replace,
-    scroll,
-    shallow,
-    prefetch,
-    legacyBehavior,
-    locale,
-  };
-
-  if (noLinkStyle) {
-    return (
-      <NextLinkComposed
-        className={className}
-        ref={ref}
-        {...nextjsProps}
-        {...other}
-      />
-    );
-  }
-
-  return (
-    <MuiLink
-      component={NextLinkComposed}
-      className={className}
-      ref={ref}
-      {...nextjsProps}
-      {...other}
-    />
-  );
-});

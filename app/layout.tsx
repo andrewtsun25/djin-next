@@ -49,13 +49,13 @@ export default function rootLayout({ children }: RootLayoutProps) {
         <title></title>
       </head>
       <body>
-        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <ThemeProvider theme={djinTheme}>
-            <NuqsAdapter>
+        <NuqsAdapter>
+          <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+            <ThemeProvider theme={djinTheme}>
               <SiteLayout>{children}</SiteLayout>
-            </NuqsAdapter>
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+            </ThemeProvider>
+          </AppRouterCacheProvider>
+        </NuqsAdapter>
       </body>
     </html>
   );
