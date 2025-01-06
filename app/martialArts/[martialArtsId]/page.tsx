@@ -144,7 +144,7 @@ export default async function MartialArtsPage(props: {
                   <Typography
                     component="figcaption"
                     variant="subtitle1"
-                    sx={{ align: "center", mt: 1 }}
+                    sx={{ textAlign: "center", mt: 1 }}
                   >
                     {mediaCaption}
                   </Typography>
