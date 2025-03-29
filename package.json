@@ -32,7 +32,7 @@
     "@types/react-dom": "19.0.4",
     "clsx": "^2.1.1",
     "eslint": "^9.22.0",
-    "eslint-config-next": "15.2.2",
+    "eslint-config-next": "15.2.3",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "firebase": "^11.4.0",
     "firebase-admin": "^13.2.0",
