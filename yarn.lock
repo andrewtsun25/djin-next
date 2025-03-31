@@ -384,6 +384,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.26.10":
+  version: 7.27.0
+  resolution: "@babel/runtime@npm:7.27.0"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 10/e6966e03b695feb4c0ac0856a4355231c2580bf9ebd0298f47739f85c0ea658679dd84409daf26378d42c86c1cbe7e33feab709b14e784254b6c441d91606465
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.22.15, @babel/template@npm:^7.24.0, @babel/template@npm:^7.3.3":
   version: 7.24.0
   resolution: "@babel/template@npm:7.24.0"
@@ -1938,19 +1947,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/icons-material@npm:^6.4.7":
-  version: 6.4.7
-  resolution: "@mui/icons-material@npm:6.4.7"
+"@mui/icons-material@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@mui/icons-material@npm:7.0.1"
   dependencies:
-    "@babel/runtime": "npm:^7.26.0"
+    "@babel/runtime": "npm:^7.26.10"
   peerDependencies:
-    "@mui/material": ^6.4.7
+    "@mui/material": ^7.0.1
     "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
     react: ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10/fc32a3a0715bd77e4f0d6943e4fa809e6fa69155520a4fe771f61f5c293a5eb502eba770f62dbcdb2a6057c17e0fc07839e9ecd381ef7913d8d097f2be8c216a
+  checksum: 10/1e1aaa6fcb002db862b86313623c212bf4e9789f4bb4c1e47fc2706b972d3eb1f2200499324741064260e5307bc727adfb4248c331daf687c2548ea8db9606d5
   languageName: node
   linkType: hard
 
@@ -4207,7 +4216,7 @@ __metadata:
     "@eslint/js": "npm:^9.23.0"
     "@fontsource/pirata-one": "npm:^5.2.5"
     "@fontsource/roboto": "npm:^5.2.5"
-    "@mui/icons-material": "npm:^6.4.7"
+    "@mui/icons-material": "npm:^7.0.1"
     "@mui/material": "npm:^6.4.7"
     "@mui/material-nextjs": "npm:^6.4.3"
     "@testing-library/jest-dom": "npm:^6.6.3"
