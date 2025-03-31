@@ -4232,7 +4232,7 @@ __metadata:
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     lodash: "npm:^4.17.21"
-    luxon: "npm:^3.5.0"
+    luxon: "npm:^3.6.0"
     next: "npm:15.2.3"
     node-mocks-http: "npm:^1.16.2"
     nuqs: "npm:^2.4.1"
@@ -7423,10 +7423,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"luxon@npm:^3.5.0":
-  version: 3.5.0
-  resolution: "luxon@npm:3.5.0"
-  checksum: 10/48f86e6c1c96815139f8559456a3354a276ba79bcef0ae0d4f2172f7652f3ba2be2237b0e103b8ea0b79b47715354ac9fac04eb1db3485dcc72d5110491dd47f
+"luxon@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "luxon@npm:3.6.0"
+  checksum: 10/1546a51dbb8e3c888311b50dcee2550778a078952dbc1aec015fa64b069b8f47a589232e8ce1324aafe1b6c913eeb612ab91dec5d05a71de7fce03656800facb
   languageName: node
   linkType: hard
 
