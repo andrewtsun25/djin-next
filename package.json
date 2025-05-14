@@ -23,7 +23,7 @@
     "@fontsource/pirata-one": "^5.2.5",
     "@fontsource/roboto": "^5.2.5",
     "@mui/icons-material": "^6.4.7",
-    "@mui/material": "^6.4.7",
+    "@mui/material": "^7.1.0",
     "@mui/material-nextjs": "^6.4.3",
     "@types/lodash": "^4.17.16",
     "@types/luxon": "^3.6.2",
