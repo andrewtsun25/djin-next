@@ -19,7 +19,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.26.0",
+    "@eslint/js": "^9.27.0",
     "@fontsource/pirata-one": "^5.2.5",
     "@fontsource/roboto": "^5.2.5",
     "@mui/icons-material": "^6.4.7",
