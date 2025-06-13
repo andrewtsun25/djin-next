@@ -1310,10 +1310,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/roboto@npm:^5.2.5":
-  version: 5.2.5
-  resolution: "@fontsource/roboto@npm:5.2.5"
-  checksum: 10/c36360495fce9d973dfa1e1eeb92ecbf01ff30a77a1902e42660f0bb9499845f14d9fbb9a0f4389b96e39c566b4b454ed6c0c8d7324c995020587453e5bf4a89
+"@fontsource/roboto@npm:^5.2.6":
+  version: 5.2.6
+  resolution: "@fontsource/roboto@npm:5.2.6"
+  checksum: 10/cb04e69d417b69175f046d1335bc70ac8f117013a46d099688ac2cbde523f7cfcf6959c6ac87a0801b6147e900d97f6c6d67cc6c17ae388bf272bccace8fd9f5
   languageName: node
   linkType: hard
 
@@ -4390,7 +4390,7 @@ __metadata:
     "@eslint/eslintrc": "npm:^3.3.1"
     "@eslint/js": "npm:^9.28.0"
     "@fontsource/pirata-one": "npm:^5.2.6"
-    "@fontsource/roboto": "npm:^5.2.5"
+    "@fontsource/roboto": "npm:^5.2.6"
     "@mui/icons-material": "npm:^6.4.7"
     "@mui/material": "npm:^6.4.7"
     "@mui/material-nextjs": "npm:^6.4.3"
